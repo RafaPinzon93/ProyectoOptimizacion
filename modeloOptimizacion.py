@@ -35,7 +35,7 @@ _TOPOLOGIA33 = np.mat('0,1,1,1,0,1,0,1,0,0,0,0,1,1,1;0,0,1,1,0,1,0,1,0,0,0,0,1,1
 _TOPOLOGIA44 = np.mat('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,0,1,0,1,0,0,0,0,1,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,0,1,0,0,0,0,1,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,1,0,0,0,0,1,0,0;1,1,1,1,1,1,1,1,1,1,0,0,1,0,0;1,1,1,1,1,1,1,1,1,1,1,0,1,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
 _TOPOLOGIA55 = np.mat('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,0,1,0,1,0,0,0,0,1,1,1;1,1,1,1,0,1,0,1,0,0,1,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,1,1,1,1,1,1,0,0;1,1,1,1,1,1,1,1,1,1,1,1,1,1,0')
 _TOPOLOGIA66 = np.mat('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,1,1,1,1,1,0,1,1;1,1,1,1,1,1,1,1,1,1,1,1,1,0,1;1,1,1,1,1,1,1,1,1,1,1,1,1,1,0')
-
+  
 _TOPOLOGIA = [[_TOPOLOGIA1, _TOPOLOGIA4],
               [_TOPOLOGIA2, _TOPOLOGIA5],
               [_TOPOLOGIA3, _TOPOLOGIA6]]
@@ -174,26 +174,54 @@ def numeroEstaciones():
     return NUMEROESTACIONES
 numeroEstaciones()
 
-def mejoresSecuencias():
-    _mejorSecuencia = []
+def tiempoEntreEstaciones():
     _tiempoEntreEstaciones = []
     for ruta in _SECUENCIAS:
         _tiempoEntreEstacionesT = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
+        # print ruta
         for secuencia in ruta:
-            print secuencia
+            # print secuencia
             secuenciaN = secuencia-1
-            for i, sec in enumerate(secuenciaN[:-1]):
-                # print i, sec
+            for i, act in enumerate(secuenciaN[:-1]):
+                # print i, act, secuenciaN[:-1]
                 siguiente = secuenciaN[i+1]
-                _tiempoEntreEstacionesT[sec,siguiente] = 2 # Distancia entre estaciones
-            for i, sec in enumerate(secuenciaN[:-1]):
-                siguiente = secuenciaN[i+1]
-                if siguiente != secuenciaN[-1]:
-                    for j in secuenciaN[i+2:-1]:
-                        pass
-                        # _tiempoEntreEstacionesT[sec,j] = _tiempoEntreEstacionesT[sec,siguiente] + _tiempoEntreEstacionesT[siguiente, j]
+                _tiempoEntreEstacionesT[act,siguiente] = 2 # Distancia entre estaciones
+            for k in range(1,len(secuenciaN[:-1])):
+                for i, sec in enumerate(secuenciaN[:-1]):
+                    if i+k <= len(secuenciaN)-2:
+                        siguiente = secuenciaN[i+k]
+                        if siguiente != secuenciaN[-1]:
+                            j = secuenciaN[i+k+1]
+                            # for j in secuenciaN[i+2:-1]:
+                                # print _tiempoEntreEstacionesT[sec,j], _tiempoEntreEstacionesT[sec,siguiente], _tiempoEntreEstacionesT[siguiente, j]
+                                # print sec, j, " : ", sec, siguiente, " , ", siguiente, j, secuenciaN[i+2:-1]
+                            _tiempoEntreEstacionesT[sec,j] = _tiempoEntreEstacionesT[sec,siguiente] + _tiempoEntreEstacionesT[siguiente, j]
+                            
+
         _tiempoEntreEstaciones.append(_tiempoEntreEstacionesT)
-    print np.array_str(_tiempoEntreEstaciones[0])
+    return _tiempoEntreEstaciones
+
+def mejoresSecuencias():
+    _mejoresSecuencias = []
+    _tiempoEntreEstaciones = tiempoEntreEstaciones()
+    for i in range(NUMEROESTACIONES):
+        fila = []
+        for j in range(NUMEROESTACIONES):
+            minimo = 200
+            _mejorSecuencia = []
+            for ruta in _tiempoEntreEstaciones:
+                tiempo = ruta[i,j]
+                if tiempo != 0 and tiempo <= minimo:
+                    minimo = tiempo
+                    _mejorSecuencia = [i, j]
+            if j == i:
+                _mejorSecuencia = [i, j]
+            fila.append(_mejorSecuencia)
+        _mejoresSecuencias.append(fila)
+
+    return _mejoresSecuencias
+
+
 
 
 def tiempoViajePromedioTot(r, t):
@@ -376,7 +404,8 @@ def pasajerosPuedenAbordar(r, t):
 # print np.around(pasajerosPuedenAbordar(1, 1), decimals= 1)
 # print pasajerosPuedenAbordar(0,0)
 
-mejoresSecuencias()
+
+print mejoresSecuencias()
 
 # pasajerosPuedenAbordar(1,0)
 # print _TOPOLOGIA[1][2], _TOPOLOGIA[1][2].shape
