@@ -4,10 +4,13 @@ from coopr.pyomo import *
 import numpy as np
 
 np.set_printoptions(linewidth=200)
+oldSettings = np.seterr(divide='ignore', invalid='ignore')
+np.seterr(**oldSettings)
 
-FACTORPASAJERO  = 10  # Factor de peso del pasajero
+FACTORPASAJERO = 10  # Factor de peso del pasajero
 FACTOROPERADEOR = 20  # Factor de peso del operador
 CAPACIDADBUSES  = 150 # Capacidad total de los buses
+TIEMPOABORDAR = 1/120.0
 _tiempoViajePromedio = [[[[1,2],[3,4]]]]
 
 NUMERORUTAS = 3
@@ -110,6 +113,18 @@ _SECUENCIAS = [[_SECUENCIA1, _SECUENCIA4],
                [_SECUENCIA2, _SECUENCIA5],
                [_SECUENCIA3, _SECUENCIA6]
 ]
+
+_Transbordo1 = 11
+_Transbordo2 = 10, 11
+_Transbordo3 = 0
+_Transbordo4 = 3
+_Transbordo5 = 3
+_Transbordo6 = 3
+
+_TRANSBORDOS = [[_Transbordo1, _Transbordo4],
+                [_Transbordo2, _Transbordo5],
+                [_Transbordo3, _Transbordo6],
+               ]
 
 NUMEROESTACIONES = 0
 
@@ -245,32 +260,57 @@ def mejoresSecuencias():
                                                 if minimoN < minimo:
                                                     minimo = minimoN
                                                     _mejoresSecuencias[i][j] = [i+1, estacionI+1, j+1]
-    sec = _SECUENCIAS[0][0]-1
-    _mejorSecuenciaR1 = []
-    for i in sec[:-1]:
-        _mejorSecuenciaR1.append(np.array(_mejoresSecuencias)[i,i+1])
+    _mejoresSecuencias[14][13] = [15,3,13,14]
+    _mejoresSecuencias[5][3]   = [6,3,4]
+    _mejoresSecuencias[7][3]   = [8,3,4]
+    _mejoresSecuencias[7][5]   = [8,3,6]
+    # sec = _SECUENCIAS[0][0]-1
+    # _mejorSecuenciaR1 = []
+    # for i in sec[:-1]:
+    #     _mejorSecuenciaR1.append(np.array(_mejoresSecuencias)[i,i+1])
 
-    _mejorSecuenciaR = []
+
+
+
+    return np.array(_mejoresSecuencias)
+
+
+def transbordos():
+    _mejoresSecuencias = mejoresSecuencias()
+    _mejoresSecuenciasN = []
     for ruta in _SECUENCIAS:
         r = []
-        for trayecto in ruta:
-            tr = []
+        for i, trayecto in enumerate(ruta):
+            tr = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
             sec = trayecto-1
             # print sec
-            for i, act in enumerate(sec[:-1]):
+            for act in sec:
+                for j in range(NUMEROESTACIONES):
+                    if len(_mejoresSecuencias[act,j])>=3 and _mejoresSecuencias[act,j][1] != 13:
+                        tr[act,j] = _mejoresSecuencias[act,j][1]
+            r.append(tr)
+        _mejoresSecuenciasN.append(np.array(r))
+
+    _mejorSecuenciaR = []
+    for ruta in range(len(_SECUENCIAS)):
+        r = []
+        for trayecto in range(len(_SECUENCIAS[ruta])):
+            tr = []
+            sec = _SECUENCIAS[ruta][trayecto]-1
+            # print sec
+            for i, act in enumerate(sec):
                 fila = []
-                for j in range(act,NUMEROESTACIONES):
-                    fila.append(_mejoresSecuencias[act][j])
+                for j in range(NUMEROESTACIONES):
+                    fila.append(_mejoresSecuenciasN[ruta][trayecto][act,j])
+                    # fila.append(_mejoresSecuencias[act][j])
                 # print i,
                 tr.append(np.array(fila))
             # print "\n"
             r.append(np.array(tr))
         _mejorSecuenciaR.append(np.array(r))
-    return np.array(_mejoresSecuencias)
-    # return np.array(_mejorSecuenciaR)[0,0]
 
-
-
+    # return np.array(_mejorSecuenciaR)
+    return np.array(_mejoresSecuenciasN)
 
 def tiempoViajePromedioTot(r, t):
     '''
@@ -294,7 +334,8 @@ def tiempoEsperaMaximo(t):
             suma = (_TOPOLOGIA[r][t]*FrecuenciasOptimas[r])
         else:
             suma += (_TOPOLOGIA[r][t]*FrecuenciasOptimas[r])
-    result = 1/suma
+    with np.errstate(divide='ignore'):
+        result = 1/suma
     result[np.isinf(result)] = 0
 
     # print result
@@ -309,7 +350,8 @@ def tiempoEsperaMaximoTot():
         else:
             suma += (topologiaTotV[r]*FrecuenciasOptimas[r])
 
-    result = 1/suma
+    with np.errstate(divide='ignore'):
+        result = 1/suma
 
     for i in range(result.shape[0]):
         for j in range(result.shape[1]):
@@ -332,14 +374,6 @@ def tiempoEsperaPromedio(t):
 
 def tiempoEsperaPromedioTot():
     return tiempoEsperaMaximoTot()/2
-
-def tiempoAcumuladoSubida(r, t):
-    pass
-
-def tiempoEsperaEstaciones(r, t):
-    pass
-
-
 
 def matrizDemandaMedia():
     a = 0.4*np.array(tiempoEsperaPromedioTot())*np.array(_DEMANDA_MEDIA)
@@ -373,14 +407,15 @@ def pasajerosEstaValid(r, t):
 
 def pasajerosPuedenAbordar(r, t):
     '''
-        Crea matriz de los pasajeros que pueden abordar
+        Crea matriz de los pasajeros que pueden abordar, un vector de los que pueden subir y  un vector de capacidades. 
     '''
-    secuencia = _SECUENCIAS[r][t] # Toma la secuencia utilizara por la ruta r en el trayecto t
+    secuencia = _SECUENCIAS[r][t]-1 # Toma la secuencia utilizara por la ruta r en el trayecto t
     pasajeros = pasajerosEstacion(r, t)
     capacidad = np.zeros(shape=(NUMEROESTACIONES)) # Se crea un arreglo de zeros con tamaño igual al numero de estaciones
     puedenSubir = np.zeros(shape=(NUMEROESTACIONES)) # Se crea un arreglo de zeros con tamaño igual al numero de estaciones
     _pasajerosPuedenAbordar = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES)) # Se crea una matriz cuadrada de zeros con tamaño igual al numero de estaciones
-    i = secuencia[0]-1 # Se toma la estación inicial
+    mTransbordo = transbordos()[r,t]
+    i = secuencia[0] # Se toma la estación inicial
     capacidad[i] = CAPACIDADBUSES - pasajeros[i] # Se inicializa el arreglo de capacidades
     puedenSubir[i] = CAPACIDADBUSES # Se inicializa el arreglo de puedenSubir
     if puedenSubir[i] >= pasajeros[i]:
@@ -388,46 +423,161 @@ def pasajerosPuedenAbordar(r, t):
     else:
         _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t)[i,:] / (pasajeros[i]*puedenSubir[i])
     if t == 0: # Si el trayecto es de ida
-        for i, iS in zip(secuencia[1:]-1, range(len(secuencia[1:]-1))):
+        for iS, i in enumerate(secuencia[1:]):
+
             valido = pasajerosEstaValid(r, t)[i]
-            anterior = secuencia[iS]-1
-            if capacidad[anterior] >= round(pasajeros[i]):
-                capacidad[i] = capacidad[anterior] - pasajeros[i] + _pasajerosPuedenAbordar[:i,i].sum()
+            anterior = secuencia[iS]
+
+            pasajerosSuma = _pasajerosPuedenAbordar[:i,i].sum()
+            pasajerosTransbordo = 0
+            if np.in1d(i+1, mTransbordo):
+                mTransbordoB = mTransbordo == i+1
+                pasajerosTransbordo = _pasajerosPuedenAbordar[mTransbordoB].sum()
+
+            if capacidad[anterior] > round(pasajeros[i]):
+                capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma + pasajerosTransbordo
             else:
                 capacidad[i] = 0
 
             if capacidad[anterior] > 0:
-                puedenSubir[i] = (capacidad[anterior] + _pasajerosPuedenAbordar[:i,i].sum())*valido
+                puedenSubir[i] = (capacidad[anterior] + pasajerosSuma + pasajerosTransbordo)*valido
             else:
-                puedenSubir[i] = _pasajerosPuedenAbordar[:i,i].sum()*valido
+                puedenSubir[i] = (pasajerosSuma + pasajerosTransbordo)*valido
             if round(puedenSubir[i]) >= pasajeros[i]:
                 _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t)[i,:]
             else:
                 _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r,t)[i,:]/pasajeros[i])*puedenSubir[i]
             # print _MEJOR_SECUENCIA[r][i-1][i]
     else: # Si el trayecto es de Vuelta
-        for i, iS in zip(secuencia[1:]-1, range(len(secuencia[1:]-1))):
-            valido = pasajerosEstaValid(r, t)[i]
-            anterior = secuencia[iS]-1
-            if capacidad[anterior] >= round(pasajeros[i]):
-                capacidad[i] = capacidad[anterior] - pasajeros[i] + _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()
-            else:
-                capacidad[i] = 0
+        if r == 2 and t == 1: # Si es un final fantasma
+
+            puedAbordI               = pasajerosPuedenAbordar(r, 0)
+            pasajerosPuedenAbordarI  = puedAbordI[0]
+            capacidadI               = puedAbordI[2]#[_SECUENCIAS[r][0][-1]-1]
+            # puedenSubirI             = puedAbordI[1]#[:_SECUENCIAS[r][0][-1]-1,secuencia[1]]
+            secuenciaI               = _SECUENCIAS[r][0]-1
+            anterior                 = secuenciaI[-1]
+            mTransbordoI             = transbordos()[r,0]
+
+            pasajerosSuma = 0
+            for x in secuenciaI:
+                    pasajerosSuma += pasajerosPuedenAbordarI[x,i]
 
             if capacidad[anterior] > 0:
-                puedenSubir[i] = (capacidad[anterior] + _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum())*valido
+                puedenSubir[i] = capacidadI[anterior] + pasajerosSuma
             else:
-                puedenSubir[i] = _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()*valido
-                print i,anterior, puedenSubir[i], _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i]
+                puedenSubir[i] = pasajerosSuma
+
+            if capacidad[anterior] > round(pasajeros[i]):
+                capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma
+            else:
+                capacidad[i] = 0
+            print puedenSubir[i]
             if round(puedenSubir[i]) >= pasajeros[i]:
                 _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t)[i,:]
             else:
                 _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r,t)[i,:]/pasajeros[i])*puedenSubir[i]
-    # print np.around(puedenSubir, decimals= 1)
+
+            for iS, i in enumerate(secuencia[1:]): # iS -> Contador, i -> Estacion secuencia
+                valido = pasajerosEstaValid(r, t)[i]
+                anterior = secuencia[iS]   
+                pasajerosSuma  = 0
+                pasajerosSumaI = 0
+                if np.in1d(i+1, secuenciaI):
+                    for x in secuenciaI[i:]:
+                        pasajerosSumaI += pasajerosPuedenAbordarI[x,i]
+                else:
+                    for x in secuenciaI:
+                        pasajerosSumaI += pasajerosPuedenAbordarI[x,i]
+                    
+                for x in secuencia[:iS+1]:
+                    pasajerosSuma += _pasajerosPuedenAbordar[x,i]
+
+                pasajerosTransbordo = 0
+                if np.in1d(i+1, mTransbordo) or np.in1d(i+1, mTransbordoI):
+                    mTransbordoB = mTransbordo == i+1
+                    mTransbordoBI = mTransbordoI > 0 # mTransbordo == i+1 Temporalmente > 0 por error de minimizacion en excel
+                    pasajerosTransbordo = _pasajerosPuedenAbordar[mTransbordoB].sum() + pasajerosPuedenAbordarI[mTransbordoBI].sum()
+
+                if capacidad[anterior] > 0:
+                    puedenSubir[i] = (capacidadI[anterior] + pasajerosSuma + pasajerosSumaI + pasajerosTransbordo)*valido
+                else:
+                    puedenSubir[i] = (pasajerosSuma +  pasajerosSumaI + pasajerosTransbordo)*valido
+
+                if capacidad[anterior] > round(pasajeros[i]):
+                    capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma + pasajerosSumaI + pasajerosTransbordo
+
+                if round(puedenSubir[i]) >= pasajeros[i]:
+                    _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t)[i,:]
+                else:
+                    _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r,t)[i,:]/pasajeros[i])*puedenSubir[i]
+        else:
+            for iS, i in enumerate(secuencia[1:]):
+
+                valido = pasajerosEstaValid(r, t)[i]
+                anterior = secuencia[iS]
+                pasajerosSuma = 0#_pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()
+                # pasajerosSuma = _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()
+                for x in secuencia[:iS+1]:
+                    pasajerosSuma += _pasajerosPuedenAbordar[x,i]
+
+                pasajerosTransbordo = 0
+                if np.in1d(i+1, mTransbordo):
+                    mTransbordoB = mTransbordo == i+1
+                    pasajerosTransbordo = _pasajerosPuedenAbordar[mTransbordoB].sum()
+
+                if capacidad[anterior] > round(pasajeros[i]):
+                    capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma + pasajerosTransbordo
+                else:
+                    capacidad[i] = 0
+
+                if capacidad[anterior] > 0:
+                    puedenSubir[i] = (capacidad[anterior] + pasajerosSuma + pasajerosTransbordo)*valido
+                else:
+                    puedenSubir[i] = (pasajerosSuma + pasajerosTransbordo)*valido
+                    # print i,anterior, puedenSubir[i], _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i]
+                if round(puedenSubir[i]) >= pasajeros[i]:
+                    _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t)[i,:]
+                else:
+                    _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r,t)[i,:]/pasajeros[i])*puedenSubir[i]
+    # print np.around(puedenSubir, decimals= 0)
     # print capacidad
     # print np.rint(pasajeros)
-    return _pasajerosPuedenAbordar
+    return [_pasajerosPuedenAbordar, puedenSubir, capacidad]
 
+
+def tiempoEsperaEstaciones(r, t):
+    return pasajerosPuedenAbordar(r,t)[0]*TIEMPOABORDAR
+
+def tiempoAcumuladoBajada(r, t):
+    tiempoEspera = tiempoEsperaEstaciones(r,t)
+    mTransbordo   = transbordos()[r,t]
+    suma = np.zeros(shape=(NUMEROESTACIONES))
+    secuencia = _SECUENCIAS[r][t]-1
+    for e in secuencia:
+        suma[e] = tiempoEspera[:,e].sum()
+        if np.in1d(e+1, mTransbordo):
+            mTransbordoB = mTransbordo == e+1
+            suma[e] += tiempoEspera[mTransbordoB].sum()
+    return suma
+
+def tiempoAcumuladoSubida(r, t):
+    tiempoEspera = tiempoEsperaEstaciones(r,t)
+    suma = tiempoEspera.sum(axis=1)
+    _tiempoSubida = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
+    secuencia = _SECUENCIAS[r][t] -1 
+    np.fill_diagonal(_tiempoSubida,suma)
+    if t == 0:
+        for iS, i in enumerate(secuencia):
+            for j in range(iS+1,len(secuencia)):
+                _tiempoSubida[secuencia[j],i] = _tiempoSubida[secuencia[j-1],i] + suma[secuencia[j]]
+        _tiempoSubida = np.transpose(_tiempoSubida)
+    else:
+        for iS, i in enumerate(secuencia):
+            for j in range(iS+1,len(secuencia)):
+                _tiempoSubida[i,secuencia[j]] = _tiempoSubida[i,secuencia[j-1]] + suma[secuencia[j]]
+    print suma
+    return _tiempoSubida
 
 
 # tiempoViajePromedioTot(1, 1)
@@ -449,12 +599,20 @@ def pasajerosPuedenAbordar(r, t):
 # print np.around(tiempoEsperaMaximo(0) + tiempoEsperaMaximo(1), decimals = 2)
 # print np.around(tiempoEsperaMaximo(0), decimals = 2)
 
-# print np.around(pasajerosPuedenAbordar(1, 1), decimals= 1)
+# print np.around(pasajerosPuedenAbordar(1, 0)[0], decimals= 1)
+# print np.around(pasajerosPuedenAbordar(1, 1)[0], decimals= 1)
 # print pasajerosPuedenAbordar(0,0)
+# print tiempoEntreEstaciones()[0]
 
-
-print mejoresSecuencias()
+# print transbordos()[2,0]
+# print transbordos()[2,1]
+# print transbordos()[0,0]
+# print _SECUENCIAS[1][1]
 
 # pasajerosPuedenAbordar(1,0)
 # print _TOPOLOGIA[1][2], _TOPOLOGIA[1][2].shape
 # print np.sum(_TOPOLOGIA[1][2])
+
+# print np.around(tiempoEsperaEstaciones(0,1), decimals= 3)
+# print np.around(tiempoAcumuladoBajada(0,0), decimals =2)
+print np.around(tiempoAcumuladoSubida(0,0), decimals =2)
