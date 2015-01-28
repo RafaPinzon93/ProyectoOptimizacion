@@ -10,14 +10,17 @@ np.seterr(**oldSettings)
 FACTORPASAJERO = 10  # Factor de peso del pasajero
 FACTOROPERADEOR = 20  # Factor de peso del operador
 CAPACIDADBUSES  = 150 # Capacidad total de los buses
-TIEMPOABORDAR = 1/120.0
+TIEMPOABORDAR = 1/60.0
 _tiempoViajePromedio = [[[[1,2],[3,4]]]]
 
 NUMERORUTAS = 3
 
-frecuenciaOptima1 = 0.19370
-frecuenciaOptima2 = 0.15703
-frecuenciaOptima3 = 0.19119
+# frecuenciaOptima1 = 0.19370
+frecuenciaOptima1 = 0.172889582833822
+# frecuenciaOptima2 = 0.15703
+frecuenciaOptima2 = 0.0842212498536333
+# frecuenciaOptima3 = 0.19119
+frecuenciaOptima3 = 0.189052798041706
 FrecuenciasOptimas = [frecuenciaOptima1, frecuenciaOptima2, frecuenciaOptima3]
 
 _TIEMPO_ENTRE_ESTACIONES1 = np.mat('0,2,4,6,6,8,8,10,10,12,14,16,12,14,16; 2,0,2,4,4,6,6,8,8,10,12,14,10,12,14; 4,2,0,2,2,4,4,6,6,8,10,12,8,10,12; 18,14,14,0,12,2,10,4,8,6,8,10,6,8,10;6,4,2,4,0,6,2,8,4,6,8,10,10,10,12;14,12,10,12,10,0,8,2,6,4,6,8,4,6,8;8,6,4,6,2,8,0,10,2,4,6,8,12,8,10;12,10,8,10,8,12,6,0,4,2,4,6,2,4,6;10,8,6,8,4,10,2,12,0,2,4,6,14,6,8;12,10,8,10,6,12,4,14,2,0,2,4,16,4,6;14,12,10,12,8,14,6,16,4,2,0,2,18,2,4;16,14,12,14,10,16,8,18,6,4,2,0,20,4,6;10,8,6,8,8,10,10,2,12,14,16,18,0,2,4;8,6,4,6,6,8,8,10,10,12,14,16,12,0,2;6,4,2,4,4,6,6,8,8,10,12,14,10,12,0')
@@ -29,9 +32,9 @@ _TIEMPO_ENTRE_ESTACIONES = [_TIEMPO_ENTRE_ESTACIONES1, _TIEMPO_ENTRE_ESTACIONES2
 #Topologias por rutas y trayectos, teniendo en cuenta viajes 'indirectos'
 _TOPOLOGIA1 = np.mat('0,1,1,0,1,0,1,0,1,1,1,1,0,0,0;0,0,1,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,1,0,1,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,1,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
 _TOPOLOGIA2 = np.mat('0,1,1,1,0,1,0,1,0,1,1,1,0,0,0;0,0,1,1,0,1,0,1,0,1,1,1,0,0,0;0,0,0,1,0,1,0,1,0,1,1,1,0,0,0;0,0,0,0,1,1,1,1,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,1,0,1,1,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
-_TOPOLOGIA3 = np.mat('0,1,1,1,0,1,0,1,0,0,0,0,1,1,1;0,0,1,1,0,1,0,1,0,0,0,0,1,1,1;0,0,0,1,0,1,0,1,0,0,0,0,1,1,1;1,1,1,0,1,1,1,1,1,0,0,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,0,1,1,1,0,0,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,0,1,0,0,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
+_TOPOLOGIA3 = np.mat('0,1,1,1,0,1,0,1,0,0,0,0,1,1,1;0,0,1,1,0,1,0,1,0,0,0,0,1,1,1;0,0,0,1,0,1,0,1,0,0,0,0,1,1,1;1,1,1,0,0,1,0,1,0,0,0,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,0,0,0,1,0,0,0,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,0,1,0,0,0,0,0,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
 _TOPOLOGIA4 = np.mat('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,0,1,0,1,0,0,0,0,1,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,0,1,0,0,0,0,1,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,1,0,0,0,0,1,0,0;1,1,1,1,1,1,1,1,1,0,0,0,1,0,0;1,1,1,1,1,1,1,1,1,1,0,0,1,0,0;1,1,1,1,1,1,1,1,1,1,1,0,1,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
-_TOPOLOGIA5 = np.mat('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,0,1,0,1,0,0,0,0,1,1,1;1,1,1,1,0,1,0,1,0,0,1,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,1,1,1,1,1,1,0,0;1,1,1,1,1,1,1,1,1,1,1,1,1,1,0')
+_TOPOLOGIA5 = np.mat('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,0,1,0,1,0,0,0,0,1,1,1;1,1,1,1,0,1,0,1,0,0,1,0,1,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,1,1,1,1,1,1,0,1;1,1,1,1,1,1,1,1,1,1,1,1,1,1,0')
 _TOPOLOGIA6 = np.mat('0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;1,1,1,1,1,1,1,1,1,1,1,1,0,1,1;1,1,1,1,1,1,1,1,1,1,1,1,1,0,1;1,1,1,1,1,1,1,1,1,1,1,1,1,1,0')
 
 _TOPOLOGIA11 = np.mat('0,1,1,0,1,0,1,0,1,1,1,1,0,0,0;0,0,1,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,1,0,1,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,1,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
@@ -280,14 +283,16 @@ def transbordos():
     _mejoresSecuenciasN = []
     for ruta in _SECUENCIAS:
         r = []
-        for i, trayecto in enumerate(ruta):
+        for trayecto in ruta:
             tr = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
             sec = trayecto-1
             # print sec
-            for act in sec:
+            for i, act in enumerate(sec):
                 for j in range(NUMEROESTACIONES):
                     if len(_mejoresSecuencias[act,j])>=3 and _mejoresSecuencias[act,j][1] != 13:
-                        tr[act,j] = _mejoresSecuencias[act,j][1]
+                        estaTrans = _mejoresSecuencias[act,j][1]
+                        if np.in1d(estaTrans, trayecto[i:]):
+                            tr[act,j] = estaTrans
             r.append(tr)
         _mejoresSecuenciasN.append(np.array(r))
 
@@ -353,17 +358,17 @@ def tiempoEsperaMaximoTot():
     with np.errstate(divide='ignore'):
         result = 1/suma
 
-    for i in range(result.shape[0]):
-        for j in range(result.shape[1]):
-            topologia1 = 0
-            topologia2 = 0
-            for r in range(len(FrecuenciasOptimas)):
-                secuencia = _MEJOR_SECUENCIA[r][i][j]
-                if len(secuencia)== 3:
-                    topologia1 += topologiaTotV[r][secuencia[0]-1,secuencia[1]-1]*FrecuenciasOptimas[r]
-                    topologia2 += topologiaTotV[r][secuencia[1]-1,secuencia[2]-1]*FrecuenciasOptimas[r]
-                    if r == 2:
-                        result[i,j] = (1/topologia1) + (1/topologia2)
+    # for i in range(result.shape[0]):
+    #     for j in range(result.shape[1]):
+    #         topologia1 = 0
+    #         topologia2 = 0
+    #         for r in range(len(FrecuenciasOptimas)):
+    #             secuencia = _MEJOR_SECUENCIA[r][i][j]
+    #             if len(secuencia)== 3:
+    #                 topologia1 += topologiaTotV[r][secuencia[0]-1,secuencia[1]-1]*FrecuenciasOptimas[r]
+    #                 topologia2 += topologiaTotV[r][secuencia[1]-1,secuencia[2]-1]*FrecuenciasOptimas[r]
+    #                 if r == 2:
+    #                     result[i,j] = (1/topologia1) + (1/topologia2)
 
     result[np.isinf(result)] = 0
     return result
@@ -553,20 +558,34 @@ def tiempoAcumuladoBajada(r, t):
     tiempoEspera = tiempoEsperaEstaciones(r,t)
     mTransbordo   = transbordos()[r,t]
     suma = np.zeros(shape=(NUMEROESTACIONES))
+    _tiempoBajada = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
     secuencia = _SECUENCIAS[r][t]-1
-    for e in secuencia:
-        suma[e] = tiempoEspera[:,e].sum()
+    for i, e in enumerate(secuencia):
+        if t == 0:
+            suma[e] = tiempoEspera[:e,e].sum()
+        else:
+            suma[e] = tiempoEspera[secuencia[:i],e].sum()
         if np.in1d(e+1, mTransbordo):
             mTransbordoB = mTransbordo == e+1
             suma[e] += tiempoEspera[mTransbordoB].sum()
+    np.fill_diagonal(_tiempoBajada,suma)
+    if t == 0:
+        for iS, i in enumerate(secuencia):
+            for j in range(iS+1,len(secuencia)):
+                _tiempoBajada[secuencia[j],i] = _tiempoBajada[secuencia[j-1],i] + suma[secuencia[j]]
+        # _tiempoBajada = np.transpose(_tiempoBajada)
+    else:
+        for iS, i in enumerate(secuencia):
+            for j in range(iS+1,len(secuencia)):
+                _tiempoBajada[i,secuencia[j]] = _tiempoBajada[i,secuencia[j-1]] + suma[secuencia[j]]    
     return suma
 
 def tiempoAcumuladoSubida(r, t):
     tiempoEspera = tiempoEsperaEstaciones(r,t)
     suma = tiempoEspera.sum(axis=1)
     _tiempoSubida = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
-    secuencia = _SECUENCIAS[r][t] -1 
     np.fill_diagonal(_tiempoSubida,suma)
+    secuencia = _SECUENCIAS[r][t] -1 
     if t == 0:
         for iS, i in enumerate(secuencia):
             for j in range(iS+1,len(secuencia)):
@@ -576,7 +595,6 @@ def tiempoAcumuladoSubida(r, t):
         for iS, i in enumerate(secuencia):
             for j in range(iS+1,len(secuencia)):
                 _tiempoSubida[i,secuencia[j]] = _tiempoSubida[i,secuencia[j-1]] + suma[secuencia[j]]
-    print suma
     return _tiempoSubida
 
 
@@ -597,15 +615,16 @@ def tiempoAcumuladoSubida(r, t):
 # tiempoEsperaMaximo(1)
 
 # print np.around(tiempoEsperaMaximo(0) + tiempoEsperaMaximo(1), decimals = 2)
-# print np.around(tiempoEsperaMaximo(0), decimals = 2)
+# print np.around(tiempoEsperaMaximo(1), decimals = 2)
+# print _TOPOLOGIA[1][1]
 
-# print np.around(pasajerosPuedenAbordar(1, 0)[0], decimals= 1)
-# print np.around(pasajerosPuedenAbordar(1, 1)[0], decimals= 1)
+# print np.around(pasajerosPuedenAbordar(0, 1)[0], decimals= 1)
+# print np.around(pasajerosPuedenAbordar(0, 1)[1], decimals= 1)
 # print pasajerosPuedenAbordar(0,0)
 # print tiempoEntreEstaciones()[0]
 
-# print transbordos()[2,0]
-# print transbordos()[2,1]
+# print transbordos()[0,1]
+# print transbordos()[0,1]
 # print transbordos()[0,0]
 # print _SECUENCIAS[1][1]
 
@@ -613,6 +632,6 @@ def tiempoAcumuladoSubida(r, t):
 # print _TOPOLOGIA[1][2], _TOPOLOGIA[1][2].shape
 # print np.sum(_TOPOLOGIA[1][2])
 
-# print np.around(tiempoEsperaEstaciones(0,1), decimals= 3)
-# print np.around(tiempoAcumuladoBajada(0,0), decimals =2)
-print np.around(tiempoAcumuladoSubida(0,0), decimals =2)
+# print np.around(tiempoEsperaEstaciones(0,1), decimals= 5)
+# print np.around(tiempoAcumuladoSubida(2,1), decimals =2)
+print np.around(tiempoAcumuladoBajada(0,1), decimals=2)

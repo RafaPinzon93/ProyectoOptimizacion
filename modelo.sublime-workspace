@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"tiempo",
+				"tiempoEsperaEstaciones	function"
+			],
+			[
+				"mat",
+				"matrizDemandaMedia	function"
+			],
+			[
+				"_TOPO",
+				"_TOPOLOGIA	statement"
+			],
+			[
+				"TOPO",
+				"_TOPOLOGIA1"
+			],
+			[
 				"mt",
 				"mTransbordoB	statement"
 			],
@@ -120,10 +136,6 @@
 				"NUMEROESTACIONES	statement"
 			],
 			[
-				"tiempo",
-				"tiempoEsperaMaximoTot	function"
-			],
-			[
 				"PA",
 				"pasajerosEstacion	function"
 			],
@@ -179,7 +191,7 @@
 			"file": "modeloOptimizacion.py",
 			"settings":
 			{
-				"buffer_size": 37262,
+				"buffer_size": 38165,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,7 +199,7 @@
 			"file": "modelo.sublime-project",
 			"settings":
 			{
-				"buffer_size": 709,
+				"buffer_size": 728,
 				"line_ending": "Unix"
 			}
 		},
@@ -403,6 +415,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"DEMANDA",
+			"_tiempoSubida",
 			"np.zeros",
 			"#_pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()",
 			"secuencia[0]",
@@ -483,15 +497,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 37262,
+						"buffer_size": 38165,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								27844,
-								27844
+								35619,
+								35619
 							]
 						],
 						"settings":
@@ -501,7 +515,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7084.0,
+						"translation.y": 9783.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -513,15 +527,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 709,
+						"buffer_size": 728,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								658,
-								658
+								411,
+								411
 							]
 						],
 						"settings":
