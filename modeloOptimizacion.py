@@ -11,16 +11,20 @@ FACTORPASAJERO = 10  # Factor de peso del pasajero
 FACTOROPERADEOR = 20  # Factor de peso del operador
 CAPACIDADBUSES  = 150 # Capacidad total de los buses
 TIEMPOABORDAR = 1/60.0
+TIEMPOESPERA2BUS = 1
 _tiempoViajePromedio = [[[[1,2],[3,4]]]]
 
 NUMERORUTAS = 3
 
 # frecuenciaOptima1 = 0.19370
-frecuenciaOptima1 = 0.172889582833822
+# frecuenciaOptima1 = 0.172889582833822
+frecuenciaOptima1 = 0.152581658700488
 # frecuenciaOptima2 = 0.15703
-frecuenciaOptima2 = 0.0842212498536333
+# frecuenciaOptima2 = 0.0842212498536333
+frecuenciaOptima2 = 0.0829857776183043
 # frecuenciaOptima3 = 0.19119
-frecuenciaOptima3 = 0.189052798041706
+# frecuenciaOptima3 = 0.189052798041706
+frecuenciaOptima3 = 0.135635424653224
 FrecuenciasOptimas = [frecuenciaOptima1, frecuenciaOptima2, frecuenciaOptima3]
 
 _TIEMPO_ENTRE_ESTACIONES1 = np.mat('0,2,4,6,6,8,8,10,10,12,14,16,12,14,16; 2,0,2,4,4,6,6,8,8,10,12,14,10,12,14; 4,2,0,2,2,4,4,6,6,8,10,12,8,10,12; 18,14,14,0,12,2,10,4,8,6,8,10,6,8,10;6,4,2,4,0,6,2,8,4,6,8,10,10,10,12;14,12,10,12,10,0,8,2,6,4,6,8,4,6,8;8,6,4,6,2,8,0,10,2,4,6,8,12,8,10;12,10,8,10,8,12,6,0,4,2,4,6,2,4,6;10,8,6,8,4,10,2,12,0,2,4,6,14,6,8;12,10,8,10,6,12,4,14,2,0,2,4,16,4,6;14,12,10,12,8,14,6,16,4,2,0,2,18,2,4;16,14,12,14,10,16,8,18,6,4,2,0,20,4,6;10,8,6,8,8,10,10,2,12,14,16,18,0,2,4;8,6,4,6,6,8,8,10,10,12,14,16,12,0,2;6,4,2,4,4,6,6,8,8,10,12,14,10,12,0')
@@ -131,21 +135,21 @@ _TRANSBORDOS = [[_Transbordo1, _Transbordo4],
 
 NUMEROESTACIONES = 0
 
-_DEMANDA_MEDIA = np.mat('''0 ,15,15,15,15,15,15,15,15,15,15,15,15,15,15;
-                           15,0 ,15,15,15,15,15,15,15,15,15,15,15,15,15;
-                           15,15,0 ,15,15,15,15,15,15,15,15,15,15,15,15;
-                           15,15,15,0 ,15,15,15,15,15,15,15,15,15,15,15;
-                           15,15,15,15,0 ,15,15,15,15,15,15,15,15,15,15;
-                           15,15,15,15,15,0 ,15,15,15,15,15,15,15,15,15;
-                           15,15,15,15,15,15,0 ,15,15,15,15,15,15,15,15;
-                           15,15,15,15,15,15,15,0 ,15,15,15,15,15,15,15;
-                           15,15,15,15,15,15,15,15,0 ,15,15,15,15,15,15;
-                           15,15,15,15,15,15,15,15,15,0 ,15,15,15,15,15;
-                           15,15,15,15,15,15,15,15,15,15,0 ,15,15,15,15;
-                           15,15,15,15,15,15,15,15,15,15,15,0 ,15,15,15;
-                           15,15,15,15,15,15,15,15,15,15,15,15,0 ,15,15;
-                           15,15,15,15,15,15,15,15,15,15,15,15,15,0 ,15;
-                           15,15,15,15,15,15,15,15,15,15,15,15,15,15,0 ''')
+_DEMANDA_MEDIA = np.mat('''0 ,10,10,10,10,10,10,10,10,10,10,10,10,10,10;
+                           10,0 ,10,10,10,10,10,10,10,10,10,10,10,10,10;
+                           10,10,0 ,10,10,10,10,10,10,10,10,10,10,10,10;
+                           10,10,10,0 ,10,10,10,10,10,10,10,10,10,10,10;
+                           10,10,10,10,0 ,10,10,10,10,10,10,10,10,10,10;
+                           10,10,10,10,10,0 ,10,10,10,10,10,10,10,10,10;
+                           10,10,10,10,10,10,0 ,10,10,10,10,10,10,10,10;
+                           10,10,10,10,10,10,10,0 ,10,10,10,10,10,10,10;
+                           10,10,10,10,10,10,10,10,0 ,10,10,10,10,10,10;
+                           10,10,10,10,10,10,10,10,10,0 ,10,10,10,10,10;
+                           10,10,10,10,10,10,10,10,10,10,0 ,10,10,10,10;
+                           10,10,10,10,10,10,10,10,10,10,10,0 ,10,10,10;
+                           10,10,10,10,10,10,10,10,10,10,10,10,0 ,10,10;
+                           10,10,10,10,10,10,10,10,10,10,10,10,10,0 ,10;
+                           10,10,10,10,10,10,10,10,10,10,10,10,10,10,0 ''')
 
 _PROPORCIONES = np.mat('''0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7;
                           0.1,0,0.1,0.1,0.2,0.4,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7;
@@ -281,17 +285,20 @@ def mejoresSecuencias():
 def transbordos():
     _mejoresSecuencias = mejoresSecuencias()
     _mejoresSecuenciasN = []
-    for ruta in _SECUENCIAS:
+    for ir ,ruta in enumerate(_SECUENCIAS):
         r = []
-        for trayecto in ruta:
+        for it, trayecto in enumerate(ruta):
             tr = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
-            sec = trayecto-1
+            if ir == 2 and it == 1:
+                sec = np.concatenate((ruta[0]-1,ruta[1]-1))
+            else:
+                sec = trayecto-1
             # print sec
             for i, act in enumerate(sec):
                 for j in range(NUMEROESTACIONES):
                     if len(_mejoresSecuencias[act,j])>=3 and _mejoresSecuencias[act,j][1] != 13:
                         estaTrans = _mejoresSecuencias[act,j][1]
-                        if np.in1d(estaTrans, trayecto[i:]):
+                        if np.in1d(estaTrans, sec[i:]+1):
                             tr[act,j] = estaTrans
             r.append(tr)
         _mejoresSecuenciasN.append(np.array(r))
@@ -317,21 +324,19 @@ def transbordos():
     # return np.array(_mejorSecuenciaR)
     return np.array(_mejoresSecuenciasN)
 
-def tiempoViajePromedioTot(r, t):
-    '''
-    Suma de la matriz tiempo de viaje promedio
-    '''
-    result = 0
-    r = r-1
-    t = t-1
-    for i in _tiempoViajePromedio[r][t]:
-        for j in i:
-            # tiempoEntreEstaciones(r)
-            result += j
-    print result
-
-def tiempoViajePromedioMat(r):
-    pass
+def transbordoE(r):
+    _mejoresSecuencias = mejoresSecuencias()
+    ruta = _SECUENCIAS[r]
+    tr = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
+    sec = np.concatenate((ruta[0]-1,ruta[1]-1))
+    # print sec
+    for i, act in enumerate(sec):
+        for j in range(NUMEROESTACIONES):
+            if len(_mejoresSecuencias[act,j])>=3 and _mejoresSecuencias[act,j][1] != 13:
+                estaTrans = _mejoresSecuencias[act,j][1]
+                if np.in1d(estaTrans, sec[i:]+1):
+                    tr[act,j] = estaTrans
+    return tr
 
 def tiempoEsperaMaximo(t):
     for r in range(len(FrecuenciasOptimas)):
@@ -477,7 +482,7 @@ def pasajerosPuedenAbordar(r, t):
                 capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma
             else:
                 capacidad[i] = 0
-            print puedenSubir[i]
+            # print puedenSubir[i]
             if round(puedenSubir[i]) >= pasajeros[i]:
                 _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t)[i,:]
             else:
@@ -555,8 +560,9 @@ def tiempoEsperaEstaciones(r, t):
     return pasajerosPuedenAbordar(r,t)[0]*TIEMPOABORDAR
 
 def tiempoAcumuladoBajada(r, t):
-    tiempoEspera = tiempoEsperaEstaciones(r,t)
+    tiempoEspera  = tiempoEsperaEstaciones(r,t)
     mTransbordo   = transbordos()[r,t]
+    tiempoEsperaI = 0
     suma = np.zeros(shape=(NUMEROESTACIONES))
     _tiempoBajada = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
     secuencia = _SECUENCIAS[r][t]-1
@@ -565,20 +571,31 @@ def tiempoAcumuladoBajada(r, t):
             suma[e] = tiempoEspera[:e,e].sum()
         else:
             suma[e] = tiempoEspera[secuencia[:i],e].sum()
+            if r==2:
+                tiempoEsperaI = tiempoEsperaEstaciones(r,0)
+                secuenciaI = _SECUENCIAS[r][0]-1
+                if np.in1d(e, secuenciaI):
+                    suma[e] += tiempoEsperaI[secuenciaI[e:],e].sum() # Revisar
+                else:
+                    suma[e] += tiempoEsperaI[secuenciaI,e].sum()
         if np.in1d(e+1, mTransbordo):
             mTransbordoB = mTransbordo == e+1
             suma[e] += tiempoEspera[mTransbordoB].sum()
-    np.fill_diagonal(_tiempoBajada,suma)
+            if r==2:
+                suma[e] += tiempoEsperaI[mTransbordoB].sum()
+        if i>0 and t==0:
+            _tiempoBajada[e,secuencia[i-1]] = suma[e]
+
     if t == 0:
         for iS, i in enumerate(secuencia):
             for j in range(iS+1,len(secuencia)):
                 _tiempoBajada[secuencia[j],i] = _tiempoBajada[secuencia[j-1],i] + suma[secuencia[j]]
-        # _tiempoBajada = np.transpose(_tiempoBajada)
+        _tiempoBajada = np.transpose(_tiempoBajada)
     else:
         for iS, i in enumerate(secuencia):
             for j in range(iS+1,len(secuencia)):
-                _tiempoBajada[i,secuencia[j]] = _tiempoBajada[i,secuencia[j-1]] + suma[secuencia[j]]    
-    return suma
+                _tiempoBajada[i,secuencia[j]] = _tiempoBajada[i,secuencia[j-1]] + suma[secuencia[j]] 
+    return _tiempoBajada
 
 def tiempoAcumuladoSubida(r, t):
     tiempoEspera = tiempoEsperaEstaciones(r,t)
@@ -597,6 +614,25 @@ def tiempoAcumuladoSubida(r, t):
                 _tiempoSubida[i,secuencia[j]] = _tiempoSubida[i,secuencia[j-1]] + suma[secuencia[j]]
     return _tiempoSubida
 
+def tiempoViajePromedio(r, t):
+    '''
+    Matriz tiempo de viaje promedio
+    '''
+    tiempoEntreEstacionesM = _TIEMPO_ENTRE_ESTACIONES[r]
+    tiempoEsperaPromedioM  = tiempoEsperaPromedio(t)
+    tiempoAcumuladoSubidaM = tiempoAcumuladoSubida(r,t)
+    tiempoAcumuladoBajadaM = tiempoAcumuladoBajada(r,t)
+    _tiempoViajePromedio = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
+    secuencia = _SECUENCIAS[r][t]-1
+
+    for i, ei in enumerate(secuencia):
+        for ej in secuencia[i:]:
+            _tiempoViajePromedio[ei,ej] = tiempoEntreEstacionesM[ei,ej] + tiempoEsperaPromedioM[ei,ej] + tiempoAcumuladoSubidaM[ei,ej] + tiempoAcumuladoBajadaM[ei,ej]
+
+    return _tiempoViajePromedio
+
+print np.around(tiempoViajePromedio(2,1), decimals = 1)
+print np.around(tiempoViajePromedio(2,1).sum(axis=0), decimals = 1)
 
 # tiempoViajePromedioTot(1, 1)
 # a = np.arange(12).reshape(4,3)
@@ -624,7 +660,9 @@ def tiempoAcumuladoSubida(r, t):
 # print tiempoEntreEstaciones()[0]
 
 # print transbordos()[0,1]
-# print transbordos()[0,1]
+# print transbordos()[2,0]
+# print transbordos()[2,1]
+# print transbordoE(2)
 # print transbordos()[0,0]
 # print _SECUENCIAS[1][1]
 
@@ -632,6 +670,6 @@ def tiempoAcumuladoSubida(r, t):
 # print _TOPOLOGIA[1][2], _TOPOLOGIA[1][2].shape
 # print np.sum(_TOPOLOGIA[1][2])
 
-# print np.around(tiempoEsperaEstaciones(0,1), decimals= 5)
-# print np.around(tiempoAcumuladoSubida(2,1), decimals =2)
-print np.around(tiempoAcumuladoBajada(0,1), decimals=2)
+# print np.around(tiempoEsperaEstaciones(2,0), decimals= 3)
+# print np.around(tiempoAcumuladoSubida(2,0), decimals =2)
+# print np.around(tiempoAcumuladoBajada(2,0), decimals=1)
