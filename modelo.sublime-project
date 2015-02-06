@@ -17,19 +17,22 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/rafapinzon/VRS"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/rafapinzon/Dropbox/ProyectoMegaBusR"
 		}
 	],
 	"settings":
 	{
 		"anaconda_linting": true,
 		"anaconda_linting_behaviour": "always",
+		"auto_python_builder_enabled": false,
 		"pep257": false,
 		"pep8": false,
 		"python_interpreter": "/usr/bin/python",
 		"test_command": "python -m unittest discover",
 		"use_pylint": false,
-		"validate_imports": false,
-		// "python_interpreter": "stackless_pyt	hon3",
-		"auto_python_builder_enabled": false
+		"validate_imports": false
 	}
 }

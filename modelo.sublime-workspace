@@ -4,12 +4,152 @@
 		"selected_items":
 		[
 			[
-				"tiempo",
-				"tiempoEsperaEstaciones	function"
+				"modelo",
+				"modeloOptimizacionPyomo"
+			],
+			[
+				"matrices",
+				"matricesTransbordo	statement"
+			],
+			[
+				"result",
+				"resultados	statement"
 			],
 			[
 				"mat",
-				"matrizDemandaMedia	function"
+				"matProporcion	statement"
+			],
+			[
+				"matT",
+				"matTransbordo	statement"
+			],
+			[
+				"obet",
+				"obtenerDatosBase	function"
+			],
+			[
+				"objet",
+				"objectiveG	function"
+			],
+			[
+				"pasajeros",
+				"pasajerosE2Vmat	statement"
+			],
+			[
+				"pasa",
+				"pasajerosE2Vmat	statement"
+			],
+			[
+				"pasjaer",
+				"pasajerosE2Vmat"
+			],
+			[
+				"NUME",
+				"NUMEROESTACIONES	statement"
+			],
+			[
+				"matrix",
+				"matrixSuma	statement"
+			],
+			[
+				"NU",
+				"NUMEROESTACIONES	statement"
+			],
+			[
+				"frecuenci",
+				"frecuenciaOptima"
+			],
+			[
+				"frecuen",
+				"frecuenciaOptima"
+			],
+			[
+				"ti",
+				"tiempoViajePromedio	function"
+			],
+			[
+				"tiempov",
+				"tiempoViajePromedioModel	function"
+			],
+			[
+				"tiempoViaje",
+				"tiempoViajePromedioS"
+			],
+			[
+				"fre",
+				"frecuenciaOptima"
+			],
+			[
+				"FRE",
+				"frecuenciaOptima"
+			],
+			[
+				"FACT",
+				"FACTORPASAJERO	statement"
+			],
+			[
+				"tiempo",
+				"tiempoEsperaPor2ViajeS	statement"
+			],
+			[
+				"NUMER",
+				"NUMEROESTACIONES	statement"
+			],
+			[
+				"NUMERO",
+				"NUMERORUTAS	statement"
+			],
+			[
+				"_",
+				"_SECUENCIAS	statement"
+			],
+			[
+				"pasajerosEs",
+				"pasajerosEspera2Viaje	function"
+			],
+			[
+				"tiempoE",
+				"tiempoEsperaPor2Bus	function"
+			],
+			[
+				"tiempoEs",
+				"tiempoEsperarPor2Viaje	function"
+			],
+			[
+				"tiempoEsperaP",
+				"tiempoEsperarPor2Viaje"
+			],
+			[
+				"tiempoEspera",
+				"tiempoEsperaPor2Bus	function"
+			],
+			[
+				"_tiempo",
+				"_tiempoEsperarPor2Viaje	statement"
+			],
+			[
+				"tiemp",
+				"tiempoEsperaPromedio"
+			],
+			[
+				"pasajer",
+				"pasajerosEspera2Viaje	function"
+			],
+			[
+				"pasaj",
+				"pasajerosEsperaSegundoViaje	function"
+			],
+			[
+				"_se",
+				"_SECUENCIAS	statement"
+			],
+			[
+				"mT",
+				"mTransbordoB	statement"
+			],
+			[
+				"r",
+				"r	param"
 			],
 			[
 				"_TOPO",
@@ -22,10 +162,6 @@
 			[
 				"mt",
 				"mTransbordoB	statement"
-			],
-			[
-				"pasajeros",
-				"pasajerosPuedenAbordar	function"
 			],
 			[
 				"pasajero",
@@ -104,10 +240,6 @@
 				"puedenSubir	statement"
 			],
 			[
-				"pasa",
-				"pasajerosEstaValid	function"
-			],
-			[
 				"pa",
 				"pasajeros	statement"
 			],
@@ -122,14 +254,6 @@
 			[
 				"PU",
 				"puedenSubirV	statement"
-			],
-			[
-				"NU",
-				"NUMEROESTACIONES	statement"
-			],
-			[
-				"NUME",
-				"numeroEstaciones	function"
 			],
 			[
 				"Num",
@@ -148,24 +272,8 @@
 				"topologiaTotV	statement"
 			],
 			[
-				"fre",
-				"frecuencia	statement"
-			],
-			[
-				"tiemp",
-				"tiempoEsperaMaximo	function"
-			],
-			[
-				"tiempoEspera",
-				"tiempoEsperaMaximo	function"
-			],
-			[
 				"object",
 				"object"
-			],
-			[
-				"tiempoE",
-				"tiempoEsperaPromedioTot	function"
 			],
 			[
 				"topologia",
@@ -191,106 +299,83 @@
 			"file": "modeloOptimizacion.py",
 			"settings":
 			{
-				"buffer_size": 38165,
+				"buffer_size": 50323,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "modelo.sublime-project",
+			"file": "/home/rafapinzon/Dropbox/U/Progra/Python/databases.py",
 			"settings":
 			{
-				"buffer_size": 728,
+				"buffer_size": 2007,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "\n\nAnaconda:\n--------\n\n  # Anaconda\n  \n  Anaconda turns your Sublime Text 3 into a full featured Python IDE. Read the plugin documentation on [http://damnwidget.github.io/anaconda](http://damnwidget.github.io/anaconda).\n  \n  [![Build Status](https://www.gitbook.io/button/status/book/damnwidget/anacondast3-developers-documentation)](https://www.gitbook.io/book/damnwidget/anacondast3-developers-documentation/activity)\n  \n  # Getting Started\n  \n  Anaconda works out of the box but there are multitude of options and features that you can tune and adapt to your own style or needs.\n  \n  * [Autocompletion on dot](http://damnwidget.github.io/anaconda/IDE/#toc_3)\n  * [Powerful IDE](http://damnwidget.github.io/anaconda/IDE/)\n  * [Advanced Configuration](http://damnwidget.github.io/anaconda/anaconda_settings/)\n  * [Run Tests using Anaconda](http://damnwidget.github.io/anaconda/tests_runner/)\n  * [Linting theme customization](http://damnwidget.github.io/anaconda/IDE/#toc_50)\n  * [Using Vagrant Environments](http://damnwidget.github.io/anaconda/vagrant/)\n  \n  # License\n  \n  This program is distributed under the terms of the GNU GPL v3. See the [LICENSE](https://raw.github.com/DamnWidget/anaconda/master/LICENSE) file for details.\n  \n  # Troubleshootings\n  \n  Guide to solve common issues\n  \n  ## Anaconda does not appear in the available packages list on Package Control\n  \n  You have to update your package control version to the version 2.0 or better\n  \n  ## I get errors in the console about \"the file can't be open\" in worker.py file\n  \n  Your sublime text can't find the interpreter that you set in your configuration, by default, anaconda set this as `python` so it will get your configured Python interpreter in your PATH (if any)\n  \n  ## Autocomplete for import behaves badly\n  \n  Sublime Text 3 Python default package decide to cancel the autocompletion when some words are detected (for example `def` or `class`) but it also decides to cancel it with the word `import`.\n  \n  To fix that behavior and make ST3 use the anaconda's completion create a new Python directory in your Packages directory and copy the contents of the file [Completion Rules.tmPreferences](https://raw.githubusercontent.com/DamnWidget/anaconda/master/Completion%20Rules.tmPreferences) there with the same name.\n  \n  \n  # Contributing with Anaconda\n  \n  There are several ways to contribute with anaconda.\n  \n  **important**: there is a [Developers Documentation book](http://damnwidget.gitbooks.io/anacondast3-developers-documentation/) that is maintained up to date with the last information about anaconda internals and useful information about how to contribute with the project\n  \n  ## Feedback\n  \n  * By giving feedback about the plugin and how it works in your platform.\n  * By reporting bugs in the issue tracker\n  * By sharing your ideas with us\n  \n  ## Bug Hunting\n  \n  Did you found a bug and you know how to fix it? First of all, thank you very much. You just have to report the bug as a new issue, fork the repository, make your changes and send a new pull request.\n  \n  ## Feature Implementor\n  \n  So you thougth about a new killer feature to implement in Anaconda?. Great!. Open an issue tagged as \"Feature\" and we will discuss it with you.\n  \n  ## Donations\n  \n  Just donate to maintain this project alive.\n  \n  [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=KP7PAHR962UGG&lc=US&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)\n  [<img src=\"https://api.flattr.com/button/flattr-badge-large.png\" />][0]\n  [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/de124b4ffd37f6c0491ee7e4de3ec4cc \"githalytics.com\")](http://githalytics.com/DamnWidget/anaconda)\n  [0]: http://flattr.com/thing/1765332/DamnWidgetanaconda-on-GitHub\n  \nPackage Control Messages\n========================",
+			"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
 			"settings":
 			{
-				"buffer_size": 3897,
+				"buffer_size": 10793,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "regex model = \"(model\"\n[^(\\n]*?\\(model[^)\\n\\t]+?\\)*?",
+			"settings":
+			{
+				"buffer_size": 52,
 				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"scratch": true
+				"name": "regex model = \"(model\""
 			}
 		},
 		{
-			"file": "/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+			"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.py",
 			"settings":
 			{
-				"buffer_size": 109,
+				"buffer_size": 1599,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/.config/sublime-text-3/Packages/User/Python.sublime-settings",
+			"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.dat",
 			"settings":
 			{
-				"buffer_size": 348,
+				"buffer_size": 2339,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+			"file": "modeloOptimizacionPyomo.dat",
 			"settings":
 			{
-				"buffer_size": 1406,
+				"buffer_size": 86,
+				"line_ending": "Unix",
+				"name": "param numR := 3 ;"
+			}
+		},
+		{
+			"file": "modeloOptimizacionPyomo.py",
+			"settings":
+			{
+				"buffer_size": 45351,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/SimAnnView.py",
+			"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/json.py",
 			"settings":
 			{
-				"buffer_size": 10105,
+				"buffer_size": 322,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/forms/MappForm.py",
+			"contents": "[\n    {\n        \"idtrayecto\":1,\n        \"servicios\":[\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ]\n        ]\n    },\n    {\n        \"idtrayecto\":2,\n        \"servicios\":[\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ]\n        ]\n    }\n]",
 			"settings":
 			{
-				"buffer_size": 682,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
-			"settings":
-			{
-				"buffer_size": 11014,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/TestView.py",
-			"settings":
-			{
-				"buffer_size": 5848,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/GeneticView.py",
-			"settings":
-			{
-				"buffer_size": 9402,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/UtilsView.py",
-			"settings":
-			{
-				"buffer_size": 6650,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/prueba.py",
-			"settings":
-			{
-				"buffer_size": 1554,
-				"line_ending": "Unix"
+				"buffer_size": 2292,
+				"line_ending": "Unix",
+				"name": "["
 			}
 		}
 	],
@@ -363,35 +448,43 @@
 	"expanded_folders":
 	[
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion",
-		"/home/rafapinzon/VRS",
-		"/home/rafapinzon/VRS/project_rs",
-		"/home/rafapinzon/VRS/project_rs/local_apps",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/models",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views",
-		"/home/rafapinzon/VRS/project_rs/rs",
-		"/home/rafapinzon/VRS/project_rs/templates",
-		"/home/rafapinzon/VRS/project_rs/templates/core",
-		"/home/rafapinzon/VRS/project_rs/templates/core/mapp"
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR"
 	],
 	"file_history":
 	[
-		"/home/rafapinzon/VRS/project_rs/templates/core/home.html",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionPyomo.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/tutorial.py",
+		"/home/rafapinzon/Downloads/CoinIpopt/ThirdParty/Lapack/get.Lapack",
+		"/home/rafapinzon/Dropbox/Proyecto Optimización/RafaStuff/modeloOptimizacion.py",
+		"/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
+		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_resources.py",
+		"/home/rafapinzon/VRS/include/python2.7/traceback.h",
+		"/home/rafapinzon/VRS/lib/python2.7/site-packages/django/contrib/admin/static/admin/js/timeparse.js",
+		"/home/rafapinzon/VRS/lib/python2.7/site-packages/django/contrib/gis/tests/data/invalid/emptypoints.dbf",
+		"/home/rafapinzon/VRS/include/python2.7/timefuncs.h",
+		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_easy_install.py",
+		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_dist_info.py",
+		"/home/rafapinzon/VRS/project_rs/TODO.txt",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modelo.sublime-project",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Python.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/SimAnnView.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms/MappForm.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/TestView.py",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/GeneticView.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/UtilsView.py",
+		"/home/rafapinzon/VRS/project_rs/prueba.py",
+		"/home/rafapinzon/VRS/project_rs/templates/core/home.html",
 		"/home/rafapinzon/VRS/project_rs/templates/core/simann.html",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms/TestForm.py",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/models/WatchModel.py",
 		"/home/rafapinzon/VRS/project_rs/rs/settings.py",
 		"/home/rafapinzon/VRS/project_rs/templates/core/mapp/update_gmap.html",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/TestView.py",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Python.sublime-settings",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/SublimeLinter/Default (Linux).sublime-keymap",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/Jedi - Python autocompletion/Default.sublime-keymap",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/SideBarEnhancements/Default (Linux).sublime-keymap",
@@ -408,13 +501,39 @@
 		"height": 100.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"19119",
+			"value",
+			"...        ",
+			"\n...         ",
+			"...",
+			"self",
+			"\n...         ",
+			"...",
+			"0.066",
+			"model=None",
+			"float(model.frecuenciaOptima[r])",
+			"matrizDemandaMedia",
+			"tiempoViajePromedio",
+			"FrecuenciasOptimas",
+			"^m",
+			"4",
+			"frecuenciaTotal",
+			"0",
+			"where",
+			"15",
+			"Subida",
+			"tiempoEntreEstaciones",
+			"tiempoViajePromedioTot",
+			"tiempoViajePromedio",
+			"np.where",
 			"DEMANDA",
 			"_tiempoSubida",
 			"np.zeros",
@@ -478,6 +597,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"10"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -488,7 +608,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -497,15 +617,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 38165,
+						"buffer_size": 50323,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								35619,
-								35619
+								19990,
+								19990
 							]
 						],
 						"settings":
@@ -515,178 +635,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 9783.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "modelo.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 728,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								411,
-								411
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3897,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1070,
-								1070
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 516.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 109,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32,
-								32
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/rafapinzon/.config/sublime-text-3/Packages/User/Python.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 348,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								345,
-								232
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1153.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+					"buffer": 1,
+					"file": "/home/rafapinzon/Dropbox/U/Progra/Python/databases.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1406,
+						"buffer_size": 2007,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								478,
-								478
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 192.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/SimAnnView.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10105,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1087,
-								1087
+								1954,
+								1954
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 3,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -697,177 +672,236 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/forms/MappForm.py",
+					"buffer": 2,
+					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 682,
+						"buffer_size": 10793,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								459,
-								459
+								134,
+								134
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11014,
+						"buffer_size": 52,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								21,
+								21
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"auto_name": "regex model = \"(model\"",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3294.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/TestView.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5848,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 1836.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/GeneticView.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9402,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1174.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/UtilsView.py",
+					"buffer": 4,
+					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6650,
+						"buffer_size": 1599,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1227,
+								1227
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1113.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/home/rafapinzon/VRS/project_rs/prueba.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.dat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 12.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "modeloOptimizacionPyomo.dat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 86,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								78,
+								78
+							]
+						],
+						"settings":
+						{
+							"auto_name": "param numR := 3 ;",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "modeloOptimizacionPyomo.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								189,
+								189
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true,
+							"wrap_width": 80
+						},
+						"translation.x": 0.0,
+						"translation.y": 17940.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/json.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2292,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1139,
+								1139
+							]
+						],
+						"settings":
+						{
+							"auto_name": "[",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -919,7 +953,7 @@
 	"project": "modelo.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":

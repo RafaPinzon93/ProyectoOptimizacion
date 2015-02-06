@@ -1,0 +1,133 @@
+g3 1 1 0	# problem unknown
+ 3 33 1 0 0 	# vars, constraints, objectives, general inequalities, equalities
+ 0 0 	# nonlinear constraints, objectives
+ 0 0	# network constraints: nonlinear, linear
+ 0 0 0 	# nonlinear vars in constraints, objectives, both
+ 0 0 0 1	# linear network variables; functions; arith, flags
+ 0 0 0 0 0 	# discrete variables: binary, integer, nonlinear (b,c,o)
+ 3 3 	# nonzeros in Jacobian, obj. gradient
+ 0 0	# max name lengths: constraints, variables
+ 0 0 0 0 0	# common exprs: b,c,o,c1,o1
+C0
+n0
+C1
+n0
+C2
+n0
+C3
+n0
+C4
+n0
+C5
+n0
+C6
+n0
+C7
+n0
+C8
+n0
+C9
+n0
+C10
+n0
+C11
+n0
+C12
+n0
+C13
+n0
+C14
+n0
+C15
+n0
+C16
+n0
+C17
+n0
+C18
+n0
+C19
+n0
+C20
+n0
+C21
+n0
+C22
+n0
+C23
+n0
+C24
+n0
+C25
+n0
+C26
+n0
+C27
+n0
+C28
+n0
+C29
+n0
+C30
+n0
+C31
+n0
+C32
+n0
+O0 0
+n139711.32166666666
+x3
+0 20
+1 20
+2 20
+r
+1 1.4596
+1 1.9596444444444445
+1 2.4563444444444444
+1 2.4463333333333335
+1 2.899
+1 2.3793333333333333
+1 3.3384
+1 2.3593
+1 3.8249333333333335
+1 4.2381
+1 4.764766666666667
+1 5.244633333333334
+1 2.7778
+1 4.589466666666667
+1 4.589466666666667
+1 5.365688888888889
+1 4.8723777777777775
+1 4.372366666666666
+1 4.2043333333333335
+1 3.8386666666666667
+1 4.1506
+1 3.3386666666666667
+1 4.157266666666667
+1 2.8589333333333333
+1 2.3992666666666667
+1 1.9127666666666667
+1 1.3994
+1 3.6843333333333335
+1 1.8788333333333334
+1 1.8721
+2 0.066
+2 0.066
+2 0.066
+b
+2 0
+2 0
+2 0
+k2
+1
+2
+J30 1
+0 1
+J31 1
+1 1
+J32 1
+2 1
+G0 3
+0 500000
+1 500000
+2 500000

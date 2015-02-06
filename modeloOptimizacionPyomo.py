@@ -2,8 +2,8 @@
 from __future__ import division
 from coopr.pyomo import *
 import numpy as np
-import MySQLdb
-# from pyutilib.misc import Options
+import coopr.environ
+from pyutilib.misc import Options
 
 # from coopr.opt import SolverFactory
     
@@ -20,33 +20,28 @@ TIEMPOABORDAR = 1/60.0
 TIEMPOESPERA2BUS = 1
 _tiempoViajePromedio = [[[[1,2],[3,4]]]]
 
-HORAINICIO = 7
-
-HORAFIN = 22
-
-NUMERORUTAS = 3 # Se sacará de base de datos
+NUMERORUTAS = 3
 
 # frecuenciaOptima1 = 0.19370
 # frecuenciaOptima1 = 0.172889582833822
 # frecuenciaOptima1 = 0.152581658700488
-frecuenciaOptima1 = 0.18
+frecuenciaOptima1 = 0.066
 # frecuenciaOptima2 = 0.15703
 # frecuenciaOptima2 = 0.0842212498536333
 # frecuenciaOptima2 = 0.0829857776183043
-frecuenciaOptima2 = 0.11
+frecuenciaOptima2 = 0.066
 # frecuenciaOptima3 = 0.19119
 # frecuenciaOptima3 = 0.189052798041706
 # frecuenciaOptima3 = 0.135635424653224
-frecuenciaOptima3 = 0.13
+frecuenciaOptima3 = 0.066
 FrecuenciasOptimas = [frecuenciaOptima1, frecuenciaOptima2, frecuenciaOptima3]
 
-# Se sacará de base de datos
 _TIEMPO_ENTRE_ESTACIONES1 = np.mat('0,2,4,6,6,8,8,10,10,12,14,16,12,14,16; 2,0,2,4,4,6,6,8,8,10,12,14,10,12,14; 4,2,0,2,2,4,4,6,6,8,10,12,8,10,12; 18,14,14,0,12,2,10,4,8,6,8,10,6,8,10;6,4,2,4,0,6,2,8,4,6,8,10,10,10,12;14,12,10,12,10,0,8,2,6,4,6,8,4,6,8;8,6,4,6,2,8,0,10,2,4,6,8,12,8,10;12,10,8,10,8,12,6,0,4,2,4,6,2,4,6;10,8,6,8,4,10,2,12,0,2,4,6,14,6,8;12,10,8,10,6,12,4,14,2,0,2,4,16,4,6;14,12,10,12,8,14,6,16,4,2,0,2,18,2,4;16,14,12,14,10,16,8,18,6,4,2,0,20,4,6;10,8,6,8,8,10,10,2,12,14,16,18,0,2,4;8,6,4,6,6,8,8,10,10,12,14,16,12,0,2;6,4,2,4,4,6,6,8,8,10,12,14,10,12,0')
 _TIEMPO_ENTRE_ESTACIONES2 = np.mat('0  ,2  ,4  ,6  ,6  ,8  ,8  ,10 ,10 ,12 ,14 ,16 ,12 ,14 ,16 ;2,0,2,4,4,6,6,8,8,10,12,14,10,12,14;4,2,0,2,2,4,4,6,6,8,10,12,8,10,12;18,16,12,0,12,2,10,4,8,6,8,10,6,8,10;6,4,2,4,0,6,2,8,4,6,8,10,10,12,14;16,14,12,14,10,0,8,2,6,4,6,8,4,6,8;8,6,4,6,2,8,0,10,2,4,6,8,12,8,10;14,12,10,12,8,14,6,0,4,2,4,6,2,4,6;10,8,6,8,4,10,2,12,0,2,4,6,14,6,8;12,10,8,10,6,12,4,14,2,0,2,4,16,4,6;10,8,6,8,8,10,6,12,4,2,0,2,14,2,4;12,10,8,10,10,12,8,14,6,4,2,0,16,4,6;10,8,6,8,8,10,10,2,12,14,16,18,0,2,4;8,6,4,6,6,8,8,10,10,12,14,16,12,0,2;6,4,2,4,4,6,6,8,8,10,12,14,10,12,0')
 _TIEMPO_ENTRE_ESTACIONES3 = np.mat('0,2,4,6,6,8,8,10,10,12,14,16,12,14,16;2,0,2,4,4,6,6,8,8,10,12,14,10,12,14;4,2,0,2,2,4,4,6,6,8,10,12,8,10,12;16,14,12,0,14,2,16,4,18,6,8,10,6,8,10;6,4,2,4,0,6,2,8,4,6,8,10,10,12,14;14,12,10,12,12,0,14,2,16,4,6,8,4,6,8;8,6,4,6,2,8,0,10,2,4,6,8,12,8,10;12,10,8,10,10,12,6,0,4,2,4,6,2,4,6;10,8,6,8,4,10,2,12,0,2,4,6,14,6,8;12,10,8,10,6,12,4,14,2,0,2,4,16,4,6;10,8,6,8,8,10,6,12,4,2,0,2,14,2,4;12,10,8,10,10,12,8,14,6,4,2,0,16,4,6;10,8,6,8,8,10,10,2,12,14,16,18,0,2,4;8,6,4,6,6,8,8,10,10,12,14,16,12,0,2;6,4,2,4,4,6,6,8,8,10,12,14,10,12,0')
 _TIEMPO_ENTRE_ESTACIONES = [_TIEMPO_ENTRE_ESTACIONES1, _TIEMPO_ENTRE_ESTACIONES2, _TIEMPO_ENTRE_ESTACIONES3]
 
-# Se sacará de base de datos
+
 #Topologias por rutas y trayectos, teniendo en cuenta viajes 'indirectos'
 _TOPOLOGIA1 = np.mat('0,1,1,0,1,0,1,0,1,1,1,1,0,0,0;0,0,1,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,1,0,1,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,1,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,1,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
 _TOPOLOGIA2 = np.mat('0,1,1,1,0,1,0,1,0,1,1,1,0,0,0;0,0,1,1,0,1,0,1,0,1,1,1,0,0,0;0,0,0,1,0,1,0,1,0,1,1,1,0,0,0;0,0,0,0,1,1,1,1,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,1,0,1,1,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,1,0,1,0,1,1,1,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,1,1,0,1,1;0,0,0,0,0,0,0,0,0,0,0,1,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0;0,0,0,0,0,0,0,0,0,0,0,0,0,0,0')
@@ -71,8 +66,6 @@ _TOPOLOGIA_Directo = np.mat('''1,1,1,0,1,0,1,0,1,1,1,1,0,0,0;
                                1,1,1,1,0,1,0,1,0,1,1,1,0,1,1;
                                1,1,1,1,0,1,0,1,0,0,0,0,1,1,1
   ''')
-
-# Se sacará de base de datos
 _MEJOR_SECUENCIAr1 =[   [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[1,10],[1,11],[1,12],[1,13],[1,14],[1,15]],
                         [[2,1],[2,2],[2,3],[2,4],[2,5],[2,6],[2,7],[2,8],[2,9],[2,10],[2,11],[2,12],[2,13],[2,14],[2,15]],
                         [[3,1],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],[3,10],[3,11],[3,12],[3,13],[3,14],[3,15]],
@@ -125,7 +118,6 @@ _MEJOR_SECUENCIAr3 =[   [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[
                     ]
 _MEJOR_SECUENCIA = [_MEJOR_SECUENCIAr1,_MEJOR_SECUENCIAr2, _MEJOR_SECUENCIAr3]
 
-# Se sacará de base de datos
 _SECUENCIA1 = np.array([1, 2, 3, 5, 7, 9, 10, 11, 12])
 _SECUENCIA4 = np.array([12, 11, 10, 9, 7, 5, 3, 2, 1])
 _SECUENCIA2 = np.array([1, 2, 3, 4, 6, 8, 10, 11, 12])
@@ -152,7 +144,6 @@ _TRANSBORDOS = [[_Transbordo1, _Transbordo4],
 
 NUMEROESTACIONES = 0
 
-# Se sacará de base de datos
 _DEMANDA_MEDIA = np.mat('''0 ,10,10,10,10,10,10,10,10,10,10,10,10,10,10;
                            10,0 ,10,10,10,10,10,10,10,10,10,10,10,10,10;
                            10,10,0 ,10,10,10,10,10,10,10,10,10,10,10,10;
@@ -168,7 +159,7 @@ _DEMANDA_MEDIA = np.mat('''0 ,10,10,10,10,10,10,10,10,10,10,10,10,10,10;
                            10,10,10,10,10,10,10,10,10,10,10,10,0 ,10,10;
                            10,10,10,10,10,10,10,10,10,10,10,10,10,0 ,10;
                            10,10,10,10,10,10,10,10,10,10,10,10,10,10,0 ''')
-# Se sacará de base de datos
+
 _PROPORCIONES = np.mat('''0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7;
                           0.1,0,0.1,0.1,0.2,0.4,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7;
                           0.1,0.1,0,0.1,0.1,0.4,0.3,0.4,0.4,0.7,0.4,0.4,0.7,0.7,0.7;
@@ -185,70 +176,10 @@ _PROPORCIONES = np.mat('''0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7
                           0.2,0.2,0.2,0.2,0.4,0.4,0.4,0.5,0.5,0.4,0.4,0.6,0.2,0,0.1;
                           0.2,0.2,0.2,0.2,0.4,0.4,0.4,0.5,0.5,0.4,0.4,0.6,0.6,0.1,0
                             ''')
-def obtenerDatosBase():
-    db_host = 'admin.megaruta.co'
-    usuario = 'rutamega_eqopt'
-    clave = 'eedd8ae977b7f997ce92aa1b0'
-    base_de_datos = 'rutamega_principal' #rutamega_principal
-    dbr = MySQLdb.connect(host=db_host, user=usuario, passwd=clave,db=base_de_datos)
-    cursor=dbr.cursor() # real
-    query_quotes =  "SET sql_mode='ANSI_QUOTES'" # para que acepte tablas con "caracteres especiales"
-    cursor.execute(query_quotes)
-    sql = '''SELECT * FROM "estacion-matrices"'''
-    sqlRutas = '''SELECT count(idruta) FROM "estacion-matrices" group by idruta;'''
-    sqlEstaciones = '''SELECT distinct estaciones  From(SELECT distinct idestacionorigen as estaciones FROM "estacion-matrices" union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones'''
-    # try:
-    cursor.execute(sql)
-    # Obtenemos todos los registros en una lista de listas
-    resultados = cursor.fetchall()
-    cursor.execute(sqlRutas)
-    rutas = cursor.fetchall()
-    cursor.execute(sqlEstaciones)
-    estaciones = cursor.fetchall()
-    numEstaciones = len(estaciones)
-    numRutas = len(rutas)
-    matricesTiempo = []
-    matricesTransbordo = []
-    matDemanda = np.zeros((numEstaciones, numEstaciones))
-    matProporcion = np.zeros((numEstaciones, numEstaciones))
-    # print len(resultados)
-    iR = 0
-    for ruta in range(numRutas):
-        matTiempo = np.zeros((numEstaciones, numEstaciones))
-        matTransbordo = np.zeros((numEstaciones, numEstaciones))
-        for j in range(numEstaciones):
-            for i in range(numEstaciones):
-                if i!=j:
-                    # print numEstaciones*ruta + iR
-                    registro = resultados[iR]
-                    matTiempo[i,j] = registro[4]
-                    matTransbordo[i,j] = registro[7]
-                    if registro[3]:
-                        matDemanda[i,j] = registro[3]
-                    if registro[8]:
-                        matProporcion[i,j] = registro[8]
-                    iR +=1
-            # jR +=1
-   
-        matricesTiempo.append(matTiempo)
-        matricesTransbordo.append(matTransbordo)
-    # print np.array(matricesTiempo)
-    print np.array(matricesTransbordo)
-    # for x in resultados[224:239]:
-    #     print x
-    # except:
-    #    print "Error: No se pudo obtener los datos"
 
-
-    # 'num_rows' needed to reshape the 1D NumPy array returend by 'fromiter' 
-    # in other words, to restore original dimensions of the results set
-    # num_rows = int(cursor.rowcount)
-    # print num_rows
-   
-
-# obtenerDatosBase()
 
 def numeroEstaciones():
+    "Devuelve la cantidad de estaciones totales, para generar rango de matrices"
     global NUMEROESTACIONES
     for ruta in _SECUENCIAS:
         for secuencia in ruta:
@@ -259,6 +190,7 @@ def numeroEstaciones():
 numeroEstaciones()
 
 def tiempoEntreEstaciones():
+    "Crea las matrices de Tiempo Entre Estaciones, solo se toman en cuenta las directas"
     _tiempoEntreEstaciones = []
     for ruta in _SECUENCIAS:
         _tiempoEntreEstacionesT = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
@@ -276,9 +208,6 @@ def tiempoEntreEstaciones():
                         siguiente = secuenciaN[i+k]
                         if siguiente != secuenciaN[-1]:
                             j = secuenciaN[i+k+1]
-                            # for j in secuenciaN[i+2:-1]:
-                                # print _tiempoEntreEstacionesT[sec,j], _tiempoEntreEstacionesT[sec,siguiente], _tiempoEntreEstacionesT[siguiente, j]
-                                # print sec, j, " : ", sec, siguiente, " , ", siguiente, j, secuenciaN[i+2:-1]
                             _tiempoEntreEstacionesT[sec,j] = _tiempoEntreEstacionesT[sec,siguiente] + _tiempoEntreEstacionesT[siguiente, j]
 
 
@@ -286,6 +215,10 @@ def tiempoEntreEstaciones():
     return _tiempoEntreEstaciones
 
 def mejoresSecuencias():
+    '''
+    Devuelve una matriz con las mejores secuencias para ir de una estación a otra 
+    (algoritmo de fuerza bruta, se puede optimizar con programacion dinámica)
+    '''
     _mejoresSecuencias = []
     _tiempoEntreEstaciones = tiempoEntreEstaciones()
     for i in range(NUMEROESTACIONES):
@@ -336,13 +269,11 @@ def mejoresSecuencias():
     # for i in sec[:-1]:
     #     _mejorSecuenciaR1.append(np.array(_mejoresSecuencias)[i,i+1])
 
-
-
-
     return np.array(_mejoresSecuencias)
 
 
 def transbordos(model= None):
+    "Devuelve las matrices de transbordos de acuerdo a la matriz de mejores secuencias"
     _mejoresSecuencias = mejoresSecuencias()
     _mejoresSecuenciasN = []
     for ir ,ruta in enumerate(_SECUENCIAS):
@@ -385,6 +316,11 @@ def transbordos(model= None):
     return np.array(_mejoresSecuenciasN)
 
 def transbordoE(r):
+    '''
+    Transbordos para rutas con trayectos que contienen finales fantasmas ej: Ruta 3
+    FInales fantasmas = la ruta no termina ahí, sino que la ruta puede ser circular.
+
+    '''
     _mejoresSecuencias = mejoresSecuencias()
     ruta = _SECUENCIAS[r]
     tr = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
@@ -399,10 +335,10 @@ def transbordoE(r):
     return tr
 
 def tiempoEsperaMaximo(t, model= None):
+    "Devuelve matriz de Tiempo de Espera Maximo para el 't'"
     suma = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
     if model:
-        for r in range(len(model)):
-        
+        for r in range(len(model)):        
             for i in range(suma.shape[0]):
                 for j in range(suma.shape[1]):
                     suma[i,j] += _TOPOLOGIA[r][t][i,j]*model[r]
@@ -421,11 +357,12 @@ def tiempoEsperaMaximo(t, model= None):
     # return np.around(result, decimals = 2)
 
 def tiempoEsperaMaximoTot(model= None):
+    "Devuelve matriz de Tiemo de Espera Máximo total para los dos trayectos"
     suma = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
     topologiaTotV = topologiaTot(model)
     if model:
         for r in range(len(model)):#FrecuenciasOptimas)):
-            # suma += topologiaTotV[r]*value(model[r])
+                # suma += topologiaTotV[r]*value(model[r])
             for i in range(suma.shape[0]):
                 for j in range(suma.shape[1]):
                     suma[i,j] += topologiaTotV[r][i,j]*model[r]
@@ -439,29 +376,19 @@ def tiempoEsperaMaximoTot(model= None):
     with np.errstate(divide='ignore'):
         result = 1/suma
 
-    # for i in range(result.shape[0]):
-    #     for j in range(result.shape[1]):
-    #         topologia1 = 0
-    #         topologia2 = 0
-    #         for r in range(len(FrecuenciasOptimas)):
-    #             secuencia = _MEJOR_SECUENCIA[r][i][j]
-    #             if len(secuencia)== 3:
-    #                 topologia1 += topologiaTotV[r][secuencia[0]-1,secuencia[1]-1]*FrecuenciasOptimas[r]
-    #                 topologia2 += topologiaTotV[r][secuencia[1]-1,secuencia[2]-1]*FrecuenciasOptimas[r]
-    #                 if r == 2:
-    #                     result[i,j] = (1/topologia1) + (1/topologia2)
-
     result[np.isinf(result)] = 0
     return result
-    #return np.around(result, decimals = 2)
 
 def tiempoEsperaPromedio(t, model= None):
+    "Devuelve matriz de Tiempo de Espera Promedio para cada trayecto 't'"
     return tiempoEsperaMaximo(t, model)/2
 
 def tiempoEsperaPromedioTot(model= None):
+    "Devuelve matriz de Tiempo de Espera Promedio total"
     return tiempoEsperaMaximoTot(model)/2
 
 def matrizDemandaMedia(model= None):
+    "Devuelve matriz de Demanda Media"
     a = 0.4*np.array(tiempoEsperaPromedioTot(model))*np.array(_DEMANDA_MEDIA)
     return (a + np.array(_DEMANDA_MEDIA)) * np.array(_PROPORCIONES)
 
@@ -475,6 +402,7 @@ def topologiaTot(model= None):
     return _MatrizTopologia
 
 def probabilidadEleccion(r, t, model= None):
+    "Devuelve matriz de probabilidad de Elección para el trayecto 't' de la ruta 'r'"
     topologia = np.array(_TOPOLOGIA[r][t])
     if model:
         frecuencia = model[r]#FrecuenciasOptimas[r]
@@ -484,17 +412,20 @@ def probabilidadEleccion(r, t, model= None):
     return topologia*tiempoEsperaM*frecuencia
 
 def distribucionDemanda(r, t, model= None):
+    "Devuelve matriz de Distribucion de Demanda para el trayecto 't' de la ruta 'r'"
     return np.array(matrizDemandaMedia(model))*np.array(probabilidadEleccion(r, t, model))
+    
 
 def pasajerosEstacion(r, t, model= None):
+    "Devuelve arreglo de pasajeros en estación para el trayecto 't' de la ruta 'r'"
     return distribucionDemanda(r, t, model).sum(axis= 1)
 
 def pasajerosEstaValid(r, t, model= None):
     x = pasajerosEstacion(r, t, model)
-    x[x>0] = 1
-    # for i in range(x.shape[0]):
-    #     if value(x[i]) >= 0.000001:
-    #         x[i] = 1
+    # x[x>0] = 1
+    for i in range(x.shape[0]):
+        if value(x[i]) >= 0.000001:
+            x[i] = 1
     return x
 
 def pasajerosPuedenAbordar(r, t, model= None):
@@ -503,14 +434,17 @@ def pasajerosPuedenAbordar(r, t, model= None):
     '''
     secuencia = _SECUENCIAS[r][t]-1 # Toma la secuencia utilizara por la ruta r en el trayecto t
     pasajeros = pasajerosEstacion(r, t, model)
-    capacidad = np.zeros(shape=(NUMEROESTACIONES)) # Se crea un arreglo de zeros con tamaño igual al numero de estaciones
-    puedenSubir = np.zeros(shape=(NUMEROESTACIONES)) # Se crea un arreglo de zeros con tamaño igual al numero de estaciones
-    _pasajerosPuedenAbordar = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES)) # Se crea una matriz cuadrada de zeros con tamaño igual al numero de estaciones
+    # Se crea un arreglo de zeros con tamaño igual al numero de estaciones
+    capacidad = np.zeros(shape=(NUMEROESTACIONES)) 
+    # Se crea un arreglo de zeros con tamaño igual al numero de estaciones
+    puedenSubir = np.zeros(shape=(NUMEROESTACIONES)) 
+    # Se crea una matriz cuadrada de zeros con tamaño igual al numero de estaciones
+    _pasajerosPuedenAbordar = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
     mTransbordo = transbordos(model)[r,t]
     i = secuencia[0] # Se toma la estación inicial
     capacidad[i] = CAPACIDADBUSES - pasajeros[i] # Se inicializa el arreglo de capacidades
     puedenSubir[i] = CAPACIDADBUSES # Se inicializa el arreglo de puedenSubir
-    if puedenSubir[i] >= pasajeros[i]:
+    if puedenSubir[i] >= value(pasajeros[i]):
         _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t, model)[i,:]
     else:
         _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t, model)[i,:] / (pasajeros[i]*puedenSubir[i])
@@ -535,7 +469,7 @@ def pasajerosPuedenAbordar(r, t, model= None):
                 puedenSubir[i] = (capacidad[anterior] + pasajerosSuma + pasajerosTransbordo)*valido
             else:
                 puedenSubir[i] = (pasajerosSuma + pasajerosTransbordo)*valido
-            if round(puedenSubir[i]) >= pasajeros[i]:
+            if round(puedenSubir[i]) >= value(pasajeros[i]):
                 _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r, t, model)[i,:]
             else:
                 _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r, t, model)[i,:]/pasajeros[i])*puedenSubir[i]
@@ -565,7 +499,7 @@ def pasajerosPuedenAbordar(r, t, model= None):
             else:
                 capacidad[i] = 0
             # print puedenSubir[i]
-            if round(puedenSubir[i]) >= pasajeros[i]:
+            if round(puedenSubir[i]) >= value(pasajeros[i]):
                 _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t, model)[i,:]
             else:
                 _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r,t, model)[i,:]/pasajeros[i])*puedenSubir[i]
@@ -599,7 +533,7 @@ def pasajerosPuedenAbordar(r, t, model= None):
                 if capacidad[anterior] > round(pasajeros[i]):
                     capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma + pasajerosSumaI + pasajerosTransbordo
 
-                if round(puedenSubir[i]) >= pasajeros[i]:
+                if round(puedenSubir[i]) >= value(pasajeros[i]):
                     _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t, model)[i,:]
                 else:
                     _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r,t, model)[i,:]/pasajeros[i])*puedenSubir[i]
@@ -628,7 +562,7 @@ def pasajerosPuedenAbordar(r, t, model= None):
                 else:
                     puedenSubir[i] = (pasajerosSuma + pasajerosTransbordo)*valido
                     # print i,anterior, puedenSubir[i], _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i]
-                if round(puedenSubir[i]) >= pasajeros[i]:
+                if round(puedenSubir[i]) >= value(pasajeros[i]):
                     _pasajerosPuedenAbordar[i,:] = distribucionDemanda(r,t, model)[i,:]
                 else:
                     _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r,t, model)[i,:]/pasajeros[i])*puedenSubir[i]
@@ -639,9 +573,11 @@ def pasajerosPuedenAbordar(r, t, model= None):
 
 
 def tiempoEsperaEstaciones(r, t, model= None):
+    "Devuelve matriz de tiempo de Espera entre Estaciones para el trayecto 't' de la ruta 'r'"
     return pasajerosPuedenAbordar(r,t,model)[0]*TIEMPOABORDAR
 
 def tiempoAcumuladoBajada(r, t, model= None):
+    "Devuelve matriz de tiempo Acumulado de Bajada para el trayecto 't' de la ruta 'r'"
     tiempoEspera  = tiempoEsperaEstaciones(r,t, model)
     mTransbordo   = transbordos(model)[r,t]
     tiempoEsperaI = 0
@@ -680,6 +616,7 @@ def tiempoAcumuladoBajada(r, t, model= None):
     return _tiempoBajada
 
 def tiempoAcumuladoSubida(r, t, model= None):
+    "Devuelve matriz de tiempo Acumulado de Subida para el trayecto 't' de la ruta 'r'"
     tiempoEspera = tiempoEsperaEstaciones(r,t, model)
     suma = tiempoEspera.sum(axis=1)
     _tiempoSubida = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
@@ -698,7 +635,7 @@ def tiempoAcumuladoSubida(r, t, model= None):
 
 def tiempoViajePromedio(r, t, model= None):
     '''
-    Matriz tiempo de viaje promedio
+    Devuelve Matriz tiempo de viaje promedio para el trayecto 't' de la ruta 'r'
     '''
     # print value(FrecuenciasOptimas[0])
     tiempoEntreEstacionesM = _TIEMPO_ENTRE_ESTACIONES[r]
@@ -717,34 +654,38 @@ def tiempoViajePromedio(r, t, model= None):
 # print np.around(tiempoViajePromedio(2,1).sum(axis=0), decimals = 1)
 
 def pasajerosEspera2Viaje(r,t, model= None):
+    "Devuelve matriz de tiempo de espera de los pasajeros para el segundo viaje para el trayecto 't' de la ruta 'r'"
     return distribucionDemanda(r,t, model) - pasajerosPuedenAbordar(r,t, model)[0]
 
 # print np.around(pasajerosEspera2Viaje(2,1), decimals=1)
 # print np.around(pasajerosEspera2Viaje(2,1).sum(), decimals=1)
 
 def tiempoEsperaPor2Bus(t, model= None):
+    "Devuelve matriz de tiempo de espera por el segundo bus para el trayecto 't'"
     return tiempoEsperaPromedio(t, model) + tiempoEsperaMaximo(t, model)
 
 # print np.around(tiempoEsperaPor2Bus(1), decimals=2)
 
 def tiempoEsperarPor2Viaje(r,t, model= None):
-    pasajerosEspera2ViajeB = pasajerosEspera2Viaje(r,t, model)>0
-    # pasajerosE2Vmat = pasajerosEspera2Viaje(r,t, model)
-    # pasajerosEspera2ViajeB = np.zeros((NUMEROESTACIONES, NUMEROESTACIONES), dtype=bool)
-    # for i in range(pasajerosE2Vmat.shape[0]):
-    #     for j in range(pasajerosE2Vmat.shape[1]):
-    #         if pasajerosE2Vmat[i,j] > 0:
-    #             pasajerosEspera2ViajeB[i,j] = True
+    "Devuelve matriz de tiempo de espera para el segundo viaje para el trayecto 't' de la ruta 'r'"
+    # pasajerosEspera2ViajeB = pasajerosEspera2Viaje(r,t, model)>0
+    pasajerosE2Vmat = pasajerosEspera2Viaje(r,t, model)
+    pasajerosEspera2ViajeB = np.zeros((NUMEROESTACIONES, NUMEROESTACIONES), dtype=bool)
+    for i in range(pasajerosE2Vmat.shape[0]):
+        for j in range(pasajerosE2Vmat.shape[1]):
+            if value(pasajerosE2Vmat[i,j] > 0):
+                pasajerosEspera2ViajeB[i,j] = True
 
     _tiempoEsperarPor2Viaje = np.where(pasajerosEspera2ViajeB, tiempoEsperaPor2Bus(t, model), 0)
     return _tiempoEsperarPor2Viaje
 # print np.around(tiempoEsperarPor2Viaje(2,1), decimals=1)
 
 def frecuenciaTotal(t, model= None):
+    "Devuelve matriz de Frecuencia Total para el segundo viaje para el trayecto 't'"
     _frecuenciaTotal = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
     if model:    
         for r, f in enumerate(model):
-            _frecuenciaTotal += np.where(_TOPOLOGIA[r][t]>0, model[r], 0)#value(f), 0)
+            _frecuenciaTotal += np.where(_TOPOLOGIA[r][t]>0, value(model[r]), 0)#value(f), 0)
     else:
         for r, f in enumerate(FrecuenciasOptimas):
             _frecuenciaTotal += np.where(_TOPOLOGIA[r][t]>0, f, 0)#value(f), 0)
@@ -753,86 +694,24 @@ def frecuenciaTotal(t, model= None):
 # print np.around(frecuenciaTotal(1), decimals=2)
 
 def funcionCalidad(t, model= None):
+    "Devuelve matriz de Funcion de Calidad para el segundo viaje para el trayecto 't'"
     return np.array(frecuenciaTotal(t, model))*np.array(tiempoEsperaPromedio(t, model))
 
 # print np.around(funcionCalidad(1), decimals=2)
 
 def serviciosRequeridos(r,t, model= None):
+    "Devuelve matriz de Servicios Requeridos para el segundo viaje para el trayecto 't' de la ruta 'r'"
     return distribucionDemanda(r,t, model)/CAPACIDADBUSES
 
 # print np.around(serviciosRequeridos(1,0), decimals=2)
 
 def flujoAsignado(t, model= None):
+    "Devuelve matriz de Flujo Asignado para el segundo viaje para el trayecto 't'"
     _flujoAsignado = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
     for r in range(NUMERORUTAS):
         _flujoAsignado += np.where(_TOPOLOGIA[r][t]>0, serviciosRequeridos( r,t, model), 0)
-    # print FrecuenciasOptimas
     return _flujoAsignado
 
-
-def intervalosTiemposEntreSalidas():
-    return 1/np.array(FrecuenciasOptimas)
-
-def tiempoViajePromedioSinEspera(r,t, model=None):
-    '''
-    Matriz tiempo de viaje promedio
-    '''
-    # print value(FrecuenciasOptimas[0])
-    tiempoEntreEstacionesM = _TIEMPO_ENTRE_ESTACIONES[r]
-    tiempoAcumuladoSubidaM = tiempoAcumuladoSubida(r,t, model)
-    tiempoAcumuladoBajadaM = tiempoAcumuladoBajada(r,t, model)
-    _tiempoViajePromedio = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
-    secuencia = _SECUENCIAS[r][t]-1
-    for i, ei in enumerate(secuencia):
-        for ej in secuencia[i:]:
-            _tiempoViajePromedio[ei,ej] = tiempoEntreEstacionesM[ei,ej] + tiempoAcumuladoSubidaM[ei,ej] + tiempoAcumuladoBajadaM[ei,ej]
-    # print _tiempoViajePromedio.sum(), model[0].value
-    return _tiempoViajePromedio
-
-print np.around(tiempoViajePromedioSinEspera(2,1), decimals= 1)
-
-
-# print np.around(flujoAsignado(1), decimals=2)
-
-# tiempoViajePromedioTot(1, 1)
-# a = np.arange(12).reshape(4,3)
-# print "numpy", a.sum(axis=0)
-
-# print _PROPORCIONES, _PROPORCIONES.shape, type(_PROPORCIONES)
-# print np.sum(_PROPORCIONES)
-
-
-# print tiempoEsperaPromedio(0)
-# sumaTop = _TOPOLOGIA[0][0].sum(axis = 1)
-# for x in range(len(sumaTop)):
-#   if sumaTop[x] == 0:
-#     print x+1
-
-# tiempoEsperaMaximo(1)
-
-# print np.around(tiempoEsperaMaximo(0) + tiempoEsperaMaximo(1), decimals = 2)
-# print np.around(tiempoEsperaPromedio(0), decimals = 2)
-# print _TOPOLOGIA[1][1]
-
-# print np.around(pasajerosPuedenAbordar(0, 1)[0], decimals= 1)
-# print np.around(pasajerosPuedenAbordar(0, 1)[1], decimals= 1)
-# print pasajerosPuedenAbordar(0,0)
-# print tiempoEntreEstaciones()[0]
-
-# print transbordos()[0,1]
-# print transbordos()[2,0]
-# print transbordos()[2,1]
-# print transbordoE(2)
-# print transbordos()[0,0]
-# print _SECUENCIAS[1][1]
-
-# pasajerosPuedenAbordar(1,0)
-# print _TOPOLOGIA[1][2], _TOPOLOGIA[1][2].shape
-# print np.sum(_TOPOLOGIA[1][2])
-
-# print np.around(tiempoEsperaEstaciones(2,0), decimals= 3)
-# print np.around(tiempoAcumuladoSubida(2,0), decimals =2)
-# print np.around(tiempoAcumuladoBajada(2,0), decimals=1)
 
 model = AbstractModel() # Se crea el modelo abstracto
 
@@ -844,37 +723,17 @@ model.t = RangeSet(0,1) # Trayectos
 model.I = RangeSet(1,model.estaciones) # Estaciones Filas
 model.J = RangeSet(1,model.estaciones) # Estaciones Columnas
 
-model.costoRuta = Param(model.r)
+model.costoRuta = Param(model.r) # Parametro que es el costo de cada ruta
 
-model.frecuenciaOptima = Var(model.r, domain=NonNegativeReals, initialize= 0.10, bounds=(0.066, 70))
+# Se crean Variables del modelo que son las frecuencias, se inicializan porque es un modelo no lineal.
+model.frecuenciaOptima = Var(model.r, domain=NonNegativeReals, initialize= 0.10, bounds=(0.066, 70)) 
 
-
-# def tiempoViajePromedioModel(model, r, t):
-#     return tiempoViajePromedio(r,t,model.frecuenciaOptima).sum()
-# model.tiempoViajePromedioS = Param(model.r, model.t, initialize=tiempoViajePromedioModel)
-
-# def tiempoEsperaPor2ViajeModel(model, r, t):
-#     return tiempoEsperarPor2Viaje(r,t,model.frecuenciaOptima).sum()
-# model.tiempoEsperaPor2ViajeS = Param(model.r, model.t, initialize=tiempoEsperaPor2ViajeModel)
 
 def obj_expression(model):
-    # global FrecuenciasOptimas
-    # FrecuenciasOptimas = model.frecuenciaOptima
-    # print model.frecuenciaOptima[0].value
-    # tiempoViajePromedioS = 0
-    # tiempoEsperaPor2ViajeS = 0
-    # x = model.frecuenciaOptima
-    # print type(model.frecuenciaOptima[0])
-    # x = [model.frecuenciaOptima[0], model.frecuenciaOptima[1], model.frecuenciaOptima[2]]
-    # for r in model.r:
-    #     for t in model.t:
-    #         tiempoViajePromedioS += tiempoViajePromedio(r,t,model).sum()
-    #         tiempoEsperaPor2ViajeS += tiempoEsperarPor2Viaje(r,t, model).sum()
-    # return (tiempoViajePromedioS + (tiempoEsperaPor2ViajeS*TIEMPOESPERA2BUS))*FACTORPASAJERO + summation(model.costoRuta, model.frecuenciaOptima)*FACTOROPERADEOR
-    # return (sum(model.tiempoViajePromedioS[r,t] for r in model.r for t  in model.t) + (sum(model.tiempoEsperaPor2ViajeS[r,t] for r in model.r for t in  model.t))*TIEMPOESPERA2BUS)*FACTORPASAJERO + summation(model.costoRuta, model.frecuenciaOptima)*FACTOROPERADEOR
-    obj1 = (sum(tiempoViajePromedio(r,t,model.frecuenciaOptima).sum() for r in model.r for t  in model.t) + (sum(tiempoEsperarPor2Viaje(r,t,model.frecuenciaOptima).sum() for r in model.r for t in  model.t))*TIEMPOESPERA2BUS)*FACTORPASAJERO 
-    obj2 = summation(model.costoRuta, model.frecuenciaOptima)*FACTOROPERADEOR
-    return obj1 + obj2
+    "Función objetivo de Pyomo, donde devuelve el valor a optimizar para python"
+    objetivoUsuarios = (sum(tiempoViajePromedio(r,t,model.frecuenciaOptima).sum() for r in model.r for t  in model.t) + (sum(tiempoEsperarPor2Viaje(r,t,model.frecuenciaOptima).sum() for r in model.r for t in  model.t))*TIEMPOESPERA2BUS)*FACTORPASAJERO 
+    objetivoOperador = summation(model.costoRuta, model.frecuenciaOptima)*FACTOROPERADEOR
+    return objetivoUsuarios + objetivoOperador
 
 model.OBJ = Objective(rule= obj_expression, sense=minimize)
 
@@ -886,43 +745,18 @@ def quality_constraint_rule(model, t, i):
 
 model.qualityConstraint = Constraint(model.t, model.I, rule=quality_constraint_rule)
 
-# instance = model.create('modeloOptimizacionPyomo.dat')
-# instance.pprint()
+instance = model.create('modeloOptimizacionPyomo.dat')
+instance.pprint()
 
-# def frequency_constraint_rule(model, r):
-#     return (0.066, model.frecuenciaOptima[r], None)
-# model.frequencyConstraint = Constraint(model.r, rule=frequency_constraint_rule)
+def frequency_constraint_rule(model, r):
+    return (0.066, model.frecuenciaOptima[r], None)
+model.frequencyConstraint = Constraint(model.r, rule=frequency_constraint_rule)
 
-# options = Options()
-# options.solver = 'ipopt'
-# options.quiet = True
+from coopr.opt import SolverFactory
+instance = model.create("modeloOptimizacionPyomo.dat"); # Se crea una instancia del modelo, con los datos del archivo.dat ya que es un modelo abstracto
+opt = SolverFactory("ipopt") # Se utiliza el solver ipopt ya que es un problema no lineal
+results = opt.solve(instance) # Resuelve el modelo y devuelve su solución
+print results
 
-# instance = model.create('modeloOptimizacionPyomo.dat')
 
-# results, opt = \
-# scripting.util.apply_optimizer(options, instance)
-# instance.load(results)
-# print " ", str(instance.sv.value).rjust(10),str(instance.cb.value).rjust(15)
-
-# print (sum(tiempoViajePromedio(r,t).sum() for r in range(NUMERORUTAS) for t  in range(1)) + (sum(tiempoEsperarPor2Viaje(r,t).sum() for r in range(NUMERORUTAS) for t  in range(1)))*TIEMPOESPERA2BUS)*FACTORPASAJERO + (5000*0.066)*3#sum(5000*FrecuenciasOptimas[r] for r in range(NUMERORUTAS))*FACTOROPERADEOR
-# def scipyObjective(x):
-#     global FrecuenciasOptimas
-#     FrecuenciasOptimas = [x[0], x[1], x[2]]
-#     return (sum(tiempoViajePromedio(r,t).sum() for r in range(NUMERORUTAS) for t  in range(1)) + (sum(tiempoEsperarPor2Viaje(r,t).sum() for r in range(NUMERORUTAS) for t  in range(1)))*TIEMPOESPERA2BUS)*FACTORPASAJERO + sum(5000*FrecuenciasOptimas[r] for r in range(NUMERORUTAS))*FACTOROPERADEOR
-# class MyBounds(object):
-#     def __init__(self, xmax=[10,10,10], xmin=[0.066,0.066, 0.066] ):
-#         self.xmax = np.array(xmax)
-#         self.xmin = np.array(xmin)
-#     def __call__(self, **kwargs):
-#         x = kwargs["x_new"]
-#         tmax = bool(np.all(x <= self.xmax))
-#         tmin = bool(np.all(x >= self.xmin))
-#         return tmax and tmin
-
-# minimizer_kwargs = {"method": "BFGS"}
-# mybounds = MyBounds()
-# x0 = [0.8,0.8,0.8]
-# result = basinhopping(scipyObjective, x0, minimizer_kwargs=minimizer_kwargs, niter=10, accept_test=mybounds)
-
-# print("global minimum: x = %.4f, f(x0) = %.4f" % (ret.x, ret.fun))
-
+    

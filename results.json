@@ -1,0 +1,51 @@
+{
+    "Problem": [
+        {
+            "Lower bound": -Infinity, 
+            "Number of constraints": 30, 
+            "Number of objectives": 1, 
+            "Number of variables": 3, 
+            "Sense": "unknown", 
+            "Upper bound": Infinity
+        }
+    ], 
+    "Solution": [
+        {
+            "number of solutions": 1, 
+            "number of solutions displayed": 1
+        }, 
+        {
+            "Constraint": "No nonzero values", 
+            "Objective": {
+                "OBJ": {
+                    "Id": 0, 
+                    "Value": 523062.56046328024
+                }
+            }, 
+            "Status": "optimal", 
+            "Variable": {
+                "frecuenciaOptima[0]": {
+                    "Id": 0, 
+                    "Value": 0.066
+                }, 
+                "frecuenciaOptima[1]": {
+                    "Id": 1, 
+                    "Value": 0.066
+                }, 
+                "frecuenciaOptima[2]": {
+                    "Id": 2, 
+                    "Value": 0.066
+                }
+            }
+        }
+    ], 
+    "Solver": [
+        {
+            "Error rc": 0, 
+            "Id": 0, 
+            "Message": "Ipopt 3.12.0\\x3a Optimal Solution Found", 
+            "Status": "ok", 
+            "Termination condition": "optimal"
+        }
+    ]
+}
