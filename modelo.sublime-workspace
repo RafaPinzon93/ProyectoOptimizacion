@@ -4,6 +4,122 @@
 		"selected_items":
 		[
 			[
+				"serviciosR",
+				"serviciosRuta	function"
+			],
+			[
+				"serviicos",
+				"serviciosDict	statement"
+			],
+			[
+				"horasDi",
+				"horasDictArray	statement"
+			],
+			[
+				"ser",
+				"_serviciosRutaB"
+			],
+			[
+				"horaIn",
+				"horaInicial"
+			],
+			[
+				"id",
+				"idT"
+			],
+			[
+				"hora",
+				"horasalida"
+			],
+			[
+				"servicios",
+				"serviciosEst	statement"
+			],
+			[
+				"esta",
+				"estacionesDict	statement"
+			],
+			[
+				"idt",
+				"idTrayecto"
+			],
+			[
+				"idT",
+				"idTrayecto	statement"
+			],
+			[
+				"_Tra",
+				"_TRAYECTOS	statement"
+			],
+			[
+				"pilaS",
+				"pilaSalidaArray	statement"
+			],
+			[
+				"pila",
+				"pilaSalida	statement"
+			],
+			[
+				"horasD",
+				"horasDictArray	statement"
+			],
+			[
+				"hor",
+				"horaSalida	statement"
+			],
+			[
+				"convert",
+				"convertHour	function"
+			],
+			[
+				"servi",
+				"serviciosRuta	function"
+			],
+			[
+				"_tRA",
+				"_TRAYECTOS	statement"
+			],
+			[
+				"_TRA",
+				"_TRAYECTOS	statement"
+			],
+			[
+				"_hora",
+				"_horaEstaciones	statement"
+			],
+			[
+				"_Hora",
+				"_horaEstacionesLlegada	statement"
+			],
+			[
+				"tiempoViaj",
+				"tiempoViajePromedioSinEspera	function"
+			],
+			[
+				"tiempoVIaje",
+				"tiempoViajePromedioSinEspera	function"
+			],
+			[
+				"_SECUENCI",
+				"_SECUENCIAS	statement"
+			],
+			[
+				"h",
+				"horaInicio"
+			],
+			[
+				"inter",
+				"intervalosPeriodosRutas	statement"
+			],
+			[
+				"H",
+				"HORAFIN	statement"
+			],
+			[
+				"tiempoViajeP",
+				"tiempoViajePromedioSinEspera	function"
+			],
+			[
 				"modelo",
 				"modeloOptimizacionPyomo"
 			],
@@ -299,24 +415,34 @@
 			"file": "modeloOptimizacion.py",
 			"settings":
 			{
-				"buffer_size": 50323,
+				"buffer_size": 59403,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/Dropbox/U/Progra/Python/databases.py",
+			"file": "horarios.json",
 			"settings":
 			{
-				"buffer_size": 2007,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
-			"settings":
-			{
-				"buffer_size": 10793,
+				"buffer_size": 1851659,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "[ {'idtrayecto': 1, 'servicios': [{'idservicio': 0.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:02:43', 'horasalida': '7:03:21', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:00:00', 'horasalida': '7:00:43', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:07:55', 'horasalida': '7:08:56', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:05:21', 'horasalida': '7:05:55', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:13:47', 'horasalida': '7:14:48', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:10:56', 'horasalida': '7:11:47', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:36', 'horasalida': '7:21:10', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:16:48', 'horasalida': '7:17:36', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:23:10', 'horasalida': '7:23:43', 'idestacion': 11}}, {'idservicio': 2.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:08:16', 'horasalida': '7:08:54', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:05:33', 'horasalida': '7:06:16', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:13:28', 'horasalida': '7:14:30', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:10:54', 'horasalida': '7:11:28', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:20', 'horasalida': '7:20:21', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:16:30', 'horasalida': '7:17:20', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:25:10', 'horasalida': '7:26:44', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:21', 'horasalida': '7:23:10', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:28:44', 'horasalida': '7:29:17', 'idestacion': 11}}, {'idservicio': 4.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:13:49', 'horasalida': '7:14:27', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:11:07', 'horasalida': '7:11:49', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:02', 'horasalida': '7:20:03', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:16:27', 'horasalida': '7:17:02', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:24:54', 'horasalida': '7:25:54', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:03', 'horasalida': '7:22:54', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:43', 'horasalida': '7:32:17', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:27:54', 'horasalida': '7:28:43', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:34:17', 'horasalida': '7:34:50', 'idestacion': 11}}, {'idservicio': 6.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:23', 'horasalida': '7:20:01', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:16:40', 'horasalida': '7:17:23', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:24:35', 'horasalida': '7:25:36', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:01', 'horasalida': '7:22:35', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:27', 'horasalida': '7:31:28', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:27:36', 'horasalida': '7:28:27', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:16', 'horasalida': '7:37:50', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:28', 'horasalida': '7:34:16', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:39:50', 'horasalida': '7:40:23', 'idestacion': 11}}, {'idservicio': 8.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:24:56', 'horasalida': '7:25:34', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:22:13', 'horasalida': '7:22:56', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:08', 'horasalida': '7:31:10', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:27:34', 'horasalida': '7:28:08', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:00', 'horasalida': '7:37:01', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:10', 'horasalida': '7:34:00', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:41:50', 'horasalida': '7:43:24', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:39:01', 'horasalida': '7:39:50', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:45:24', 'horasalida': '7:45:57', 'idestacion': 11}}, {'idservicio': 1.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:29', 'horasalida': '7:31:07', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:27:47', 'horasalida': '7:28:29', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:35:42', 'horasalida': '7:36:43', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:07', 'horasalida': '7:33:42', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:41:34', 'horasalida': '7:42:34', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:38:43', 'horasalida': '7:39:34', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:47:23', 'horasalida': '7:48:57', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:34', 'horasalida': '7:45:23', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:50:57', 'horasalida': '7:51:30', 'idestacion': 11}}, {'idservicio': 3.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:03', 'horasalida': '7:36:41', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:33:20', 'horasalida': '7:34:03', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:41:15', 'horasalida': '7:42:16', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:38:41', 'horasalida': '7:39:15', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:47:07', 'horasalida': '7:48:08', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:16', 'horasalida': '7:45:07', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:52:56', 'horasalida': '7:54:30', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:50:08', 'horasalida': '7:50:56', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:56:30', 'horasalida': '7:57:03', 'idestacion': 11}}, {'idservicio': 5.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:41:36', 'horasalida': '7:42:14', 'idestacion': 1}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:38:53', 'horasalida': '7:39:36', 'idestacion': 0}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:46:48', 'horasalida': '7:47:50', 'idestacion': 4}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:14', 'horasalida': '7:44:48', 'idestacion': 2}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:52:40', 'horasalida': '7:53:41', 'idestacion': 8}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:49:50', 'horasalida': '7:50:40', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:58:30', 'horasalida': '8:00:04', 'idestacion': 10}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:55:41', 'horasalida': '7:56:30', 'idestacion': 9}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '8:02:04', 'horasalida': '8:02:37', 'idestacion': 11}}]}\n {'idtrayecto': 2, 'servicios': [{'idservicio': 1.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:03:06', 'horasalida': '7:04:03', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:00:00', 'horasalida': '7:01:06', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:08:45', 'horasalida': '7:09:08', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:06:03', 'horasalida': '7:06:45', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:13:51', 'horasalida': '7:14:27', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:11:08', 'horasalida': '7:11:51', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:20:39', 'horasalida': '7:20:50', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:16:27', 'horasalida': '7:18:39', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:22:50', 'horasalida': '7:23:01', 'idestacion': 0}}, {'idservicio': 3.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:08:40', 'horasalida': '7:09:36', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:05:33', 'horasalida': '7:06:40', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:14:18', 'horasalida': '7:14:41', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:11:36', 'horasalida': '7:12:18', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:24', 'horasalida': '7:20:00', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:16:41', 'horasalida': '7:17:24', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:26:13', 'horasalida': '7:26:23', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:00', 'horasalida': '7:24:13', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:28:23', 'horasalida': '7:28:34', 'idestacion': 0}}, {'idservicio': 5.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:14:13', 'horasalida': '7:15:10', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:11:07', 'horasalida': '7:12:13', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:51', 'horasalida': '7:20:15', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:17:10', 'horasalida': '7:17:51', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:24:57', 'horasalida': '7:25:34', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:15', 'horasalida': '7:22:57', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:31:46', 'horasalida': '7:31:57', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:27:34', 'horasalida': '7:29:46', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:33:57', 'horasalida': '7:34:07', 'idestacion': 0}}, {'idservicio': 7.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:46', 'horasalida': '7:20:43', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:16:40', 'horasalida': '7:17:46', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:25:25', 'horasalida': '7:25:48', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:43', 'horasalida': '7:23:25', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:31', 'horasalida': '7:31:07', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:27:48', 'horasalida': '7:28:31', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:37:19', 'horasalida': '7:37:30', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:07', 'horasalida': '7:35:19', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:39:30', 'horasalida': '7:39:41', 'idestacion': 0}}, {'idservicio': 9.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:25:20', 'horasalida': '7:26:16', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:22:13', 'horasalida': '7:23:20', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:58', 'horasalida': '7:31:21', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:28:16', 'horasalida': '7:28:58', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:04', 'horasalida': '7:36:40', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:21', 'horasalida': '7:34:04', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:42:53', 'horasalida': '7:43:03', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:38:40', 'horasalida': '7:40:53', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:45:03', 'horasalida': '7:45:14', 'idestacion': 0}}, {'idservicio': 0.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:53', 'horasalida': '7:31:50', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:27:47', 'horasalida': '7:28:53', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:31', 'horasalida': '7:36:55', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:50', 'horasalida': '7:34:31', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:41:37', 'horasalida': '7:42:14', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:38:55', 'horasalida': '7:39:37', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:48:26', 'horasalida': '7:48:37', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:14', 'horasalida': '7:46:26', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:50:37', 'horasalida': '7:50:47', 'idestacion': 0}}, {'idservicio': 2.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:26', 'horasalida': '7:37:23', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:33:20', 'horasalida': '7:34:26', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:42:05', 'horasalida': '7:42:28', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:39:23', 'horasalida': '7:40:05', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:47:11', 'horasalida': '7:47:47', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:28', 'horasalida': '7:45:11', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:53:59', 'horasalida': '7:54:10', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:49:47', 'horasalida': '7:51:59', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:56:10', 'horasalida': '7:56:21', 'idestacion': 0}}, {'idservicio': 4.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:42:00', 'horasalida': '7:42:56', 'idestacion': 10}, '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:38:53', 'horasalida': '7:40:00', 'idestacion': 11}, '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:47:38', 'horasalida': '7:48:01', 'idestacion': 8}, '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:56', 'horasalida': '7:45:38', 'idestacion': 9}, '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:52:44', 'horasalida': '7:53:20', 'idestacion': 4}, '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:50:01', 'horasalida': '7:50:44', 'idestacion': 6}, '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:59:33', 'horasalida': '7:59:43', 'idestacion': 1}, '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:55:20', 'horasalida': '7:57:33', 'idestacion': 2}, '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '8:01:43', 'horasalida': '8:01:54', 'idestacion': 0}}]}]\n",
+			"settings":
+			{
+				"buffer_size": 18406,
+				"line_ending": "Unix",
+				"name": "[ {'idtrayecto': 1, 'servicios': [{'idservicio': 0"
+			}
+		},
+		{
+			"contents": "[ {'idtrayecto': 1, \n    'servicios': \n    [\n        {'idservicio': 1.0, \n        '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:03:06', 'horasalida': '7:04:03', 'idestacion': 10}, \n        '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:00:00', 'horasalida': '7:01:06', 'idestacion': 11}, \n        '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:08:45', 'horasalida': '7:09:08', 'idestacion': 8}, \n        '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:06:03', 'horasalida': '7:06:45', 'idestacion': 9}, \n        '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:13:51', 'horasalida': '7:14:27', 'idestacion': 4}, \n        '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:11:08', 'horasalida': '7:11:51', 'idestacion': 6}, \n        '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:20:39', 'horasalida': '7:20:50', 'idestacion': 1}, \n        '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:16:27', 'horasalida': '7:18:39', 'idestacion': 2}, \n        '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:22:50', 'horasalida': '7:23:01', 'idestacion': 0}}, \n\n        {'idservicio': 3.0, \n        '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:08:40', 'horasalida': '7:09:36', 'idestacion': 10}, \n        '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:05:33', 'horasalida': '7:06:40', 'idestacion': 11}, \n        '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:14:18', 'horasalida': '7:14:41', 'idestacion': 8}, \n        '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:11:36', 'horasalida': '7:12:18', 'idestacion': 9}, \n        '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:24', 'horasalida': '7:20:00', 'idestacion': 4}, \n        '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:16:41', 'horasalida': '7:17:24', 'idestacion': 6}, \n        '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:26:13', 'horasalida': '7:26:23', 'idestacion': 1}, \n        '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:00', 'horasalida': '7:24:13', 'idestacion': 2}, \n        '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:28:23', 'horasalida': '7:28:34', 'idestacion': 0}}, \n\n        {'idservicio': 5.0, \n        '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:14:13', 'horasalida': '7:15:10', 'idestacion': 10}, \n        '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:11:07', 'horasalida': '7:12:13', 'idestacion': 11}, \n        '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:51', 'horasalida': '7:20:15', 'idestacion': 8}, \n        '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:17:10', 'horasalida': '7:17:51', 'idestacion': 9}, \n        '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:24:57', 'horasalida': '7:25:34', 'idestacion': 4}, \n        '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:15', 'horasalida': '7:22:57', 'idestacion': 6}, \n        '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:31:46', 'horasalida': '7:31:57', 'idestacion': 1}, \n        '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:27:34', 'horasalida': '7:29:46', 'idestacion': 2}, \n        '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:33:57', 'horasalida': '7:34:07', 'idestacion': 0}}, \n\n        {'idservicio': 7.0, \n        '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:19:46', 'horasalida': '7:20:43', 'idestacion': 10}, \n        '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:16:40', 'horasalida': '7:17:46', 'idestacion': 11}, \n        '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:25:25', 'horasalida': '7:25:48', 'idestacion': 8}, \n        '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:22:43', 'horasalida': '7:23:25', 'idestacion': 9}, \n        '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:31', 'horasalida': '7:31:07', 'idestacion': 4}, \n        '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:27:48', 'horasalida': '7:28:31', 'idestacion': 6}, \n        '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:37:19', 'horasalida': '7:37:30', 'idestacion': 1}, \n        '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:07', 'horasalida': '7:35:19', 'idestacion': 2}, \n        '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:39:30', 'horasalida': '7:39:41', 'idestacion': 0}}, \n\n        {'idservicio': 9.0, \n        '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:25:20', 'horasalida': '7:26:16', 'idestacion': 10}, \n        '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:22:13', 'horasalida': '7:23:20', 'idestacion': 11}, \n        '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:58', 'horasalida': '7:31:21', 'idestacion': 8}, \n        '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:28:16', 'horasalida': '7:28:58', 'idestacion': 9}, \n        '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:04', 'horasalida': '7:36:40', 'idestacion': 4}, \n        '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:21', 'horasalida': '7:34:04', 'idestacion': 6}, \n        '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:42:53', 'horasalida': '7:43:03', 'idestacion': 1}, \n        '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:38:40', 'horasalida': '7:40:53', 'idestacion': 2}, \n        '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:45:03', 'horasalida': '7:45:14', 'idestacion': 0}}, \n\n        {'idservicio': 0.0, \n        '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:30:53', 'horasalida': '7:31:50', 'idestacion': 10}, \n        '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:27:47', 'horasalida': '7:28:53', 'idestacion': 11}, \n        '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:31', 'horasalida': '7:36:55', 'idestacion': 8}, \n        '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:33:50', 'horasalida': '7:34:31', 'idestacion': 9}, \n        '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:41:37', 'horasalida': '7:42:14', 'idestacion': 4}, \n        '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:38:55', 'horasalida': '7:39:37', 'idestacion': 6}, \n        '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:48:26', 'horasalida': '7:48:37', 'idestacion': 1}, \n        '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:14', 'horasalida': '7:46:26', 'idestacion': 2}, \n        '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:50:37', 'horasalida': '7:50:47', 'idestacion': 0}}, \n\n        {'idservicio': 2.0, \n        '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:36:26', 'horasalida': '7:37:23', 'idestacion': 10}, \n        '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:33:20', 'horasalida': '7:34:26', 'idestacion': 11}, \n        '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:42:05', 'horasalida': '7:42:28', 'idestacion': 8}, \n        '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:39:23', 'horasalida': '7:40:05', 'idestacion': 9}, \n        '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:47:11', 'horasalida': '7:47:47', 'idestacion': 4}, \n        '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:28', 'horasalida': '7:45:11', 'idestacion': 6},\n        '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:53:59', 'horasalida': '7:54:10', 'idestacion': 1},\n        '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:49:47', 'horasalida': '7:51:59', 'idestacion': 2}, \n        '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '7:56:10', 'horasalida': '7:56:21', 'idestacion': 0}}, \n\n        {'idservicio': 4.0, '1': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:42:00', 'horasalida': '7:42:56', 'idestacion': 10},\n         '0': {'estacioninicial': True, 'estacionfinal': False, 'horallegada': '7:38:53', 'horasalida': '7:40:00', 'idestacion': 11}, \n         '3': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:47:38', 'horasalida': '7:48:01', 'idestacion': 8},\n         '2': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:44:56', 'horasalida': '7:45:38', 'idestacion': 9},\n         '5': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:52:44', 'horasalida': '7:53:20', 'idestacion': 4}, \n         '4': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:50:01', 'horasalida': '7:50:44', 'idestacion': 6}, \n         '7': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:59:33', 'horasalida': '7:59:43', 'idestacion': 1}, \n         '6': {'estacioninicial': False, 'estacionfinal': False, 'horallegada': '7:55:20', 'horasalida': '7:57:33', 'idestacion': 2},\n         '8': {'estacioninicial': False, 'estacionfinal': True, 'horallegada': '8:01:43', 'horasalida': '8:01:54', 'idestacion': 0}}]}\n {'idtrayecto': 2}]\n",
+			"settings":
+			{
+				"buffer_size": 9953,
+				"line_ending": "Unix",
+				"name": "[ {'idtrayecto': 1,"
 			}
 		},
 		{
@@ -362,20 +488,11 @@
 			}
 		},
 		{
-			"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/json.py",
+			"file": "/home/rafapinzon/Downloads/Estructura Json Frecuencias_v2.txt",
 			"settings":
 			{
-				"buffer_size": 322,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "[\n    {\n        \"idtrayecto\":1,\n        \"servicios\":[\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ]\n        ]\n    },\n    {\n        \"idtrayecto\":2,\n        \"servicios\":[\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ],\n            [{\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false},\n             {\"idestacion\":1,\"horainicio\":\"17:00\",\"horafin\":\"17:00\",\"estacioninicial\":true,\"estacionfinal\":false}\n            ]\n        ]\n    }\n]",
-			"settings":
-			{
-				"buffer_size": 2292,
-				"line_ending": "Unix",
-				"name": "["
+				"buffer_size": 2322,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -452,11 +569,14 @@
 	],
 	"file_history":
 	[
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/horarios.json",
+		"/home/rafapinzon/Dropbox/Proyecto Optimización/json.py",
+		"/home/rafapinzon/Dropbox/U/Progra/Python/databases.py",
+		"/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionPyomo.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/tutorial.py",
 		"/home/rafapinzon/Downloads/CoinIpopt/ThirdParty/Lapack/get.Lapack",
 		"/home/rafapinzon/Dropbox/Proyecto Optimización/RafaStuff/modeloOptimizacion.py",
-		"/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
 		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_resources.py",
 		"/home/rafapinzon/VRS/include/python2.7/traceback.h",
 		"/home/rafapinzon/VRS/lib/python2.7/site-packages/django/contrib/admin/static/admin/js/timeparse.js",
@@ -509,6 +629,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"\"idestacion\"",
+			"nicio",
+			"Salida",
+			"tiempoViajePromedioSinEspera",
 			"19119",
 			"value",
 			"...        ",
@@ -608,7 +732,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -617,15 +741,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 50323,
+						"buffer_size": 59403,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19990,
-								19990
+								53296,
+								53296
 							]
 						],
 						"settings":
@@ -635,74 +759,100 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1153.0,
+						"translation.y": 16660.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/home/rafapinzon/Dropbox/U/Progra/Python/databases.py",
+					"file": "horarios.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2007,
+						"buffer_size": 1851659,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1954,
-								1954
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 3,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1296.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18406,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18406,
+								18406
+							]
+						],
+						"settings":
+						{
+							"auto_name": "[ {'idtrayecto': 1, 'servicios': [{'idservicio': 0",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10793,
+						"buffer_size": 9953,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								134,
-								134
+								9808,
+								9808
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"auto_name": "[ {'idtrayecto': 1,",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"semi_transient": false,
 					"settings":
 					{
@@ -730,7 +880,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.py",
 					"semi_transient": false,
 					"settings":
@@ -758,7 +908,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.dat",
 					"semi_transient": false,
 					"settings":
@@ -786,7 +936,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "modeloOptimizacionPyomo.dat",
 					"semi_transient": false,
 					"settings":
@@ -811,11 +961,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "modeloOptimizacionPyomo.py",
 					"semi_transient": false,
 					"settings":
@@ -827,8 +977,8 @@
 						"selection":
 						[
 							[
-								189,
-								189
+								547,
+								547
 							]
 						],
 						"settings":
@@ -840,68 +990,39 @@
 							"wrap_width": 80
 						},
 						"translation.x": 0.0,
-						"translation.y": 17940.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/json.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 322,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
+					"file": "/home/rafapinzon/Downloads/Estructura Json Frecuencias_v2.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2292,
+						"buffer_size": 2322,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1139,
-								1139
+								2317,
+								2317
 							]
 						],
 						"settings":
 						{
-							"auto_name": "[",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

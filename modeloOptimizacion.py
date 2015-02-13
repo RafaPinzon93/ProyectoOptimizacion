@@ -2,11 +2,12 @@
 from __future__ import division
 from coopr.pyomo import *
 import numpy as np
-import MySQLdb
+# import MySQLdb
+import json
 # from pyutilib.misc import Options
 
 # from coopr.opt import SolverFactory
-    
+
 
 
 np.set_printoptions(linewidth=200)
@@ -71,6 +72,8 @@ _TOPOLOGIA_Directo = np.mat('''1,1,1,0,1,0,1,0,1,1,1,1,0,0,0;
                                1,1,1,1,0,1,0,1,0,1,1,1,0,1,1;
                                1,1,1,1,0,1,0,1,0,0,0,0,1,1,1
   ''')
+
+_TRAYECTOS = [{1:'Ida',2:'Vuelta'},{3:'Ida',4:'Vuelta'},{5:'Ida',6:'Vuelta'}] # Se obtiene de base de datos
 
 # Se sacará de base de datos
 _MEJOR_SECUENCIAr1 =[   [[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],[1,10],[1,11],[1,12],[1,13],[1,14],[1,15]],
@@ -195,8 +198,9 @@ def obtenerDatosBase():
     query_quotes =  "SET sql_mode='ANSI_QUOTES'" # para que acepte tablas con "caracteres especiales"
     cursor.execute(query_quotes)
     sql = '''SELECT * FROM "estacion-matrices"'''
-    sqlRutas = '''SELECT count(idruta) FROM "estacion-matrices" group by idruta;'''
+    sqlRutas = '''SELECT idruta FROM "estacion-matrices" group by idruta;'''
     sqlEstaciones = '''SELECT distinct estaciones  From(SELECT distinct idestacionorigen as estaciones FROM "estacion-matrices" union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones'''
+    sqlIdTrayectos = '''SELECT f.idtrayecto, b.idruta, f.sentidotrayecto FROM (SELECT idruta FROM "estacion-matrices" GROUP BY idruta)b LEFT JOIN trayecto f ON b.idruta = f.idruta;'''
     # try:
     cursor.execute(sql)
     # Obtenemos todos los registros en una lista de listas
@@ -205,6 +209,8 @@ def obtenerDatosBase():
     rutas = cursor.fetchall()
     cursor.execute(sqlEstaciones)
     estaciones = cursor.fetchall()
+    cursor.execute(sqlIdTrayectos)
+    idTrayectos = cursor.fetchall()
     numEstaciones = len(estaciones)
     numRutas = len(rutas)
     matricesTiempo = []
@@ -229,22 +235,23 @@ def obtenerDatosBase():
                         matProporcion[i,j] = registro[8]
                     iR +=1
             # jR +=1
-   
+
         matricesTiempo.append(matTiempo)
         matricesTransbordo.append(matTransbordo)
     # print np.array(matricesTiempo)
-    print np.array(matricesTransbordo)
+    # print np.array(matricesTransbordo)
+    print np.array(rutas)
     # for x in resultados[224:239]:
     #     print x
     # except:
     #    print "Error: No se pudo obtener los datos"
 
 
-    # 'num_rows' needed to reshape the 1D NumPy array returend by 'fromiter' 
+    # 'num_rows' needed to reshape the 1D NumPy array returend by 'fromiter'
     # in other words, to restore original dimensions of the results set
     # num_rows = int(cursor.rowcount)
     # print num_rows
-   
+
 
 # obtenerDatosBase()
 
@@ -402,7 +409,7 @@ def tiempoEsperaMaximo(t, model= None):
     suma = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
     if model:
         for r in range(len(model)):
-        
+
             for i in range(suma.shape[0]):
                 for j in range(suma.shape[1]):
                     suma[i,j] += _TOPOLOGIA[r][t][i,j]*model[r]
@@ -499,7 +506,7 @@ def pasajerosEstaValid(r, t, model= None):
 
 def pasajerosPuedenAbordar(r, t, model= None):
     '''
-        Crea matriz de los pasajeros que pueden abordar, un vector de los que pueden subir y  un vector de capacidades. 
+        Crea matriz de los pasajeros que pueden abordar, un vector de los que pueden subir y  un vector de capacidades.
     '''
     secuencia = _SECUENCIAS[r][t]-1 # Toma la secuencia utilizara por la ruta r en el trayecto t
     pasajeros = pasajerosEstacion(r, t, model)
@@ -572,7 +579,7 @@ def pasajerosPuedenAbordar(r, t, model= None):
 
             for iS, i in enumerate(secuencia[1:]): # iS -> Contador, i -> Estacion secuencia
                 valido = pasajerosEstaValid(r, t, model)[i]
-                anterior = secuencia[iS]   
+                anterior = secuencia[iS]
                 pasajerosSuma  = 0
                 pasajerosSumaI = 0
                 if np.in1d(i+1, secuenciaI):
@@ -581,7 +588,7 @@ def pasajerosPuedenAbordar(r, t, model= None):
                 else:
                     for x in secuenciaI:
                         pasajerosSumaI += pasajerosPuedenAbordarI[x,i]
-                    
+
                 for x in secuencia[:iS+1]:
                     pasajerosSuma += _pasajerosPuedenAbordar[x,i]
 
@@ -676,7 +683,7 @@ def tiempoAcumuladoBajada(r, t, model= None):
     else:
         for iS, i in enumerate(secuencia):
             for j in range(iS+1,len(secuencia)):
-                _tiempoBajada[i,secuencia[j]] = _tiempoBajada[i,secuencia[j-1]] + suma[secuencia[j]] 
+                _tiempoBajada[i,secuencia[j]] = _tiempoBajada[i,secuencia[j-1]] + suma[secuencia[j]]
     return _tiempoBajada
 
 def tiempoAcumuladoSubida(r, t, model= None):
@@ -684,7 +691,7 @@ def tiempoAcumuladoSubida(r, t, model= None):
     suma = tiempoEspera.sum(axis=1)
     _tiempoSubida = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
     np.fill_diagonal(_tiempoSubida,suma)
-    secuencia = _SECUENCIAS[r][t] -1 
+    secuencia = _SECUENCIAS[r][t] -1
     if t == 0:
         for iS, i in enumerate(secuencia):
             for j in range(iS+1,len(secuencia)):
@@ -742,7 +749,7 @@ def tiempoEsperarPor2Viaje(r,t, model= None):
 
 def frecuenciaTotal(t, model= None):
     _frecuenciaTotal = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
-    if model:    
+    if model:
         for r, f in enumerate(model):
             _frecuenciaTotal += np.where(_TOPOLOGIA[r][t]>0, model[r], 0)#value(f), 0)
     else:
@@ -773,7 +780,7 @@ def flujoAsignado(t, model= None):
 def intervalosTiemposEntreSalidas():
     return 1/np.array(FrecuenciasOptimas)
 
-def tiempoViajePromedioSinEspera(r,t, model=None):
+def tiempoViajePromedioSinEsperaSB(r,t, model=None):
     '''
     Matriz tiempo de viaje promedio
     '''
@@ -789,9 +796,173 @@ def tiempoViajePromedioSinEspera(r,t, model=None):
     # print _tiempoViajePromedio.sum(), model[0].value
     return _tiempoViajePromedio
 
-print np.around(tiempoViajePromedioSinEspera(2,1), decimals= 1)
+def tiempoViajePromedioSinEspera(r,t, model=None):
+    '''
+    Matriz tiempo de viaje promedio
+    '''
+    # print value(FrecuenciasOptimas[0])
+    tiempoEntreEstacionesM = _TIEMPO_ENTRE_ESTACIONES[r]
+    _tiempoViajePromedio = np.zeros(shape=(NUMEROESTACIONES, NUMEROESTACIONES))
+    secuencia = _SECUENCIAS[r][t]-1
+    for i, ei in enumerate(secuencia):
+        for ej in secuencia[i:]:
+            _tiempoViajePromedio[ei,ej] = tiempoEntreEstacionesM[ei,ej]
+    # print _tiempoViajePromedio.sum(), model[0].value
+    return _tiempoViajePromedio
+import datetime
+
+def convertHour(horas = None, hora = None):
+    if horas:
+        horasD = []
+        for i, x in enumerate(horas):
+            horasD.append(str(datetime.timedelta(seconds= int(round(((x*24)*60)*60)))))
+        # return np.vectorize(str(datetime.timedelta(minutes=x)))
+        return np.array(horasD)
+    elif hora:
+        horaStr = str(datetime.timedelta(seconds= int(round(((hora*24)*60)*60))))
+        if len(horaStr) == 7:
+            horaStr = "0" + horaStr
+        return horaStr
 
 
+def horaInicioServicios(r):
+    intervalosPeriodosRutas = intervalosTiemposEntreSalidas()[r]/(24*60)
+    tiempoInicio = HORAINICIO/24
+    tiempoFinal = HORAFIN/24
+    # minutosTotales = (HORAINICIO - HORAFIN)*60 # Los convertimos en minutos
+    horas = np.arange(tiempoInicio, tiempoFinal, intervalosPeriodosRutas)
+    horasD = []
+    # f = np.vectorize(convertHour)
+    # result_array = f(horas)
+    for i, x in enumerate(horas):
+        horasD.append(str(datetime.timedelta(seconds= int(round(((x*24)*60)*60)))))
+    # return np.array(horasD)
+    return horas
+
+def horaEstaciones(r,t, idT):
+    horaInicio = horaInicioServicios(r)
+    secuencia = _SECUENCIAS[r][t] -1
+    tiempoSalida = tiempoViajePromedioSinEsperaSB(r,t)[secuencia[0],secuencia] / (24*60)
+    tiempoLlegada = np.zeros(len(secuencia))
+    # tiempoLlegada[1:] = tiempoSalida[:-1] + tiempoViajePromedioSinEspera(r,t)[secuencia[0],secuencia[1:]] / (24*60)
+    for i in range(1,len(tiempoLlegada)):
+        tiempoLlegada[i] = tiempoSalida[i-1] + tiempoViajePromedioSinEspera(r,t)[secuencia[i-1],secuencia[i]] / (24*60)
+    _horaEstaciones = []
+    for horaI in horaInicio[:12]:
+        # _horaEstacionesLlegada = convertHour(horaI + tiempoLlegada)
+        _horaEstacionesLlegada = (horaI + tiempoLlegada)
+        # _horaEstacionesSalida = convertHour(horaI + tiempoSalida)
+        _horaEstacionesSalida = (horaI + tiempoSalida)
+        estacionInicio = np.zeros(len(secuencia), dtype=bool)
+        estacionInicio[0] = True
+        estacionFinal = np.zeros(len(secuencia), dtype=bool)
+        estacionFinal[-1] = True
+        idTrayecto = np.empty(len(secuencia))
+        idTrayecto.fill(idT)
+        _horaEstaciones.append(zip(_horaEstacionesLlegada, _horaEstacionesSalida, estacionInicio, estacionFinal, idTrayecto, secuencia))
+    dtype = [('horaLlegada', float), ('horaSalida', float),('estacionInicio', bool), ('estacionFinal', bool),('idTrayecto', int), ('secuencia', int)]
+    _horaEstaciones = np.array(_horaEstaciones, dtype)
+    return _horaEstaciones
+
+
+def horasRuta(r):
+    horas = []
+    rutaT = _TRAYECTOS[r]
+    for t, value in rutaT.iteritems():
+        if value == 'Ida':
+            # horas.append(horaEstaciones(r,0,t))
+            for horaE in horaEstaciones(r,0,t):
+                horas.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
+        else:
+            for horaE in horaEstaciones(r,1,t):
+                horas.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
+    dtype= [('horaInicial', float), ('horaFinal', float), ('idTrayecto', int)]
+    horas = np.array(horas, dtype)
+    # print horas.shape, r, horas
+    # horas = horas.reshape(rows*columns,horas.shape[2])
+    return horas
+
+def serviciosRuta(r, horas = None):
+    if horas == None:
+        horas = horasRuta(r)
+    horasDict = []
+    for i,hora in enumerate(horas):
+        horasDict.append((i, hora['horaInicial'], hora['idTrayecto']))
+    dtype = [('id', int),('horaLlegada', float), ('idTrayecto', int)]
+    horasDictArray = np.array(horasDict, dtype)
+    horasDictArray.sort(order='horaLlegada')
+    pilaSalida = []
+    servicios = []
+    pilaSalida.append((0,horas[horasDictArray[0][0]]['horaFinal'], horasDictArray[0][2]))
+    servicios.append((0, horasDictArray[0][0], horasDictArray[0][1], horasDictArray[0][2]))
+    i = 1
+    for x in horasDictArray[1:]:
+        '''
+        x[0] = id    x[1] = horaLlegada    x[2] = idTrayecto
+        '''
+        # pilaSalida.append((i,horas['horaFinal'][x[0]][-1], x[2]))
+        typeD = [('servicio', int),('horaSalida', float), ('idTrayecto', int)]
+        pilaSalidaArray = np.array(pilaSalida, typeD)
+        pilaSalidaArray.sort(order='horaSalida')
+        pilaTrayecto = pilaSalidaArray[pilaSalidaArray['idTrayecto'] != x[2]]
+        # if pilaSalidaArray[0]['horaSalida'] < x[1]:
+        if pilaTrayecto[0]['horaSalida'] < x[1]:
+            servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))
+            del pilaSalida[pilaTrayecto[0]['servicio']]
+            # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))
+            pilaSalida.insert(pilaTrayecto[0]['servicio'],(pilaTrayecto[0]['servicio'], horas[x[0]]['horaFinal'],x[2]))
+        else:
+            pilaSalida.append((i,horas[x[0]]['horaFinal'], x[2]))
+            servicios.append((i, x[0], x[1], x[2]))
+            i+=1
+    # dtype = [('servicio', int), ('id', int), ('horaLlegada', float), ('idTrayecto', int)]
+    return np.array(servicios)
+
+def jsonFile():
+    estructura = []
+    tray = 0
+    horaAnt = []
+    for r, rutaT in enumerate(_TRAYECTOS):
+        for t, value in rutaT.iteritems():
+            estructura.append({'idtrayecto':t})
+            serviciosEst = []
+            if value == 'Ida':
+                horas = horaEstaciones(r,0,t)
+                horaAnt = horas
+            else:
+                horas = horaEstaciones(r,1,t)
+            # print serviciosRuta(0)
+            _serviciosRuta = serviciosRuta(r)
+            _serviciosRutaB = _serviciosRuta[_serviciosRuta[:,-1]==t]
+            for i, servicio in enumerate(_serviciosRutaB):
+                horarios = {}
+                serviciosDict = {'idservicio':int(servicio[0])+1}
+                if value == 'Ida':
+                    idLinea = servicio[1]
+                else:
+                    idLinea = servicio[1] - len(horaAnt)
+                for i, hora in enumerate(horas[idLinea]):
+                    # print hora
+                    estacionesDict = {}
+                    estacionesDict["idestacion"] = hora['secuencia']+1
+                    estacionesDict["horallegada"] = convertHour(hora = hora['horaLlegada'])
+                    estacionesDict["horasalida"] = convertHour(hora = hora["horaSalida"])
+                    estacionesDict["estacioninicial"] = 'true' if hora["estacionInicio"] else 'false'
+                    estacionesDict["estacionfinal"] = 'true' if hora["estacionFinal"] else 'false'
+                    horarios[str(i)] = estacionesDict
+                serviciosDict["horarios"] = horarios
+                serviciosDict["orden"] = i
+                serviciosEst.append(serviciosDict)
+            estructura[tray]['servicios']= serviciosEst
+            tray+=1
+    out_file = open("horarios.json","w")
+    json.dump(estructura,out_file, indent=4, sort_keys=True, separators=(',', ': '))
+    out_file.close()
+# jsonFile()
+# print convertHour(hora= 0.2666)
+serv =  serviciosRuta(1)#[serviciosRuta(1)[:,-1] == 3]
+# serv.sort(order = 'servicio')
+print serv[np.lexsort((serv[:,2], serv[:,0]))]
 # print np.around(flujoAsignado(1), decimals=2)
 
 # tiempoViajePromedioTot(1, 1)
@@ -872,14 +1043,14 @@ def obj_expression(model):
     #         tiempoEsperaPor2ViajeS += tiempoEsperarPor2Viaje(r,t, model).sum()
     # return (tiempoViajePromedioS + (tiempoEsperaPor2ViajeS*TIEMPOESPERA2BUS))*FACTORPASAJERO + summation(model.costoRuta, model.frecuenciaOptima)*FACTOROPERADEOR
     # return (sum(model.tiempoViajePromedioS[r,t] for r in model.r for t  in model.t) + (sum(model.tiempoEsperaPor2ViajeS[r,t] for r in model.r for t in  model.t))*TIEMPOESPERA2BUS)*FACTORPASAJERO + summation(model.costoRuta, model.frecuenciaOptima)*FACTOROPERADEOR
-    obj1 = (sum(tiempoViajePromedio(r,t,model.frecuenciaOptima).sum() for r in model.r for t  in model.t) + (sum(tiempoEsperarPor2Viaje(r,t,model.frecuenciaOptima).sum() for r in model.r for t in  model.t))*TIEMPOESPERA2BUS)*FACTORPASAJERO 
+    obj1 = (sum(tiempoViajePromedio(r,t,model.frecuenciaOptima).sum() for r in model.r for t  in model.t) + (sum(tiempoEsperarPor2Viaje(r,t,model.frecuenciaOptima).sum() for r in model.r for t in  model.t))*TIEMPOESPERA2BUS)*FACTORPASAJERO
     obj2 = summation(model.costoRuta, model.frecuenciaOptima)*FACTOROPERADEOR
     return obj1 + obj2
 
 model.OBJ = Objective(rule= obj_expression, sense=minimize)
 
 def quality_constraint_rule(model, t, i):
-    # rule = flujoAsignado(t-1).sum(axis=0) <= funcionCalidad(t-1).sum(axis=0) 
+    # rule = flujoAsignado(t-1).sum(axis=0) <= funcionCalidad(t-1).sum(axis=0)
     # return rule.all() == True
     return (None, flujoAsignado(t,model.frecuenciaOptima).sum(axis=0)[i-1], funcionCalidad(t,model.frecuenciaOptima).sum(axis=0)[i-1])
     # return (None, sum(model.distribucionServicios[r, j, t] for j, t in zip(model.J, model.trayecto)), sum(model.F1[r, j, t] for j, t in zip(model.I, model.trayecto)))
