@@ -883,9 +883,17 @@ def horasRuta(r):
     return horas
 
 def serviciosRuta(r, horas = None):
+    '''
+        Función que recive la ruta para la cual se van a sacar los servicios
+        Los servicios son la identificación de un determinado bus que recorre la ruta
+
+    '''
     if horas == None:
         horas = horasRuta(r)
     horasDict = []
+    tray = _TRAYECTOS[r]
+    tIda = None
+    tVuelta = None
     for i,hora in enumerate(horas):
         horasDict.append((i, hora['horaInicial'], hora['idTrayecto']))
     dtype = [('id', int),('horaLlegada', float), ('idTrayecto', int)]
@@ -896,6 +904,7 @@ def serviciosRuta(r, horas = None):
     pilaSalida.append((0,horas[horasDictArray[0][0]]['horaFinal'], horasDictArray[0][2]))
     servicios.append((0, horasDictArray[0][0], horasDictArray[0][1], horasDictArray[0][2]))
     i = 1
+    flag = True
     for x in horasDictArray[1:]:
         '''
         x[0] = id    x[1] = horaLlegada    x[2] = idTrayecto
@@ -906,7 +915,21 @@ def serviciosRuta(r, horas = None):
         pilaSalidaArray.sort(order='horaSalida')
         pilaTrayecto = pilaSalidaArray[pilaSalidaArray['idTrayecto'] != x[2]]
         # if pilaSalidaArray[0]['horaSalida'] < x[1]:
-        if pilaTrayecto[0]['horaSalida'] < x[1]:
+        if pilaTrayecto[0]['horaSalida'] < x[1] and flag:
+            serviciosV = np.array(servicios)
+            for key, value in tray.items():
+                if value == 'Ida':
+                    tIda = key
+                else:
+                    tVuelta = key
+            for i in serviciosV[serviciosV[:,-1]==tVuelta]:
+                servicios.insert(0, (i[0], -1.0, 0.0, tIda))
+            servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))
+            del pilaSalida[pilaTrayecto[0]['servicio']]
+            # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))
+            pilaSalida.insert(pilaTrayecto[0]['servicio'],(pilaTrayecto[0]['servicio'], horas[x[0]]['horaFinal'],x[2]))
+            flag = False
+        elif pilaTrayecto[0]['horaSalida'] < x[1]:
             servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))
             del pilaSalida[pilaTrayecto[0]['servicio']]
             # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))
@@ -917,6 +940,31 @@ def serviciosRuta(r, horas = None):
             i+=1
     # dtype = [('servicio', int), ('id', int), ('horaLlegada', float), ('idTrayecto', int)]
     return np.array(servicios)
+
+def serviciosOrdenados(r, t):
+    "Recive los servicios, y los devuelve con orden respecto a los servicios"
+    serv = serviciosRuta(r)
+    serv = serv[serv[:,-1]==t]
+    _serviciosOrdenados = serv[np.lexsort((serv[:,2], serv[:,0]))]
+    arrayServ = []
+    length = 0
+    for i in range(int(_serviciosOrdenados[:,0].max())+1):
+        subArray = _serviciosOrdenados[_serviciosOrdenados[:,0] == i]
+        lengthA = len(subArray)
+        arrayServ.append(subArray)
+        if length < lengthA:
+            length = lengthA
+    newArray = np.empty_like(serv)
+    ind = 0
+    for i in range(length):
+        for e in arrayServ:
+            if i < len(e):
+                newArray[ind] = e[i]
+                ind += 1
+            # print e[i]
+    return np.array(newArray)
+    # return 0
+
 
 def jsonFile():
     estructura = []
@@ -932,37 +980,40 @@ def jsonFile():
             else:
                 horas = horaEstaciones(r,1,t)
             # print serviciosRuta(0)
-            _serviciosRuta = serviciosRuta(r)
-            _serviciosRutaB = _serviciosRuta[_serviciosRuta[:,-1]==t]
-            for i, servicio in enumerate(_serviciosRutaB):
+            _serviciosRuta = serviciosOrdenados(r, t)
+            # _serviciosRutaB = _serviciosRuta[_serviciosRuta[:,-1]==t]
+            # for i, servicio in enumerate(_serviciosRutaB):
+            for i, servicio in enumerate(_serviciosRuta):
                 horarios = {}
                 serviciosDict = {'idservicio':int(servicio[0])+1}
-                if value == 'Ida':
-                    idLinea = servicio[1]
-                else:
-                    idLinea = servicio[1] - len(horaAnt)
-                for i, hora in enumerate(horas[idLinea]):
-                    # print hora
-                    estacionesDict = {}
-                    estacionesDict["idestacion"] = hora['secuencia']+1
-                    estacionesDict["horallegada"] = convertHour(hora = hora['horaLlegada'])
-                    estacionesDict["horasalida"] = convertHour(hora = hora["horaSalida"])
-                    estacionesDict["estacioninicial"] = 'true' if hora["estacionInicio"] else 'false'
-                    estacionesDict["estacionfinal"] = 'true' if hora["estacionFinal"] else 'false'
-                    horarios[str(i)] = estacionesDict
+                if servicio[1] != -1:
+                    if value == 'Ida':
+                        idLinea = servicio[1]
+                    else:
+                        idLinea = servicio[1] - len(horaAnt)
+                    for j, hora in enumerate(horas[idLinea]):
+                        # print hora
+                        estacionesDict = {}
+                        estacionesDict["idestacion"] = hora['secuencia']+1
+                        estacionesDict["horallegada"] = convertHour(hora = hora['horaLlegada'])
+                        estacionesDict["horasalida"] = convertHour(hora = hora["horaSalida"])
+                        estacionesDict["estacioninicial"] = 'true' if hora["estacionInicio"] else 'false'
+                        estacionesDict["estacionfinal"] = 'true' if hora["estacionFinal"] else 'false'
+                        horarios[str(j)] = estacionesDict
                 serviciosDict["horarios"] = horarios
-                serviciosDict["orden"] = i
+                serviciosDict["orden"] = i+1
                 serviciosEst.append(serviciosDict)
             estructura[tray]['servicios']= serviciosEst
             tray+=1
     out_file = open("horarios.json","w")
     json.dump(estructura,out_file, indent=4, sort_keys=True, separators=(',', ': '))
     out_file.close()
-# jsonFile()
+jsonFile()
 # print convertHour(hora= 0.2666)
-serv =  serviciosRuta(1)#[serviciosRuta(1)[:,-1] == 3]
+# serv =  serviciosRuta(1)#[serviciosRuta(1)[:,-1] == 3]
 # serv.sort(order = 'servicio')
-print serv[np.lexsort((serv[:,2], serv[:,0]))]
+# print serviciosOrdenados(1, 4)
+# print serviciosRuta(1)
 # print np.around(flujoAsignado(1), decimals=2)
 
 # tiempoViajePromedioTot(1, 1)

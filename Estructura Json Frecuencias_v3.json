@@ -1,0 +1,273 @@
+[
+    {
+        "idtrayecto": 1,
+        "servicios": [
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:00:00", "horasalida": "07:00:43", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:02:43", "horasalida": "07:03:21", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:05:21", "horasalida": "07:05:55", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:07:55", "horasalida": "07:08:56", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:10:56", "horasalida": "07:11:47", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:13:47", "horasalida": "07:14:48", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:16:48", "horasalida": "07:17:36", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:19:36", "horasalida": "07:21:10", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "07:23:10", "horasalida": "07:23:43", "idestacion": 12 }
+                },
+                "idservicio": 1,
+                "orden": 1
+            },
+            {
+                "horarios": {
+                },
+                "idservicio": 2,
+                "orden": 2
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:05:33", "horasalida": "07:06:16", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:08:16", "horasalida": "07:08:54", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:10:54", "horasalida": "07:11:28", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:13:28", "horasalida": "07:14:30", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:16:30", "horasalida": "07:17:20", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:19:20", "horasalida": "07:20:21", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:22:21", "horasalida": "07:23:10", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:25:10", "horasalida": "07:26:44", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "07:28:44", "horasalida": "07:29:17", "idestacion": 12 }
+                },
+                "idservicio": 3,
+                "orden": 3
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:55:33", "horasalida": "07:56:16", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:58:16", "horasalida": "07:58:54", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:00:54", "horasalida": "08:01:28", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:03:28", "horasalida": "08:04:30", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:06:30", "horasalida": "08:07:20", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:09:20", "horasalida": "08:10:21", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:12:21", "horasalida": "08:13:10", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:15:10", "horasalida": "08:16:44", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "08:18:44", "horasalida": "08:19:17", "idestacion": 12 }
+                },
+                "idservicio": 1,
+                "orden": 4
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:27:47", "horasalida": "07:28:29", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:30:29", "horasalida": "07:31:07", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:33:07", "horasalida": "07:33:42", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:35:42", "horasalida": "07:36:43", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:38:43", "horasalida": "07:39:34", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:41:34", "horasalida": "07:42:34", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:44:34", "horasalida": "07:45:23", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:47:23", "horasalida": "07:48:57", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "07:50:57", "horasalida": "07:51:30", "idestacion": 12 }
+                },
+                "idservicio": 2,
+                "orden": 5
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "08:01:07", "horasalida": "08:01:49", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:03:49", "horasalida": "08:04:27", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:06:27", "horasalida": "08:07:02", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:09:02", "horasalida": "08:10:03", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:12:03", "horasalida": "08:12:54", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:14:54", "horasalida": "08:15:54", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:17:54", "horasalida": "08:18:43", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:20:43", "horasalida": "08:22:17", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "08:24:17", "horasalida": "08:24:50", "idestacion": 12 }
+                },
+                "idservicio": 3,
+                "orden": 6
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "08:51:07", "horasalida": "08:51:49", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:53:49", "horasalida": "08:54:27", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:56:27", "horasalida": "08:57:02", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:59:02", "horasalida": "09:00:03", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:02:03", "horasalida": "09:02:54", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:04:54", "horasalida": "09:05:54", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:07:54", "horasalida": "09:08:43", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:10:43", "horasalida": "09:12:17", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "09:14:17", "horasalida": "09:14:50", "idestacion": 12 }
+                },
+                "idservicio": 1,
+                "orden": 7
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "08:23:20", "horasalida": "08:24:03", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:26:03", "horasalida": "08:26:41", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:28:41", "horasalida": "08:29:15", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:31:15", "horasalida": "08:32:16", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:34:16", "horasalida": "08:35:07", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:37:07", "horasalida": "08:38:08", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:40:08", "horasalida": "08:40:56", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:42:56", "horasalida": "08:44:30", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "08:46:30", "horasalida": "08:47:03", "idestacion": 12 }
+                },
+                "idservicio": 2,
+                "orden": 8
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "08:56:40", "horasalida": "08:57:23", "idestacion": 1 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:59:23", "horasalida": "09:00:01", "idestacion": 2 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:02:01", "horasalida": "09:02:35", "idestacion": 3 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:04:35", "horasalida": "09:05:36", "idestacion": 5 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:07:36", "horasalida": "09:08:27", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:10:27", "horasalida": "09:11:28", "idestacion": 9 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:13:28", "horasalida": "09:14:16", "idestacion": 10 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:16:16", "horasalida": "09:17:50", "idestacion": 11 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "09:19:50", "horasalida": "09:20:23", "idestacion": 12 }
+                },
+                "idservicio": 3,
+                "orden": 9
+            }
+        ]
+    },
+    {
+        "idtrayecto": 2,
+        "servicios": [
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:27:47", "horasalida": "07:28:53", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:30:53", "horasalida": "07:31:50", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:33:50", "horasalida": "07:34:31", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:36:31", "horasalida": "07:36:55", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:38:55", "horasalida": "07:39:37", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:41:37", "horasalida": "07:42:14", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:44:14", "horasalida": "07:46:26", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:48:26", "horasalida": "07:48:37", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "07:50:37", "horasalida": "07:50:47", "idestacion": 1 }
+                },
+                "idservicio": 1,
+                "orden": 1
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:00:00", "horasalida": "07:01:06", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:03:06", "horasalida": "07:04:03", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:06:03", "horasalida": "07:06:45", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:08:45", "horasalida": "07:09:08", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:11:08", "horasalida": "07:11:51", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:13:51", "horasalida": "07:14:27", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:16:27", "horasalida": "07:18:39", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:20:39", "horasalida": "07:20:50", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "07:22:50", "horasalida": "07:23:01", "idestacion": 1 }
+                },
+                "idservicio": 2,
+                "orden": 2
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:33:20", "horasalida": "07:34:26", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:36:26", "horasalida": "07:37:23", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:39:23", "horasalida": "07:40:05", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:42:05", "horasalida": "07:42:28", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:44:28", "horasalida": "07:45:11", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:47:11", "horasalida": "07:47:47", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:49:47", "horasalida": "07:51:59", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:53:59", "horasalida": "07:54:10", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "07:56:10", "horasalida": "07:56:21", "idestacion": 1 }
+                },
+                "idservicio": 3,
+                "orden": 3
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "08:23:20", "horasalida": "08:24:26", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:26:26", "horasalida": "08:27:23", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:29:23", "horasalida": "08:30:05", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:32:05", "horasalida": "08:32:28", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:34:28", "horasalida": "08:35:11", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:37:11", "horasalida": "08:37:47", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:39:47", "horasalida": "08:41:59", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:43:59", "horasalida": "08:44:10", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "08:46:10", "horasalida": "08:46:21", "idestacion": 1 }
+                },
+                "idservicio": 1,
+                "orden": 4
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "07:55:33", "horasalida": "07:56:40", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "07:58:40", "horasalida": "07:59:36", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:01:36", "horasalida": "08:02:18", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:04:18", "horasalida": "08:04:41", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:06:41", "horasalida": "08:07:24", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:09:24", "horasalida": "08:10:00", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:12:00", "horasalida": "08:14:13", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:16:13", "horasalida": "08:16:23", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "08:18:23", "horasalida": "08:18:34", "idestacion": 1 }
+                },
+                "idservicio": 2,
+                "orden": 5
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "08:28:53", "horasalida": "08:30:00", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:32:00", "horasalida": "08:32:56", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:34:56", "horasalida": "08:35:38", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:37:38", "horasalida": "08:38:01", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:40:01", "horasalida": "08:40:44", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:42:44", "horasalida": "08:43:20", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:45:20", "horasalida": "08:47:33", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:49:33", "horasalida": "08:49:43", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "08:51:43", "horasalida": "08:51:54", "idestacion": 1 }
+                },
+                "idservicio": 3,
+                "orden": 6
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "09:18:53", "horasalida": "09:20:00", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:22:00", "horasalida": "09:22:56", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:24:56", "horasalida": "09:25:38", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:27:38", "horasalida": "09:28:01", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:30:01", "horasalida": "09:30:44", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:32:44", "horasalida": "09:33:20", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:35:20", "horasalida": "09:37:33", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:39:33", "horasalida": "09:39:43", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "09:41:43", "horasalida": "09:41:54", "idestacion": 1 }
+                },
+                "idservicio": 1,
+                "orden": 7
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "08:51:07", "horasalida": "08:52:13", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:54:13", "horasalida": "08:55:10", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:57:10", "horasalida": "08:57:51", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "08:59:51", "horasalida": "09:00:15", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:02:15", "horasalida": "09:02:57", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:04:57", "horasalida": "09:05:34", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:07:34", "horasalida": "09:09:46", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:11:46", "horasalida": "09:11:57", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "09:13:57", "horasalida": "09:14:07", "idestacion": 1 }
+                },
+                "idservicio": 2,
+                "orden": 8
+            },
+            {
+                "horarios": {
+                    "0": {"estacionfinal": "false", "estacioninicial": "true", "horallegada": "09:24:27", "horasalida": "09:25:33", "idestacion": 12 },
+                    "1": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:27:33", "horasalida": "09:28:30", "idestacion": 11 },
+                    "2": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:30:30", "horasalida": "09:31:11", "idestacion": 10 },
+                    "3": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:33:11", "horasalida": "09:33:35", "idestacion": 9 },
+                    "4": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:35:35", "horasalida": "09:36:17", "idestacion": 7 },
+                    "5": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:38:17", "horasalida": "09:38:54", "idestacion": 5 },
+                    "6": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:40:54", "horasalida": "09:43:06", "idestacion": 3 },
+                    "7": {"estacionfinal": "false", "estacioninicial": "false", "horallegada": "09:45:06", "horasalida": "09:45:17", "idestacion": 2 },
+                    "8": {"estacionfinal": "true", "estacioninicial": "false", "horallegada": "09:47:17", "horasalida": "09:47:27", "idestacion": 1 }
+                },
+                "idservicio": 3,
+                "orden": 9
+            }
+        ]
+    }
+]
