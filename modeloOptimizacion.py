@@ -2,7 +2,7 @@
 from __future__ import division
 from coopr.pyomo import *
 import numpy as np
-# import MySQLdb
+import MySQLdb
 import json
 # from pyutilib.misc import Options
 
@@ -21,9 +21,9 @@ TIEMPOABORDAR = 1/60.0
 TIEMPOESPERA2BUS = 1
 _tiempoViajePromedio = [[[[1,2],[3,4]]]]
 
-HORAINICIO = 7
+HORAINICIO = 5
 
-HORAFIN = 22
+HORAFIN = 23
 
 NUMERORUTAS = 3 # Se sacará de base de datos
 
@@ -198,7 +198,7 @@ def obtenerDatosBase():
     query_quotes =  "SET sql_mode='ANSI_QUOTES'" # para que acepte tablas con "caracteres especiales"
     cursor.execute(query_quotes)
     sql = '''SELECT * FROM "estacion-matrices"'''
-    sqlRutas = '''SELECT idruta FROM "estacion-matrices" group by idruta;'''
+    sqlRutas = '''SELECT idruta FROM "estacion-matrices" group by idruta;''' #Se puede sacar de IdTrayectos
     sqlEstaciones = '''SELECT distinct estaciones  From(SELECT distinct idestacionorigen as estaciones FROM "estacion-matrices" union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones'''
     sqlIdTrayectos = '''SELECT f.idtrayecto, b.idruta, f.sentidotrayecto FROM (SELECT idruta FROM "estacion-matrices" GROUP BY idruta)b LEFT JOIN trayecto f ON b.idruta = f.idruta;'''
     # try:
@@ -240,7 +240,8 @@ def obtenerDatosBase():
         matricesTransbordo.append(matTransbordo)
     # print np.array(matricesTiempo)
     # print np.array(matricesTransbordo)
-    print np.array(rutas)
+    # print np.array(rutas)
+    print np.array(idTrayectos)
     # for x in resultados[224:239]:
     #     print x
     # except:
@@ -253,7 +254,7 @@ def obtenerDatosBase():
     # print num_rows
 
 
-# obtenerDatosBase()
+obtenerDatosBase()
 
 def numeroEstaciones():
     global NUMEROESTACIONES
@@ -848,7 +849,7 @@ def horaEstaciones(r,t, idT):
     for i in range(1,len(tiempoLlegada)):
         tiempoLlegada[i] = tiempoSalida[i-1] + tiempoViajePromedioSinEspera(r,t)[secuencia[i-1],secuencia[i]] / (24*60)
     _horaEstaciones = []
-    for horaI in horaInicio[:12]:
+    for horaI in horaInicio:
         # _horaEstacionesLlegada = convertHour(horaI + tiempoLlegada)
         _horaEstacionesLlegada = (horaI + tiempoLlegada)
         # _horaEstacionesSalida = convertHour(horaI + tiempoSalida)
@@ -922,7 +923,8 @@ def serviciosRuta(r, horas = None):
                     tIda = key
                 else:
                     tVuelta = key
-            for i in serviciosV[serviciosV[:,-1]==tVuelta]:
+            serviciosAdicionales = serviciosV[serviciosV[:,-1]==tVuelta]
+            for i in reversed(serviciosAdicionales):
                 servicios.insert(0, (i[0], -1.0, 0.0, tIda))
             servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))
             del pilaSalida[pilaTrayecto[0]['servicio']]
@@ -938,6 +940,12 @@ def serviciosRuta(r, horas = None):
             pilaSalida.append((i,horas[x[0]]['horaFinal'], x[2]))
             servicios.append((i, x[0], x[1], x[2]))
             i+=1
+    numeroServA = len(serviciosAdicionales)
+    serviciosIda = np.array(servicios)
+    serviciosIda = serviciosIda[serviciosIda[:,-1]==tIda]
+    for serv in serviciosIda[-numeroServA:]:
+        servicios.append((serv[0], -1.0, 1.0, tVuelta))
+
     # dtype = [('servicio', int), ('id', int), ('horaLlegada', float), ('idTrayecto', int)]
     return np.array(servicios)
 
@@ -970,7 +978,9 @@ def jsonFile():
     estructura = []
     tray = 0
     horaAnt = []
+    # _serviciosRuta = None
     for r, rutaT in enumerate(_TRAYECTOS):
+        _serviciosRuta = serviciosRuta(r)
         for t, value in rutaT.iteritems():
             estructura.append({'idtrayecto':t})
             serviciosEst = []
@@ -980,11 +990,12 @@ def jsonFile():
             else:
                 horas = horaEstaciones(r,1,t)
             # print serviciosRuta(0)
-            _serviciosRuta = serviciosOrdenados(r, t)
-            # _serviciosRutaB = _serviciosRuta[_serviciosRuta[:,-1]==t]
-            # for i, servicio in enumerate(_serviciosRutaB):
-            for i, servicio in enumerate(_serviciosRuta):
+            # _serviciosRuta = serviciosOrdenados(r, t)
+            _serviciosRutaB = _serviciosRuta[_serviciosRuta[:,-1]==t]
+            for i, servicio in enumerate(_serviciosRutaB):
+            # for i, servicio in enumerate(_serviciosRuta):
                 horarios = {}
+                # horarios = []
                 serviciosDict = {'idservicio':int(servicio[0])+1}
                 if servicio[1] != -1:
                     if value == 'Ida':
@@ -1000,6 +1011,7 @@ def jsonFile():
                         estacionesDict["estacioninicial"] = 'true' if hora["estacionInicio"] else 'false'
                         estacionesDict["estacionfinal"] = 'true' if hora["estacionFinal"] else 'false'
                         horarios[str(j)] = estacionesDict
+                        # horarios.append(str(j) +" "+str(estacionesDict))
                 serviciosDict["horarios"] = horarios
                 serviciosDict["orden"] = i+1
                 serviciosEst.append(serviciosDict)
@@ -1008,12 +1020,12 @@ def jsonFile():
     out_file = open("horarios.json","w")
     json.dump(estructura,out_file, indent=4, sort_keys=True, separators=(',', ': '))
     out_file.close()
-jsonFile()
+# jsonFile()
 # print convertHour(hora= 0.2666)
 # serv =  serviciosRuta(1)#[serviciosRuta(1)[:,-1] == 3]
 # serv.sort(order = 'servicio')
 # print serviciosOrdenados(1, 4)
-# print serviciosRuta(1)
+# print serviciosRuta(0)
 # print np.around(flujoAsignado(1), decimals=2)
 
 # tiempoViajePromedioTot(1, 1)

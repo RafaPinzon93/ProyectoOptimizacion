@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"idT",
+				"idTrayectos"
+			],
+			[
 				"leng",
 				"lenghtA	statement"
 			],
@@ -50,10 +54,6 @@
 			[
 				"idt",
 				"idTrayecto"
-			],
-			[
-				"idT",
-				"idTrayecto	statement"
 			],
 			[
 				"_Tra",
@@ -423,15 +423,57 @@
 			"file": "modeloOptimizacion.py",
 			"settings":
 			{
-				"buffer_size": 61424,
+				"buffer_size": 61969,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nAnaconda:\n--------\n\n  Changes in 1.4.1\n  ================\n  \n  - Fixed small bug introduced in v1.4.0 when find usages was used\n  \n  For more detailed information about those changes run git v1.4.0..v1.4.1 on git repository\n  \n\n  Changes in 1.4.0\n  ================\n  \n  Sublime Text 3 build 3070 included a new API that allow us to show\n  tooltips with basic formated HTML on them.\n  \n  This release implements this feature that should be available to anyone\n  using Sublime Text 3 build 3070 or newer.\n  \n  ### Notes\n  In build 3070 the tooltips doesn't play nice with the auto completion\n  the solution is to update to 3071 or better or just disable tooltips\n  in anaconda configuration file\n  \n  Configuration Changes\n  =====================\n  \n  * Display signatures is not true by default\n  * Tooltips are enabled by default\n  * More informative display signatures is enabled by default\n  \n  Customizable Tooltips\n  =====================\n  \n  The theme of the tooltips are customizable, there are two by default themes:\n  \n  * Dark (for darker themes)\n  * Light (for lighter themes)\n  \n  Users can create their own custom themes adding CSS files with their\n  customizations into `Packages/User/Anaconda.themes` like for example:\n  \n      Packages/User/Anaconda.themes/custom_tooltip.css\n  \n  ### CSS Template\n  \n  ```css\n  html {\n      background-color: #141414;\n      color: #d3bc5f;\n  }\n  \n  h3 {\n      color: #beb7c8;\n      font-size: 1.2em;\n  }\n  \n  .signature {\n      margin-top: 4px;\n  }\n  \n  .doc_signature {\n      margin-top: 4px;\n      color: #44849b;\n      font-size: 1.2em;\n  }\n  ```\n  \n  For more detailed information about those changes run git v1.3.7..v1.4.0 on git repository\n  ",
+			"settings":
+			{
+				"buffer_size": 1750,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/rafapinzon/Downloads/AnaLexico.py",
+			"settings":
+			{
+				"buffer_size": 1006,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/CompilPython/mpascal/mpaslex.py",
+			"settings":
+			{
+				"buffer_size": 3699,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/Excelexample.py",
+			"settings":
+			{
+				"buffer_size": 2947,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl.py",
+			"settings":
+			{
+				"buffer_size": 10983,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "horarios.json",
 			"settings":
 			{
-				"buffer_size": 117279,
+				"buffer_size": 2253128,
 				"line_ending": "Unix"
 			}
 		},
@@ -580,11 +622,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion"
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR"
 	],
 	"file_history":
 	[
+		"/home/rafapinzon/Dropbox/U/Compiladores/pruebas.py",
+		"/home/rafapinzon/Dropbox/U/Compiladores/Pruebas.pas",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/horarios.json",
 		"/home/rafapinzon/Dropbox/Proyecto Optimización/json.py",
 		"/home/rafapinzon/Dropbox/U/Progra/Python/databases.py",
@@ -748,7 +791,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -757,15 +800,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 61424,
+						"buffer_size": 61969,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								54898,
-								54898
+								19097,
+								19097
 							]
 						],
 						"settings":
@@ -775,27 +818,176 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 17444.0,
+						"translation.y": 2993.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "horarios.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 117279,
+						"buffer_size": 1750,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								49773,
-								49773
+								1750,
+								1750
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/rafapinzon/Downloads/AnaLexico.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								604,
+								604
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/rafapinzon/CompilPython/mpascal/mpaslex.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24,
+								24
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/Excelexample.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								146,
+								146
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1891,
+								1891
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 2322.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "horarios.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2253128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								934,
+								934
 							]
 						],
 						"settings":
@@ -806,14 +998,14 @@
 							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 25171.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 7,
 					"file": "Estructura Json Frecuencias_v3.json",
 					"semi_transient": false,
 					"settings":
@@ -836,15 +1028,15 @@
 							"translate_tabs_to_spaces": true,
 							"word_wrap": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 8,
 					"semi_transient": false,
 					"settings":
 					{
@@ -868,11 +1060,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 9,
 					"semi_transient": false,
 					"settings":
 					{
@@ -896,11 +1088,11 @@
 						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 10,
 					"semi_transient": false,
 					"settings":
 					{
@@ -924,11 +1116,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 11,
 					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.py",
 					"semi_transient": false,
 					"settings":
@@ -952,11 +1144,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 12,
 					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.dat",
 					"semi_transient": false,
 					"settings":
@@ -980,11 +1172,11 @@
 						"translation.y": 12.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 13,
 					"file": "modeloOptimizacionPyomo.dat",
 					"semi_transient": false,
 					"settings":
@@ -1009,11 +1201,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 14,
 					"file": "modeloOptimizacionPyomo.py",
 					"semi_transient": false,
 					"settings":
@@ -1041,11 +1233,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 15,
 					"file": "/home/rafapinzon/Downloads/Estructura Json Frecuencias_v2.txt",
 					"semi_transient": false,
 					"settings":
@@ -1070,7 +1262,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
