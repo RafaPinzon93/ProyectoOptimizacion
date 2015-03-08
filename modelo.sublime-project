@@ -21,6 +21,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/rafapinzon/Dropbox/ProyectoMegaBusR"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/rafapinzon/Dropbox"
 		}
 	],
 	"settings":
