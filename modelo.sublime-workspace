@@ -524,19 +524,28 @@
 			}
 		},
 		{
-			"file": "modeloOptimizacionGA.py",
+			"file": "modeloOptimizacionGA1.py",
 			"settings":
 			{
-				"buffer_size": 68121,
+				"buffer_size": 65305,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/GeneticView.py",
+			"contents": "Tiempo de espera promedio Trayecto Ida\n[[ 0.    1.36  1.36  2.23  3.51  2.23  3.51  2.23  3.51  2.32  2.32  2.32  3.3   3.3   3.3 ]\n [ 0.    0.    1.36  2.23  3.51  2.23  3.51  2.23  3.51  2.32  2.32  2.32  3.3   3.3   3.3 ]\n [ 0.    0.    0.    2.23  3.51  2.23  3.51  2.23  3.51  2.32  2.32  2.32  3.3   3.3   3.3 ]\n [ 3.3   3.3   3.3   0.    6.86  2.23  6.86  2.23  6.86  6.86  6.86  6.86  3.3   3.3   3.3 ]\n [ 0.    0.    0.    0.    0.    0.    3.51  0.    3.51  3.51  3.51  3.51  0.    3.51  3.51]\n [ 3.3   3.3   3.3   3.3   6.86  0.    6.86  2.23  6.86  6.86  6.86  6.86  3.3   3.3   3.3 ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    3.51  3.51  3.51  3.51  0.    3.51  3.51]\n [ 3.3   3.3   3.3   3.3   6.86  3.3   6.86  0.    6.86  6.86  6.86  6.86  3.3   3.3   3.3 ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    3.51  3.51  3.51  0.    3.51  3.51]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    2.32  2.32  0.    2.32  2.32]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    2.32  0.    0.    0.  ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]]\n\n\nTiempo de espera promedio Trayecto Vuelta\n[[ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 1.36  0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 1.36  1.36  0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 3.51  3.51  3.51  3.51  0.    3.51  0.    3.51  0.    0.    0.    0.    3.51  0.    0.  ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 3.51  3.51  3.51  3.51  3.51  3.51  0.    3.51  0.    0.    0.    0.    3.51  0.    0.  ]\n [ 0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.    0.  ]\n [ 3.51  3.51  3.51  3.51  3.51  3.51  3.51  3.51  0.    0.    0.    0.    3.51  0.    0.  ]\n [ 3.51  3.51  3.51  3.51  3.51  3.51  3.51  3.51  3.51  0.    0.    0.    3.51  0.    0.  ]\n [ 2.32  2.32  2.32  2.32  3.51  2.32  3.51  2.32  3.51  3.51  0.    0.    2.32  6.86  6.86]\n [ 2.32  2.32  2.32  2.32  3.51  2.32  3.51  2.32  3.51  3.51  2.32  0.    2.32  6.86  6.86]\n [ 3.3   3.3   3.3   3.3   3.3   3.3   3.3   3.3   3.3   3.3   3.3   3.3   0.    3.3   3.3 ]\n [ 2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  0.    2.23]\n [ 2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  2.23  0.  ]]\n",
 			"settings":
 			{
-				"buffer_size": 10457,
+				"buffer_size": 2875,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Awesome question: Promoted\n\nI would suggest (each at most a day)\n\nLearn how to use Git and GitHub\nLearn how to use SVN\nLearn simple linux regular expressions\nFind a site with a few interview programming questions, and practice going through the full answer, with code, for some of them (a few a day should be good; do them in a language you don't know well if you already can ace most).\nSet up a crawler that can scrape some webpages and parse some basic data.\nSet up a bigger crawler that has to fill out a form or two.\nProgram a basic linear algebra library (matrices, vectors, multiplication)\nAdd SVD to this library\nAdd matrix inversion to this library\nAdd least squares regression to this library\nMake your library work efficiently with sparse data.\nLearn how to use list comprehensions in python.\nUpdate 1:\nRead the freaking manual for your favorite language. In the past I've wasted hours in Python because I didn't know that the Counter data structure existed, and kept getting the bugs from using Dicts as Counters. There are many examples like this.\nGet a stackoverflow account and learn to use the site. If you don't at least know that StackOverflow is an available resource, and you're an english-speaking programmer, you're doing it wrong.\nImplement a simple Machine learning algorithm on your own, with a whole pipeline. I.e. you read a simple input csv, split it into training and test set, run a simple algorithm with readily-tuneable or explorable hyperparameters, and a simple output of relevant statistics.\nLearn the how to make a simple line graph in Excel, and make sure you can do it right; i.e. properly labeled axes and tick marks, title and legends.\nLearn how to make a simple line graph in something other than Excel. Make sure you can do it right (same requirements).\nGet your eclipse installation fully pumped up: python dev tools, c dev tools, any other language you could ever write in, and make sure you can write a hello world successfully in each perspective. It'll save you time some future day.\nLearn the basic functionality of a NoSQL database; (you can learn a big chunk of mongoDB in a day)\nLearn the most basic functionality of SQL (you don't need to be a query guru,  but have a small clue about it).\nLearn a tool for in-depth parsing of HTML and XML\nImplement a list-of-lists graph data structure\nImplement random walk, PageRank, clustering coefficient finding (#triangles over possible triangles) and common neighbor number finding.\nImplement BFS, DFS, Shortest Path, topological sort and Minimum Spanning Tree (bonus for union-find version). Take a couple days if you have no algorithms background.\nMake a simple java applet that has at least some interaction with listeners and not just buttons and such.",
+			"settings":
+			{
+				"buffer_size": 2748,
+				"line_ending": "Unix",
+				"name": "Awesome question: Promoted"
 			}
 		},
 		{
@@ -723,15 +732,18 @@
 	},
 	"expanded_folders":
 	[
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion",
 		"/home/rafapinzon/VRS",
 		"/home/rafapinzon/VRS/project_rs",
 		"/home/rafapinzon/VRS/project_rs/local_apps",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/views",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR"
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Soluciones"
 	],
 	"file_history":
 	[
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionGA.py",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
 		"/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl organizada con problemas.py",
 		"/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl.py",
@@ -803,6 +815,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			";",
+			",",
+			";",
+			",",
 			"res1",
 			"diagonal",
 			"def objFunction(frecuencias):\n    global FrecuenciasOptimas\n\n    for i, x in enumerate(frecuencias):\n        # FrecuenciasOptimas[i] = ValoresFrecuencias[x]\n        FrecuenciasOptimas[i] = x\n\n    lenf = len(FrecuenciasOptimas)\n    obj1 = (sum(tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) + \n            (sum(tiempoEsperarPor2Viaje(r,t).sum() for r in range(lenf) for t in  [0,1]))*TIEMPOESPERA2BUS)*FACTORPASAJERO\n    obj2 = sum(COSTOS[r]* FrecuenciasOptimas[r] for r in range(lenf))*FACTOROPERADEOR\n    # vecO[frecuencias]\n    return obj1 + obj2",
@@ -917,7 +933,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -947,33 +963,86 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "modeloOptimizacionGA.py",
+					"file": "modeloOptimizacionGA1.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 68121,
+						"buffer_size": 65305,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1334,
-								1334
+								30481,
+								30481
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"word_wrap": false,
-							"wrap_width": 80
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9261.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2008,
+								2008
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2748,
+								2748
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Awesome question: Promoted",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -983,36 +1052,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/GeneticView.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 10457,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 2646.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "/home/rafapinzon/Dropbox/U/Sistemas Distribuidos/Threading.py",
 					"semi_transient": false,
 					"settings":
@@ -1038,11 +1078,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/home/rafapinzon/Dropbox/U/Sistemas Distribuidos/Client.py",
 					"semi_transient": false,
 					"settings":
@@ -1066,11 +1106,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "/home/rafapinzon/Dropbox/U/Sistemas Distribuidos/Server.py",
 					"semi_transient": false,
 					"settings":
@@ -1094,11 +1134,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "modeloOptimizacionPyomo.py",
 					"semi_transient": false,
 					"settings":
@@ -1126,11 +1166,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "modeloOptimizacionDB.py",
 					"semi_transient": false,
 					"settings":
@@ -1157,11 +1197,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl.py",
 					"semi_transient": false,
 					"settings":
@@ -1187,11 +1227,11 @@
 						"translation.y": 406.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControlconoptreal.py",
 					"semi_transient": false,
 					"settings":
@@ -1217,11 +1257,11 @@
 						"translation.y": 6022.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1246,11 +1286,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "/home/rafapinzon/CompilPython/mpascal/mpaslex.py",
 					"semi_transient": false,
 					"settings":
@@ -1276,11 +1316,11 @@
 						"translation.y": 1524.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "horarios.json",
 					"semi_transient": false,
 					"settings":
@@ -1307,11 +1347,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "Estructura Json Frecuencias_v3.json",
 					"semi_transient": false,
 					"settings":
@@ -1338,11 +1378,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.py",
 					"semi_transient": false,
 					"settings":
@@ -1366,11 +1406,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1394,11 +1434,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/PruebaModelo.dat",
 					"semi_transient": false,
 					"settings":
@@ -1422,7 +1462,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
