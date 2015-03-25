@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import numpy as np
-import MySQLdb
+# import MySQLdb
 import json
 from scipy import optimize
 from pyevolve import G1DList, GSimpleGA, Selectors
 from pyevolve import Initializators, Mutators, Consts
+import inspect, os
 
-# from pyutilib.misc import Options
 
 # from coopr.opt import SolverFactory
 
@@ -230,7 +230,7 @@ _TRANSBORDOS = [[_Transbordo1, _Transbordo4],
 TRANSBORDO = None # Variable para hacer dp cuando se calculan los transbordos.
 NUMEROESTACIONES = 0
 
-EstacionesBaseDatosDict = {}
+EstacionesBaseDatosDict = None
 
 # Se sacará de base de datos
 # _DEMANDA_MEDIA = np.array([[0 ,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
@@ -270,8 +270,11 @@ _PROPORCIONES = np.array([[0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.
 
 def obtenerDatosBase():
     global EstacionesBaseDatosDict
+    #db_host =  '190.128.19.105'
     db_host = 'admin.megaruta.co'
+    # usuario = 'optimizacion'
     usuario = 'rutamega_eqopt'
+    # clave =  'fdoq9zSyfSlMsyW9wGkh'
     clave = 'eedd8ae977b7f997ce92aa1b0'
     base_de_datos = 'rutamega_principal' #rutamega_principal
     dbr = MySQLdb.connect(host=db_host, user=usuario, passwd=clave,db=base_de_datos)
@@ -414,7 +417,7 @@ def obtenerDatosBase():
     EstacionesBaseDatosDict = estacionDictInv
     # for ruta in trayectosList:
     # print trayectosList # Igual que la del modelo
-    print secuenciasA # Igual que la del modelo
+    # print secuenciasA # Igual que la del modelo
     # print estacionesDict
     # print np.array(secuenciasNP[:,0])
     # print np.array(matricesTiempo) # Igual que la del modelo
@@ -427,8 +430,7 @@ def obtenerDatosBase():
     # except:
     #    print "Error: No se pudo obtener los datos"
 
-obtenerDatosBase()
-print EstacionesBaseDatosDict
+# print EstacionesBaseDatosDict
 
 def numeroEstaciones():
     "Devuelve la cantidad de estaciones totales, para generar rango de matrices"
@@ -439,7 +441,7 @@ def numeroEstaciones():
             if maximo > NUMEROESTACIONES:
                 NUMEROESTACIONES = maximo
     return NUMEROESTACIONES
-numeroEstaciones()
+# numeroEstaciones()
 
 def tiempoEntreEstaciones():
     "Crea las matrices de Tiempo Entre Estaciones, solo se toman en cuenta las directas"
@@ -478,18 +480,18 @@ def mejoresSecuencias():
     '''
     _mejoresSecuencias = []
     _tiempoEntreEstaciones = tiempoEntreEstaciones()
-    for i in range(NUMEROESTACIONES):
+    for ind in range(NUMEROESTACIONES):
         fila = []
-        for j in range(NUMEROESTACIONES):
+        for indj in range(NUMEROESTACIONES):
             minimo = 200
             _mejorSecuencia = []
             for ruta in _tiempoEntreEstaciones:
-                tiempo = ruta[i,j]
+                tiempo = ruta[ind,indj]
                 if tiempo != 0 and tiempo <= minimo:
                     minimo = tiempo
-                    _mejorSecuencia = [i+1, j+1]
-            if j == i:
-                _mejorSecuencia = [i+1, j+1]
+                    _mejorSecuencia = [ind+1, indj+1]
+            if indj == ind:
+                _mejorSecuencia = [ind+1, indj+1]
             fila.append(_mejorSecuencia)
         _mejoresSecuencias.append(fila)
     for i, fila in enumerate(_mejoresSecuencias):
@@ -522,7 +524,8 @@ def mejoresSecuencias():
     _mejoresSecuencias[7][3]   = [8,3,4]
     _mejoresSecuencias[7][5]   = [8,3,6]
 
-    return np.array(_mejoresSecuencias)
+    # return np.array(_mejoresSecuencias)
+    return _mejoresSecuencias
 # print mejoresSecuencias()
 
 def transbordos():
@@ -533,7 +536,7 @@ def transbordos():
     global TRANSBORDO
     if TRANSBORDO == None: # Si no se han asignado transbordos
         # Se toman las mejores secuencias (utilizando rutas más cortas)
-        _mejoresSecuencias = mejoresSecuencias()
+        _mejoresSecuenciasT = mejoresSecuencias()
         _mejoresSecuenciasN = []
         for ir ,ruta in enumerate(_SECUENCIAS):
             r = []
@@ -547,8 +550,8 @@ def transbordos():
                 # print sec
                 for i, act in enumerate(sec):
                     for j in range(NUMEROESTACIONES):
-                        if len(_mejoresSecuencias[act,j])>=3 and _mejoresSecuencias[act,j][1] != 13:
-                            estaTrans = _mejoresSecuencias[act,j][1] # Estación de transbordo
+                        if len(_mejoresSecuenciasT[act][j])>=3 and _mejoresSecuenciasT[act][j][1] != 13:
+                            estaTrans = _mejoresSecuenciasT[act][j][1] # Estación de transbordo
                             # Si la estación de transbordo está más adelante en la matriz trayecto
                             # Se le asigna esta estación de transbordo.
                             if np.in1d(estaTrans, sec[i:]+1):
@@ -570,7 +573,7 @@ def transbordos():
     return TRANSBORDO
 
 # Tansbordo = transbordos()
-print transbordos()[1,1]
+# print transbordos()[2,1]
 # Transbordos estación en la ruta 3 trayecto ida, 4,6.8
 
 # def transbordoE(r):
@@ -1293,7 +1296,10 @@ def jsonFile():
                     for j, hora in enumerate(horas[idLinea]):
                         # print hora
                         estacionesDict = {}
-                        estacionesDict["idestacion"] = EstacionesBaseDatosDict[hora['secuencia']+1]
+                        if EstacionesBaseDatosDict:
+                            estacionesDict["idestacion"] = EstacionesBaseDatosDict[hora['secuencia']+1]
+                        else:
+                            estacionesDict["idestacion"] = hora['secuencia']+1
                         estacionesDict["horallegada"] = convertHour(hora = hora['horaLlegada'])
                         estacionesDict["horasalida"] = convertHour(hora = hora["horaSalida"])
                         estacionesDict["estacioninicial"] = 'true' if hora["estacionInicio"] else 'false'
@@ -1305,7 +1311,8 @@ def jsonFile():
                 serviciosEst.append(serviciosDict)
             estructura[tray]['servicios']= serviciosEst
             tray+=1
-    out_file = open("horariosOpt.json","w")
+    nombreArchivo = inspect.getfile(inspect.currentframe()) 
+    out_file = open("archivos/horariosOpt-"+nombreArchivo+"-.json","w")
     json.dump(estructura,out_file, indent=4, sort_keys=True, separators=(',', ': '))
     out_file.close()
 
@@ -1361,7 +1368,7 @@ def objFunction(frecuencias):
 
     for i, x in enumerate(frecuencias):
         # FrecuenciasOptimas[i] = ValoresFrecuencias[x]
-        if x < ValoresFrecuencias[-1]-0.0009:
+        if x < ValoresFrecuencias[-1]:
             penalty = 100
             # print ValoresFrecuencias[-1]
         FrecuenciasOptimas[i] = x
@@ -1494,13 +1501,14 @@ def optNelderMead():
     print "\nObjetivo Pasajeros: " + str(objetivos[0])+" Objetivo Operador: " + str(objetivos[1])
 
 #Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
-# optNelderMead()
-# FrecuenciasOptimas = list(optGAPyevolve())
-# print objFunction(FrecuenciasOptimas)
-# print FrecuenciasOptimas
-print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO
-print "Demanda: ", NUMERODEMANDA, " Costos: ", COSTOS
 
-# Se ejecuta la función que genera el archivo "horariosGA.json"
-# jsonFile()
+if __name__ == "__main__":
+    # obtenerDatosBase()
+    numeroEstaciones()
+    optNelderMead()
+    print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO
+    print "Demanda: ", NUMERODEMANDA, " Costos: ", COSTOS
+
+    # Se ejecuta la función que genera el archivo "horariosGA.json"
+    jsonFile()
 

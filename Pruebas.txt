@@ -1,0 +1,178 @@
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [462453.60(516993.56)/344540.58(315643.35)/385378.00(385378.00)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [381050.90(414215.92)/313844.72(311913.73)/317542.41(317542.41)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [380624.63(400384.56)/312980.76(311670.51)/317187.20(317187.20)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [381348.92(400384.56)/313081.06(311670.51)/317790.76(317790.76)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [382378.67(418177.26)/314180.51(311670.51)/318648.90(318648.90)]
+        Total time elapsed: 178.935 seconds.
+
+        Funcion objetivo Genetico: 311670.51 , Frecuencias:  [ 0.087   0.0645  0.0645]
+        Objetivo Pasajeros: 203676.116079 Objetivo Operador: 107994.389902
+        Optimization terminated successfully.
+                 Current function value: 311510.996189
+                 Iterations: 71
+                 Function evaluations: 139
+
+        Funcion Objetivo Nelder-Mead: 311511.00 , Frecuencias :  [ 0.08808981  0.06361614  0.06386367]
+        Objetivo Pasajeros: 203726.189054 Objetivo Operador: 107784.807135
+
+        Factor Operador:  100  Factor Pasajero:  100
+        Demanda:  2  Costos:  [5000, 5000, 5000]
+
+
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [598442.74(577343.51)/427817.96(442812.92)/498702.28(498702.28)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [533477.87(512060.99)/436684.13(438582.41)/444564.89(444564.89)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [534994.84(516412.77)/435989.55(438040.09)/445829.03(445829.03)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [534885.72(520516.03)/436560.80(438040.09)/445738.10(445738.10)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [531434.11(491777.52)/434131.11(438040.09)/442861.76(442861.76)]
+        Total time elapsed: 174.006 seconds.
+
+        Funcion objetivo Genetico: 438040.09 , Frecuencias:  [ 0.1429  0.0741  0.1538]
+        Objetivo Pasajeros: 252651.405827 Objetivo Operador: 185388.685389
+        Optimization terminated successfully.
+                 Current function value: 437317.023420
+                 Iterations: 196
+                 Function evaluations: 373
+
+        Funcion Objetivo Nelder-Mead: 437317.02 , Frecuencias :  [ 0.14206872  0.07306066  0.15161794]
+        Objetivo Pasajeros: 253943.364513 Objetivo Operador: 183373.658907
+
+        Factor Operador:  100  Factor Pasajero:  100
+        Demanda:  6  Costos:  [5000, 5000, 5000]
+
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [737793.79(714768.74)/540670.73(554556.55)/614828.16(614828.16)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [658803.19(616800.47)/538891.13(542759.16)/549002.66(549002.66)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [662214.05(638413.56)/540261.16(542759.16)/551845.04(551845.04)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [667414.42(653071.68)/540772.72(542759.16)/556178.68(556178.68)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [665984.91(648128.00)/540414.76(542759.16)/554987.42(554987.42)]
+        Total time elapsed: 120.641 seconds.
+
+        Funcion objetivo Genetico: 542759.16 , Frecuencias:  [ 0.1538  0.1111  0.0909]
+        Objetivo Pasajeros: 407703.922372 Objetivo Operador: 177933.177933
+
+        Funcion Objetivo Nelder-Mead: 542321.03 , Frecuencias :  [ 0.15799337  0.10562565  0.16914496]
+        [ 0.15799337  0.10562565  0.16914496]
+        0.157993374118 0.105625648783 0.169144962448 
+        Objetivo Pasajeros: 325939.036303 Objetivo Operador: 216381.992675
+
+        Factor Operador:  100  Factor Pasajero:  100
+        Demanda:  12  Costos:  [5000, 5000, 5000]
+
+
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [1242969.77(1239085.30)/837837.43(841549.56)/1035808.14(1035808.14)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [1022110.81(995775.94)/829253.28(832732.46)/851759.01(851759.01)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [996617.06(962764.57)/811009.19(814984.40)/830514.22(830514.22)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [996369.57(1082412.90)/819293.44(813586.35)/830307.98(830307.98)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [1005252.64(1071776.72)/820442.70(813586.35)/837710.53(837710.53)]
+        Total time elapsed: 127.438 seconds.
+
+        Funcion objetivo Genetico: 813586.35 , Frecuencias:  [ 0.2222  0.1667  0.2   ]
+        Objetivo Pasajeros: 519141.905276 Objetivo Operador: 294444.444444
+
+        Funcion Objetivo Nelder-Mead: 811952.12 , Frecuencias :  [ 0.22345195  0.16165252  0.19188472]
+        [ 0.22345195  0.16165252  0.19188472]
+        0.22345194815 0.161652522923 0.191884721002 
+        Objetivo Pasajeros: 523457.522023 Objetivo Operador: 288494.596037
+
+        Factor Operador:  100  Factor Pasajero:  200
+        Demanda:  12  Costos:  [5000, 5000, 5000]
+
+
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [968107.44(1015443.86)/700423.06(669227.57)/806756.20(806756.20)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [819594.63(873332.33)/668290.66(662505.80)/682995.53(682995.53)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [823272.63(882522.92)/669609.57(662505.80)/686060.52(686060.52)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [811939.66(882522.92)/667342.81(662505.80)/676616.39(676616.39)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [819424.38(881626.97)/665278.01(657272.99)/682853.65(682853.65)]
+        Total time elapsed: 127.675 seconds.
+
+        Funcion objetivo Genetico: 657272.99 , Frecuencias:  [ 0.1818  0.087   0.2222]
+        Objetivo Pasajeros: 411774.529489 Objetivo Operador: 245498.46289
+
+        Funcion Objetivo Nelder-Mead: 655821.25 , Frecuencias :  0.171827969842 0.09907457537 0.214830606051 
+        Objetivo Pasajeros: 412954.673752 Objetivo Operador: 242866.575631
+
+        Factor Operador:  100  Factor Pasajero:  200
+        Demanda:  6  Costos:  [5000, 5000, 5000]
+
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [659966.72(650618.11)/498509.91(502883.78)/549972.27(549972.27)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [609781.82(581861.80)/500766.31(502795.19)/508151.52(508151.52)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [606329.20(535955.01)/497108.62(502795.19)/505274.33(505274.33)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [612194.42(598049.01)/501579.53(502769.37)/510162.02(510162.02)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [608893.34(561258.41)/498663.14(502769.37)/507411.12(507411.12)]
+        Total time elapsed: 129.197 seconds.
+
+        Funcion objetivo Genetico: 502769.37 , Frecuencias:  [ 0.125   0.087   0.0714]
+        Objetivo Pasajeros: 361076.825899 Objetivo Operador: 141692.546584
+
+        Funcion Objetivo Nelder-Mead: 502761.47 , Frecuencias :  0.125158875657 0.0883186964592 0.0708428613092 
+        Objetivo Pasajeros: 360601.24989 Objetivo Operador: 142160.216713
+
+        Factor Operador:  100  Factor Pasajero:  200
+        Demanda:  2  Costos:  [5000, 5000, 5000]
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [670999.27(813912.80)/497771.49(419314.34)/559166.06(559166.06)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [507286.70(629492.25)/418427.46(412195.67)/422738.92(422738.92)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [519636.40(662688.03)/425173.39(412195.67)/433030.33(433030.33)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [517221.47(645398.72)/423449.38(412195.67)/431017.89(431017.89)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [511600.74(671369.19)/421414.14(412195.67)/426333.95(426333.95)]
+        Total time elapsed: 129.017 seconds.
+
+        Funcion objetivo Genetico: 412195.67 , Frecuencias:  [ 0.0645  0.0645  0.0645]
+        Objetivo Pasajeros: 218647.283333 Objetivo Operador: 193548.387097
+
+        Funcion Objetivo Nelder-Mead: 411085.11 , Frecuencias :  0.0638504784817 0.0636161290327 0.0636416488035 
+        Objetivo Pasajeros: 219976.852384 Objetivo Operador: 191108.256318
+
+        Factor Operador:  200  Factor Pasajero:  100
+        Demanda:  2  Costos:  [5000, 5000, 5000]
+
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [825179.56(919859.38)/636819.74(601826.89)/687649.63(687649.63)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [722871.18(760286.02)/597010.89(595339.57)/602392.65(602392.65)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [725393.60(749980.95)/596121.28(594418.37)/604494.67(604494.67)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [719841.38(689665.24)/592587.10(594418.37)/599867.82(599867.82)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [722304.12(677807.18)/590019.68(594418.37)/601920.10(601920.10)]
+        Total time elapsed: 129.505 seconds.
+
+        Funcion objetivo Genetico: 594418.37 , Frecuencias:  [ 0.1176  0.0769  0.0909]
+        Objetivo Pasajeros: 308939.145712 Objetivo Operador: 285479.226656
+
+        Funcion Objetivo Nelder-Mead: 592509.41 , Frecuencias :  0.105556714056 0.0800714664912 0.0894260194915 
+        Objetivo Pasajeros: 317455.210453 Objetivo Operador: 275054.200039
+
+        Factor Operador:  200  Factor Pasajero:  100
+        Demanda:  6  Costos:  [5000, 5000, 5000]
+
+
+
+        Gen. 0 (0.00%): Max/Min/Avg Fitness(Raw) [980941.29(1002973.74)/749681.36(740548.50)/817451.07(817451.07)]
+        Gen. 5 (25.00%): Max/Min/Avg Fitness(Raw) [901344.81(901742.79)/737845.23(737810.06)/751120.67(751120.67)]
+        Gen. 10 (50.00%): Max/Min/Avg Fitness(Raw) [899328.17(853888.84)/732750.52(737810.06)/749440.14(749440.14)]
+        Gen. 15 (75.00%): Max/Min/Avg Fitness(Raw) [896254.39(890211.72)/737427.75(737810.06)/746878.66(746878.66)]
+        Gen. 20 (100.00%): Max/Min/Avg Fitness(Raw) [896190.16(879058.16)/736642.08(737810.06)/746825.14(746825.14)]
+        Total time elapsed: 139.067 seconds.
+
+        Funcion objetivo Genetico: 737810.06 , Frecuencias:  [ 0.1333  0.1176  0.0833]
+        Objetivo Pasajeros: 403496.338047 Objetivo Operador: 334313.72549
+
+        Funcion Objetivo Nelder-Mead: 735220.99 , Frecuencias :  0.121519445331 0.120341259691 0.0887628196068 
+        Objetivo Pasajeros: 404597.46496 Objetivo Operador: 330623.524628
+
+        Factor Operador:  200  Factor Pasajero:  100
+        Demanda:  12  Costos:  [5000, 5000, 5000]
+
+
+
+
+

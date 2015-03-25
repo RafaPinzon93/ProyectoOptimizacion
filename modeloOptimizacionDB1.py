@@ -34,22 +34,20 @@ NUMERORUTAS = 3 # Se sacará de base de datos
 # frecuenciaOptima1 = 0.152581658700488
 # frecuenciaOptima1 = 0.086957
 # frecuenciaOptima1 = 0.14237#407194874246
-# frecuenciaOptima1 = 0.15799337
-frecuenciaOptima1 = 0.087
+frecuenciaOptima1 = 0.15799337
+
 # frecuenciaOptima2 = 0.15703
 # frecuenciaOptima2 = 0.0842212498536333
 # frecuenciaOptima2 = 0.0829857776183043
 # frecuenciaOptima2 = 0.064516
 # frecuenciaOptima2 = 0.07289#5650882390362
-# frecuenciaOptima2 = 0.10562565
-frecuenciaOptima2 = 0.0645
+frecuenciaOptima2 = 0.10562565
 # frecuenciaOptima3 = 0.19119
 # frecuenciaOptima3 = 0.189052798041706
 # frecuenciaOptima3 = 0.135635424653224
 # frecuenciaOptima3 = 0.064516
 # frecuenciaOptima3 = 0.15171#605529579485
-# frecuenciaOptima3 = 0.16914496
-frecuenciaOptima3 = 0.0645
+frecuenciaOptima3 = 0.16914496
 FrecuenciasOptimas = [frecuenciaOptima1, frecuenciaOptima2, frecuenciaOptima3]
 
 # Se sacará de base de datos
@@ -230,8 +228,6 @@ _TRANSBORDOS = [[_Transbordo1, _Transbordo4],
 TRANSBORDO = None # Variable para hacer dp cuando se calculan los transbordos.
 NUMEROESTACIONES = 0
 
-EstacionesBaseDatosDict = {}
-
 # Se sacará de base de datos
 # _DEMANDA_MEDIA = np.array([[0 ,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
 #                            [2,0 ,2,2,2,2,2,2,2,2,2,2,2,2,2]
@@ -269,7 +265,6 @@ _PROPORCIONES = np.array([[0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.
 
 
 def obtenerDatosBase():
-    global EstacionesBaseDatosDict
     db_host = 'admin.megaruta.co'
     usuario = 'rutamega_eqopt'
     clave = 'eedd8ae977b7f997ce92aa1b0'
@@ -385,11 +380,7 @@ def obtenerDatosBase():
             secuenciaList = []
             for i, elemento in enumerate(nuevaSecuencia):
                 secuenciaList.append(estacionesDict[elemento[1]])
-
-            if trayecto[2] == 'Ida':
-                secuenciaList2.insert(0, secuenciaList)
-            else:
-                secuenciaList2.append(secuenciaList)
+            secuenciaList2.append(secuenciaList)
 
         secuenciasA.append(secuenciaList2)
         trayectosList.append(trayectos) # Se añaden los trayectos de la ruta
@@ -407,19 +398,15 @@ def obtenerDatosBase():
                 arrayBoolean[estacion-1:] = matricesTransbordoNP[iR][estacion-1,estacion-1:]>0
                 topologiaM[estacion-1, arrayBoolean] = 1
                 # print topologiaM[estacion-1, matricesTransbordoNP[iR][estacion-1,estacion-1:]>0]
-            # print topologiaM
-    estacionDictInv= {}
-    for estacionBase, estacionMod in estacionesDict.iteritems():
-        estacionDictInv[estacionMod] = estacionBase
-    EstacionesBaseDatosDict = estacionDictInv
+            print topologiaM
     # for ruta in trayectosList:
     # print trayectosList # Igual que la del modelo
-    print secuenciasA # Igual que la del modelo
+    # print secuenciasA # Igual que la del modelo
     # print estacionesDict
     # print np.array(secuenciasNP[:,0])
     # print np.array(matricesTiempo) # Igual que la del modelo
     # print matricesTransbordoNP[0][4,]
-    # print np.array(rutas)
+    print np.array(rutas)
     # print np.array(idTrayectos)
     # print np.array(secuencias)
     # print np.array(estaciones)
@@ -428,7 +415,6 @@ def obtenerDatosBase():
     #    print "Error: No se pudo obtener los datos"
 
 obtenerDatosBase()
-print EstacionesBaseDatosDict
 
 def numeroEstaciones():
     "Devuelve la cantidad de estaciones totales, para generar rango de matrices"
@@ -570,7 +556,7 @@ def transbordos():
     return TRANSBORDO
 
 # Tansbordo = transbordos()
-print transbordos()[1,1]
+# print transbordos()[1,0]
 # Transbordos estación en la ruta 3 trayecto ida, 4,6.8
 
 # def transbordoE(r):
@@ -1179,8 +1165,8 @@ def serviciosRuta(r, horas = None):
     tray = _TRAYECTOS[r]
     tIda = None
     tVuelta = None
-    for ind ,hora in enumerate(horas):
-        horasDict.append((ind , hora['horaInicial'], hora['idTrayecto']))
+    for i,hora in enumerate(horas):
+        horasDict.append((i, hora['horaInicial'], hora['idTrayecto']))
     dtype = [('id', int),('horaLlegada', float), ('idTrayecto', int)]
     horasDictArray = np.array(horasDict, dtype)
     horasDictArray.sort(order='horaLlegada')
@@ -1188,7 +1174,7 @@ def serviciosRuta(r, horas = None):
     servicios = []
     pilaSalida.append((0,horas[horasDictArray[0][0]]['horaFinal'], horasDictArray[0][2]))
     servicios.append((0, horasDictArray[0][0], horasDictArray[0][1], horasDictArray[0][2]))
-    serv  = 1
+    i = 1
     flag = True
     for x in horasDictArray[1:]:
         '''
@@ -1208,8 +1194,8 @@ def serviciosRuta(r, horas = None):
                 else:
                     tVuelta = key
             serviciosAdicionales = serviciosV[serviciosV[:,-1]==tVuelta]
-            for ind in reversed(serviciosAdicionales):
-                servicios.insert(0, (ind[0], -1.0, 0.0, tIda))
+            for i in reversed(serviciosAdicionales):
+                servicios.insert(0, (i[0], -1.0, 0.0, tIda))
             servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))
             del pilaSalida[pilaTrayecto[0]['servicio']]
             # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))
@@ -1221,9 +1207,9 @@ def serviciosRuta(r, horas = None):
             # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))
             pilaSalida.insert(pilaTrayecto[0]['servicio'],(pilaTrayecto[0]['servicio'], horas[x[0]]['horaFinal'],x[2]))
         else:
-            pilaSalida.append((serv , horas[x[0]]['horaFinal'] , x[2]))
-            servicios.append((serv , x[0], x[1], x[2]))
-            serv +=1
+            pilaSalida.append((i,horas[x[0]]['horaFinal'], x[2]))
+            servicios.append((i, x[0], x[1], x[2]))
+            i+=1
     numeroServA = len(serviciosAdicionales)
     serviciosIda = np.array(servicios)
     serviciosIda = serviciosIda[serviciosIda[:,-1]==tIda]
@@ -1293,7 +1279,7 @@ def jsonFile():
                     for j, hora in enumerate(horas[idLinea]):
                         # print hora
                         estacionesDict = {}
-                        estacionesDict["idestacion"] = EstacionesBaseDatosDict[hora['secuencia']+1]
+                        estacionesDict["idestacion"] = hora['secuencia']+1
                         estacionesDict["horallegada"] = convertHour(hora = hora['horaLlegada'])
                         estacionesDict["horasalida"] = convertHour(hora = hora["horaSalida"])
                         estacionesDict["estacioninicial"] = 'true' if hora["estacionInicio"] else 'false'
@@ -1462,9 +1448,9 @@ def optGAPyevolve():
         frecuencias[i] = ValoresFrecuencias[g]
 
     print "\nFuncion objetivo Genetico: %.2f"% (best.score,), \
-    ", Frecuencias: ", np.around(frecuencias, decimals = 4)
+    ", Frecuencias: ", np.around(FrecuenciasOptimas, decimals = 4)
 
-    objetivos = objFunctionList(frecuencias)
+    objetivos = objFunctionList(FrecuenciasOptimas)
     print "Objetivo Pasajeros: " + str(objetivos[0])+" Objetivo Operador: " + str(objetivos[1])
     return frecuencias
 
@@ -1483,19 +1469,14 @@ def optNelderMead():
     print "\nFuncion Objetivo Nelder-Mead: %.2f"%(resultado.fun),
     print ', Frecuencias : ', #np.around(resultado.x, decimals= 4)
     FrecuenciasOptimas = resultado.x
-    # frecuencias = []
-    for i, x in enumerate(resultado.x):
-        # FrecuenciasOptimas[i] = x
-        # frecuencias.append(x)
-        print x,
-    # FrecuenciasOptimas = frecuencias
-
+    for i in resultado.x:
+        print i,
     objetivos = objFunctionList(FrecuenciasOptimas)
     print "\nObjetivo Pasajeros: " + str(objetivos[0])+" Objetivo Operador: " + str(objetivos[1])
 
 #Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
 # optNelderMead()
-# FrecuenciasOptimas = list(optGAPyevolve())
+
 # print objFunction(FrecuenciasOptimas)
 # print FrecuenciasOptimas
 print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO

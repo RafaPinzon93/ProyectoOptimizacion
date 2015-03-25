@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import numpy as np
-import MySQLdb
+# import MySQLdb
 import json
 from scipy import optimize
 from pyevolve import G1DList, GSimpleGA, Selectors
@@ -18,13 +18,15 @@ oldSettings = np.seterr(divide='ignore', invalid='ignore')
 np.seterr(**oldSettings)
 
 FACTORPASAJERO = 100  # Factor de peso del pasajero
-FACTOROPERADEOR = 100  # Factor de peso del operador
+FACTOROPERADEOR = 200  # Factor de peso del operador
 CAPACIDADBUSES  = 150 # Capacidad total de los buses
 TIEMPOABORDAR = 1/60.0
 TIEMPOESPERA2BUS = 1
-NUMERODEMANDA = 2
+NUMERODEMANDA = 12
+_tiempoViajePromedio = [[[[1,2],[3,4]]]]
 
 HORAINICIO = 5
+
 HORAFIN = 23
 
 NUMERORUTAS = 3 # Se sacará de base de datos
@@ -34,70 +36,68 @@ NUMERORUTAS = 3 # Se sacará de base de datos
 # frecuenciaOptima1 = 0.152581658700488
 # frecuenciaOptima1 = 0.086957
 # frecuenciaOptima1 = 0.14237#407194874246
-# frecuenciaOptima1 = 0.15799337
-frecuenciaOptima1 = 0.087
+frecuenciaOptima1 = 0.15799337
+
 # frecuenciaOptima2 = 0.15703
 # frecuenciaOptima2 = 0.0842212498536333
 # frecuenciaOptima2 = 0.0829857776183043
 # frecuenciaOptima2 = 0.064516
 # frecuenciaOptima2 = 0.07289#5650882390362
-# frecuenciaOptima2 = 0.10562565
-frecuenciaOptima2 = 0.0645
+frecuenciaOptima2 = 0.10562565
 # frecuenciaOptima3 = 0.19119
 # frecuenciaOptima3 = 0.189052798041706
 # frecuenciaOptima3 = 0.135635424653224
 # frecuenciaOptima3 = 0.064516
 # frecuenciaOptima3 = 0.15171#605529579485
-# frecuenciaOptima3 = 0.16914496
-frecuenciaOptima3 = 0.0645
+frecuenciaOptima3 = 0.16914496
 FrecuenciasOptimas = [frecuenciaOptima1, frecuenciaOptima2, frecuenciaOptima3]
 
 # Se sacará de base de datos
-_TIEMPO_ENTRE_ESTACIONES1 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14,16],
-                                      [ 2, 0, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12,14],
-                                      [ 4, 2, 0, 2, 2, 4, 4, 6, 6, 8,10,12, 8,10,12],
-                                      [18,14,14, 0,12, 2,10, 4, 8, 6, 8,10, 6, 8,10],
-                                      [ 6, 4, 2, 4, 0, 6, 2, 8, 4, 6, 8,10,10,10,12],
-                                      [14,12,10,12,10, 0, 8, 2, 6, 4, 6, 8, 4, 6, 8],
-                                      [ 8, 6, 4, 6, 2, 8, 0,10, 2, 4, 6, 8,12, 8,10],
-                                      [12,10, 8,10, 8,12, 6, 0, 4, 2, 4, 6, 2, 4, 6],
-                                      [10, 8, 6, 8, 4,10, 2,12, 0, 2, 4, 6,14, 6, 8],
-                                      [12,10, 8,10, 6,12, 4,14, 2, 0, 2, 4,16, 4, 6],
-                                      [14,12,10,12, 8,14, 6,16, 4, 2, 0, 2,18, 2, 4],
-                                      [16,14,12,14,10,16, 8,18, 6, 4, 2, 0,20, 4, 6],
-                                      [10, 8, 6, 8, 8,10,10, 2,12,14,16,18, 0, 2, 4],
-                                      [ 8, 6, 4, 6, 6, 8, 8,10,10,12,14,16,12, 0, 2],
-                                      [ 6, 4, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12, 0]])
-_TIEMPO_ENTRE_ESTACIONES2 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14,16],
-                                      [ 2, 0, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12,14],
-                                      [ 4, 2, 0, 2, 2, 4, 4, 6, 6, 8,10,12, 8,10,12],
-                                      [18,16,12, 0,12, 2,10, 4, 8, 6, 8,10, 6, 8,10],
-                                      [ 6, 4, 2, 4, 0, 6, 2, 8, 4, 6, 8,10,10,12,14],
-                                      [16,14,12,14,10, 0, 8, 2, 6, 4, 6, 8, 4, 6, 8],
-                                      [ 8, 6, 4, 6, 2, 8, 0,10, 2, 4, 6, 8,12, 8,10],
-                                      [14,12,10,12, 8,14, 6, 0, 4, 2, 4, 6, 2, 4, 6],
-                                      [10, 8, 6, 8, 4,10, 2,12, 0, 2, 4, 6,14, 6, 8],
-                                      [12,10, 8,10, 6,12, 4,14, 2, 0, 2, 4,16, 4, 6],
-                                      [10, 8, 6, 8, 8,10, 6,12, 4, 2, 0, 2,14, 2, 4],
-                                      [12,10, 8,10,10,12, 8,14, 6, 4, 2, 0,16, 4, 6],
-                                      [10, 8, 6, 8, 8,10,10, 2,12,14,16,18, 0, 2, 4],
-                                      [ 8, 6, 4, 6, 6, 8, 8,10,10,12,14,16,12, 0, 2],
-                                      [ 6, 4, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12, 0]])
-_TIEMPO_ENTRE_ESTACIONES3 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14,16],
-                                      [ 2, 0, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12,14],
-                                      [ 4, 2, 0, 2, 2, 4, 4, 6, 6, 8,10,12, 8,10,12],
-                                      [16,14,12, 0,14, 2,16, 4,18, 6, 8,10, 6, 8,10],
-                                      [ 6, 4, 2, 4, 0, 6, 2, 8, 4, 6, 8,10,10,12,14],
-                                      [14,12,10,12,12, 0,14, 2,16, 4, 6, 8, 4, 6, 8],
-                                      [ 8, 6, 4, 6, 2, 8, 0,10, 2, 4, 6, 8,12, 8,10],
-                                      [12,10, 8,10,10,12,12, 0,14, 2, 4, 6, 2, 4, 6],
-                                      [10, 8, 6, 8, 4,10, 2,12, 0, 2, 4, 6,14, 6, 8],
-                                      [12,10, 8,10, 6,12, 4,14, 2, 0, 2, 4,16, 4, 6],
-                                      [10, 8, 6, 8, 8,10, 6,12, 4, 2, 0, 2,14, 2, 4],
-                                      [12,10, 8,10,10,12, 8,14, 6, 4, 2, 0,16, 4, 6],
-                                      [10, 8, 6, 8, 8,10,10,12,12,14,16,18, 0, 2, 4],
-                                      [ 8, 6, 4, 6, 6, 8, 8,10,10,12,14,16,12, 0, 2],
-                                      [ 6, 4, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12, 0]])
+_TIEMPO_ENTRE_ESTACIONES1 = np.array([[0,2,4,6,6,8,8,10,10,12,14,16,12,14,16],
+                                      [ 2,0,2,4,4,6,6,8,8,10,12,14,10,12,14],
+                                      [ 4,2,0,2,2,4,4,6,6,8,10,12,8,10,12],
+                                      [ 18,14,14,0,12,2,10,4,8,6,8,10,6,8,10],
+                                      [6,4,2,4,0,6,2,8,4,6,8,10,10,10,12],
+                                      [14,12,10,12,10,0,8,2,6,4,6,8,4,6,8],
+                                      [8,6,4,6,2,8,0,10,2,4,6,8,12,8,10],
+                                      [12,10,8,10,8,12,6,0,4,2,4,6,2,4,6],
+                                      [10,8,6,8,4,10,2,12,0,2,4,6,14,6,8],
+                                      [12,10,8,10,6,12,4,14,2,0,2,4,16,4,6],
+                                      [14,12,10,12,8,14,6,16,4,2,0,2,18,2,4],
+                                      [16,14,12,14,10,16,8,18,6,4,2,0,20,4,6],
+                                      [10,8,6,8,8,10,10,2,12,14,16,18,0,2,4],
+                                      [8,6,4,6,6,8,8,10,10,12,14,16,12,0,2],
+                                      [6,4,2,4,4,6,6,8,8,10,12,14,10,12,0]])
+_TIEMPO_ENTRE_ESTACIONES2 = np.array([[0,2,4,6,6,8,8,10,10,12,14,16,12,14,16],
+                                      [2,0,2,4,4,6,6,8,8,10,12,14,10,12,14],
+                                      [4,2,0,2,2,4,4,6,6,8,10,12,8,10,12],
+                                      [18,16,12,0,12,2,10,4,8,6,8,10,6,8,10],
+                                      [6,4,2,4,0,6,2,8,4,6,8,10,10,12,14],
+                                      [16,14,12,14,10,0,8,2,6,4,6,8,4,6,8],
+                                      [8,6,4,6,2,8,0,10,2,4,6,8,12,8,10],
+                                      [14,12,10,12,8,14,6,0,4,2,4,6,2,4,6],
+                                      [10,8,6,8,4,10,2,12,0,2,4,6,14,6,8],
+                                      [12,10,8,10,6,12,4,14,2,0,2,4,16,4,6],
+                                      [10,8,6,8,8,10,6,12,4,2,0,2,14,2,4],
+                                      [12,10,8,10,10,12,8,14,6,4,2,0,16,4,6],
+                                      [10,8,6,8,8,10,10,2,12,14,16,18,0,2,4],
+                                      [8,6,4,6,6,8,8,10,10,12,14,16,12,0,2],
+                                      [6,4,2,4,4,6,6,8,8,10,12,14,10,12,0]])
+_TIEMPO_ENTRE_ESTACIONES3 = np.array([[0,2,4,6,6,8,8,10,10,12,14,16,12,14,16],
+                                      [2,0,2,4,4,6,6,8,8,10,12,14,10,12,14],
+                                      [4,2,0,2,2,4,4,6,6,8,10,12,8,10,12],
+                                      [16,14,12,0,14,2,16,4,18,6,8,10,6,8,10],
+                                      [6,4,2,4,0,6,2,8,4,6,8,10,10,12,14],
+                                      [14,12,10,12,12,0,14,2,16,4,6,8,4,6,8],
+                                      [8,6,4,6,2,8,0,10,2,4,6,8,12,8,10],
+                                      [12,10,8,10,10,12,6,0,4,2,4,6,2,4,6],
+                                      [10,8,6,8,4,10,2,12,0,2,4,6,14,6,8],
+                                      [12,10,8,10,6,12,4,14,2,0,2,4,16,4,6],
+                                      [10,8,6,8,8,10,6,12,4,2,0,2,14,2,4],
+                                      [12,10,8,10,10,12,8,14,6,4,2,0,16,4,6],
+                                      [10,8,6,8,8,10,10,2,12,14,16,18,0,2,4],
+                                      [8,6,4,6,6,8,8,10,10,12,14,16,12,0,2],
+                                      [6,4,2,4,4,6,6,8,8,10,12,14,10,12,0]])
 
 _TIEMPO_ENTRE_ESTACIONES = [_TIEMPO_ENTRE_ESTACIONES1, _TIEMPO_ENTRE_ESTACIONES2, _TIEMPO_ENTRE_ESTACIONES3]
 
@@ -198,8 +198,8 @@ _TOPOLOGIA = [[_TOPOLOGIA1, _TOPOLOGIA4],
               [_TOPOLOGIA2, _TOPOLOGIA5],
               [_TOPOLOGIA3, _TOPOLOGIA6]]
 
-# Se obtiene de base de datos
-_TRAYECTOS = [{1:'Ida',2:'Vuelta'},{3:'Ida',4:'Vuelta'},{5:'Ida',6:'Vuelta'}]
+
+_TRAYECTOS = [{1:'Ida',2:'Vuelta'},{3:'Ida',4:'Vuelta'},{5:'Ida',6:'Vuelta'}] # Se obtiene de base de datos
 
 
 # Se sacará de base de datos
@@ -227,10 +227,8 @@ _TRANSBORDOS = [[_Transbordo1, _Transbordo4],
                 [_Transbordo3, _Transbordo6],
                ]
 
-TRANSBORDO = None # Variable para hacer dp cuando se calculan los transbordos.
 NUMEROESTACIONES = 0
-
-EstacionesBaseDatosDict = {}
+TRANSBORDO = None
 
 # Se sacará de base de datos
 # _DEMANDA_MEDIA = np.array([[0 ,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
@@ -266,10 +264,10 @@ _PROPORCIONES = np.array([[0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.
                           [0.2,0.2,0.2,0.2,0.4,0.4,0.4,0.5,0.5,0.4,0.4,0.6,0.6,0.1,0]])
 
 # print _PROPORCIONES.sum(axis=0)
-
-
 def obtenerDatosBase():
-    global EstacionesBaseDatosDict
+    '''
+        Se sacan las tablas requeridas de la BD
+    '''
     db_host = 'admin.megaruta.co'
     usuario = 'rutamega_eqopt'
     clave = 'eedd8ae977b7f997ce92aa1b0'
@@ -280,21 +278,8 @@ def obtenerDatosBase():
     cursor.execute(query_quotes)
     sql = '''SELECT * FROM "estacion-matrices"'''
     sqlRutas = '''SELECT idruta FROM "estacion-matrices" group by idruta;''' #Se puede sacar de IdTrayectos
-    sqlEstaciones = ''' SELECT distinct estaciones  From(SELECT distinct idestacionorigen as estaciones
-                        FROM "estacion-matrices"
-                        union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones'''
-    sqlIdTrayectos = '''SELECT f.idtrayecto, b.idruta, f.sentidotrayecto FROM (SELECT idruta FROM "estacion-matrices" GROUP BY idruta)b
-                        LEFT JOIN trayecto f ON b.idruta = f.idruta;'''
-    # sqlSecuencias = '''SELECT te.idtrayecto, te.idestacion, te.ordentrayectoestacion FROM "trayecto-estacion" te, (SELECT f.idtrayecto idT FROM (SELECT idruta FROM "estacion-matrices" GROUP BY idruta)b LEFT JOIN trayecto f ON b.idruta = f.idruta)e WHERE e.idT = te.idtrayecto'''
-    sqlSecuencias = ''' SELECT te.idtrayecto, te.idestacion, te.ordentrayectoestacion
-                        FROM "trayecto-estacion" te,
-                        (SELECT distinct estaciones
-                        From(SELECT distinct idestacionorigen as estaciones FROM "estacion-matrices"
-                        union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones) em
-                        WHERE em.estaciones = te.idestacion and te.estadotrayectoestacion = 'Activo'
-                        ORDER BY te.idtrayecto, te.ordentrayectoestacion;
-                    '''
-    sqlFinTrayecto = '''SELECT idestacion, fintrayecto FROM estacion where fintrayecto = 1; '''
+    sqlEstaciones = '''SELECT distinct estaciones  From(SELECT distinct idestacionorigen as estaciones FROM "estacion-matrices" union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones'''
+    sqlIdTrayectos = '''SELECT f.idtrayecto, b.idruta, f.sentidotrayecto FROM (SELECT idruta FROM "estacion-matrices" GROUP BY idruta)b LEFT JOIN trayecto f ON b.idruta = f.idruta;'''
     # try:
     cursor.execute(sql)
     # Obtenemos todos los registros en una lista de listas
@@ -305,32 +290,19 @@ def obtenerDatosBase():
     estaciones = cursor.fetchall()
     cursor.execute(sqlIdTrayectos)
     idTrayectos = cursor.fetchall()
-    cursor.execute(sqlSecuencias)
-    secuencias = cursor.fetchall()
-    cursor.execute(sqlFinTrayecto)
-    finTrayecto = cursor.fetchall()
     numEstaciones = len(estaciones)
     numRutas = len(rutas)
     matricesTiempo = []
     matricesTransbordo = []
     matDemanda = np.zeros((numEstaciones, numEstaciones))
     matProporcion = np.zeros((numEstaciones, numEstaciones))
-    estacionesDict = {}
-
-    # for i, e in enumerate(estaciones):
-    #     estacionesDict[e] = i+1
-
     # print len(resultados)
     iR = 0
-    # flag = True
     for ruta in range(numRutas):
         matTiempo = np.zeros((numEstaciones, numEstaciones))
         matTransbordo = np.zeros((numEstaciones, numEstaciones))
         for j in range(numEstaciones):
-            # if j != 0:
-            #     flag = False
             for i in range(numEstaciones):
-
                 if i!=j:
                     # print numEstaciones*ruta + iR
                     registro = resultados[iR]
@@ -340,95 +312,29 @@ def obtenerDatosBase():
                         matDemanda[i,j] = registro[3]
                     if registro[8]:
                         matProporcion[i,j] = registro[8]
-                    estacionesDict[registro[1]]= i+1
                     iR +=1
-
             # jR +=1
-        # numE = len(estacionesDict)
-        estacionesArray = []
-        matTransbordoT = np.copy(matTransbordo)
-        for key, value in estacionesDict.iteritems():
-            estacionesArray.append([key, value])
-        #Cambiar a que trabaje con diccionario
-        for i in estacionesArray:
-            matTransbordoT[matTransbordo == i[0]] = i[1]
+
         matricesTiempo.append(matTiempo)
-        matricesTransbordo.append(matTransbordoT)
-    secuenciasNP = np.array(secuencias)
-    matrizSecuencias = []
-    secuenciasA = []
-    # for idT in idTrayectos:
-    #     nuevaSecuencia = secuenciasNP[secuenciasNP[:,0]==idT[0]]
-    #     #  Reconstruye la lista de secuencias con el [id, estacionBD, orden]
-    #     #  ej: [1, 38, 0] cambiando el id de las estaciones a el orden en la matriz
-    #     #  [id, estacionModulo, orden]
-    #     #  ej: [1, 1, 0]
-    #     # for i, elemento in enumerate(nuevaSecuencia):
-    #     #     elemento[1] = estacionesDict[elemento[1]]
-    #     #     nuevaSecuencia[i] =  elemento
-    #     secuenciaList = []
-    #     for i, elemento in enumerate(nuevaSecuencia):
-    #         secuenciaList.append(estacionesDict[elemento[1]])
-    #     secuenciasA.append(secuenciaList)
+        matricesTransbordo.append(matTransbordo)
+    # print np.array(matricesTiempo)
+    print np.array(matricesTransbordo)
 
-    idTrayectosNP = np.array(idTrayectos)
-    trayectosList = []
-    for i, ruta in enumerate(rutas):
-        trayectos = {}
-        secuenciaList2 = []
-        for trayecto in idTrayectosNP[idTrayectosNP[:,1].astype(int)  == ruta]:
-            # Se crea un diccionario solo con el id del trayecto y su valor
-            # ej: trayecto [1, 3, vuelta] :: [idtrayecto, idruta, sentido]
-            nuevaSecuencia = secuenciasNP[secuenciasNP[:,0]== int(trayecto[0])]
-            trayectos[int(trayecto[0])] = trayecto[2]
-
-            secuenciaList = []
-            for i, elemento in enumerate(nuevaSecuencia):
-                secuenciaList.append(estacionesDict[elemento[1]])
-
-            if trayecto[2] == 'Ida':
-                secuenciaList2.insert(0, secuenciaList)
-            else:
-                secuenciaList2.append(secuenciaList)
-
-        secuenciasA.append(secuenciaList2)
-        trayectosList.append(trayectos) # Se añaden los trayectos de la ruta
-
-    matrizTopologias = []
-    matricesTransbordoNP = np.array(matricesTransbordo)
-    for iR, ruta in enumerate(secuenciasA):
-        topologiaRuta = []
-        for sec in ruta:
-            topologiaM = np.zeros(shape=(numEstaciones, numEstaciones))
-            for i, estacion in enumerate(sec[:-1]):
-                newSec = [x-1 for x in sec]
-                topologiaM[estacion-1, newSec[i+1:]] = 1
-                arrayBoolean = np.zeros(shape=numEstaciones, dtype= bool)
-                arrayBoolean[estacion-1:] = matricesTransbordoNP[iR][estacion-1,estacion-1:]>0
-                topologiaM[estacion-1, arrayBoolean] = 1
-                # print topologiaM[estacion-1, matricesTransbordoNP[iR][estacion-1,estacion-1:]>0]
-            # print topologiaM
-    estacionDictInv= {}
-    for estacionBase, estacionMod in estacionesDict.iteritems():
-        estacionDictInv[estacionMod] = estacionBase
-    EstacionesBaseDatosDict = estacionDictInv
-    # for ruta in trayectosList:
-    # print trayectosList # Igual que la del modelo
-    print secuenciasA # Igual que la del modelo
-    # print estacionesDict
-    # print np.array(secuenciasNP[:,0])
-    # print np.array(matricesTiempo) # Igual que la del modelo
-    # print matricesTransbordoNP[0][4,]
     # print np.array(rutas)
     # print np.array(idTrayectos)
-    # print np.array(secuencias)
-    # print np.array(estaciones)
-
+    # for x in resultados[224:239]:
+    #     print x
     # except:
     #    print "Error: No se pudo obtener los datos"
 
-obtenerDatosBase()
-print EstacionesBaseDatosDict
+
+    # 'num_rows' needed to reshape the 1D NumPy array returend by 'fromiter'
+    # in other words, to restore original dimensions of the results set
+    # num_rows = int(cursor.rowcount)
+    # print num_rows
+
+
+# obtenerDatosBase()
 
 def numeroEstaciones():
     "Devuelve la cantidad de estaciones totales, para generar rango de matrices"
@@ -570,7 +476,7 @@ def transbordos():
     return TRANSBORDO
 
 # Tansbordo = transbordos()
-print transbordos()[1,1]
+# print transbordos()[1,0]
 # Transbordos estación en la ruta 3 trayecto ida, 4,6.8
 
 # def transbordoE(r):
@@ -1179,8 +1085,8 @@ def serviciosRuta(r, horas = None):
     tray = _TRAYECTOS[r]
     tIda = None
     tVuelta = None
-    for ind ,hora in enumerate(horas):
-        horasDict.append((ind , hora['horaInicial'], hora['idTrayecto']))
+    for i,hora in enumerate(horas):
+        horasDict.append((i, hora['horaInicial'], hora['idTrayecto']))
     dtype = [('id', int),('horaLlegada', float), ('idTrayecto', int)]
     horasDictArray = np.array(horasDict, dtype)
     horasDictArray.sort(order='horaLlegada')
@@ -1188,7 +1094,7 @@ def serviciosRuta(r, horas = None):
     servicios = []
     pilaSalida.append((0,horas[horasDictArray[0][0]]['horaFinal'], horasDictArray[0][2]))
     servicios.append((0, horasDictArray[0][0], horasDictArray[0][1], horasDictArray[0][2]))
-    serv  = 1
+    i = 1
     flag = True
     for x in horasDictArray[1:]:
         '''
@@ -1208,8 +1114,8 @@ def serviciosRuta(r, horas = None):
                 else:
                     tVuelta = key
             serviciosAdicionales = serviciosV[serviciosV[:,-1]==tVuelta]
-            for ind in reversed(serviciosAdicionales):
-                servicios.insert(0, (ind[0], -1.0, 0.0, tIda))
+            for i in reversed(serviciosAdicionales):
+                servicios.insert(0, (i[0], -1.0, 0.0, tIda))
             servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))
             del pilaSalida[pilaTrayecto[0]['servicio']]
             # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))
@@ -1221,9 +1127,9 @@ def serviciosRuta(r, horas = None):
             # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))
             pilaSalida.insert(pilaTrayecto[0]['servicio'],(pilaTrayecto[0]['servicio'], horas[x[0]]['horaFinal'],x[2]))
         else:
-            pilaSalida.append((serv , horas[x[0]]['horaFinal'] , x[2]))
-            servicios.append((serv , x[0], x[1], x[2]))
-            serv +=1
+            pilaSalida.append((i,horas[x[0]]['horaFinal'], x[2]))
+            servicios.append((i, x[0], x[1], x[2]))
+            i+=1
     numeroServA = len(serviciosAdicionales)
     serviciosIda = np.array(servicios)
     serviciosIda = serviciosIda[serviciosIda[:,-1]==tIda]
@@ -1293,7 +1199,7 @@ def jsonFile():
                     for j, hora in enumerate(horas[idLinea]):
                         # print hora
                         estacionesDict = {}
-                        estacionesDict["idestacion"] = EstacionesBaseDatosDict[hora['secuencia']+1]
+                        estacionesDict["idestacion"] = hora['secuencia']+1
                         estacionesDict["horallegada"] = convertHour(hora = hora['horaLlegada'])
                         estacionesDict["horasalida"] = convertHour(hora = hora["horaSalida"])
                         estacionesDict["estacioninicial"] = 'true' if hora["estacionInicio"] else 'false'
@@ -1462,9 +1368,9 @@ def optGAPyevolve():
         frecuencias[i] = ValoresFrecuencias[g]
 
     print "\nFuncion objetivo Genetico: %.2f"% (best.score,), \
-    ", Frecuencias: ", np.around(frecuencias, decimals = 4)
+    ", Frecuencias: ", np.around(FrecuenciasOptimas, decimals = 4)
 
-    objetivos = objFunctionList(frecuencias)
+    objetivos = objFunctionList(FrecuenciasOptimas)
     print "Objetivo Pasajeros: " + str(objetivos[0])+" Objetivo Operador: " + str(objetivos[1])
     return frecuencias
 
@@ -1483,24 +1389,16 @@ def optNelderMead():
     print "\nFuncion Objetivo Nelder-Mead: %.2f"%(resultado.fun),
     print ', Frecuencias : ', #np.around(resultado.x, decimals= 4)
     FrecuenciasOptimas = resultado.x
-    # frecuencias = []
-    for i, x in enumerate(resultado.x):
-        # FrecuenciasOptimas[i] = x
-        # frecuencias.append(x)
-        print x,
-    # FrecuenciasOptimas = frecuencias
-
+    for i in resultado.x:
+        print i,
     objetivos = objFunctionList(FrecuenciasOptimas)
     print "\nObjetivo Pasajeros: " + str(objetivos[0])+" Objetivo Operador: " + str(objetivos[1])
 
-#Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
-# optNelderMead()
-# FrecuenciasOptimas = list(optGAPyevolve())
+optNelderMead()
 # print objFunction(FrecuenciasOptimas)
 # print FrecuenciasOptimas
 print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO
 print "Demanda: ", NUMERODEMANDA, " Costos: ", COSTOS
-
 # Se ejecuta la función que genera el archivo "horariosGA.json"
 # jsonFile()
 
