@@ -1,0 +1,23 @@
+[root@dbs1 optimizacion]# ./modeloOptimizacionV1.py
+[{1: 'Ida', 2: 'Vuelta'}, {3: 'Ida', 4: 'Vuelta'}, {5: 'Ida', 6: 'Vuelta'}]
+[[[1, 2, 3, 5, 9, 10, 11, 12], [12, 11, 10, 9, 7, 5, 3, 2, 1]], [[1, 2, 3, 4, 6,
+ 8, 10, 11, 12], [12, 11, 14, 15, 3, 2, 1]], [[14, 15, 3, 2, 1], [1, 2, 3, 4, 6,
+ 8, 13]]]
+Traceback (most recent call last):
+  File "./modeloOptimizacionV1.py", line 1501, in <module> optNelderMead()
+  File "./modeloOptimizacionV1.py", line 1482, in optNelderMeadx0 = np.array(optGAPyevolve())
+  File "./modeloOptimizacionV1.py", line 1458, in optGAPyevolve ga.evolve(freq_stats=5)
+  File "/usr/lib/python2.6/site-packages/pyevolve/GSimpleGA.py", line 755, in evolve self.internalPop.evaluate()
+  File "/usr/lib/python2.6/site-packages/pyevolve/GPopulation.py", line 378, in evaluate ind.evaluate(**args)
+  File "/usr/lib/python2.6/site-packages/pyevolve/GenomeBase.py", line 138, in evaluate for it in self.evaluator.applyFunctions(self, **args):
+  File "/usr/lib/python2.6/site-packages/pyevolve/FunctionSlot.py", line 180, in applyFunctions yield f(obj, **args)
+  File "./modeloOptimizacionV1.py", line 1348, in objFunctionGenetic obj1 = (sum(tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) +
+  File "./modeloOptimizacionV1.py", line 1348, in <genexpr> obj1 = (sum(tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) +
+  File "./modeloOptimizacionV1.py", line 960, in tiempoViajePromedio tiempoAcumuladoSubidaM = tiempoAcumuladoSubida(r,t)
+  File "./modeloOptimizacionV1.py", line 935, in tiempoAcumuladoSubida tiempoEspera = tiempoEsperaEstaciones(r,t)
+  File "./modeloOptimizacionV1.py", line 885, in tiempoEsperaEstaciones return pasajerosPuedenAbordar(r,t)[0]*TIEMPOABORDAR
+  File "./modeloOptimizacionV1.py", line 748, in pasajerosPuedenAbordar mTransbordo = transbordos()[r,t]
+  File "./modeloOptimizacionV1.py", line 537, in transbordos _mejoresSecuencias = mejoresSecuencias()
+  File "./modeloOptimizacionV1.py", line 526, in mejoresSecuencias return np.array(_mejoresSecuencias)
+ValueError: setting an array element with a sequence.
+[root@dbs1 optimizacion]#

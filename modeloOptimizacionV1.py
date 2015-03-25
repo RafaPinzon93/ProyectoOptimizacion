@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import numpy as np
-# import MySQLdb
+import MySQLdb
 import json
 from scipy import optimize
 from pyevolve import G1DList, GSimpleGA, Selectors
 from pyevolve import Initializators, Mutators, Consts
 import inspect, os
-
-
-# from coopr.opt import SolverFactory
-
 
 
 np.set_printoptions(linewidth=200)
@@ -1503,7 +1499,7 @@ def optNelderMead():
 #Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
 
 if __name__ == "__main__":
-    # obtenerDatosBase()
+    obtenerDatosBase()
     numeroEstaciones()
     optNelderMead()
     print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO
