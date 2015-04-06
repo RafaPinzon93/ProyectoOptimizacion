@@ -452,7 +452,7 @@ def obtenerDatosBase(db_host = 'admin.megaruta.co', usuario ='rutamega_eqopt', c
     NUMERORUTAS      = numRutas
     _TRANSBORDOS     = matricesTransbordo
     _SECUENCIAS      = matrizSecuencia
-    # _TRAYECTOS       = trayectosList
+    _TRAYECTOS       = trayectosList
     _PROPORCIONES    = matProporcion
 
 # print EstacionesBaseDatosDict
@@ -1362,7 +1362,7 @@ def horasRuta(r):
         if value == 'Ida':
             # horas.append(horaEstaciones(r,0,t))
             for horaE in horaEstaciones(r,0,t):
-                horas.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
+                horas.insert(0, (horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
         else:
             for horaE in horaEstaciones(r,1,t):
                 horas.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
@@ -1393,6 +1393,11 @@ def serviciosRuta(r, horas = None):
     tray = _TRAYECTOS[r]
     tIda = None
     tVuelta = None
+    for key, value in tray.items():
+        if value == 'Ida':
+            tIda = key
+        else:
+            tVuelta = key
     for ind ,hora in enumerate(horas):
         horasDict.append((ind , hora['horaInicial'], hora['idTrayecto']))
     dtype = [('id', int),('horaLlegada', float), ('idTrayecto', int)]
@@ -1416,11 +1421,6 @@ def serviciosRuta(r, horas = None):
         # if pilaSalidaArray[0]['horaSalida'] < x[1]:
         if pilaTrayecto[0]['horaSalida'] < x[1] and flag:
             serviciosV = np.array(servicios)
-            for key, value in tray.items():
-                if value == 'Ida':
-                    tIda = key
-                else:
-                    tVuelta = key
             serviciosAdicionales = serviciosV[serviciosV[:,-1]==tVuelta]
             for ind in reversed(serviciosAdicionales):
                 servicios.insert(0, (ind[0], -1.0, 0.0, tIda))
@@ -1476,15 +1476,17 @@ def serviciosOrdenados(r, t):
 
 def jsonFile():
     '''
-    Genera el archivo "horarios.json" con la estructura v3
-    requerida por SingleClick
+        Genera el archivo "horarios-NOMBREARCHIVOFUENTE-.json" con la estructura v3
+        requerida por SingleClick
     '''
     estructura = []
     tray = 0
-    horaAnt = []
+    # horaAnt = None
+    # print _TRAYECTOS
     # _serviciosRuta = None
     for r, rutaT in enumerate(_TRAYECTOS):
         _serviciosRuta = serviciosRuta(r)
+        horaAnt = None
         for t, value in rutaT.iteritems():
             estructura.append({'idtrayecto':t})
             serviciosEst = []
@@ -1492,6 +1494,10 @@ def jsonFile():
                 horas = horaEstaciones(r,0,t)
                 horaAnt = horas
             else:
+                if horaAnt == None:
+                    for key, valueD in _TRAYECTOS[r].iteritems():
+                        if valueD == 'Ida':
+                            horaAnt = horaEstaciones(r,0,key)
                 horas = horaEstaciones(r,1,t)
             # print serviciosRuta(0)
             # _serviciosRuta = serviciosOrdenados(r, t)
@@ -1749,11 +1755,6 @@ if __name__ == "__main__":
     # optNelderMead()
     print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO
     print "Demanda: ", NUMERODEMANDA, " Costos: ", COSTOS
-
-    # print serviciosRuta(2)[serviciosRuta(2)[:,-1]==5]
-    # print serviciosRuta(2)[serviciosRuta(2)[:,-1]==6]
-    # print len(horaInicioServicios(2))
-    # print _TRAYECTOS
 
     # Se ejecuta la función que genera el archivo "horariosGA.json"
     jsonFile()
