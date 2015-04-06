@@ -211,20 +211,9 @@ _SECUENCIAS = [[_SECUENCIA1, _SECUENCIA4],
                [_SECUENCIA3, _SECUENCIA6]
 ]
 
-_Transbordo1 = 11
-_Transbordo2 = 10, 11
-_Transbordo3 = 0
-_Transbordo4 = 3
-_Transbordo5 = 3
-_Transbordo6 = 3
-
-_TRANSBORDOS = [[_Transbordo1, _Transbordo4],
-                [_Transbordo2, _Transbordo5],
-                [_Transbordo3, _Transbordo6],
-               ]
 
 TRANSBORDO = None # Variable para hacer dp cuando se calculan los transbordos.
-NUMEROESTACIONES = 0
+NUMEROESTACIONES = 15
 
 EstacionesBaseDatosDict = None
 
@@ -264,15 +253,32 @@ _PROPORCIONES = np.array([[0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.
 # print _PROPORCIONES.sum(axis=0)
 
 
-def obtenerDatosBase():
+def obtenerDatosBase(db_host = 'admin.megaruta.co', usuario ='rutamega_eqopt', clave = 'eedd8ae977b7f997ce92aa1b0', base_de_datos ='rutamega_principal'):
+    '''
+        Obtiene las variables principales para realizar las tablas horarias como son:
+            - Matrices de Tiempos: matricesTiempo
+            - Matrices de Transbordos: matricesTransbordo
+            - Matriz de Proporciones: matProporcion
+            - Diccionario de Estaciones: estacionDictInv {estacionOrden: idEstacionDB,...}
+                Ej: {1: 38L, 2: 39L, 3: 36L, 4: 35L, 5: 34L, 6: 33L, 7: 10L, 8: 9L, 9: 8L...}
+            }
+            - Matrices Secuencias: matrizSecuencia
+            - Lista de Diccionario de Trayectos: trayectosList
+                Ej: [{1: 'Ida', 2: 'Vuelta'}, {3: 'Ida', 4: 'Vuelta'}, {5: 'Vuelta', 6: 'Ida'}] 
+
+        Parametros
+        ----------
+            - db_host = Host de la Base de Datos
+            - usuario = Usuario de la Base de Datos
+            - clave   = Clave de la Base de Datos
+            - base_de_datos = Nombre de la Base de Datos
+
+        Return
+        ------
+            Vacio. Solo cambia matrices del programa.
+    '''
     global EstacionesBaseDatosDict
-    #db_host =  '190.128.19.105'
-    db_host = 'admin.megaruta.co'
-    # usuario = 'optimizacion'
-    usuario = 'rutamega_eqopt'
-    # clave =  'fdoq9zSyfSlMsyW9wGkh'
-    clave = 'eedd8ae977b7f997ce92aa1b0'
-    base_de_datos = 'rutamega_principal' #rutamega_principal
+
     dbr = MySQLdb.connect(host=db_host, user=usuario, passwd=clave,db=base_de_datos)
     cursor=dbr.cursor() # real
     query_quotes =  "SET sql_mode='ANSI_QUOTES'" # para que acepte tablas con "caracteres especiales"
@@ -467,11 +473,12 @@ def tiempoEntreEstaciones():
         _tiempoEntreEstaciones.append(_tiempoEntreEstacionesT)
     return np.array(_tiempoEntreEstaciones)
 
-# print tiempoEntreEstaciones()
+print tiempoEntreEstaciones()
 
 def mejoresSecuencias():
     '''
-    Devuelve una matriz con las mejores secuencias para ir de una estación a otra
+    Devuelve una matriz con las mejores secuencias para ir de una estación a otra,
+    encontrando así los puntos de transbordo.
     (algoritmo de fuerza bruta, se puede optimizar con programacion dinámica)
     '''
     _mejoresSecuencias = []
@@ -575,7 +582,7 @@ def transbordos():
 # def transbordoE(r):
 #     '''
 #     Transbordos para rutas con trayectos que contienen finales fantasmas ej: Ruta 3
-#     FInales fantasmas = la ruta no termina ahí, sino que la ruta puede ser circular.
+#     FInales fantasmas: la ruta no termina ahí, sino que la ruta puede ser circular.
 
 #     '''
 #     _mejoresSecuencias = mejoresSecuencias()
@@ -1261,6 +1268,35 @@ def jsonFile():
     '''
     Genera el archivo "horarios.json" con la estructura v3
     requerida por SingleClick
+    Ejemplo: 
+    [
+        {
+            "idtrayecto": 1,
+            "servicios": [
+                {
+                    "horarios": {},
+                    "idservicio": 2,
+                    "orden": 1
+                },
+                {
+                    "horarios": {},
+                    "idservicio": 4,
+                    "orden": 2
+                },
+                {
+                    "horarios": {
+                        "0": {
+                            "estacionfinal": "false",
+                            "estacioninicial": "true",
+                            "horallegada": "05:00:00",
+                            "horasalida": "05:00:12",
+                            "idestacion": 38
+                        },
+                    ...
+                ...
+            ...
+        }
+
     '''
     estructura = []
     tray = 0
@@ -1499,12 +1535,17 @@ def optNelderMead():
 #Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
 
 if __name__ == "__main__":
-    obtenerDatosBase()
+    # obtenerDatosBase( db_host =  '190.128.19.105',
+    #                   usuario = 'optimizacion',
+    #                   clave =  'fdoq9zSyfSlMsyW9wGkh',
+    #                   base_de_datos = 'rutamega_principal',
+    #                 )
     numeroEstaciones()
-    optNelderMead()
+    print tiempoEntreEstaciones()
+    # optNelderMead()
     print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO
     print "Demanda: ", NUMERODEMANDA, " Costos: ", COSTOS
 
     # Se ejecuta la función que genera el archivo "horariosGA.json"
-    jsonFile()
+    # jsonFile()
 

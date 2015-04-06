@@ -1,18 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import numpy as np
-# import MySQLdb
+import MySQLdb
 import json
 from scipy import optimize
 from pyevolve import G1DList, GSimpleGA, Selectors
 from pyevolve import Initializators, Mutators, Consts
-
-# from pyutilib.misc import Options
-
-# from coopr.opt import SolverFactory
+import inspect, os
 
 
-
+np.set_printoptions(threshold=np.nan)
 np.set_printoptions(linewidth=200)
 oldSettings = np.seterr(divide='ignore', invalid='ignore')
 np.seterr(**oldSettings)
@@ -35,21 +32,21 @@ NUMERORUTAS = 3 # Se sacará de base de datos
 # frecuenciaOptima1 = 0.086957
 # frecuenciaOptima1 = 0.14237#407194874246
 # frecuenciaOptima1 = 0.15799337
-frecuenciaOptima1 = 0.087
+frecuenciaOptima1 =  0.064516141848
 # frecuenciaOptima2 = 0.15703
 # frecuenciaOptima2 = 0.0842212498536333
 # frecuenciaOptima2 = 0.0829857776183043
 # frecuenciaOptima2 = 0.064516
 # frecuenciaOptima2 = 0.07289#5650882390362
 # frecuenciaOptima2 = 0.10562565
-frecuenciaOptima2 = 0.0645
+frecuenciaOptima2 = 0.233239857681
 # frecuenciaOptima3 = 0.19119
 # frecuenciaOptima3 = 0.189052798041706
 # frecuenciaOptima3 = 0.135635424653224
 # frecuenciaOptima3 = 0.064516
 # frecuenciaOptima3 = 0.15171#605529579485
 # frecuenciaOptima3 = 0.16914496
-frecuenciaOptima3 = 0.0645
+frecuenciaOptima3 = 0.579580630684 
 FrecuenciasOptimas = [frecuenciaOptima1, frecuenciaOptima2, frecuenciaOptima3]
 
 # Se sacará de base de datos
@@ -100,6 +97,16 @@ _TIEMPO_ENTRE_ESTACIONES3 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14
                                       [ 6, 4, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12, 0]])
 
 _TIEMPO_ENTRE_ESTACIONES = [_TIEMPO_ENTRE_ESTACIONES1, _TIEMPO_ENTRE_ESTACIONES2, _TIEMPO_ENTRE_ESTACIONES3]
+
+tiempoTrayectoIda = [[2.4339788732394365, 3.265845070422535, 3.0809859154929575, 0.9242957746478873, 1.1399647887323943, 1.8177816901408448, 0.8626760563380281, 1.2632042253521125, 0.7702464788732394, 1.3248239436619715, 0.8318661971830986, 2.403169014084507, 2.834507042253521, 0.8318661971830986, 3.820422535211267, 1.3556338028169013, 1.2015845070422535, 1.1707746478873238, 1.509683098591549, 2.7112676056338025],
+                    [2.689964157706094, 3.6093189964157717, 3.4050179211469542, 1.0215053763440864, 1.2598566308243733, 2.1111111111111116, 1.191756272401434, 1.3279569892473122, 0.9534050179211473, 1.6003584229390686, 1.3279569892473122, 1.9408602150537637, 1.2939068100358426, 0.9193548387096778, 1.8387096774193556, 4.222222222222223, 1.4982078853046599, 1.3279569892473122, 1.2939068100358426, 1.6684587813620078, 2.9964157706093197],
+                    [2.7869742198100407, 3.7394843962008144, 3.5278154681139755, 1.0583446404341927, 1.3052917232021708, 2.187245590230665, 1.2347354138398914, 1.3758480325644504, 0.9877883310719133, 1.6580732700135683, 1.3758480325644504, 2.010854816824966, 1.3405698778833108, 0.9525101763907734, 0.9877883310719133]]
+                     
+tiempoTrayectoVuelta = [[2.1874999999999996, 1.4788732394366195, 1.1091549295774645, 1.232394366197183, 1.3864436619718308, 3.7896126760563376, 0.8626760563380281, 2.7728873239436616, 2.15669014084507, 0.8626760563380281, 1.2015845070422535, 0.9242957746478873, 1.294014084507042, 0.7394366197183098, 1.8485915492957745, 1.232394366197183, 0.8318661971830986, 2.7112676056338025, 2.988556338028168, 2.834507042253521],
+                       [2.4175627240143376, 1.634408602150538, 1.2258064516129035, 1.3620071684587818, 1.5322580645161297, 4.42652329749104, 1.7706093189964165, 2.043010752688173, 1.0555555555555558, 1.3620071684587818, 1.191756272401434, 1.5322580645161297, 1.2939068100358426, 1.9408602150537637, 1.3620071684587818, 0.9193548387096778, 2.9964157706093197, 3.3028673835125457, 3.132616487455198],
+                       [0.7055630936227951, 1.8344640434192672, 2.1166892808683855, 1.0936227951153326, 1.4111261872455902, 1.2347354138398914, 1.587516960651289, 1.3405698778833108, 2.010854816824966, 1.4111261872455902, 0.9525101763907734, 3.104477611940298, 3.421981004070556, 3.245590230664858]]
+
+_TiempoDirectoTrayectos = [tiempoTrayectoIda, tiempoTrayectoVuelta]
 
 # Se sacará de base de datos
 #Topologias por rutas y trayectos, teniendo en cuenta viajes 'indirectos'
@@ -215,22 +222,21 @@ _SECUENCIAS = [[_SECUENCIA1, _SECUENCIA4],
                [_SECUENCIA3, _SECUENCIA6]
 ]
 
-_Transbordo1 = 11
-_Transbordo2 = 10, 11
-_Transbordo3 = 0
-_Transbordo4 = 3
-_Transbordo5 = 3
-_Transbordo6 = 3
 
-_TRANSBORDOS = [[_Transbordo1, _Transbordo4],
-                [_Transbordo2, _Transbordo5],
-                [_Transbordo3, _Transbordo6],
-               ]
+
+_TRANSBORDOS = None
 
 TRANSBORDO = None # Variable para hacer dp cuando se calculan los transbordos.
 NUMEROESTACIONES = 0
 
 EstacionesBaseDatosDict = None
+
+FinTrayectoArray = None
+
+EsRutasFantasmas = [[False, False],
+                  [False, False],
+                  [False, True]
+                 ]
 
 # Se sacará de base de datos
 # _DEMANDA_MEDIA = np.array([[0 ,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
@@ -268,21 +274,52 @@ _PROPORCIONES = np.array([[0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.
 # print _PROPORCIONES.sum(axis=0)
 
 
-def obtenerDatosBase():
+def obtenerDatosBase(db_host = 'admin.megaruta.co', usuario ='rutamega_eqopt', clave = 'eedd8ae977b7f997ce92aa1b0', base_de_datos ='rutamega_principal'):
+    '''
+        Obtiene las variables principales para realizar las tablas horarias como son:
+            - Matrices de Transbordos: matricesTransbordo
+            - Matriz de Proporciones: matProporcion
+            - Diccionario de Estaciones: estacionDictInv {estacionOrden: idEstacionDB,...}
+                Ej: {1: 38L, 2: 39L, 3: 36L, 4: 35L, 5: 34L, 6: 33L, 7: 10L, 8: 9L, 9: 8L...}
+            }
+            - Matrices Secuencias: matrizSecuencia
+            - Lista de Diccionario de Trayectos: trayectosList
+                Ej: [{1: 'Ida', 2: 'Vuelta'}, {3: 'Ida', 4: 'Vuelta'}, {5: 'Vuelta', 6: 'Ida'}] 
+            - Es Ruta Fantasma: EsRutaFantasma
+            - Estaciones de Fin de Trayectos: FinTrayectoArray
+            - Numero de Estaciones: numEstaciones
+            - Numero de Rutas: numRutas
+        Opcionales
+            - Matrices de Tiempos: matricesTiempo
+
+        Parametros
+        ----------
+            - db_host = Host de la Base de Datos
+            - usuario = Usuario de la Base de Datos
+            - clave   = Clave de la Base de Datos
+            - base_de_datos = Nombre de la Base de Datos
+
+        Return
+        ------
+            Vacio. Solo cambia matrices del programa.
+    '''
+
+    global _TRANSBORDOS
+    global _PROPORCIONES
     global EstacionesBaseDatosDict
-    #db_host =  '190.128.19.105'
-    db_host = 'admin.megaruta.co'
-    # usuario = 'optimizacion'
-    usuario = 'rutamega_eqopt'
-    # clave =  'fdoq9zSyfSlMsyW9wGkh'
-    clave = 'eedd8ae977b7f997ce92aa1b0'
-    base_de_datos = 'rutamega_principal' #rutamega_principal
+    global _SECUENCIAS
+    global _TRAYECTOS 
+    global EsRutaFantasma
+    global FinTrayectoArray
+    global NUMEROESTACIONES
+    global NumeroRutas
+
     dbr = MySQLdb.connect(host=db_host, user=usuario, passwd=clave,db=base_de_datos)
     cursor=dbr.cursor() # real
     query_quotes =  "SET sql_mode='ANSI_QUOTES'" # para que acepte tablas con "caracteres especiales"
     cursor.execute(query_quotes)
     sql = '''SELECT * FROM "estacion-matrices"'''
-    sqlRutas = '''SELECT idruta FROM "estacion-matrices" group by idruta;''' #Se puede sacar de IdTrayectos
+    sqlRutas = '''SELECT distinct idruta FROM "estacion-matrices";''' #Se puede sacar de IdTrayectos
     sqlEstaciones = ''' SELECT distinct estaciones  From(SELECT distinct idestacionorigen as estaciones
                         FROM "estacion-matrices"
                         union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones'''
@@ -298,20 +335,23 @@ def obtenerDatosBase():
                         ORDER BY te.idtrayecto, te.ordentrayectoestacion;
                     '''
     sqlFinTrayecto = '''SELECT idestacion, fintrayecto FROM estacion where fintrayecto = 1; '''
-    # try:
-    cursor.execute(sql)
-    # Obtenemos todos los registros en una lista de listas
-    resultados = cursor.fetchall()
-    cursor.execute(sqlRutas)
-    rutas = cursor.fetchall()
-    cursor.execute(sqlEstaciones)
-    estaciones = cursor.fetchall()
-    cursor.execute(sqlIdTrayectos)
-    idTrayectos = cursor.fetchall()
-    cursor.execute(sqlSecuencias)
-    secuencias = cursor.fetchall()
-    cursor.execute(sqlFinTrayecto)
-    finTrayecto = cursor.fetchall()
+    try:
+        cursor.execute(sql)
+        # Obtenemos todos los registros en una lista de listas
+        resultados = cursor.fetchall()
+        cursor.execute(sqlRutas)
+        rutas = cursor.fetchall()
+        cursor.execute(sqlEstaciones)
+        estaciones = cursor.fetchall()
+        cursor.execute(sqlIdTrayectos)
+        idTrayectos = cursor.fetchall()
+        cursor.execute(sqlSecuencias)
+        secuencias = cursor.fetchall()
+        cursor.execute(sqlFinTrayecto)
+        finTrayecto = cursor.fetchall() # Contiene las estaciones finales de trayectos
+    except:
+       print "Error: No se pudo obtener los datos"
+
     numEstaciones = len(estaciones)
     numRutas = len(rutas)
     matricesTiempo = []
@@ -320,61 +360,48 @@ def obtenerDatosBase():
     matProporcion = np.zeros((numEstaciones, numEstaciones))
     estacionesDict = {}
 
-    # for i, e in enumerate(estaciones):
-    #     estacionesDict[e] = i+1
-
-    # print len(resultados)
     iR = 0
-    # flag = True
-    for ruta in range(numRutas):
-        matTiempo = np.zeros((numEstaciones, numEstaciones))
-        matTransbordo = np.zeros((numEstaciones, numEstaciones))
-        for j in range(numEstaciones):
-            # if j != 0:
-            #     flag = False
-            for i in range(numEstaciones):
-
-                if i!=j:
-                    # print numEstaciones*ruta + iR
-                    registro = resultados[iR]
-                    matTiempo[i,j] = registro[4]
-                    matTransbordo[i,j] = registro[7]
-                    if registro[3]:
-                        matDemanda[i,j] = registro[3]
-                    if registro[8]:
-                        matProporcion[i,j] = registro[8]
-                    estacionesDict[registro[1]]= i+1
-                    iR +=1
-
-            # jR +=1
-        # numE = len(estacionesDict)
-        estacionesArray = []
-        matTransbordoT = np.copy(matTransbordo)
-        for key, value in estacionesDict.iteritems():
-            estacionesArray.append([key, value])
-        #Cambiar a que trabaje con diccionario
-        for i in estacionesArray:
-            matTransbordoT[matTransbordo == i[0]] = i[1]
-        matricesTiempo.append(matTiempo)
-        matricesTransbordo.append(matTransbordoT)
-    secuenciasNP = np.array(secuencias)
-    matrizSecuencias = []
-    secuenciasA = []
-    # for idT in idTrayectos:
-    #     nuevaSecuencia = secuenciasNP[secuenciasNP[:,0]==idT[0]]
-    #     #  Reconstruye la lista de secuencias con el [id, estacionBD, orden]
-    #     #  ej: [1, 38, 0] cambiando el id de las estaciones a el orden en la matriz
-    #     #  [id, estacionModulo, orden]
-    #     #  ej: [1, 1, 0]
-    #     # for i, elemento in enumerate(nuevaSecuencia):
-    #     #     elemento[1] = estacionesDict[elemento[1]]
-    #     #     nuevaSecuencia[i] =  elemento
-    #     secuenciaList = []
-    #     for i, elemento in enumerate(nuevaSecuencia):
-    #         secuenciaList.append(estacionesDict[elemento[1]])
-    #     secuenciasA.append(secuenciaList)
 
     idTrayectosNP = np.array(idTrayectos)
+    trayectosDict = {}
+    for tray in idTrayectosNP:
+        trayectosDict[tray[0]] = tray[2]
+    for ruta in rutas:
+        instTransRuta = []
+        for trayecto in idTrayectosNP[idTrayectosNP[:,1] == str(ruta[0]),0]:
+            matTransbordo = np.zeros((numEstaciones, numEstaciones))
+            idTrayecto = resultados[iR][6] 
+            for fila in range(numEstaciones):
+                for columna in range(numEstaciones):
+                    if fila!=columna:
+                        # print numEstaciones*ruta + iR
+                        registro = resultados[iR]
+                        # matTiempo[fila,columna] = registro[4]
+                        matTransbordo[fila,columna] = registro[7]
+                        if registro[8]:
+                            matProporcion[fila,columna] = registro[8]
+                        # if registro[3]:
+                            # matDemanda[fila,columna] = registro[3]
+                        # if registro[8]:
+                            # matProporcion[fila,columna] = registro[8]
+                        estacionesDict[registro[2]]= columna+1
+                        iR +=1
+            matTransbordoT = np.zeros((numEstaciones, numEstaciones))
+            for i in estacionesDict:
+                matTransbordoT[matTransbordo == i] = estacionesDict[i]
+
+            # Mientras arreglan transbordos en base de Datos
+            # if trayectosDict[str(idTrayecto)] == 'Ida':
+            #     instTransRuta.insert(0, matTransbordoT)
+            # else:
+            #     instTransRuta.append(matTransbordoT)
+            instTransRuta.append(matTransbordoT)
+
+        matricesTransbordo.append(instTransRuta)
+
+    secuenciasNP = np.array(secuencias)
+
+    matrizSecuencia = []
     trayectosList = []
     for i, ruta in enumerate(rutas):
         trayectos = {}
@@ -390,47 +417,194 @@ def obtenerDatosBase():
                 secuenciaList.append(estacionesDict[elemento[1]])
 
             if trayecto[2] == 'Ida':
-                secuenciaList2.insert(0, secuenciaList)
+                secuenciaList2.insert(0, np.array(secuenciaList))
             else:
-                secuenciaList2.append(secuenciaList)
+                secuenciaList2.append(np.array(secuenciaList))
 
-        secuenciasA.append(secuenciaList2)
+        matrizSecuencia.append(secuenciaList2)
         trayectosList.append(trayectos) # Se añaden los trayectos de la ruta
 
-    matrizTopologias = []
-    matricesTransbordoNP = np.array(matricesTransbordo)
-    for iR, ruta in enumerate(secuenciasA):
-        topologiaRuta = []
-        for sec in ruta:
-            topologiaM = np.zeros(shape=(numEstaciones, numEstaciones))
-            for i, estacion in enumerate(sec[:-1]):
-                newSec = [x-1 for x in sec]
-                topologiaM[estacion-1, newSec[i+1:]] = 1
-                arrayBoolean = np.zeros(shape=numEstaciones, dtype= bool)
-                arrayBoolean[estacion-1:] = matricesTransbordoNP[iR][estacion-1,estacion-1:]>0
-                topologiaM[estacion-1, arrayBoolean] = 1
-                # print topologiaM[estacion-1, matricesTransbordoNP[iR][estacion-1,estacion-1:]>0]
-            # print topologiaM
     estacionDictInv= {}
     for estacionBase, estacionMod in estacionesDict.iteritems():
         estacionDictInv[estacionMod] = estacionBase
-    EstacionesBaseDatosDict = estacionDictInv
-    # for ruta in trayectosList:
-    # print trayectosList # Igual que la del modelo
-    # print secuenciasA # Igual que la del modelo
-    # print estacionesDict
-    # print np.array(secuenciasNP[:,0])
-    # print np.array(matricesTiempo) # Igual que la del modelo
-    # print matricesTransbordoNP[0][4,]
-    # print np.array(rutas)
-    # print np.array(idTrayectos)
-    # print np.array(secuencias)
-    # print np.array(estaciones)
 
-    # except:
-    #    print "Error: No se pudo obtener los datos"
+    FinTrayectoArray = []
+    for estacion in finTrayecto:
+        FinTrayectoArray.append(estacionesDict[estacion[0]]-1)
+    # print FinTrayectoArray
+
+    EsRutaFantasma = []
+    for ruta in matrizSecuencia:
+        rutaF = [False]
+        secuencia = ruta[0]
+        if secuencia[-1] -1 in FinTrayectoArray:
+            rutaF.append(False)
+        else:
+            rutaF.append(True)
+        EsRutaFantasma.append(rutaF)
+    # print EsRutaFantasma
+
+    # print estacionDictInv
+
+    EstacionesBaseDatosDict = estacionDictInv
+    # print json.dumps(estacionesDict, sort_keys = True) 
+    NUMEROESTACIONES = numEstaciones
+    NUMERORUTAS      = numRutas
+    _TRANSBORDOS     = matricesTransbordo
+    _SECUENCIAS      = matrizSecuencia
+    # _TRAYECTOS       = trayectosList
+    _PROPORCIONES    = matProporcion
 
 # print EstacionesBaseDatosDict
+
+def tiempoTrayectosDirectos(trayectosValue):
+    '''
+        Devuelve la matriz de tiempo trayectos directos tiempoTrayectos[indiceTrayecto][indiceRuta][fila, columna]
+
+        Parametros
+        ----------
+        - trayectosValue: matriz que contiene la secuencia del trayecto de las rutas. 
+            Ej: [...,[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [16, 17, 18, 19, 20, 21, 22, 23, 24, 6, 5, 4, 3, 2, 1]]] 
+            Se muestra solo las secuencias de la ruta 3 trayecto vuelta del modelo de 40 estaciones
+
+        Return
+        ------
+        - tiempoTrayectos: matriz donde se encuentran los tiempos directos de cada trayecto de cada ruta
+            [indiceTrayecto][indiceRuta][np.array(numeroEstaciones,numeroEstaciones)]
+
+    '''
+    tiemposTrayectos = []
+    for indexT, trayectoValue in enumerate(trayectosValue):
+        trayectoVect = []
+        for indexR, ruta in enumerate(trayectoValue):
+            tiempo = np.zeros((NUMEROESTACIONES, NUMEROESTACIONES))
+            for i, index in enumerate(ruta[:-1]):
+                siguiente = ruta[i+1]
+                tiempo[index, siguiente] = _TiempoDirectoTrayectos[indexT][indexR][i]
+                # tiemposTrayectos[indexT][indexR][index, siguiente] = _TiempoDirectoTrayectos[indexT][indexR][i]
+            trayectoVect.append(tiempo)
+        tiemposTrayectos.append(trayectoVect)
+                
+
+    for indexT, trayectoValue in enumerate(trayectosValue):
+        for indexR, ruta in enumerate(trayectoValue):
+            for k in range(1,len(ruta[:-1])):
+                for i, sec in enumerate(ruta[:-1]):
+                    if i+k <= len(ruta)-2:
+                        siguiente = ruta[i+k]
+                        if siguiente != ruta[-1]:
+                            j = ruta[i+k+1]
+                            tiemposTrayectos[indexT][indexR][sec,j] = tiemposTrayectos[indexT][indexR][sec,siguiente]\
+                             + tiemposTrayectos[indexT][indexR][siguiente, j]
+    return tiemposTrayectos
+
+def tiempoTrayectosTransbordo(trayectosValue):
+    '''
+        Devuelve la matriz de tiempo trayectos contando transbordos tiempoTrayectos[indiceTrayecto][indiceRuta][fila, columna]
+
+        Parametros
+        ----------
+        - trayectosValue: matriz que contiene la secuencia del trayecto de las rutas. 
+            Ej: [...,[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [16, 17, 18, 19, 20, 21, 22, 23, 24, 6, 5, 4, 3, 2, 1]]] 
+            Se muestra solo las secuencias de la ruta 3 trayecto vuelta del modelo de 40 estaciones
+
+        Return
+        ------
+        - tiempoTrayectos: matriz donde se encuentran los tiempos de cada trayecto de cada ruta con los transbordos
+            [indiceTrayecto][indiceRuta][np.array(numeroEstaciones,numeroEstaciones)]
+
+    '''
+    tiemposTrayectos = tiempoTrayectosDirectos(trayectosValue)
+    for indR, ruta in enumerate(_TRANSBORDOS):
+        if not(trayectosValue[0][indR][-1] in FinTrayectoArray):
+            fantasma = True
+        else:
+            fantasma = False
+        for indT, matriz in enumerate(ruta):
+            indicesNonZero = np.nonzero(matriz)
+            for i in range(len(indicesNonZero[0])):
+                estacionTransbordo = matriz[indicesNonZero[0][i],indicesNonZero[1][i]] -1
+                if fantasma:
+                    if estacionTransbordo in trayectosValue[indT][indR][trayectosValue[indT][indR].index(indicesNonZero[0][i]):]:
+                        tiempoInicioTransbordo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], estacionTransbordo]
+                    else:
+                        # Si no se encuentra la Estacion de Transbordo en la secuencia, se sumará el tiempo de ir hasta la
+                        # estación final y luego la del trayecto de vuelta hasta la de transbordo
+                        tiempoInicioTransbordo = tiemposTrayectos[0][indR][indicesNonZero[0][i], trayectosValue[0][indR][-1]] \
+                        + tiemposTrayectos[1][indR][trayectosValue[1][indR][0], estacionTransbordo]
+
+                else:
+                    tiempoInicioTransbordo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], estacionTransbordo]
+                tiempo = None
+                for indT2, rutaTrayecto in enumerate(trayectosValue):
+                    for indR2, trayecto in enumerate(rutaTrayecto):
+                        if estacionTransbordo in trayecto:
+                            if indicesNonZero[1][i] in trayecto[np.where(trayecto==estacionTransbordo)[0]:]: 
+                                if fantasma:
+                                    sumaTiempos = (tiempoInicioTransbordo + 
+                                    tiemposTrayectos[indT][indR][estacionTransbordo, indicesNonZero[1][i]]) 
+                                    tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
+                                        sumaTiempos)
+                                else:
+                                    sumaTiempos = (tiempoInicioTransbordo + 
+                                    tiemposTrayectos[indT2][indR2][estacionTransbordo, indicesNonZero[1][i]]) 
+                                    if tiempo == None: # Si es el primero en encontrarlo
+                                        tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
+                                        sumaTiempos)
+                                        tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
+                                    elif tiempo > sumaTiempos:
+                                        tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
+                                        sumaTiempos)
+                                        tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
+                            elif fantasma:
+                                if indicesNonZero[1][i] in trayectosValue[1][indR2]:
+                                    sumaTiempos = (tiempoInicioTransbordo + 
+                                    tiemposTrayectos[indT2][indR2][estacionTransbordo, trayectosValue[indT2][indR2][-1]] +
+                                    tiemposTrayectos[1][indR2][trayectosValue[1][indR][0], indicesNonZero[1][i]]) 
+                                    if tiempo == None: # Si es el primero en encontrarlo
+                                        tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
+                                        sumaTiempos)
+                                        tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
+                                    elif tiempo > sumaTiempos:
+                                        tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
+                                        sumaTiempos)
+                                        tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
+    return tiemposTrayectos
+
+def tiempoTrayectosRutas(tiemposTrayectos):
+    '''
+        Devuelve la matriz de tiempo trayectos contando transbordos tiempoTrayectos[indiceTrayecto][indiceRuta][fila, columna]
+    '''
+    tiempoRutas = []
+    for indR in range(NUMERORUTAS):
+        tiempoRutas.append(tiemposTrayectos[0][indR] + tiemposTrayectos[1][indR])
+    return tiempoRutas
+
+def obtenerTopologias(tiemposTrayectos):
+    '''
+        Crea las matrices de Topologias a traves de las matrices de tiempo
+
+        Parametros
+        ----------
+        - tiempoTrayectos: 
+    '''
+    matricesTopologia = []
+    for indexT, tiempo in enumerate(tiemposTrayectos):
+        trayecto = []
+        for i, ruta in enumerate(tiempo):
+            topologia = np.zeros((NUMEROESTACIONES, NUMEROESTACIONES))
+            topologia[ruta>0] = 1
+            # if indexT == 0:
+                # np.savetxt("tiemposRuta"+str(i+1)+"IdaV2.csv", ruta, delimiter=",", fmt = "%10.5f")
+                # np.savetxt("topologiaRuta"+str(i+1)+"IdaV2.csv", topologia, delimiter=",", fmt = "%d")
+            # else:
+                # np.savetxt("tiemposRuta"+str(i+1)+"VueltaV2.csv", ruta, delimiter=",", fmt = "%10.5f")
+                # np.savetxt("topologiaRuta"+str(i+1)+"VueltaV2.csv", topologia, delimiter=",", fmt = "%d")
+            trayecto.append(topologia)
+        matricesTopologia.append(trayecto)
+
+    matricesTopologia = zip(*matricesTopologia)
+    return matricesTopologia
 
 def numeroEstaciones():
     "Devuelve la cantidad de estaciones totales, para generar rango de matrices"
@@ -747,7 +921,10 @@ def pasajerosPuedenAbordar(r, t):
     puedenSubir = np.zeros(shape=(NUMEROESTACIONES))
      # Se crea una matriz cuadrada de zeros con tamaño igual al numero de estaciones
     _pasajerosPuedenAbordar = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
-    mTransbordo = transbordos()[r,t]
+    if _TRANSBORDOS:
+        mTransbordo = _TRANSBORDOS[r][t]
+    else:
+        mTransbordo = transbordos()[r,t]
     i = secuencia[0] # Se toma la estación inicial
     capacidad[i] = CAPACIDADBUSES - pasajeros[i] # Se inicializa el arreglo de capacidades
     puedenSubir[i] = CAPACIDADBUSES # Se inicializa el arreglo de puedenSubir
@@ -783,15 +960,20 @@ def pasajerosPuedenAbordar(r, t):
                 _pasajerosPuedenAbordar[i,:] = (distribucionDemanda(r, t)[i,:]/pasajeros[i])*puedenSubir[i]
             # print _MEJOR_SECUENCIA[r][i-1][i]
     else: # Si el trayecto es de Vuelta
-        if r == 2 and t == 1: # Si es un final fantasma
-
-            puedAbordI               = pasajerosPuedenAbordar(r, 0)
+        # if r == 2 and t == 1: # Si es un final fantasma
+        if EsRutasFantasmas[r][t]:
+            puedAbordI               = pasajerosPuedenAbordar(r, 0) 
+            # Pasajeros que pueden abordar ida
             pasajerosPuedenAbordarI  = puedAbordI[0]
+            # Capacidad que pueden abordar ida
             capacidadI               = puedAbordI[2]#[_SECUENCIAS[r][0][-1]-1]
             # puedenSubirI             = puedAbordI[1]#[:_SECUENCIAS[r][0][-1]-1,secuencia[1]]
-            secuenciaI               = _SECUENCIAS[r][0]-1
+            secuenciaI               = _SECUENCIAS[r][0]-1 # Secuencia ida
             anterior                 = secuenciaI[-1]
-            mTransbordoI             = transbordos()[r,0]
+            if _TRANSBORDOS:
+                mTransbordoI          = _TRANSBORDOS[r][0]
+            else:
+                mTransbordoI         = transbordos()[r,0] # Transbordo ida
 
             pasajerosSuma = 0
             for x in secuenciaI:
@@ -892,7 +1074,10 @@ def tiempoEsperaEstaciones(r, t):
 def tiempoAcumuladoBajada(r, t):
     "Devuelve matriz de tiempo Acumulado de Bajada para el trayecto 't' de la ruta 'r'"
     tiempoEspera  = tiempoEsperaEstaciones(r,t)
-    mTransbordo   = transbordos()[r,t]
+    if _TRANSBORDOS:
+        mTransbordo = _TRANSBORDOS[r][t]
+    else:
+        mTransbordo = transbordos()[r,t]
     tiempoEsperaI = 0
     suma = np.zeros(shape=(NUMEROESTACIONES))
     _tiempoBajada = np.zeros(shape=(NUMEROESTACIONES,NUMEROESTACIONES))
@@ -1123,6 +1308,23 @@ def horaEstaciones(r,t, idT):
     es decir para cada estación tiene: la hora de llegada, la hora de salida,
     dos booleanos que indican si es una estación de inicio o estación final,
     el id del trayecto y la secuencia
+
+    Parametros
+    ----------
+        - r: Indice de Ruta
+        - t: Indice de Trayecto
+        - idT: id del Trayecto
+
+    Return
+    ------
+        - _horaEstaciones: matriz que contiene
+                           [[   * _horaEstacionesLlegada,
+                                * _horaEstacionesSalida,
+                                * estacionInicio,
+                                * estacionFinal,
+                                * idTrayecto,
+                                * secuencia ], ...]
+
     '''
     horaInicio = horaInicioServicios(r)
     secuencia = _SECUENCIAS[r][t] -1
@@ -1174,6 +1376,15 @@ def serviciosRuta(r, horas = None):
     '''
         Función que recibe la ruta para la cual se van a sacar los servicios
         Los servicios son la identificación de un determinado bus que recorre la ruta
+
+        Parametros
+        ----------
+            - r: indice de Ruta. Ej: 0 --> Ruta 1
+            - horas: Arreglo con hora inicial y final de la ruta
+
+        Return
+        ------
+            - servicios: 
 
     '''
     if horas == None:
@@ -1227,11 +1438,13 @@ def serviciosRuta(r, horas = None):
             pilaSalida.append((serv , horas[x[0]]['horaFinal'] , x[2]))
             servicios.append((serv , x[0], x[1], x[2]))
             serv +=1
+    # print len(servicios)
     numeroServA = len(serviciosAdicionales)
     serviciosIda = np.array(servicios)
     serviciosIda = serviciosIda[serviciosIda[:,-1]==tIda]
     for serv in serviciosIda[-numeroServA:]:
         servicios.append((serv[0], -1.0, 1.0, tVuelta))
+    # print len(servicios)
 
     # dtype = [('servicio', int), ('id', int), ('horaLlegada', float), ('idTrayecto', int)]
     return np.array(servicios)
@@ -1311,7 +1524,8 @@ def jsonFile():
                 serviciosEst.append(serviciosDict)
             estructura[tray]['servicios']= serviciosEst
             tray+=1
-    out_file = open("archivos/horariosOpt.json","w")
+    nombreArchivo = inspect.getfile(inspect.currentframe()) 
+    out_file = open("archivos/horariosOpt-"+nombreArchivo+"-.json","w")
     json.dump(estructura,out_file, indent=4, sort_keys=True, separators=(',', ': '))
     out_file.close()
 
@@ -1499,14 +1713,47 @@ def optNelderMead():
     objetivos = objFunctionList(FrecuenciasOptimas)
     print "\nObjetivo Pasajeros: " + str(objetivos[0])+" Objetivo Operador: " + str(objetivos[1])
 
+def trayectosValueF(secuencias):
+    '''
+        Transpone la matriz de secuencias y pasa de indices iniciando en 1 a 0
+    '''
+    trayectosValue = map(list, zip(*secuencias))
+    for tray in range(len(trayectosValue)):
+        for ruta in range(len(trayectosValue[0])):
+            trayectosValue[tray][ruta] = list(trayectosValue[tray][ruta] -1)
+    return trayectosValue
+
+def calcularTopologiaTiempo():
+    '''
+        Cambia las matrices de _TIEMPO_ENTRE_ESTACIONES y _TOPOLOGIA, de acuerdo a las 
+        _SECUENCIAS establecidas 
+    '''
+    global _TIEMPO_ENTRE_ESTACIONES
+    global _TOPOLOGIA
+    trayectosValue = trayectosValueF(_SECUENCIAS)
+    tiemposTrayectos = tiempoTrayectosTransbordo(trayectosValue)
+    _TIEMPO_ENTRE_ESTACIONES = tiempoTrayectosRutas(tiemposTrayectos)
+    _TOPOLOGIA = obtenerTopologias(_TIEMPO_ENTRE_ESTACIONES)
+
 #Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
 
 if __name__ == "__main__":
-    # obtenerDatosBase()
-    numeroEstaciones()
-    optNelderMead()
+    # obtenerDatosBase( db_host =  '190.128.19.105',
+    #                   usuario = 'optimizacion',
+    #                   clave =  'fdoq9zSyfSlMsyW9wGkh',
+    #                   base_de_datos = 'rutamega_principal',
+    #                 )
+    obtenerDatosBase()
+    calcularTopologiaTiempo()
+    # numeroEstaciones()
+    # optNelderMead()
     print "\nFactor Operador: ", FACTOROPERADEOR, " Factor Pasajero: ", FACTORPASAJERO
     print "Demanda: ", NUMERODEMANDA, " Costos: ", COSTOS
+
+    # print serviciosRuta(2)[serviciosRuta(2)[:,-1]==5]
+    # print serviciosRuta(2)[serviciosRuta(2)[:,-1]==6]
+    # print len(horaInicioServicios(2))
+    # print _TRAYECTOS
 
     # Se ejecuta la función que genera el archivo "horariosGA.json"
     jsonFile()
