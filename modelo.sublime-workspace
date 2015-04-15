@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"Optim",
+				"OptimizacionFrecuencias	class"
+			],
+			[
+				"LABL",
+				"label_ResultadoOut	statement"
+			],
+			[
+				"segund",
+				"segundoNumeroEdit	statement"
+			],
+			[
+				"seg",
+				"segundoNumeroEdit	statement"
+			],
+			[
+				"QFile",
+				"QFileDialog	class"
+			],
+			[
+				"file",
+				"fileObj	statement"
+			],
+			[
+				"zero",
+				"ZeroSpinBox"
+			],
+			[
+				"Z",
+				"ZeroSpinBox	class"
+			],
+			[
+				"Qt",
+				"QtCore	module"
+			],
+			[
+				"obj",
+				"objFunction	function"
+			],
+			[
+				"PASS",
+				"pass	keyword"
+			],
+			[
+				"QDouble",
+				"QDoubleSpinBox	class"
+			],
+			[
+				"Q",
+				"QtCore	module"
+			],
+			[
+				"tiempoTra",
+				"tiempoTrayectos"
+			],
+			[
+				"QDia",
+				"QDialog	class"
+			],
+			[
+				"horas",
+				"horas"
+			],
+			[
 				"propori",
 				"_PROPORCIONES"
 			],
@@ -160,10 +224,6 @@
 				"try	Try/Except"
 			],
 			[
-				"Qt",
-				"QtGui	module"
-			],
-			[
 				"idtra",
 				"idTrayectosNP"
 			],
@@ -190,10 +250,6 @@
 			[
 				"trayecto",
 				"trayectoValue	forflow"
-			],
-			[
-				"tiempoTra",
-				"tiempoTrayectoVuelta"
 			],
 			[
 				"ind",
@@ -234,10 +290,6 @@
 			[
 				"cell",
 				"cell_type	function"
-			],
-			[
-				"file",
-				"file_location	statement"
 			],
 			[
 				"valores",
@@ -346,10 +398,6 @@
 			[
 				"Objetivos",
 				"objetivos	statement"
-			],
-			[
-				"obj",
-				"Objetivo"
 			],
 			[
 				"Frecuenc",
@@ -466,121 +514,66 @@
 			[
 				"hor",
 				"horaSalida	statement"
-			],
-			[
-				"convert",
-				"convertHour	function"
-			],
-			[
-				"servi",
-				"serviciosRuta	function"
-			],
-			[
-				"_tRA",
-				"_TRAYECTOS	statement"
-			],
-			[
-				"_TRA",
-				"_TRAYECTOS	statement"
-			],
-			[
-				"_hora",
-				"_horaEstaciones	statement"
-			],
-			[
-				"_Hora",
-				"_horaEstacionesLlegada	statement"
-			],
-			[
-				"tiempoViaj",
-				"tiempoViajePromedioSinEspera	function"
-			],
-			[
-				"tiempoVIaje",
-				"tiempoViajePromedioSinEspera	function"
-			],
-			[
-				"_SECUENCI",
-				"_SECUENCIAS	statement"
-			],
-			[
-				"h",
-				"horaInicio"
-			],
-			[
-				"inter",
-				"intervalosPeriodosRutas	statement"
-			],
-			[
-				"H",
-				"HORAFIN	statement"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/xdlrExample.py",
+			"file": "modeloOptimizacionV4.1.py",
 			"settings":
 			{
-				"buffer_size": 1856,
+				"buffer_size": 82889,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": " [2.4339788732394365, 3.265845070422535, 3.0809859154929575, 0.9242957746478873, 1.1399647887323943, 1.8177816901408448, 0.8626760563380281, 1.2632042253521125, 0.7702464788732394, 1.3248239436619715, 0.8318661971830986, 2.403169014084507, 2.834507042253521, 0.8318661971830986, 3.820422535211267, 1.3556338028169013, 1.2015845070422535, 1.1707746478873238, 1.509683098591549, 2.7112676056338025]\n [2.1874999999999996, 1.4788732394366195, 1.1091549295774645, 1.232394366197183, 1.3864436619718308, 3.7896126760563376, 0.8626760563380281, 2.7728873239436616, 2.15669014084507, 0.8626760563380281, 1.2015845070422535, 0.9242957746478873, 1.294014084507042, 0.7394366197183098, 1.8485915492957745, 1.232394366197183, 0.8318661971830986, 2.7112676056338025, 2.988556338028168, 2.834507042253521]\n\n u'Intercambiador Cuba',\n  u'San Fernando',\n  u'El Viajero',\n  u'Aeropuerto',\n  u'Batallon',\n  u'Maraya',\n  u'Jardin',\n  u'Ucumari',\n  u'Consota',\n  u'El Cafetero',\n  u'Francisco Pereira',\n  u'Centenario ',\n  u'Condina',\n  u'Ferrocarril',\n  u'Villavicencio',\n  u'La Popa',\n  u'Santa Monica',\n  u'Milan',\n  u'Fundadores',\n  u'Cam',\n  u'Intercambiador Dqs',\n  u'Cam',\n  u'Fundadores',\n  u'Milan',\n  u'Santa Monica',\n  u'La Popa',\n  u'Villavicencio',\n  u'Ferrocarril',\n  u'Parque Olaya',\n  u'Centenario ',\n  u'Francisco Pereira',\n  u'El Cafetero',\n  u'Consota',\n  u'Ucumari',\n  u'Jardin',\n  u'Maraya',\n  u'Batallon',\n  u'Aeropuerto',\n  u'El Viajero',\n  u'San Fernando',\n  u'Intercambiador Cuba'\n\n[38.0, 39.0, 36.0, 35.0, 34.0, 33.0, 32.0, 31.0,30.0 , 29.0, 28.0, 27.0, 26.0, 24.0, 23.0, 22.0, 21.0,, 19.0, 37.0]\n[41.0, 37.0, 19.0,, 21.0, 22.0, 23.0, 24.0, 25.0, 27.0, 28.0, 29.0,, 31.0, 32.0, 33.0, 34.0, 35.0, 36.0, 39.0]\n\n[3.7394843962008144, 3.5278154681139755, 1.0583446404341927, 1.3052917232021708, 2.187245590230665, 1.2347354138398914, 1.3758480325644504, 0.9877883310719133, 1.6580732700135683, 1.3758480325644504, 2.010854816824966, 1.3405698778833108, 0.9525101763907734, 0.9877883310719133, 0.7055630936227951, 1.8344640434192672, 2.1166892808683855]\n[1.0936227951153326, 1.4111261872455902, 1.2347354138398914, 1.587516960651289, 1.3405698778833108, 2.010854816824966, 1.4111261872455902, 0.9525101763907734, 3.104477611940298, 3.421981004070556, 3.245590230664858]\n\n[2.7869742198100407, 3.7394843962008144, 3.5278154681139755, 1.0583446404341927, 1.3052917232021708, 2.187245590230665, 1.2347354138398914, 1.3758480325644504, 0.9877883310719133, 1.6580732700135683, 1.3758480325644504, 2.010854816824966, 1.3405698778833108, 0.9525101763907734, 0.9877883310719133, 0.7055630936227951, 1.8344640434192672, 2.1166892808683855]\n[1.0936227951153326, 1.4111261872455902, 1.2347354138398914, 1.587516960651289, 1.3405698778833108, 2.010854816824966, 1.4111261872455902, 0.9525101763907734, 3.104477611940298, 3.421981004070556, 3.245590230664858, 52.000000000000014\n\n[38.0,39.0,36.0,35.0,34.0,33.0,10.0,9.0,8.0,7.0,6.0,1.0,2.0,5.0,4.0,3.0,18.0,17.0,16.0]\n[16.0,15.0,14.0,13.0,12.0,24.0,33.0,34.0,35.0,36.0,39.0,38.0]\n\nIntercambiador Cuba 38.0\nSan Fernando 39.0\nEl Viajero 36.0\nAeropuerto 35.0\nBatallon 34.0\nMaraya 33.0\nTurin 10.0\nEgoya 9.0\nColiseo  8.0\nOrmaza 7.0\nMercados 6.0\nEl Lago 1.0\nOtun 2.0\nVictoria 5.0\nDel Cafe 4.0\nLibertad 3.0\nViaducto 18.0\nCentral 17.0\nClaret 16.0\nCanarte 15.0\nLas Flores 14.0\nBanderas 13.0\nPalacio De Justicia 12.0\nRuana 24.0\nMaraya 33.0\nBatallon 34.0\nAeropuerto 35.0\nEl Viajero 36.0\nSan Fernando 39.0\nIntercambiador Cuba 38.0\n",
+			"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GSimpleGA.py",
 			"settings":
 			{
-				"buffer_size": 3454,
+				"buffer_size": 28674,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GPopulation.py",
+			"settings":
+			{
+				"buffer_size": 13859,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/Tutorial5InterfazBasica.py",
+			"settings":
+			{
+				"buffer_size": 1775,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/SumarApp.py",
+			"settings":
+			{
+				"buffer_size": 851,
 				"line_ending": "Unix",
-				"name": "[2.4339788732394365, 3.265845070422535, 3.0809859"
+				"name": "SumarApp.py"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40EstacionesV2.py",
+			"file": "modeloOptimizacionV5.py",
 			"settings":
 			{
-				"buffer_size": 19572,
-				"line_ending": "Unix"
+				"buffer_size": 92246,
+				"line_ending": "Unix",
+				"name": "modeloOptimizacionV5.py"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/Secuencias40Est.txt",
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorialSumar.py",
 			"settings":
 			{
-				"buffer_size": 441,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "modeloOptimizacionV2.py",
-			"settings":
-			{
-				"buffer_size": 81737,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
-			"settings":
-			{
-				"buffer_size": 8496,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/models/MappModel.py",
-			"settings":
-			{
-				"buffer_size": 1768,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/urls.py",
-			"settings":
-			{
-				"buffer_size": 1650,
+				"buffer_size": 2818,
 				"line_ending": "Unix"
 			}
 		}
@@ -612,8 +605,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 243.0,
-		"last_filter": "",
+		"height": 374.0,
+		"last_filter": "pyt",
 		"selected_items":
 		[
 			[
@@ -621,8 +614,28 @@
 				"Set Syntax: Python"
 			],
 			[
+				"pytho",
+				"Set Syntax: Python (Django)"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"enabl",
+				"Package Control: Enable Package"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
 			],
 			[
 				"remove",
@@ -631,10 +644,6 @@
 			[
 				"packa",
 				"Package Control: Remove Package"
-			],
-			[
-				"disable",
-				"Package Control: Disable Package"
 			],
 			[
 				"DISABLE",
@@ -664,6 +673,9 @@
 		"height": 139.0,
 		"history":
 		[
+			"view.settings().get(\"setting_name\")",
+			"view.settings()",
+			"view.settings().get(\"setting_name\")",
 			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
 		]
 	},
@@ -679,21 +691,61 @@
 	"expanded_folders":
 	[
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos",
-		"/home/rafapinzon/VRS/project_rs",
-		"/home/rafapinzon/VRS/project_rs/local_apps",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/classes",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/models",
-		"/home/rafapinzon/VRS/project_rs/templates",
-		"/home/rafapinzon/VRS/project_rs/templates/core",
-		"/home/rafapinzon/VRS/project_rs/templates/core/mapp"
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion"
 	],
 	"file_history":
 	[
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/PrimeraApp.py",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Python.sublime-settings",
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/05TutorialInterfazBasica.py",
+		"/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GPopulation.py",
+		"/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/FunctionSlot.py",
+		"/home/rafapinzon/CompilPython/mpascal/mpasparse.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV2.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modelo.sublime-project",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Python Django.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV4.1.py",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/rafapinzon/.config/sublime-text-2/Packages/Default/Preferences (Linux).sublime-settings",
+		"/home/rafapinzon/VRS/project_rs/templates/core/test/test_table.html",
+		"/home/rafapinzon/VRS/project_rs/templates/core/genetic.html",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/GeneticView.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/urls.py",
+		"/home/rafapinzon/VRS/project_rs/templates/base.html",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/DatosCreacionTiempo40est.txt",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40EstacionesV2.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV4.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorial6_dialogs.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorial5_signals.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorial4_events.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/VersionesPasadas/modeloOptimizacion.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/models/MappModel.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/TestView.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/csvtutorial.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/pyqt4table_example.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/pyqt4file.py",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/classes/MappWrapper.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/gui_python.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/csv_module_pyqt4.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/python_widget_ui.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/tut3PyQt.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorial3_currency_converter.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Soluciones/pruebas_modeloOptimizacionV4.1(variando demandas y factores).txt",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/pruebas con restriccion mala.txt",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/csvtutorial.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/untitled.ui",
+		"/home/rafapinzon/CompilPython/mpascal/mpaslex.py",
+		"/home/rafapinzon/CompilPython/mpascal/mpasast.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/xdlrExample.py",
+		"/home/rafapinzon/blabla.py",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/Anaconda/README.md",
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
+		"/home/rafapinzon/VRS/project_rs/templates/core/mapp/costs.html",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40Estaciones.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV1.py",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/classes/SimAnn.py",
@@ -706,18 +758,10 @@
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV3.py",
 		"/home/rafapinzon/Documents/Chat/Chat/Server.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/EscogenciaTiemposTransbordoRutaFantasma.txt",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/classes/MappWrapper.py",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms/MappForm.py",
-		"/home/rafapinzon/VRS/project_rs/templates/base.html",
 		"/home/rafapinzon/Dropbox/U/Progra/untitled.c",
-		"/home/rafapinzon/CompilPython/mpascal/mpaslex.py",
-		"/home/rafapinzon/CompilPython/mpascal/mpasast.py",
-		"/home/rafapinzon/CompilPython/mpascal/mpasparse.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempos.csv",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modelo.sublime-project",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/TiemposRuta2Alg.py",
 		"/home/rafapinzon/Dropbox/StuffsToDo",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/ErrorServerUne.txt",
@@ -725,10 +769,8 @@
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionGA2.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionDB1.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos/horariosOpt.json",
-		"/home/rafapinzon/VRS/project_rs/templates/core/test/test_table.html",
 		"/home/rafapinzon/VRS/project_rs/templates/core/test/test.html",
 		"/home/rafapinzon/Dropbox/U/Progra/Python/NameFileExecuted.py",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/urls.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/horariosOpt.json",
 		"/home/rafapinzon/VRS/project_rs/templates/core/mapp/update_gmap.html",
 		"/home/rafapinzon/Dropbox/Proyecto Optimización/GenerarControl.py",
@@ -775,25 +817,12 @@
 		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_easy_install.py",
 		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_dist_info.py",
 		"/home/rafapinzon/VRS/project_rs/TODO.txt",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Python.sublime-settings",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/SimAnnView.py",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/TestView.py",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/GeneticView.py",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/UtilsView.py",
 		"/home/rafapinzon/VRS/project_rs/prueba.py",
 		"/home/rafapinzon/VRS/project_rs/templates/core/home.html",
 		"/home/rafapinzon/VRS/project_rs/templates/core/simann.html",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms/TestForm.py",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/models/WatchModel.py",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/SublimeLinter/Default (Linux).sublime-keymap",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/Jedi - Python autocompletion/Default.sublime-keymap",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/SideBarEnhancements/Default (Linux).sublime-keymap",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/Anaconda/Default (Linux).sublime-keymap",
-		"/home/rafapinzon/Dropbox/Proyecto Optimización/modeloOptimizacion.py",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings"
+		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms/TestForm.py"
 	],
 	"find":
 	{
@@ -809,9 +838,107 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"TRANSBORDO",
+			"global",
+			"self",
+			"calcularTopologiaTiempo",
+			"trayectosValueF",
+			"optNelderMead",
+			"optGAPyevolve",
+			"gradf",
+			"objFunctionList",
+			"objFunction",
+			"objFunctionGenetic",
+			"jsonFile",
+			"serviciosOrdenados",
+			"serviciosRuta",
+			"horasRuta",
+			"horaEstaciones",
+			"horaInicioServicios",
+			"convertHour",
+			"tiempoViajePromedioSinEspera",
+			"tiempoViajePromedioSinEsperaSB",
+			"intervalosTiemposEntreSalidas",
+			"flujoAsignado",
+			"serviciosRequeridos",
+			"funcionCalidad",
+			"frecuenciaTotal",
+			"tiempoEsperarPor2Viaje",
+			"tiempoEsperaPor2Bus",
+			"pasajerosEspera2Viaje",
+			"tiempoViajePromedio",
+			"tiempoAcumuladoSubida",
+			"tiempoAcumuladoBajada",
+			"tiempoEsperaEstaciones",
+			"pasajerosPuedenAbordar",
+			"pasajerosEstaValid",
+			"pasajerosEstacion",
+			"distribucionDemanda",
+			"probabilidadEleccion",
+			"matrizDemandaMedia",
+			"tiempoEsperaPromedioTot",
+			"tiempoEsperaPromedio",
+			"demandaMediaConstante",
+			"tiempoEsperaMaximoTot",
+			"topologiaTot",
+			"tiempoEsperaMaximo",
+			"transbordos",
+			"mejoresSecuencias",
+			"tiempoEntreEstaciones",
+			"numeroEstaciones",
+			"obtenerTopologias",
+			"tiempoTrayectosRutas",
+			"tiempoTrayectosTransbordo",
+			"tiempoTrayectosDirectos",
+			"EsRutasFantasmas",
+			"EsRutaFantasma",
+			"_TRAYECTOS",
+			"_PROPORCIONES",
+			"EsRutasFantasmas",
+			"FinTrayectoArray",
+			"EstacionesBaseDatosDict",
+			"NUMEROESTACIONES",
+			"_TRANSBORDOS",
+			"_SECUENCIAS",
+			"_TOPOLOGIA",
+			"_TiempoDirectoTrayectos",
+			"_TIEMPO_ENTRE_ESTACIONES",
+			"FrecuenciasOptimas",
+			"COSTOS",
+			"ValoresFrecuencias",
+			"NUMERORUTAS",
+			"HORAFIN",
+			"HORAINICIO",
+			"NUMERODEMANDA",
+			"TIEMPOESPERA2BUS",
+			"TIEMPOABORDAR",
+			"CAPACIDADBUSES",
+			"FACTOROPERADEOR",
+			"FACTORPASAJERO",
+			"tab",
+			"tabs",
+			"file",
+			"fileName",
+			"open",
+			"spinbox",
+			"*args, **kwargs",
+			"int",
+			"float",
+			"int",
+			"0",
+			"columnView",
+			"ColumnView",
+			"columnView",
+			"11[\\r*\\n+]",
+			"11\n",
+			"- GESTIÓN DE LOS RIESGOS DEL PROYECTO",
+			"31211 - GESTIÓN DE LOS RIESGOS DEL PROYECTO\n",
+			"",
+			"^[^\\#\\n]( )+print",
+			"x[0]",
 			"^[^\\#\\n]( )+print",
 			"_SECUENCIAS",
 			"finTrayectoArray",
@@ -841,234 +968,185 @@
 			"trayectoIdaValue",
 			"index",
 			"Ida",
-			"16.0",
-			"0.0",
-			", ",
-			"trayectoIda",
-			"2.7112676056338025,",
-			",",
-			"0.0",
-			"_tiempoEntreEstacionesT",
-			"secuenciaN",
-			"]",
-			"Ida",
-			"0.0",
-			",",
-			"data3",
-			"listEstac",
-			",",
-			"\n[",
-			",",
-			"sheet1",
-			"sheet",
-			"_mejoresSecuencias",
-			"i",
-			"matBoolean",
-			",8,",
-			",0,",
-			"10",
-			",6,",
-			",2,",
-			",4,",
-			",8,",
-			"(,|\\[)[0-9](,|\\[)",
-			",8,8,",
-			",8,",
-			"(,|\\[)[0-9](,|\\[| )",
-			"Id",
-			"copy",
-			"round",
-			"mat",
-			";",
-			"  ",
-			";",
-			"14; ",
-			";",
-			"4",
-			"14; ",
-			";",
-			"'",
-			"^print",
-			";",
-			",",
-			";",
-			",",
-			"res1",
-			"diagonal",
-			"def objFunction(frecuencias):\n    global FrecuenciasOptimas\n\n    for i, x in enumerate(frecuencias):\n        # FrecuenciasOptimas[i] = ValoresFrecuencias[x]\n        FrecuenciasOptimas[i] = x\n\n    lenf = len(FrecuenciasOptimas)\n    obj1 = (sum(tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) + \n            (sum(tiempoEsperarPor2Viaje(r,t).sum() for r in range(lenf) for t in  [0,1]))*TIEMPOESPERA2BUS)*FACTORPASAJERO\n    obj2 = sum(COSTOS[r]* FrecuenciasOptimas[r] for r in range(lenf))*FACTOROPERADEOR\n    # vecO[frecuencias]\n    return obj1 + obj2",
-			"Frecuencias",
-			"(frecuencias)",
-			"Transbordo",
-			"Tansbordo",
-			"value",
-			"model.frecuenciaOptima",
-			"instance",
-			"\"idestacion\"",
-			"nicio",
-			"Salida",
-			"tiempoViajePromedioSinEspera",
-			"19119",
-			"value",
-			"...        ",
-			"\n...         ",
-			"...",
-			"self",
-			"\n...         ",
-			"...",
-			"0.066",
-			"model=None",
-			"float(model.frecuenciaOptima[r])",
-			"matrizDemandaMedia",
-			"tiempoViajePromedio",
-			"FrecuenciasOptimas",
-			"^m",
-			"4",
-			"frecuenciaTotal",
-			"0",
-			"where",
-			"15",
-			"Subida",
-			"tiempoEntreEstaciones",
-			"tiempoViajePromedioTot",
-			"tiempoViajePromedio",
-			"np.where",
-			"DEMANDA",
-			"_tiempoSubida",
-			"np.zeros",
-			"#_pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()",
-			"secuencia[0]",
-			"anterior",
-			"_SECUENCIAS[r][0][-1]-1",
-			"pasajerosTransbordo"
+			"16.0"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"self.TRANSBORDO",
+			"# global",
+			"self.calcularTopologiaTiempo",
+			"self.trayectosValueF",
+			"self.optNelderMead",
+			"self.optGAPyevolve",
+			"self.gradf",
+			"self.objFunctionList",
+			"self.objFunction",
+			"self.objFunctionGenetic",
+			"self.jsonFile",
+			"self.serviciosOrdenados",
+			"self.serviciosRuta",
+			"self.horasRuta",
+			"self.horaEstaciones",
+			"self.horaInicioServicios",
+			"self.convertHour",
+			"self.tiempoViajePromedioSinEspera",
+			"self.tiempoViajePromedioSinEsperaSB",
+			"self.intervalosTiemposEntreSalidas",
+			"self.flujoAsignado",
+			"self.serviciosRequeridos",
+			"self.funcionCalidad",
+			"self.frecuenciaTotal",
+			"self.tiempoEsperarPor2Viaje",
+			"self.tiempoEsperaPor2Bus",
+			"self.pasajerosEspera2Viaje",
+			"self.tiempoViajePromedio",
+			"self.tiempoAcumuladoSubida",
+			"self.tiempoAcumuladoBajada",
+			"self.tiempoEsperaEstaciones",
+			"self.pasajerosPuedenAbordar",
+			"self.pasajerosEstacionValida",
+			"self.pasajerosEstacion",
+			"self.distribucionDemanda",
+			"self.probabilidadEleccion",
+			"self.matrizDemandaMedia",
+			"self.tiempoEsperaPromedioTot",
+			"self.tiempoEsperaPromedio",
+			"self.demandaMediaConstante",
+			"self.tiempoEsperaMaximoTot",
+			"self.topologiaTot",
+			"self.tiempoEsperaMaximo",
+			"self.transbordos",
+			"self.mejoresSecuencias",
+			"self.tiempoEntreEstaciones",
+			"self.numeroEstaciones",
+			"self.obtenerTopologias",
+			"self.tiempoTrayectosRutas",
+			"self.tiempoTrayectosTransbordo",
+			"self.tiempoTrayectosDirectos",
+			"self._TRAYECTOS",
+			"self._PROPORCIONES",
+			"self.EsRutasFantasmas",
+			"self.FinTrayectoArray",
+			"self.EstacionesBaseDatosDict",
+			"self.NUMEROESTACIONES",
+			"self._TRANSBORDOS",
+			"self._SECUENCIAS",
+			"self._TOPOLOGIA",
+			"self._TiempoDirectoTrayectos",
+			"self._TIEMPO_ENTRE_ESTACIONES",
+			"self.FrecuenciasOptimas",
+			"self.COSTOS",
+			"self.ValoresFrecuencias",
+			"self.NUMERORUTAS",
+			"self.HORAFIN",
+			"self.HORAINICIO",
+			"self.NUMERODEMANDA",
+			"self.TIEMPOESPERA2BUS",
+			"self.TIEMPOABORDAR",
+			"self.CAPACIDADBUSES",
+			"self.FACTOROPERADEOR",
+			"self.FACTORPASAJERO",
 			"TRANSBORDO",
 			"10"
 		],
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": false,
+		"whole_word": true,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/xdlrExample.py",
+					"file": "modeloOptimizacionV4.1.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1856,
+						"buffer_size": 82889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								801,
-								801
+								61056,
+								61056
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3454,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2270,
-								2270
-							]
-						],
-						"settings":
-						{
-							"auto_name": "[2.4339788732394365, 3.265845070422535, 3.0809859",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 22706.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40EstacionesV2.py",
+					"buffer": 1,
+					"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GSimpleGA.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19572,
+						"buffer_size": 28674,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17748,
-								17748
+								23015,
+								23015
 							]
 						],
 						"settings":
 						{
-							"open_with_edit": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 3,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 3483.0,
+						"translation.x": -0.0,
+						"translation.y": 5076.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/Secuencias40Est.txt",
-					"semi_transient": true,
+					"buffer": 2,
+					"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GPopulation.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 441,
+						"buffer_size": 13859,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								326,
-								326
+								3789,
+								3789
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1078,20 +1156,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "modeloOptimizacionV2.py",
+					"buffer": 3,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/Tutorial5InterfazBasica.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 81737,
+						"buffer_size": 1775,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79532,
-								79532
+								346,
+								346
 							]
 						],
 						"settings":
@@ -1101,93 +1179,94 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 30753.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8496,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6684,
-								6684
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2143.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/models/MappModel.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1768,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1531,
-								1531
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 20.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "/home/rafapinzon/VRS/project_rs/local_apps/core/urls.py",
+					"buffer": 4,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/SumarApp.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1650,
+						"buffer_size": 851,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								767,
+								767
+							]
+						],
+						"settings":
+						{
+							"auto_name": "SumarApp.py",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "modeloOptimizacionV5.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 92246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87669,
+								87669
+							]
+						],
+						"settings":
+						{
+							"auto_name": "modeloOptimizacionV5.py",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 29893.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorialSumar.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2004,
+								2004
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 113.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1199,7 +1278,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -1254,12 +1333,12 @@
 		"selected_items":
 		[
 			[
-				"d",
-				"def sol"
+				"",
+				"Package Control Messages"
 			],
 			[
-				"",
-				"Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV1.py"
+				"d",
+				"def sol"
 			]
 		],
 		"width": 0.0

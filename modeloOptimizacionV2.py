@@ -1358,14 +1358,17 @@ def horasRuta(r):
     '''
     horas = []
     rutaT = _TRAYECTOS[r]
+    horasIda = []
+    horasVuelta = []
     for t, value in rutaT.iteritems():
         if value == 'Ida':
             # horas.append(horaEstaciones(r,0,t))
             for horaE in horaEstaciones(r,0,t):
-                horas.insert(0, (horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
+                horasIda.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
         else:
             for horaE in horaEstaciones(r,1,t):
-                horas.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
+                horasVuelta.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))
+    horas = horasIda + horasVuelta
     dtype= [('horaInicial', float), ('horaFinal', float), ('idTrayecto', int)]
     horas = np.array(horas, dtype)
     # print horas.shape, r, horas
