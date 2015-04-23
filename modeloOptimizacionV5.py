@@ -12,7 +12,7 @@ from scipy import optimize
 from pyevolve import G1DList, GSimpleGA, Selectors
 from pyevolve import Initializators, Mutators, Consts
 
-import inspect, os
+import inspect, os, sys
 
 
 np.set_printoptions(threshold=np.nan)
@@ -29,10 +29,30 @@ def _pickle_method(m):
 copy_reg.pickle(types.MethodType, _pickle_method)
 
 class OptimizacionFrecuencias(object):
-    """Clase donde estan las funciones requeridas y las variables para optimizar las frecuencias"""
-    def __init__(self, numeroDemanda = 12, factorPasajero = 100, factorOperador = 100,
+    """
+    Clase donde estan las funciones requeridas y las variables para optimizar las frecuencias
+
+    Parametros
+    ----------
+        - numeroDemanda: Numero de demanda con la que se llenara la matriz de demanda.
+        - factorPasajero: Factor de peso del pasajero.
+        - factorOperador: Factor de peso del operador.
+        - capacidadBuses: Capacidad total de los buses.
+        - tiempoAbordar: Tiempo promedio para abordar los Buses.
+        - tiempoEspera2Bus: Tiempo promedio espera de segundo Bus.
+        - horaInicio: Hora de inicio de servicios.
+        - horaFin: Hora de fin de servicios.
+        - numeroRutas: Numero de Rutas.
+        - numeroEstacionesC: Numero de Estaciones.
+        - frecuenciasOptimas: Lista con el valor de la frecuencia optima para cada ruta.
+        - finTrayecto: Lista con las estaciones finales disponibles de todas las rutas.
+
+    """
+    def __init__(self, numeroDemanda = 2, factorPasajero = 100, factorOperador = 100,
                  capacidadBuses = 150, tiempoAbordar = 1/60.0, tiempoEspera2Bus = 1,
-                 horaInicio = 5, horaFin = 23, frecuenciasOptimas = [0.588608646066, 0.064516141848, 0.487587969109]):
+                 horaInicio = 5, horaFin = 23, numeroRutas = 3, numeroEstacionesC = 15,
+                 frecuenciasOptimas = [0.588608646066, 0.064516141848, 0.487587969109],
+                 finTrayecto = [11,0], transbordosM = None):
 
         self.FACTORPASAJERO = factorPasajero  # Factor de peso del pasajero
         self.FACTOROPERADEOR = factorOperador  # Factor de peso del operador
@@ -45,11 +65,12 @@ class OptimizacionFrecuencias(object):
         self.HORAINICIO = horaInicio
         self.HORAFIN = horaFin
 
-        self.NUMERORUTAS = 3 # Se sacará de base de datos
+        self.NUMERORUTAS = numeroRutas
+        self.NUMEROESTACIONES = numeroEstacionesC
         
         self.FrecuenciasOptimas = frecuenciasOptimas
 
-        # Se sacará de base de datos
+        
         _TIEMPO_ENTRE_ESTACIONES1 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14,16],
                                               [ 2, 0, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12,14],
                                               [ 4, 2, 0, 2, 2, 4, 4, 6, 6, 8,10,12, 8,10,12],
@@ -108,7 +129,7 @@ class OptimizacionFrecuencias(object):
 
         self._TiempoDirectoTrayectos = [tiempoTrayectoIda, tiempoTrayectoVuelta]
 
-        # Se sacará de base de datos
+        
         #Topologias por rutas y trayectos, teniendo en cuenta viajes 'indirectos'
         _TOPOLOGIA1 = np.array([[0,1,1,0,1,0,1,0,1,1,1,1,0,0,0],
                                 [0,0,1,0,1,0,1,0,1,1,1,1,0,0,0],
@@ -209,7 +230,7 @@ class OptimizacionFrecuencias(object):
         self._TRAYECTOS = [{1:'Ida',2:'Vuelta'},{3:'Ida',4:'Vuelta'},{5:'Ida',6:'Vuelta'}]
 
 
-        # Se sacará de base de datos
+        
         _SECUENCIA1 = np.array([1, 2, 3, 5, 7, 9, 10, 11, 12])
         _SECUENCIA4 = np.array([12, 11, 10, 9, 7, 5, 3, 2, 1])
         _SECUENCIA2 = np.array([1, 2, 3, 4, 6, 8, 10, 11, 12])
@@ -224,37 +245,24 @@ class OptimizacionFrecuencias(object):
 
 
 
-        self._TRANSBORDOS = None
+        if transbordosM is not None:
+            self._TRANSBORDOS = transbordosM
+        else:
+            self._TRANSBORDOS = self.transbordos()
 
-        self.TRANSBORDO = None # Variable para hacer dp cuando se calculan los self.transbordos.
-        self.NUMEROESTACIONES = 15
+        # self.TRANSBORDO = None # Variable para hacer dp cuando se calculan los self.transbordos().
 
         self.EstacionesBaseDatosDict = None
 
-        self.FinTrayectoArray = None
+        self.FinTrayectoArray = finTrayecto
 
-        self.EsRutaFantasma = [[False, False],
-                          [False, False],
-                          [False, True]
-                         ]
+        # self.EsRutaFantasma = [[False, False],
+        #                   [False, False],
+        #                   [False, True]
+        #                  ]
 
-        # Se sacará de base de datos
-        # _DEMANDA_MEDIA = np.array([[0 ,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
-        #                            [2,0 ,2,2,2,2,2,2,2,2,2,2,2,2,2]
-        #                            [2,2,0 ,2,2,2,2,2,2,2,2,2,2,2,2]
-        #                            [2,2,2,0 ,2,2,2,2,2,2,2,2,2,2,2]
-        #                            [2,2,2,2,0 ,2,2,2,2,2,2,2,2,2,2]
-        #                            [2,2,2,2,2,0 ,2,2,2,2,2,2,2,2,2]
-        #                            [2,2,2,2,2,2,0 ,2,2,2,2,2,2,2,2]
-        #                            [2,2,2,2,2,2,2,0 ,2,2,2,2,2,2,2]
-        #                            [2,2,2,2,2,2,2,2,0 ,2,2,2,2,2,2]
-        #                            [2,2,2,2,2,2,2,2,2,0 ,2,2,2,2,2]
-        #                            [2,2,2,2,2,2,2,2,2,2,0 ,2,2,2,2]
-        #                            [2,2,2,2,2,2,2,2,2,2,2,0 ,2,2,2]
-        #                            [2,2,2,2,2,2,2,2,2,2,2,2,0 ,2,2]
-        #                            [2,2,2,2,2,2,2,2,2,2,2,2,2,0 ,2]
-        #                            [2,2,2,2,2,2,2,2,2,2,2,2,2,2,0 ]])
-        # Se sacará de base de datos
+        self.EsRutaFantasma = self.esRutaFantasmaFun()
+        
         self._PROPORCIONES = np.array([[0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7],
                                   [0.1,0,0.1,0.1,0.2,0.4,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7],
                                   [0.1,0.1,0,0.1,0.1,0.4,0.3,0.4,0.4,0.7,0.4,0.4,0.7,0.7,0.7],
@@ -278,7 +286,56 @@ class OptimizacionFrecuencias(object):
         self.ValoresFrecuencias = 1/np.arange(3,16,0.5)
 
         self.COSTOS = [5000,5000,5000] # Costos de cada Ruta
+        self.dbr = None
 
+    def cambiarVariablesOptimizacion(self, demanda = None, factorPasajero = None, factorOperador = None, 
+                                     capacidadBuses = None, tiempoAbordar = None, tiempoEspera2Bus = None):
+        '''
+            Cambia las variables dependientes de la optimizacion, solo cambia las que son pasadas
+
+            Parametros
+            ----------
+                - demanda = int
+                - factorPasajero: int
+                - factorOperador: int
+                - capacidadBuses: int
+                - tiempoAbordar: int
+                - tiempoEspera2Bus: int
+            Return
+            ------
+                None
+        '''
+        if demanda:
+            self.NUMERODEMANDA = demanda
+        if factorPasajero:
+            self.FACTORPASAJERO = factorPasajero
+        if factorOperador:
+            self.FACTOROPERADEOR = factorOperador
+        if capacidadBuses:
+            self.CAPACIDADBUSES = capacidadBuses
+        if tiempoAbordar:
+            self.TIEMPOABORDAR = tiempoAbordar
+        if tiempoEspera2Bus:
+            self.TIEMPOESPERA2BUS = tiempoEspera2Bus
+
+    def cambiarVariablesJSON(self, horaInicio = None, horaFin = None):
+        '''
+            Cambia las variables dependientes de generar las tablas horarias en el archivo JSON,
+            solo cambia las que son pasadas
+
+            Parametros
+            ----------
+                - horaInicio = int
+                - horaFin = int
+            Return
+            ------
+                None
+        '''
+        if horaInicio:
+            self.HORAINICIO = horaInicio
+        if horaFin:
+            self.HORAFIN = horaFin
+       
 
     def obtenerDatosBase(self, db_host = 'admin.megaruta.co', usuario ='rutamega_eqopt', clave = 'eedd8ae977b7f997ce92aa1b0', base_de_datos ='rutamega_principal'):
         '''
@@ -311,18 +368,8 @@ class OptimizacionFrecuencias(object):
                 Vacio. Solo cambia matrices del programa.
         '''
 
-        # # global self._TRANSBORDOS
-        # # global self._PROPORCIONES
-        # # global self.EstacionesBaseDatosDict
-        # # global self._SECUENCIAS
-        # # global self._TRAYECTOS 
-        # # global self.EsRutaFantasma
-        # # global self.FinTrayectoArray
-        # # global self.NUMEROESTACIONES
-        # # global self.NUMERORUTAS
-
-        dbr = MySQLdb.connect(host=db_host, user=usuario, passwd=clave,db=base_de_datos)
-        cursor=dbr.cursor() # real
+        self.dbr = MySQLdb.connect(host=db_host, user=usuario, passwd=clave,db=base_de_datos)
+        cursor= self.dbr.cursor() 
         query_quotes =  "SET sql_mode='ANSI_QUOTES'" # para que acepte tablas con "caracteres especiales"
         cursor.execute(query_quotes)
         sql = '''SELECT * FROM "estacion-matrices"'''
@@ -332,7 +379,6 @@ class OptimizacionFrecuencias(object):
                             union all SELECT distinct idestaciondestino FROM "estacion-matrices") estaciones'''
         sqlIdTrayectos = '''SELECT f.idtrayecto, b.idruta, f.sentidotrayecto FROM (SELECT idruta FROM "estacion-matrices" GROUP BY idruta)b
                             LEFT JOIN trayecto f ON b.idruta = f.idruta;'''
-        # sqlSecuencias = '''SELECT te.idtrayecto, te.idestacion, te.ordentrayectoestacion FROM "trayecto-estacion" te, (SELECT f.idtrayecto idT FROM (SELECT idruta FROM "estacion-matrices" GROUP BY idruta)b LEFT JOIN trayecto f ON b.idruta = f.idruta)e WHERE e.idT = te.idtrayecto'''
         sqlSecuencias = ''' SELECT te.idtrayecto, te.idestacion, te.ordentrayectoestacion
                             FROM "trayecto-estacion" te,
                             (SELECT distinct estaciones
@@ -464,6 +510,31 @@ class OptimizacionFrecuencias(object):
         self._PROPORCIONES    = matProporcion
 
     # print self.EstacionesBaseDatosDict
+    def esRutaFantasmaFun(self):
+        self.EsRutaFantasma = []
+        for ruta in self._SECUENCIAS:
+            rutaF = [False]
+            secuencia = ruta[0]
+            if secuencia[-1] -1 in self.FinTrayectoArray:
+                rutaF.append(False)
+            else:
+                rutaF.append(True)
+            self.EsRutaFantasma.append(rutaF)
+        return self.EsRutaFantasma
+
+    def generarCSV(self):
+        for ruta in range(self.NUMERORUTAS):
+            np.savetxt("archivos/TiempoEntreEstaciones.csv", self._TIEMPO_ENTRE_ESTACIONES[ruta], delimiter=",", fmt = "%10.5f")
+            for trayecto in [0,1]:
+                if trayecto == 0:
+                    np.savetxt("archivos/Secuencia"+str(ruta+1)+"Ida.csv", self._SECUENCIAS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+                    np.savetxt("archivos/Transbordos"+str(ruta+1)+"Ida.csv", self._TRANSBORDOS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+                    np.savetxt("archivos/Topologia"+str(ruta+1)+"Ida.csv", self._TOPOLOGIA[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+                else:
+                    np.savetxt("archivos/Secuencia"+str(ruta+1)+"Vuelta.csv", self._SECUENCIAS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+                    np.savetxt("archivos/Transbordos"+str(ruta+1)+"Vuelta.csv", self._TRANSBORDOS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+                    np.savetxt("archivos/Topologia"+str(ruta+1)+"Vuelta.csv", self._TOPOLOGIA[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+        np.savetxt("archivos/Proporciones.csv", self._PROPORCIONES, delimiter=",", fmt = "%10.5f")
 
     def tiempoTrayectosDirectos(self, trayectosValue):
         '''
@@ -478,7 +549,7 @@ class OptimizacionFrecuencias(object):
             Return
             ------
             - tiempoTrayectos: matriz donde se encuentran los tiempos directos de cada trayecto de cada ruta
-                [indiceTrayecto][indiceRuta][np.array(self.numeroEstaciones,self.numeroEstaciones)]
+                [indiceTrayecto][indiceRuta][np.array(NUMEROESTACIONES,NUMEROESTACIONES)]
 
         '''
         tiemposTrayectos = []
@@ -519,7 +590,7 @@ class OptimizacionFrecuencias(object):
             Return
             ------
             - tiempoTrayectos: matriz donde se encuentran los tiempos de cada trayecto de cada ruta con los self.transbordos
-                [indiceTrayecto][indiceRuta][np.array(self.numeroEstaciones,self.numeroEstaciones)]
+                [indiceTrayecto][indiceRuta][np.array(NUMEROESTACIONES,NUMEROESTACIONES)]
 
         '''
         tiemposTrayectos = self.tiempoTrayectosDirectos(trayectosValue)
@@ -723,34 +794,35 @@ class OptimizacionFrecuencias(object):
         Se implementa DP, con la variable de self.TRANSBORDO
         '''
         # global self.TRANSBORDO
-        if self.TRANSBORDO == None: # Si no se han asignado self.transbordos
+        # if self.TRANSBORDO == None: # Si no se han asignado self.transbordos
             # Se toman las mejores secuencias (utilizando rutas más cortas)
-            _mejoresSecuenciasT = self.mejoresSecuencias()
-            _mejoresSecuenciasN = []
-            for ir ,ruta in enumerate(self._SECUENCIAS):
-                r = []
-                for it, trayecto in enumerate(ruta):
-                    tr = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))
-                    if ir == 2 and it == 1: # Si es estación fantasma
-                        # Se concatenan las dos secuencias, la de trayecto ida y la de vuelta.
-                        sec = np.concatenate((ruta[0]-1,ruta[1]-1))
-                    else: # Si es cualquier estación normal, se asigna el trayecto actual
-                        sec = trayecto-1
-                    # print sec
-                    for i, act in enumerate(sec):
-                        for j in range(self.NUMEROESTACIONES):
-                            if len(_mejoresSecuenciasT[act][j])>=3 and _mejoresSecuenciasT[act][j][1] != 13:
-                                estaTrans = _mejoresSecuenciasT[act][j][1] # Estación de transbordo
-                                # Si la estación de transbordo está más adelante en la matriz trayecto
-                                # Se le asigna esta estación de transbordo.
-                                if np.in1d(estaTrans, sec[i:]+1):
-                                    tr[act,j] = estaTrans
-                    r.append(tr)
-                _mejoresSecuenciasN.append(np.array(r))
+        _mejoresSecuenciasT = self.mejoresSecuencias()
+        _mejoresSecuenciasN = []
+        for ir ,ruta in enumerate(self._SECUENCIAS):
+            r = []
+            for it, trayecto in enumerate(ruta):
+                tr = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))
+                if ir == 2 and it == 1: # Si es estación fantasma
+                    # Se concatenan las dos secuencias, la de trayecto ida y la de vuelta.
+                    sec = np.concatenate((ruta[0]-1,ruta[1]-1))
+                else: # Si es cualquier estación normal, se asigna el trayecto actual
+                    sec = trayecto-1
+                # print sec
+                for i, act in enumerate(sec):
+                    for j in range(self.NUMEROESTACIONES):
+                        if len(_mejoresSecuenciasT[act][j])>=3 and _mejoresSecuenciasT[act][j][1] != 13:
+                            estaTrans = _mejoresSecuenciasT[act][j][1] # Estación de transbordo
+                            # Si la estación de transbordo está más adelante en la matriz trayecto
+                            # Se le asigna esta estación de transbordo.
+                            if np.in1d(estaTrans, sec[i:]+1):
+                                tr[act,j] = estaTrans
+                r.append(tr)
+            _mejoresSecuenciasN.append(np.array(r))
 
-            self.TRANSBORDO = np.array(_mejoresSecuenciasN)
+            # self.TRANSBORDO = np.array(_mejoresSecuenciasN)
 
-        return self.TRANSBORDO
+        # return self.TRANSBORDO
+        return np.array(_mejoresSecuenciasN)
 
 
     def tiempoEsperaMaximo(self, t):
@@ -905,10 +977,7 @@ class OptimizacionFrecuencias(object):
         puedenSubir = np.zeros(shape=(self.NUMEROESTACIONES))
          # Se crea una matriz cuadrada de zeros con tamaño igual al numero de estaciones
         _pasajerosPuedenAbordar = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))
-        if self._TRANSBORDOS:
-            mTransbordo = self._TRANSBORDOS[r][t]
-        else:
-            mTransbordo = self.transbordos()[r,t]
+        mTransbordo = self._TRANSBORDOS[r][t]
         i = secuencia[0] # Se toma la estación inicial
         capacidad[i] = self.CAPACIDADBUSES - pasajeros[i] # Se inicializa el arreglo de capacidades
         puedenSubir[i] = self.CAPACIDADBUSES # Se inicializa el arreglo de puedenSubir
@@ -954,10 +1023,7 @@ class OptimizacionFrecuencias(object):
                 # puedenSubirI             = puedAbordI[1]#[:self._SECUENCIAS[r][0][-1]-1,secuencia[1]]
                 secuenciaI               = self._SECUENCIAS[r][0]-1 # Secuencia ida
                 anterior                 = secuenciaI[-1]
-                if self._TRANSBORDOS:
-                    mTransbordoI          = self._TRANSBORDOS[r][0]
-                else:
-                    mTransbordoI         = self.transbordos()[r,0] # Transbordo ida
+                mTransbordoI          = self._TRANSBORDOS[r][0]# Transbordo ida
 
                 pasajerosSuma = 0
                 for x in secuenciaI:
@@ -1058,10 +1124,7 @@ class OptimizacionFrecuencias(object):
     def tiempoAcumuladoBajada(self, r, t):
         "Devuelve matriz de tiempo Acumulado de Bajada para el trayecto 't' de la ruta 'r'"
         tiempoEspera  = self.tiempoEsperaEstaciones(r,t)
-        if self._TRANSBORDOS:
-            mTransbordo = self._TRANSBORDOS[r][t]
-        else:
-            mTransbordo = self.transbordos()[r,t]
+        mTransbordo = self._TRANSBORDOS[r][t]
         tiempoEsperaI = 0
         suma = np.zeros(shape=(self.NUMEROESTACIONES))
         _tiempoBajada = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))
@@ -1352,7 +1415,8 @@ class OptimizacionFrecuencias(object):
             idTrayecto = np.empty(len(secuencia))
             idTrayecto.fill(idT)
             _horaEstaciones.append(zip(_horaEstacionesLlegada, _horaEstacionesSalida, estacionInicio, estacionFinal, idTrayecto, secuencia))
-        dtype = [('horaLlegada', float), ('horaSalida', float),('estacionInicio', bool), ('estacionFinal', bool),('idTrayecto', int), ('secuencia', int)]
+        dtype = [('horaLlegada', float), ('horaSalida', float),('estacionInicio', bool), 
+                 ('estacionFinal', bool),('idTrayecto', int), ('secuencia', int)]
         _horaEstaciones = np.array(_horaEstaciones, dtype)
         return _horaEstaciones
 
@@ -1483,10 +1547,20 @@ class OptimizacionFrecuencias(object):
         # return 0
 
 
-    def jsonFile(self):
+    def jsonFile(self, direccion = None, nombreArchivoS = None, nombreProgramacion= None):
         '''
             Genera el archivo "horarios-NOMBREARCHIVOFUENTE-.json" con la estructura v3
             requerida por SingleClick
+
+            Parametros
+            ----------
+                - direccion = String. Contiene la direccion de la carpeta donde se va a generar el JSON
+                                      Si se deja como vacio la direccion por defecto sera:
+                                        "/var/www/html/Archivos/Optimizacion/Programacion/"
+                - nombreArchivoS = String. Contiene el nombre del archivo para ser generado. Si se deja
+                                           Vacio el nombre por defecto sera el nombre de este archivo.
+                                           "modeloOptimizacionV5"
+
         '''
         estructura = []
         tray = 0
@@ -1539,13 +1613,77 @@ class OptimizacionFrecuencias(object):
                     serviciosEst.append(serviciosDict)
                 estructura[tray]['servicios']= serviciosEst
                 tray+=1
-        nombreArchivo = inspect.getfile(inspect.currentframe()) 
-        out_file = open("archivos/horariosOpt-"+nombreArchivo+"-.json","w")
+        path = inspect.getfile(inspect.currentframe()) 
+        nombreArchivoExt = os.path.basename(path)
+        nombreArchivo, extension = os.path.splitext(nombreArchivoExt)
+        if direccion is None:
+            out_file = open("/var/www/html/Archivos/Optimizacion/Programacion/"+nombreArchivoS+".json","w")
+        else:
+            if nombreArchivoS is None:
+                out_file = open(direccion+"/"+nombreArchivo+".json","w")
+            else:
+                out_file = open(direccion+"/"+nombreArchivoS+".json","w")
+
         # out_file = open("/etc/optimizacion/archivos/horariosOpt.json","w")
         # out_file = open("/var/www/html/Archivos/Optimizacion/horariosOpt.json","w")
         json.dump(estructura,out_file, indent=4, sort_keys=True, separators=(',', ': '))
+        self.generarRegistroBD(nombreArchivoS, nombreProgramacion)
         out_file.close()
 
+    def generarRegistroBD(self, nombreArchivoS, nombreProgramacion):
+        '''
+            Genera registro de la generacion de optimizacion de frecuencias en la base de datos.
+            Sera guardada en la tabla "programacion-optimizacion" con el:
+                - nombreprogramacionoptimizacion
+                - archivoprogramacionoptimizacion
+                - fechacreacion
+                - fechamodificacion
+
+            Parametros
+            ----------
+                - nombreArchivoS: String, nombre del archivo generado.
+                - nombreProgramacion: String, nombre de la programacion.
+        '''
+        cursor = self.dbr.cursor() 
+        query_quotes =  "SET sql_mode='ANSI_QUOTES'" # para que acepte tablas con "caracteres especiales"
+        cursor.execute(query_quotes)
+
+        sqlCheckNombre = '''SELECT nombreprogramacionoptimizacion FROM "programacion-optimizacion" where 
+                           LOWER(nombreprogramacionoptimizacion) = '%s'; ''' %nombreProgramacion.lower()
+        cursor.execute(sqlCheckNombre)
+        checkNombre = cursor.fetchall()
+
+        fecha = datetime.datetime.now().date()
+        nombreArchivo = nombreArchivoS + ".json"
+        if len(checkNombre) == 0:
+            sqlNuevoRegistro = """INSERT INTO "programacion-optimizacion" (nombreprogramacionoptimizacion,
+                 archivoprogramacionoptimizacion, fechacreacion, fechamodificacion, enejecucion)
+                 VALUES ('%s', '%s', NOW(), NOW(), 'No')"""%(nombreProgramacion, nombreArchivo)
+                 # VALUES ('%s', '%s', NOW(), NOW())"""%(nombreProgramacion, nombreArchivo)
+            try:
+               # Ejecutamos el comando
+               cursor.execute(sqlNuevoRegistro)
+               # Efectuamos los cambios en la base de datos
+               self.dbr.commit()
+            except:
+               # Si se genero algún error revertamos la operación
+               self.dbr.rollback()
+               print "datos no validos"
+        else:
+            sqlModificacionRegistro = """UPDATE "programacion-optimizacion" 
+            SET fechamodificacion= NOW(), archivoprogramacionoptimizacion='%s', enejecucion = 'No'
+            WHERE LOWER(nombreprogramacionoptimizacion) = '%s' """ % (nombreArchivo, nombreProgramacion.lower())
+
+            try:
+               # Ejecutamos el comando
+               cursor.execute(sqlModificacionRegistro)
+               # Efectuamos los cambios en la base de datos
+               self.dbr.commit()
+            except:
+               # Si se genero algún error revertamos la operación
+               self.dbr.rollback()
+               print "datos no validos"
+        self.dbr.close()
 
     def objFunctionGenetic(self, frecuencias):
         '''
@@ -1571,7 +1709,8 @@ class OptimizacionFrecuencias(object):
 
         lenf = len(self.FrecuenciasOptimas)
         obj1 = (sum(self.tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) +
-                (sum(self.tiempoEsperarPor2Viaje(r,t).sum() for r in range(lenf) for t in  [0,1]))*self.TIEMPOESPERA2BUS)*self.FACTORPASAJERO
+                (sum(self.tiempoEsperarPor2Viaje(r,t).sum() for r in range(lenf) 
+                 for t in  [0,1]))*self.TIEMPOESPERA2BUS)*self.FACTORPASAJERO
         obj2 = sum(self.COSTOS[r]* self.FrecuenciasOptimas[r] for r in range(lenf))*self.FACTOROPERADEOR
 
         # rule = self.flujoAsignado().sum(axis=0) <= self.funcionCalidad().sum(axis=0)
@@ -1666,7 +1805,7 @@ class OptimizacionFrecuencias(object):
 
 
     # Genome instance
-    def optGAPyevolve(self):
+    def optGAPyevolve(self, multiProcessing= False):
         '''
         Implementación de Algoritmo Genético, a través de la librería pyevolve.
         Devuelve la lista con las frecuencias óptimas para cada ruta
@@ -1683,10 +1822,14 @@ class OptimizacionFrecuencias(object):
 
         # Genetic Algorithm Instance
         ga = GSimpleGA.GSimpleGA(genome)
-        ga.setMultiProcessing()
+
+        if multiProcessing:
+            ga.setMultiProcessing()
+
         ga.selector.set(Selectors.GRankSelector)
         # ga.selector.set(Selectors.GTournamentSelector)
-
+        # csv_adapter = DBFileCSV(identify="run1", filename="stats.csv")
+        # ga.setDBAdapter(csv_adapter)
         ga.setMinimax(Consts.minimaxType["minimize"])
         ga.setGenerations(20)
         ga.setMutationRate(0.1)
@@ -1712,14 +1855,14 @@ class OptimizacionFrecuencias(object):
         print "Objetivo Pasajeros: " + str(objetivos[0])+" Objetivo Operador: " + str(objetivos[1])
         return frecuencias
 
-    def optNelderMead(self):
+    def optNelderMead(self, multiProcessing = False):
         '''
         Función que cambia las variables de las self.FrecuenciasOptimas # global
         utilizando el algoritmo Nelder-Mead de la librería SciPy
         Nelder-Mead: nonlinear optimization technique
         '''
         # global self.FrecuenciasOptimas
-        x0 = np.array(self.optGAPyevolve())
+        x0 = np.array(self.optGAPyevolve(multiProcessing))
 
         # x0 = np.asarray((0.18, 0.11, 0.12))
         # resultado = optimize.minimize(self.objFunction, x0, method = 'Nelder-Mead',
@@ -1789,19 +1932,23 @@ class OptimizacionFrecuencias(object):
 #Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
 
 if __name__ == "__main__":
-    # obtenerDatosBase( db_host =  'localhost',
-    #                   usuario = 'optimizacion',
-    #                   clave =  'fdoq9zSyfSlMsyW9wGkh',
-    #                   base_de_datos = 'rutamega_principal',
-    #                 )
-    optimizacionF = OptimizacionFrecuencias()
-    # obtenerDatosBase()
-    # self.calcularTopologiaTiempo()
-    optimizacionF.optNelderMead()
+    optimizacionF = OptimizacionFrecuencias(numeroDemanda = 2)
+    optimizacionF.obtenerDatosBase( 
+        db_host =  'localhost',
+        usuario = 'optimizacion',
+        clave =  'fdoq9zSyfSlMsyW9wGkh',
+        base_de_datos = 'rutamega_principal',
+    )
+    # optimizacionF.obtenerDatosBase()
+    # optimizacionF.generarCSV()
+    optimizacionF.calcularTopologiaTiempo()
+    # print optimizacionF._TRANSBORDOS
+    optimizacionF.optNelderMead(multiProcessing = True)
   
     print "\nFactor Operador: ", optimizacionF.FACTOROPERADEOR, " Factor Pasajero: ", optimizacionF.FACTORPASAJERO
     print "Demanda: ", optimizacionF.NUMERODEMANDA, " Costos: ", optimizacionF.COSTOS
 
-    # Se ejecuta la función que genera el archivo "horariosGA.json"
-    optimizacionF.jsonFile()
+    # Se ejecuta la función que genera el archivo JSON, se toma el primer parametro como el nombre de archivo.
+    # Ejemplo: > python modeloOptimizacionV5.py horariosOpt. El nombre del archivo seria horariosOpt.json
+    optimizacionF.jsonFile(nombreArchivoS = sys.argv[1], nombreProgramacion = sys.argv[2])
 
