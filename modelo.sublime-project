@@ -8,14 +8,17 @@
 			"shell_cmd": "python -u \"$file\""
 		}
 	],
-	"settings":
-    {
-        "tab_size": 4
-    },
 	"folders":
 	[
 		{
 			"path": "/home/rafapinzon/Dropbox/ProyectoMegaBusR"
+		},
+		{
+			"path": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI"
 		}
-	]
+	],
+	"settings":
+	{
+		"tab_size": 4
+	}
 }

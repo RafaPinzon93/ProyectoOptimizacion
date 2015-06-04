@@ -524,16 +524,16 @@ class OptimizacionFrecuencias(object):
 
     def generarCSV(self):
         for ruta in range(self.NUMERORUTAS):
-            np.savetxt("archivos/TiempoEntreEstaciones.csv", self._TIEMPO_ENTRE_ESTACIONES[ruta], delimiter=",", fmt = "%10.5f")
+            np.savetxt("archivos/TiempoEntreEstaciones"+str(ruta+1)+".csv", self._TIEMPO_ENTRE_ESTACIONES[ruta], delimiter=",", fmt = "%10.5f")
             for trayecto in [0,1]:
                 if trayecto == 0:
-                    np.savetxt("archivos/Secuencia"+str(ruta+1)+"Ida.csv", self._SECUENCIAS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
-                    np.savetxt("archivos/Transbordos"+str(ruta+1)+"Ida.csv", self._TRANSBORDOS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
-                    np.savetxt("archivos/Topologia"+str(ruta+1)+"Ida.csv", self._TOPOLOGIA[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+                    np.savetxt("archivos/Secuencia"+str(ruta+1)+"Ida.csv", self._SECUENCIAS[ruta][trayecto], delimiter=",", fmt = "%d")
+                    np.savetxt("archivos/Transbordos"+str(ruta+1)+"Ida.csv", self._TRANSBORDOS[ruta][trayecto], delimiter=",", fmt = "%d")
+                    np.savetxt("archivos/Topologia"+str(ruta+1)+"Ida.csv", self._TOPOLOGIA[ruta][trayecto], delimiter=",", fmt = "%d")
                 else:
-                    np.savetxt("archivos/Secuencia"+str(ruta+1)+"Vuelta.csv", self._SECUENCIAS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
-                    np.savetxt("archivos/Transbordos"+str(ruta+1)+"Vuelta.csv", self._TRANSBORDOS[ruta][trayecto], delimiter=",", fmt = "%10.5f")
-                    np.savetxt("archivos/Topologia"+str(ruta+1)+"Vuelta.csv", self._TOPOLOGIA[ruta][trayecto], delimiter=",", fmt = "%10.5f")
+                    np.savetxt("archivos/Secuencia"+str(ruta+1)+"Vuelta.csv", self._SECUENCIAS[ruta][trayecto], delimiter=",", fmt = "%d")
+                    np.savetxt("archivos/Transbordos"+str(ruta+1)+"Vuelta.csv", self._TRANSBORDOS[ruta][trayecto], delimiter=",", fmt = "%d")
+                    np.savetxt("archivos/Topologia"+str(ruta+1)+"Vuelta.csv", self._TOPOLOGIA[ruta][trayecto], delimiter=",", fmt = "%d")
         np.savetxt("archivos/Proporciones.csv", self._PROPORCIONES, delimiter=",", fmt = "%10.5f")
 
     def tiempoTrayectosDirectos(self, trayectosValue):
@@ -575,6 +575,7 @@ class OptimizacionFrecuencias(object):
                                 j = ruta[i+k+1]
                                 tiemposTrayectos[indexT][indexR][sec,j] = tiemposTrayectos[indexT][indexR][sec,siguiente]\
                                  + tiemposTrayectos[indexT][indexR][siguiente, j]
+                # np.savetxt("archivos/TiempoEntreEstaciones"+str(indexR+1)+"_"+str(indexT)+".csv", tiemposTrayectos[indexT][indexR], delimiter=",", fmt = "%10.5f")
         return tiemposTrayectos
 
     def tiempoTrayectosTransbordo(self, trayectosValue):
@@ -617,25 +618,31 @@ class OptimizacionFrecuencias(object):
                     tiempo = None
                     for indT2, rutaTrayecto in enumerate(trayectosValue):
                         for indR2, trayecto in enumerate(rutaTrayecto):
+                            if not(trayectosValue[0][indR2][-1] in self.FinTrayectoArray):
+                                fantasma2 = True
+                            else:
+                                fantasma2 = False
+                            if indR == 1 and indT == 1 and indicesNonZero[0][i] == 17 and indicesNonZero[1][i] == 16:
+                                print fantasma2
                             if estacionTransbordo in trayecto:
                                 if indicesNonZero[1][i] in trayecto[np.where(trayecto==estacionTransbordo)[0]:]: 
-                                    if fantasma:
-                                        sumaTiempos = (tiempoInicioTransbordo + 
-                                        tiemposTrayectos[indT][indR][estacionTransbordo, indicesNonZero[1][i]]) 
+                                    # if fantasma:
+                                    #     sumaTiempos = (tiempoInicioTransbordo + 
+                                    #     tiemposTrayectos[indT][indR][estacionTransbordo, indicesNonZero[1][i]]) 
+                                    #     tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
+                                    #         sumaTiempos)
+                                    # else:
+                                    sumaTiempos = (tiempoInicioTransbordo + 
+                                    tiemposTrayectos[indT2][indR2][estacionTransbordo, indicesNonZero[1][i]]) 
+                                    if tiempo == None: # Si es el primero en encontrarlo
                                         tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
-                                            sumaTiempos)
-                                    else:
-                                        sumaTiempos = (tiempoInicioTransbordo + 
-                                        tiemposTrayectos[indT2][indR2][estacionTransbordo, indicesNonZero[1][i]]) 
-                                        if tiempo == None: # Si es el primero en encontrarlo
-                                            tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
-                                            sumaTiempos)
-                                            tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
-                                        elif tiempo > sumaTiempos:
-                                            tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
-                                            sumaTiempos)
-                                            tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
-                                elif fantasma:
+                                        sumaTiempos)
+                                        tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
+                                    elif tiempo > sumaTiempos:
+                                        tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(
+                                        sumaTiempos)
+                                        tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]
+                                elif fantasma2:
                                     if indicesNonZero[1][i] in trayectosValue[1][indR2]:
                                         sumaTiempos = (tiempoInicioTransbordo + 
                                         tiemposTrayectos[indT2][indR2][estacionTransbordo, trayectosValue[indT2][indR2][-1]] +
@@ -652,15 +659,16 @@ class OptimizacionFrecuencias(object):
 
     def tiempoTrayectosRutas(self, tiemposTrayectos):
         '''
-            Devuelve la matriz de tiempo trayectos contando self.transbordos tiempoTrayectos[indiceTrayecto][indiceRuta][fila, columna]
+            Devuelve la matriz de tiempo trayectos contando transbordos. Estructura: tiempoTrayectos[indiceTrayecto][indiceRuta][estacionActual, estacionActual]
 
             Parametros
             ----------
-                - tiempoTrayectos:    
+                - tiempoTrayectos: matriz donde se encuentran los tiempos de cada trayecto de cada ruta con los transbordos
+                  [indiceTrayecto][indiceRuta][np.array(NUMEROESTACIONES,NUMEROESTACIONES)]
 
             Return
             ------
-
+                - tiempoRutas: matriz que contiene el tiempo de la Ruta en los dos trayectos, Estructura: tiempoRutas[indiceRuta][estacionActual, estacionDestino]
         '''
         tiempoRutas = []
         for indR in range(self.NUMERORUTAS):
@@ -673,7 +681,11 @@ class OptimizacionFrecuencias(object):
 
             Parametros
             ----------
-                - tiempoTrayectos: 
+                - tiempoTrayectos: matriz que contiene el tiempo de la Ruta en los dos trayectos, Estructura: tiempoRutas[indiceRuta][estacionActual, estacionDestino]
+
+            Return
+            ------
+                - matricesTopologia: lista que contiene las matrices de topologia de 
         '''
         matricesTopologia = []
         for indexT, tiempo in enumerate(tiemposTrayectos):
@@ -1927,22 +1939,20 @@ class OptimizacionFrecuencias(object):
         trayectosValue = self.trayectosValueF(self._SECUENCIAS)
         tiemposTrayectos = self.tiempoTrayectosTransbordo(trayectosValue)
         self._TIEMPO_ENTRE_ESTACIONES = self.tiempoTrayectosRutas(tiemposTrayectos)
-        self._TOPOLOGIA = self.obtenerTopologias(self._TIEMPO_ENTRE_ESTACIONES)
+        self._TOPOLOGIA = self.obtenerTopologias(tiemposTrayectos)
 
 #Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead
 
 if __name__ == "__main__":
     optimizacionF = OptimizacionFrecuencias(numeroDemanda = 2)
-    optimizacionF.obtenerDatosBase( 
-        db_host =  'localhost',
-        usuario = 'optimizacion',
-        clave =  'fdoq9zSyfSlMsyW9wGkh',
-        base_de_datos = 'rutamega_principal',
-    )
-    # optimizacionF.obtenerDatosBase()
-    # optimizacionF.generarCSV()
+    # optimizacionF.obtenerDatosBase( 
+    #     db_host =  'localhost',
+    #     usuario = 'optimizacion',
+    #     clave =  'fdoq9zSyfSlMsyW9wGkh',
+    #     base_de_datos = 'rutamega_principal',
+    # )
+    optimizacionF.obtenerDatosBase()
     optimizacionF.calcularTopologiaTiempo()
-    # print optimizacionF._TRANSBORDOS
     optimizacionF.optNelderMead(multiProcessing = True)
   
     print "\nFactor Operador: ", optimizacionF.FACTOROPERADEOR, " Factor Pasajero: ", optimizacionF.FACTORPASAJERO
@@ -1950,5 +1960,8 @@ if __name__ == "__main__":
 
     # Se ejecuta la función que genera el archivo JSON, se toma el primer parametro como el nombre de archivo.
     # Ejemplo: > python modeloOptimizacionV5.py horariosOpt. El nombre del archivo seria horariosOpt.json
-    optimizacionF.jsonFile(nombreArchivoS = sys.argv[1], nombreProgramacion = sys.argv[2])
+    if len(sys.argv) > 1:
+        optimizacionF.jsonFile(nombreArchivoS = sys.argv[1], nombreProgramacion = sys.argv[2])
+    else: 
+        optimizacionF.jsonFile(direccion = "archivos")
 

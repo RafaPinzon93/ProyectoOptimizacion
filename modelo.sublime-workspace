@@ -4,6 +4,142 @@
 		"selected_items":
 		[
 			[
+				"file",
+				"fileName	statement"
+			],
+			[
+				"fil",
+				"fileName	statement"
+			],
+			[
+				"numero",
+				"numeroExponente	statement"
+			],
+			[
+				"pas",
+				"password	param"
+			],
+			[
+				"exit",
+				"exitapp	statement"
+			],
+			[
+				"add",
+				"add_sheet	function"
+			],
+			[
+				"bas",
+				"basename	function"
+			],
+			[
+				"show",
+				"showDialog	function"
+			],
+			[
+				"ui",
+				"uiPrincipal	statement"
+			],
+			[
+				"table",
+				"tableView"
+			],
+			[
+				"hand",
+				"handleSave	function"
+			],
+			[
+				"push",
+				"pushButtonSaveFile	statement"
+			],
+			[
+				"UI",
+				"Ui_tableDialog	class"
+			],
+			[
+				"Estacones",
+				"EstacionesBaseDatosDict"
+			],
+			[
+				"N",
+				"NUMEROESTACIONES	statement"
+			],
+			[
+				"generar",
+				"generarCSV	function"
+			],
+			[
+				"optimia",
+				"optimizacionF	statement"
+			],
+			[
+				"rutaT",
+				"rutaTransbordo	statement"
+			],
+			[
+				"traye",
+				"trayectoTRansbrodo	statement"
+			],
+			[
+				"exe",
+				"except	keyword"
+			],
+			[
+				"puh",
+				"pushButtonOptimizar	statement"
+			],
+			[
+				"PROPOR",
+				"_PROPORCIONES"
+			],
+			[
+				"load",
+				"loadtxt	function"
+			],
+			[
+				"obtener",
+				"obtenerDatosModeloCSV	function"
+			],
+			[
+				"facto",
+				"factorOper	forstmt"
+			],
+			[
+				"factor",
+				"factorOperador	param"
+			],
+			[
+				"fant",
+				"fantasma2	statement"
+			],
+			[
+				"index",
+				"indexT"
+			],
+			[
+				"en",
+				"enejecucion"
+			],
+			[
+				"nombre",
+				"nombreArchivoS	param"
+			],
+			[
+				"db",
+				"dbr"
+			],
+			[
+				"fe",
+				"fetchall"
+			],
+			[
+				"nombr",
+				"nombreArchivo"
+			],
+			[
+				"date",
+				"datetime	class"
+			],
+			[
 				"nomber",
 				"nombreArchivo"
 			],
@@ -12,24 +148,12 @@
 				"nombreArchivoS"
 			],
 			[
-				"nombre",
-				"nombreArchivoS	param"
-			],
-			[
-				"ui",
-				"uiPrincipal"
-			],
-			[
 				"base",
 				"baseDatos	statement"
 			],
 			[
 				"ob",
 				"ObtenerDBGUI	class"
-			],
-			[
-				"bas",
-				"baseDatosDialog"
 			],
 			[
 				"cam",
@@ -50,14 +174,6 @@
 			[
 				"but",
 				"buttonBoxOkCancel	statement"
-			],
-			[
-				"UI",
-				"Ui_BaseDatosDialog	class"
-			],
-			[
-				"push",
-				"pushButtonObtenerDB	statement"
 			],
 			[
 				"Ui",
@@ -144,10 +260,6 @@
 				"capacidadBuses	param"
 			],
 			[
-				"factor",
-				"factorPasajero	param"
-			],
-			[
 				"FAC",
 				"FACTORPASAJERO	statement"
 			],
@@ -158,18 +270,6 @@
 			[
 				"fin",
 				"finTrayecto"
-			],
-			[
-				"generar",
-				"generarCSV	function"
-			],
-			[
-				"numero",
-				"numeroDemanda	param"
-			],
-			[
-				"obtener",
-				"obtenerDatosBase	function"
 			],
 			[
 				"capa",
@@ -226,10 +326,6 @@
 			[
 				"QFile",
 				"QFileDialog	class"
-			],
-			[
-				"file",
-				"fileObj	statement"
 			],
 			[
 				"zero",
@@ -352,10 +448,6 @@
 				"userName"
 			],
 			[
-				"pas",
-				"Passw	statement"
-			],
-			[
 				"obte",
 				"obtenerDatosBase	function"
 			],
@@ -422,150 +514,122 @@
 			[
 				"try",
 				"try	Try/Except"
-			],
-			[
-				"idtra",
-				"idTrayectosNP"
-			],
-			[
-				"idTr",
-				"idTrayectosNP	statement"
-			],
-			[
-				"index",
-				"indexT	forflow"
-			],
-			[
-				"trayectos",
-				"trayectosValue	statement"
-			],
-			[
-				"tra",
-				"trayectoVueltaValue	statement"
-			],
-			[
-				"traye",
-				"trayectoVuelta	statement"
-			],
-			[
-				"trayecto",
-				"trayectoValue	forflow"
-			],
-			[
-				"ind",
-				"indexR"
-			],
-			[
-				"tray",
-				"trayRuta	statement"
-			],
-			[
-				"esta",
-				"estacionesId	statement"
-			],
-			[
-				"trayectoI",
-				"trayectoIdaValue	statement"
-			],
-			[
-				"trayectI",
-				"trayectoIdaValue	statement"
-			],
-			[
-				"obten",
-				"obtenerDatosBase	function"
-			],
-			[
-				"Ruta",
-				"RutasFantasmas"
-			],
-			[
-				"list",
-				"listEstac	statement"
-			],
-			[
-				"shee",
-				"sheet2	statement"
-			],
-			[
-				"cell",
-				"cell_type	function"
-			],
-			[
-				"valores",
-				"valoresExel"
-			],
-			[
-				"valor",
-				"valoresCast"
-			],
-			[
-				"valore",
-				"valoresExel"
-			],
-			[
-				"obj_",
-				"obj_ruleTest"
-			],
-			[
-				"Esta",
-				"EstacionesBaseDatosDict	statement"
-			],
-			[
-				"matri",
-				"matricesTransbordoNP	statement"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "modeloOptimizacionV4.1.py",
+			"file": "/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/Server.py",
 			"settings":
 			{
-				"buffer_size": 82889,
-				"line_ending": "Unix"
+				"buffer_size": 3719,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GSimpleGA.py",
+			"contents": "\\begin{table}[h]\n\\begin{tabular}{|c|c|}\n\\hline\n\\textbf{Caso de Uso}           & Generar tablas horarias.       \\\\ \\hline\n\\textbf{Actores}               & Administrador, página web.     \\\\ \\hline\n\\textbf{Referencias}           & 2.1.1, 2.1.2.                  \\\\ \\hline\n\\textbf{Resumen}               & \\multicolumn{1}{l|}{}          \\\\ \\hline\n\\multicolumn{2}{|c|}{\\textbf{Curso Normal de los Eventos}}      \\\\ \\hline\n\\textbf{Acción de los actores} & \\textbf{Respuesta del sistema} \\\\ \\hline\n\\multicolumn{1}{|l|}{}         & \\multicolumn{1}{l|}{}          \\\\ \\hline\n\\end{tabular}\n\\end{table}\n\np{.09\\textwidth}\nccccccccccc\n455963\n\nLa utilización de este módulo se dio de la siguiente manera:\n\\begin{itemize}\n\\item Se crea una lista de cromosomas de tamaño de la cantidad de rutas, de clase G1DList, la cual es una representación de una lista en una dimensión, la cual puede contener números reales o enteros de cualquier tipo de objeto.\n\\item Se le asignan parámetros de rango mínimo y máximo en el que pueden oscilar cada gen. En este caso son de 0 a 25, ya que es el tamaño del vector de “ValoresFrecuencias” el cual contiene los valores discretos de las frecuencias posibles.\n\\item Luego le es asignado un inicializador, los iniciadores definen el tipo de datos que van a ser usados en el cromosoma, en este caso se utiliza G1DListInitializatiorInteger, el cual inicializa la lista con números enteros aleatorios dentro del rango establecido.\n\\item Se asigna el tipo de mutación, G1DListMutatorIntegerRange, el cual cambia aleatoriamente los valores de los genomas dentro de un rango establecido.\n\\item Se asigna al cromosoma la función objetivo, la cual en este caso es “objFunctionGenetic”.\n\\item Luego de tener el cromosoma se crea una instancia del algoritmo genético con GSimpleGA.GSimpleGA(cromosoma).\n\\item Se establece el método de selección a esta nueva instancia, para este caso se utilizó la selección por rango con Selectors.GRankSelector.\n\\item Se selecciona si se va a minimizar o maximizar la función objetivo, en este caso se escoge minimizar Consts.minimaxType[“minimize”]\n\\item Se establecen el número de generaciones a evolucionar. Para este caso se utilizan 20 generaciones.\n\\item Se selecciona el porcentaje de mutación, para este caso se escogió el 10% con setMutationRate(0.1)\n\\item Establecido todo esto, sigue aplicar la evolución a través de “evolve”. El cual evoluciona todas las generaciones hasta el criterio de finalización.\n\\item Finalmente se obtienen los mejores individuos con la función bestIndividual().\n\\end{itemize}\n\n\\begin{itemize}\n\\item Numpy\n\\item Scipy\n\\item Matplotlib\n\\item IPython\n\\item SymPy\n\\item Pandas\n\\end{itemize}",
 			"settings":
 			{
-				"buffer_size": 28674,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GPopulation.py",
-			"settings":
-			{
-				"buffer_size": 13859,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/Tutorial5InterfazBasica.py",
-			"settings":
-			{
-				"buffer_size": 1775,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/SumarApp.py",
-			"settings":
-			{
-				"buffer_size": 851,
+				"buffer_size": 2665,
 				"line_ending": "Unix",
-				"name": "SumarApp.py"
+				"name": "\\begin{table}[h]"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/cliente.py",
+			"settings":
+			{
+				"buffer_size": 2622,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/cliente_3funciones.py",
+			"settings":
+			{
+				"buffer_size": 1310,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUI_App.py",
 			"settings":
 			{
-				"buffer_size": 4927,
+				"buffer_size": 9802,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "modeloOptimizacion.py",
+			"settings":
+			{
+				"buffer_size": 106142,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/archivos/programacion2/Proporciones.csv",
+			"settings":
+			{
+				"buffer_size": 2475,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/modeloOptimizacionV6_1.py",
+			"settings":
+			{
+				"buffer_size": 107760,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/testWriteExcel.py",
+			"settings":
+			{
+				"buffer_size": 85,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/tableGUI.py",
+			"settings":
+			{
+				"buffer_size": 3302,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/csv_module_pyqt4.py",
+			"settings":
+			{
+				"buffer_size": 2445,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/pyqt4file.py",
+			"settings":
+			{
+				"buffer_size": 1476,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/Executable.py",
+			"settings":
+			{
+				"buffer_size": 466,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/Executable2.py",
+			"settings":
+			{
+				"buffer_size": 912,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -577,26 +641,10 @@
 			}
 		},
 		{
-			"file": "archivos/horariosOpt-modeloOptimizacionV5.py-.json",
-			"settings":
-			{
-				"buffer_size": 1162424,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/AppMultipleWindows.py",
 			"settings":
 			{
 				"buffer_size": 2177,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorialSumar.py",
-			"settings":
-			{
-				"buffer_size": 2818,
 				"line_ending": "Unix"
 			}
 		},
@@ -612,40 +660,62 @@
 			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUIframework.py",
 			"settings":
 			{
-				"buffer_size": 15088,
+				"buffer_size": 16109,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "# -*- coding: utf-8 -*-\nfrom __future__ import division\nimport numpy as np\nimport MySQLdb\nimport json\nimport datetime\nimport copy_reg\nimport types\n\nfrom scipy import optimize\n\nfrom pyevolve import G1DList, GSimpleGA, Selectors\nfrom pyevolve import Initializators, Mutators, Consts\n\nimport inspect, os, sys\n\n\nnp.set_printoptions(threshold=np.nan)\nnp.set_printoptions(linewidth=200)\noldSettings = np.seterr(divide='ignore', invalid='ignore')\nnp.seterr(**oldSettings)\n\ndef _pickle_method(m):\n    if m.im_self is None:\n        return getattr, (m.im_class, m.im_func.func_name)\n    else:\n        return getattr, (m.im_self, m.im_func.func_name)\n\ncopy_reg.pickle(types.MethodType, _pickle_method)\n\nclass OptimizacionFrecuencias(object):\n    \"\"\"\n    Clase donde estan las funciones requeridas y las variables para optimizar las frecuencias\n\n    Parametros\n    ----------\n        - numeroDemanda: Numero de demanda con la que se llenara la matriz de demanda.\n        - factorPasajero: Factor de peso del pasajero.\n        - factorOperador: Factor de peso del operador.\n        - capacidadBuses: Capacidad total de los buses.\n        - tiempoAbordar: Tiempo promedio para abordar los Buses.\n        - tiempoEspera2Bus: Tiempo promedio espera de segundo Bus.\n        - horaInicio: Hora de inicio de servicios.\n        - horaFin: Hora de fin de servicios.\n        - numeroRutas: Numero de Rutas.\n        - numeroEstacionesC: Numero de Estaciones.\n        - frecuenciasOptimas: Lista con el valor de la frecuencia optima para cada ruta.\n        - finTrayecto: Lista con las estaciones finales disponibles de todas las rutas.\n\n    \"\"\"\n    def __init__(self, numeroDemanda = 2, factorPasajero = 100, factorOperador = 100,\n                 capacidadBuses = 150, tiempoAbordar = 1/60.0, tiempoEspera2Bus = 1,\n                 horaInicio = 5, horaFin = 23, numeroRutas = 3, numeroEstacionesC = 15,\n                 frecuenciasOptimas = [0.588608646066, 0.064516141848, 0.487587969109],\n                 finTrayecto = [11,0], transbordosM = None):\n\n        self.FACTORPASAJERO = factorPasajero  # Factor de peso del pasajero\n        self.FACTOROPERADEOR = factorOperador  # Factor de peso del operador\n        self.CAPACIDADBUSES  = capacidadBuses # Capacidad total de los buses\n        self.TIEMPOABORDAR = tiempoAbordar\n        self.TIEMPOESPERA2BUS = tiempoEspera2Bus\n        # self.NUMERODEMANDA = 12\n        self.NUMERODEMANDA = numeroDemanda\n\n        self.HORAINICIO = horaInicio\n        self.HORAFIN = horaFin\n\n        self.NUMERORUTAS = numeroRutas\n        self.NUMEROESTACIONES = numeroEstacionesC\n        \n        self.FrecuenciasOptimas = frecuenciasOptimas\n\n        \n        _TIEMPO_ENTRE_ESTACIONES1 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14,16],\n                                              [ 2, 0, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12,14],\n                                              [ 4, 2, 0, 2, 2, 4, 4, 6, 6, 8,10,12, 8,10,12],\n                                              [18,14,14, 0,12, 2,10, 4, 8, 6, 8,10, 6, 8,10],\n                                              [ 6, 4, 2, 4, 0, 6, 2, 8, 4, 6, 8,10,10,10,12],\n                                              [14,12,10,12,10, 0, 8, 2, 6, 4, 6, 8, 4, 6, 8],\n                                              [ 8, 6, 4, 6, 2, 8, 0,10, 2, 4, 6, 8,12, 8,10],\n                                              [12,10, 8,10, 8,12, 6, 0, 4, 2, 4, 6, 2, 4, 6],\n                                              [10, 8, 6, 8, 4,10, 2,12, 0, 2, 4, 6,14, 6, 8],\n                                              [12,10, 8,10, 6,12, 4,14, 2, 0, 2, 4,16, 4, 6],\n                                              [14,12,10,12, 8,14, 6,16, 4, 2, 0, 2,18, 2, 4],\n                                              [16,14,12,14,10,16, 8,18, 6, 4, 2, 0,20, 4, 6],\n                                              [10, 8, 6, 8, 8,10,10, 2,12,14,16,18, 0, 2, 4],\n                                              [ 8, 6, 4, 6, 6, 8, 8,10,10,12,14,16,12, 0, 2],\n                                              [ 6, 4, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12, 0]])\n        _TIEMPO_ENTRE_ESTACIONES2 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14,16],\n                                              [ 2, 0, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12,14],\n                                              [ 4, 2, 0, 2, 2, 4, 4, 6, 6, 8,10,12, 8,10,12],\n                                              [18,16,12, 0,12, 2,10, 4, 8, 6, 8,10, 6, 8,10],\n                                              [ 6, 4, 2, 4, 0, 6, 2, 8, 4, 6, 8,10,10,12,14],\n                                              [16,14,12,14,10, 0, 8, 2, 6, 4, 6, 8, 4, 6, 8],\n                                              [ 8, 6, 4, 6, 2, 8, 0,10, 2, 4, 6, 8,12, 8,10],\n                                              [14,12,10,12, 8,14, 6, 0, 4, 2, 4, 6, 2, 4, 6],\n                                              [10, 8, 6, 8, 4,10, 2,12, 0, 2, 4, 6,14, 6, 8],\n                                              [12,10, 8,10, 6,12, 4,14, 2, 0, 2, 4,16, 4, 6],\n                                              [10, 8, 6, 8, 8,10, 6,12, 4, 2, 0, 2,14, 2, 4],\n                                              [12,10, 8,10,10,12, 8,14, 6, 4, 2, 0,16, 4, 6],\n                                              [10, 8, 6, 8, 8,10,10, 2,12,14,16,18, 0, 2, 4],\n                                              [ 8, 6, 4, 6, 6, 8, 8,10,10,12,14,16,12, 0, 2],\n                                              [ 6, 4, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12, 0]])\n        _TIEMPO_ENTRE_ESTACIONES3 = np.array([[ 0, 2, 4, 6, 6, 8, 8,10,10,12,14,16,12,14,16],\n                                              [ 2, 0, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12,14],\n                                              [ 4, 2, 0, 2, 2, 4, 4, 6, 6, 8,10,12, 8,10,12],\n                                              [16,14,12, 0,14, 2,16, 4,18, 6, 8,10, 6, 8,10],\n                                              [ 6, 4, 2, 4, 0, 6, 2, 8, 4, 6, 8,10,10,12,14],\n                                              [14,12,10,12,12, 0,14, 2,16, 4, 6, 8, 4, 6, 8],\n                                              [ 8, 6, 4, 6, 2, 8, 0,10, 2, 4, 6, 8,12, 8,10],\n                                              [12,10, 8,10,10,12,12, 0,14, 2, 4, 6, 2, 4, 6],\n                                              [10, 8, 6, 8, 4,10, 2,12, 0, 2, 4, 6,14, 6, 8],\n                                              [12,10, 8,10, 6,12, 4,14, 2, 0, 2, 4,16, 4, 6],\n                                              [10, 8, 6, 8, 8,10, 6,12, 4, 2, 0, 2,14, 2, 4],\n                                              [12,10, 8,10,10,12, 8,14, 6, 4, 2, 0,16, 4, 6],\n                                              [10, 8, 6, 8, 8,10,10,12,12,14,16,18, 0, 2, 4],\n                                              [ 8, 6, 4, 6, 6, 8, 8,10,10,12,14,16,12, 0, 2],\n                                              [ 6, 4, 2, 4, 4, 6, 6, 8, 8,10,12,14,10,12, 0]])\n\n        self._TIEMPO_ENTRE_ESTACIONES = [_TIEMPO_ENTRE_ESTACIONES1, _TIEMPO_ENTRE_ESTACIONES2, _TIEMPO_ENTRE_ESTACIONES3]\n\n        tiempoTrayectoIda = [[2.4339788732394365, 3.265845070422535, 3.0809859154929575, 0.9242957746478873, 1.1399647887323943, 1.8177816901408448, 0.8626760563380281, 1.2632042253521125, 0.7702464788732394, 1.3248239436619715, 0.8318661971830986, 2.403169014084507, 2.834507042253521, 0.8318661971830986, 3.820422535211267, 1.3556338028169013, 1.2015845070422535, 1.1707746478873238, 1.509683098591549, 2.7112676056338025],\n                            [2.689964157706094, 3.6093189964157717, 3.4050179211469542, 1.0215053763440864, 1.2598566308243733, 2.1111111111111116, 1.191756272401434, 1.3279569892473122, 0.9534050179211473, 1.6003584229390686, 1.3279569892473122, 1.9408602150537637, 1.2939068100358426, 0.9193548387096778, 1.8387096774193556, 4.222222222222223, 1.4982078853046599, 1.3279569892473122, 1.2939068100358426, 1.6684587813620078, 2.9964157706093197],\n                            [2.7869742198100407, 3.7394843962008144, 3.5278154681139755, 1.0583446404341927, 1.3052917232021708, 2.187245590230665, 1.2347354138398914, 1.3758480325644504, 0.9877883310719133, 1.6580732700135683, 1.3758480325644504, 2.010854816824966, 1.3405698778833108, 0.9525101763907734, 0.9877883310719133]]\n                             \n        tiempoTrayectoVuelta = [[2.1874999999999996, 1.4788732394366195, 1.1091549295774645, 1.232394366197183, 1.3864436619718308, 3.7896126760563376, 0.8626760563380281, 2.7728873239436616, 2.15669014084507, 0.8626760563380281, 1.2015845070422535, 0.9242957746478873, 1.294014084507042, 0.7394366197183098, 1.8485915492957745, 1.232394366197183, 0.8318661971830986, 2.7112676056338025, 2.988556338028168, 2.834507042253521],\n                               [2.4175627240143376, 1.634408602150538, 1.2258064516129035, 1.3620071684587818, 1.5322580645161297, 4.42652329749104, 1.7706093189964165, 2.043010752688173, 1.0555555555555558, 1.3620071684587818, 1.191756272401434, 1.5322580645161297, 1.2939068100358426, 1.9408602150537637, 1.3620071684587818, 0.9193548387096778, 2.9964157706093197, 3.3028673835125457, 3.132616487455198],\n                               [0.7055630936227951, 1.8344640434192672, 2.1166892808683855, 1.0936227951153326, 1.4111261872455902, 1.2347354138398914, 1.587516960651289, 1.3405698778833108, 2.010854816824966, 1.4111261872455902, 0.9525101763907734, 3.104477611940298, 3.421981004070556, 3.245590230664858]]\n\n        self._TiempoDirectoTrayectos = [tiempoTrayectoIda, tiempoTrayectoVuelta]\n\n        \n        #Topologias por rutas y trayectos, teniendo en cuenta viajes 'indirectos'\n        _TOPOLOGIA1 = np.array([[0,1,1,0,1,0,1,0,1,1,1,1,0,0,0],\n                                [0,0,1,0,1,0,1,0,1,1,1,1,0,0,0],\n                                [0,0,0,0,1,0,1,0,1,1,1,1,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,1,0,1,1,1,1,0,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,1,1,1,1,0,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,1,1,1,0,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,1,1,0,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]])\n        _TOPOLOGIA2 = np.array([[0,1,1,1,0,1,0,1,0,1,1,1,0,0,0],\n                                [0,0,1,1,0,1,0,1,0,1,1,1,0,0,0],\n                                [0,0,0,1,0,1,0,1,0,1,1,1,0,0,0],\n                                [0,0,0,0,1,1,1,1,1,1,1,1,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,1,0,1,1,1,1,1,1,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,1,0,1,0,1,1,1,1,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,1,1,0,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]])\n        _TOPOLOGIA3 = np.array([[0,1,1,1,0,1,0,1,0,0,0,0,1,1,1],\n                                [0,0,1,1,0,1,0,1,0,0,0,0,1,1,1],\n                                [0,0,0,1,0,1,0,1,0,0,0,0,1,1,1],\n                                [1,1,1,0,0,1,0,1,0,0,0,0,1,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,0,0,0,1,0,0,0,0,1,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,0,1,0,0,0,0,0,0,1,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]])\n        _TOPOLOGIA4 = np.array([[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,0,1,0,1,0,0,0,0,1,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,1,1,0,1,0,0,0,0,1,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,1,1,1,1,0,0,0,0,1,0,0],\n                                [1,1,1,1,1,1,1,1,1,0,0,0,1,0,0],\n                                [1,1,1,1,1,1,1,1,1,1,0,0,1,0,0],\n                                [1,1,1,1,1,1,1,1,1,1,1,0,1,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]])\n        _TOPOLOGIA5 = np.array([[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,0,1,0,1,0,0,0,0,1,1,1],\n                                [1,1,1,1,0,1,0,1,0,0,1,0,1,1,1],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,1,1,1,1,1,1,1,1,1,0,1],\n                                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0]])\n        _TOPOLOGIA6 = np.array([[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],\n                                [1,1,1,1,1,1,1,1,1,1,1,1,0,1,1],\n                                [1,1,1,1,1,1,1,1,1,1,1,1,1,0,1],\n                                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,0]])\n\n        self._TOPOLOGIA = [[_TOPOLOGIA1, _TOPOLOGIA4],\n                      [_TOPOLOGIA2, _TOPOLOGIA5],\n                      [_TOPOLOGIA3, _TOPOLOGIA6]]\n\n        # Se obtiene de base de datos\n        self._TRAYECTOS = [{1:'Ida',2:'Vuelta'},{3:'Ida',4:'Vuelta'},{5:'Ida',6:'Vuelta'}]\n\n\n        \n        _SECUENCIA1 = np.array([1, 2, 3, 5, 7, 9, 10, 11, 12])\n        _SECUENCIA4 = np.array([12, 11, 10, 9, 7, 5, 3, 2, 1])\n        _SECUENCIA2 = np.array([1, 2, 3, 4, 6, 8, 10, 11, 12])\n        _SECUENCIA5 = np.array([12, 11, 14, 15, 3, 2, 1])\n        _SECUENCIA3 = np.array([1, 2, 3, 4, 6, 8, 13])\n        _SECUENCIA6 = np.array([13, 14, 15, 3, 2, 1])\n\n        self._SECUENCIAS = [[_SECUENCIA1, _SECUENCIA4],\n                       [_SECUENCIA2, _SECUENCIA5],\n                       [_SECUENCIA3, _SECUENCIA6]\n        ]\n\n\n\n        if transbordosM is not None:\n            self._TRANSBORDOS = transbordosM\n        else:\n            self._TRANSBORDOS = self.transbordos()\n\n        # self.TRANSBORDO = None # Variable para hacer dp cuando se calculan los self.transbordos().\n\n        self.EstacionesBaseDatosDict = None\n\n        self.FinTrayectoArray = finTrayecto\n\n        # self.EsRutaFantasma = [[False, False],\n        #                   [False, False],\n        #                   [False, True]\n        #                  ]\n\n        self.EsRutaFantasma = self.esRutaFantasmaFun()\n        \n        self._PROPORCIONES = np.array([[0,0.1,0.15,0.4,0.4,0.7,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7],\n                                  [0.1,0,0.1,0.1,0.2,0.4,0.4,0.7,0.4,0.7,0.4,0.4,0.7,0.7,0.7],\n                                  [0.1,0.1,0,0.1,0.1,0.4,0.3,0.4,0.4,0.7,0.4,0.4,0.7,0.7,0.7],\n                                  [0.2,0.1,0.1,0,0.2,0.1,0.2,0.2,0.2,0.5,0.4,0.4,0.7,0.7,0.7],\n                                  [0.2,0.2,0.2,0.7,0,0.5,0.1,0.7,0.1,0.2,0.4,0.4,0.5,0.5,0.5],\n                                  [0.2,0.2,0.1,0.1,0.3,0,0.3,0.1,0.3,0.2,0.3,0.3,0.4,0.5,0.5],\n                                  [0.2,0.2,0.2,0.7,0.1,0.7,0,0.7,0.4,0.7,0.5,0.5,0.7,0.7,0.7],\n                                  [0.2,0.2,0.2,0.1,0.3,0.2,0.7,0,0.4,0.1,0.4,0.4,0.1,0.4,0.4],\n                                  [0.2,0.2,0.2,0.2,0.2,0.7,0.1,0.7,0,0.1,0.2,0.3,0.6,0.6,0.6],\n                                  [0.2,0.2,0.2,0.7,0.2,0.7,0.2,0.5,0.1,0,0.1,0.2,0.5,0.6,0.6],\n                                  [0.2,0.2,0.2,0.7,0.3,0.7,0.4,0.5,0.2,0.1,0,0.1,0.8,0.8,0.8],\n                                  [0.2,0.2,0.3,0.7,0.4,0.7,0.5,0.5,0.3,0.2,0.1,0,0.8,0.8,0.8],\n                                  [0.2,0.2,0.2,0.3,0.4,0.4,0.4,0.5,0.5,0.4,0.4,0.3,0,0.1,0.2],\n                                  [0.2,0.2,0.2,0.2,0.4,0.4,0.4,0.5,0.5,0.4,0.4,0.6,0.2,0,0.1],\n                                  [0.2,0.2,0.2,0.2,0.4,0.4,0.4,0.5,0.5,0.4,0.4,0.6,0.6,0.1,0]])\n\n        # print self._PROPORCIONES.sum(axis=0)\n        # Valores posibles de frecuencias, que van desde un periodo\n        # de 3 minutos a 15.5, con intervalos de 0.5 minutos\n        # Obteniendo un vector de posibles frecuencias con 25 valores\n        self.ValoresFrecuencias = 1/np.arange(3,16,0.5)\n\n        self.COSTOS = [5000,5000,5000] # Costos de cada Ruta\n\n    def cambiarVariablesOptimizacion(self, demanda = None, factorPasajero = None, factorOperador = None, \n                                     capacidadBuses = None, tiempoAbordar = None, tiempoEspera2Bus = None):\n        '''\n            Cambia las variables dependientes de la optimizacion, solo cambia las que son pasadas\n\n            Parametros\n            ----------\n                - demanda = int\n                - factorPasajero: int\n                - factorOperador: int\n                - capacidadBuses: int\n                - tiempoAbordar: int\n                - tiempoEspera2Bus: int\n            Return\n            ------\n                None\n        '''\n        if demanda:\n            self.NUMERODEMANDA = demanda\n        if factorPasajero:\n            self.FACTORPASAJERO = factorPasajero\n        if factorOperador:\n            self.FACTOROPERADEOR = factorOperador\n        if capacidadBuses:\n            self.CAPACIDADBUSES = capacidadBuses\n        if tiempoAbordar:\n            self.TIEMPOABORDAR = tiempoAbordar\n        if tiempoEspera2Bus:\n            self.TIEMPOESPERA2BUS = tiempoEspera2Bus\n\n    def cambiarVariablesJSON(self, horaInicio = None, horaFin = None):\n        '''\n            Cambia las variables dependientes de generar las tablas horarias en el archivo JSON,\n            solo cambia las que son pasadas\n\n            Parametros\n            ----------\n                - horaInicio = int\n                - horaFin = int\n            Return\n            ------\n                None\n        '''\n        if horaInicio:\n            self.HORAINICIO = horaInicio\n        if horaFin:\n            self.HORAFIN = horaFin\n       \n\n    def obtenerDatosBase(self, db_host = 'admin.megaruta.co', usuario ='rutamega_eqopt', clave = 'eedd8ae977b7f997ce92aa1b0', base_de_datos ='rutamega_principal'):\n        '''\n            Obtiene las variables principales para realizar las tablas horarias como son:\n                - Matrices de Transbordos: matricesTransbordo\n                - Matriz de Proporciones: matProporcion\n                - Diccionario de Estaciones: estacionDictInv {estacionOrden: idEstacionDB,...}\n                    Ej: {1: 38L, 2: 39L, 3: 36L, 4: 35L, 5: 34L, 6: 33L, 7: 10L, 8: 9L, 9: 8L...}\n                }\n                - Matrices Secuencias: matrizSecuencia. Esta siempre va ir ordenada en cada ruta \n                                       primero el trayecto ida y luego el de vuelta.\n                - Lista de Diccionario de Trayectos: trayectosList\n                    Ej: [{1: 'Ida', 2: 'Vuelta'}, {3: 'Ida', 4: 'Vuelta'}, {5: 'Vuelta', 6: 'Ida'}] \n                - Es Ruta Fantasma: EsRutaFantasma\n                - Estaciones de Fin de Trayectos: self.FinTrayectoArray\n                - Numero de Estaciones: numEstaciones\n                - Numero de Rutas: numRutas\n            Opcionales\n                - Matrices de Tiempos: matricesTiempo\n\n            Parametros\n            ----------\n                - db_host = Host de la Base de Datos\n                - usuario = Usuario de la Base de Datos\n                - clave   = Clave de la Base de Datos\n                - base_de_datos = Nombre de la Base de Datos\n\n            Return\n            ------\n                Vacio. Solo cambia matrices del programa.\n        '''\n\n        dbr = MySQLdb.connect(host=db_host, user=usuario, passwd=clave,db=base_de_datos)\n        cursor=dbr.cursor() # real\n        query_quotes =  \"SET sql_mode='ANSI_QUOTES'\" # para que acepte tablas con \"caracteres especiales\"\n        cursor.execute(query_quotes)\n        sql = '''SELECT * FROM \"estacion-matrices\"'''\n        sqlRutas = '''SELECT distinct idruta FROM \"estacion-matrices\";''' #Se puede sacar de IdTrayectos\n        sqlEstaciones = ''' SELECT distinct estaciones  From(SELECT distinct idestacionorigen as estaciones\n                            FROM \"estacion-matrices\"\n                            union all SELECT distinct idestaciondestino FROM \"estacion-matrices\") estaciones'''\n        sqlIdTrayectos = '''SELECT f.idtrayecto, b.idruta, f.sentidotrayecto FROM (SELECT idruta FROM \"estacion-matrices\" GROUP BY idruta)b\n                            LEFT JOIN trayecto f ON b.idruta = f.idruta;'''\n        # sqlSecuencias = '''SELECT te.idtrayecto, te.idestacion, te.ordentrayectoestacion FROM \"trayecto-estacion\" te, (SELECT f.idtrayecto idT FROM (SELECT idruta FROM \"estacion-matrices\" GROUP BY idruta)b LEFT JOIN trayecto f ON b.idruta = f.idruta)e WHERE e.idT = te.idtrayecto'''\n        sqlSecuencias = ''' SELECT te.idtrayecto, te.idestacion, te.ordentrayectoestacion\n                            FROM \"trayecto-estacion\" te,\n                            (SELECT distinct estaciones\n                            From(SELECT distinct idestacionorigen as estaciones FROM \"estacion-matrices\"\n                            union all SELECT distinct idestaciondestino FROM \"estacion-matrices\") estaciones) em\n                            WHERE em.estaciones = te.idestacion and te.estadotrayectoestacion = 'Activo'\n                            ORDER BY te.idtrayecto, te.ordentrayectoestacion;\n                        '''\n        sqlFinTrayecto = '''SELECT idestacion, fintrayecto FROM estacion where fintrayecto = 1; '''\n        try:\n            cursor.execute(sql)\n            # Obtenemos todos los registros en una lista de listas\n            resultados = cursor.fetchall()\n            cursor.execute(sqlRutas)\n            rutas = cursor.fetchall()\n            cursor.execute(sqlEstaciones)\n            estaciones = cursor.fetchall()\n            cursor.execute(sqlIdTrayectos)\n            idTrayectos = cursor.fetchall()\n            cursor.execute(sqlSecuencias)\n            secuencias = cursor.fetchall()\n            cursor.execute(sqlFinTrayecto)\n            # Contiene las estaciones finales de trayectos, sin incluir fantasmas\n            finTrayecto = cursor.fetchall() \n        except:\n           print \"Error: No se pudo obtener los datos\"\n\n        numEstaciones = len(estaciones)\n        numRutas = len(rutas)\n        matricesTiempo = []\n        matricesTransbordo = []\n        matDemanda = np.zeros((numEstaciones, numEstaciones))\n        matProporcion = np.zeros((numEstaciones, numEstaciones))\n        estacionesDict = {}\n\n        iR = 0\n\n        idTrayectosNP = np.array(idTrayectos)\n        trayectosDict = {}\n        for tray in idTrayectosNP:\n            trayectosDict[tray[0]] = tray[2]\n        for ruta in rutas:\n            instTransRuta = []\n            for trayecto in idTrayectosNP[idTrayectosNP[:,1] == str(ruta[0]),0]:\n                matTransbordo = np.zeros((numEstaciones, numEstaciones))\n                idTrayecto = resultados[iR][6] \n                for fila in range(numEstaciones):\n                    for columna in range(numEstaciones):\n                        if fila!=columna:\n                            # print numEstaciones*ruta + iR\n                            registro = resultados[iR]\n                            # matTiempo[fila,columna] = registro[4]\n                            matTransbordo[fila,columna] = registro[7]\n                            if registro[8]:\n                                matProporcion[fila,columna] = registro[8]\n                            # if registro[3]:\n                                # matDemanda[fila,columna] = registro[3]\n                            # if registro[8]:\n                                # matProporcion[fila,columna] = registro[8]\n                            estacionesDict[registro[2]]= columna+1\n                            iR +=1\n                matTransbordoT = np.zeros((numEstaciones, numEstaciones))\n                for i in estacionesDict:\n                    matTransbordoT[matTransbordo == i] = estacionesDict[i]\n\n                # Mientras arreglan self.transbordos en base de Datos\n                # if trayectosDict[str(idTrayecto)] == 'Ida':\n                #     instTransRuta.insert(0, matTransbordoT)\n                # else:\n                #     instTransRuta.append(matTransbordoT)\n                instTransRuta.append(matTransbordoT)\n\n            matricesTransbordo.append(instTransRuta)\n\n        secuenciasNP = np.array(secuencias)\n\n        matrizSecuencia = []\n        trayectosList = []\n        for i, ruta in enumerate(rutas):\n            trayectos = {}\n            secuenciaList2 = []\n            for trayecto in idTrayectosNP[idTrayectosNP[:,1].astype(int)  == ruta]:\n                # Se crea un diccionario solo con el id del trayecto y su valor\n                # ej: trayecto [1, 3, vuelta] :: [idtrayecto, idruta, sentido]\n                nuevaSecuencia = secuenciasNP[secuenciasNP[:,0]== int(trayecto[0])]\n                trayectos[int(trayecto[0])] = trayecto[2]\n\n                secuenciaList = []\n                for i, elemento in enumerate(nuevaSecuencia):\n                    secuenciaList.append(estacionesDict[elemento[1]])\n\n                if trayecto[2] == 'Ida':\n                    secuenciaList2.insert(0, np.array(secuenciaList))\n                else:\n                    secuenciaList2.append(np.array(secuenciaList))\n\n            matrizSecuencia.append(secuenciaList2)\n            trayectosList.append(trayectos) # Se añaden los trayectos de la ruta\n\n        estacionDictInv= {}\n        for estacionBase, estacionMod in estacionesDict.iteritems():\n            estacionDictInv[estacionMod] = estacionBase\n\n        self.FinTrayectoArray = []\n        for estacion in finTrayecto:\n            self.FinTrayectoArray.append(estacionesDict[estacion[0]]-1)\n        # print self.FinTrayectoArray\n\n        self.EsRutaFantasma = []\n        for ruta in matrizSecuencia:\n            rutaF = [False]\n            secuencia = ruta[0]\n            if secuencia[-1] -1 in self.FinTrayectoArray:\n                rutaF.append(False)\n            else:\n                rutaF.append(True)\n            self.EsRutaFantasma.append(rutaF)\n        # print self.EsRutaFantasma\n\n        # print estacionDictInv\n\n        self.EstacionesBaseDatosDict = estacionDictInv\n        # print json.dumps(estacionesDict, sort_keys = True) \n        self.NUMEROESTACIONES = numEstaciones\n        self.NUMERORUTAS      = numRutas\n        self._TRANSBORDOS     = matricesTransbordo\n        self._SECUENCIAS      = matrizSecuencia\n        self._TRAYECTOS       = trayectosList\n        self._PROPORCIONES    = matProporcion\n\n    # print self.EstacionesBaseDatosDict\n    def esRutaFantasmaFun(self):\n        self.EsRutaFantasma = []\n        for ruta in self._SECUENCIAS:\n            rutaF = [False]\n            secuencia = ruta[0]\n            if secuencia[-1] -1 in self.FinTrayectoArray:\n                rutaF.append(False)\n            else:\n                rutaF.append(True)\n            self.EsRutaFantasma.append(rutaF)\n        return self.EsRutaFantasma\n\n    def generarCSV(self):\n        for ruta in range(self.NUMERORUTAS):\n            np.savetxt(\"archivos/TiempoEntreEstaciones.csv\", self._TIEMPO_ENTRE_ESTACIONES[ruta], delimiter=\",\", fmt = \"%10.5f\")\n            for trayecto in [0,1]:\n                if trayecto == 0:\n                    np.savetxt(\"archivos/Secuencia\"+str(ruta+1)+\"Ida.csv\", self._SECUENCIAS[ruta][trayecto], delimiter=\",\", fmt = \"%10.5f\")\n                    np.savetxt(\"archivos/Transbordos\"+str(ruta+1)+\"Ida.csv\", self._TRANSBORDOS[ruta][trayecto], delimiter=\",\", fmt = \"%10.5f\")\n                    np.savetxt(\"archivos/Topologia\"+str(ruta+1)+\"Ida.csv\", self._TOPOLOGIA[ruta][trayecto], delimiter=\",\", fmt = \"%10.5f\")\n                else:\n                    np.savetxt(\"archivos/Secuencia\"+str(ruta+1)+\"Vuelta.csv\", self._SECUENCIAS[ruta][trayecto], delimiter=\",\", fmt = \"%10.5f\")\n                    np.savetxt(\"archivos/Transbordos\"+str(ruta+1)+\"Vuelta.csv\", self._TRANSBORDOS[ruta][trayecto], delimiter=\",\", fmt = \"%10.5f\")\n                    np.savetxt(\"archivos/Topologia\"+str(ruta+1)+\"Vuelta.csv\", self._TOPOLOGIA[ruta][trayecto], delimiter=\",\", fmt = \"%10.5f\")\n        np.savetxt(\"archivos/Proporciones.csv\", self._PROPORCIONES, delimiter=\",\", fmt = \"%10.5f\")\n\n    def tiempoTrayectosDirectos(self, trayectosValue):\n        '''\n            Devuelve la matriz de tiempo trayectos directos tiempoTrayectos[indiceTrayecto][indiceRuta][fila, columna]\n\n            Parametros\n            ----------\n            - trayectosValue: matriz que contiene la secuencia del trayecto de las rutas. \n                Ej: [...,[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [16, 17, 18, 19, 20, 21, 22, 23, 24, 6, 5, 4, 3, 2, 1]]] \n                Se muestra solo las secuencias de la ruta 3 trayecto vuelta del modelo de 40 estaciones\n\n            Return\n            ------\n            - tiempoTrayectos: matriz donde se encuentran los tiempos directos de cada trayecto de cada ruta\n                [indiceTrayecto][indiceRuta][np.array(NUMEROESTACIONES,NUMEROESTACIONES)]\n\n        '''\n        tiemposTrayectos = []\n        for indexT, trayectoValue in enumerate(trayectosValue):\n            trayectoVect = []\n            for indexR, ruta in enumerate(trayectoValue):\n                tiempo = np.zeros((self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n                for i, index in enumerate(ruta[:-1]):\n                    siguiente = ruta[i+1]\n                    tiempo[index, siguiente] = self._TiempoDirectoTrayectos[indexT][indexR][i]\n                    # tiemposTrayectos[indexT][indexR][index, siguiente] = self._TiempoDirectoTrayectos[indexT][indexR][i]\n                trayectoVect.append(tiempo)\n            tiemposTrayectos.append(trayectoVect)\n                    \n\n        for indexT, trayectoValue in enumerate(trayectosValue):\n            for indexR, ruta in enumerate(trayectoValue):\n                for k in range(1,len(ruta[:-1])):\n                    for i, sec in enumerate(ruta[:-1]):\n                        if i+k <= len(ruta)-2:\n                            siguiente = ruta[i+k]\n                            if siguiente != ruta[-1]:\n                                j = ruta[i+k+1]\n                                tiemposTrayectos[indexT][indexR][sec,j] = tiemposTrayectos[indexT][indexR][sec,siguiente]\\\n                                 + tiemposTrayectos[indexT][indexR][siguiente, j]\n        return tiemposTrayectos\n\n    def tiempoTrayectosTransbordo(self, trayectosValue):\n        '''\n            Devuelve la matriz de tiempo trayectos contando self.transbordos tiempoTrayectos[indiceTrayecto][indiceRuta][fila, columna]\n\n            Parametros\n            ----------\n            - trayectosValue: matriz que contiene la secuencia del trayecto de las rutas. \n                Ej: [...,[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [16, 17, 18, 19, 20, 21, 22, 23, 24, 6, 5, 4, 3, 2, 1]]] \n                Se muestra solo las secuencias de la ruta 3 trayecto vuelta del modelo de 40 estaciones\n\n            Return\n            ------\n            - tiempoTrayectos: matriz donde se encuentran los tiempos de cada trayecto de cada ruta con los self.transbordos\n                [indiceTrayecto][indiceRuta][np.array(NUMEROESTACIONES,NUMEROESTACIONES)]\n\n        '''\n        tiemposTrayectos = self.tiempoTrayectosDirectos(trayectosValue)\n        for indR, ruta in enumerate(self._TRANSBORDOS):\n            if not(trayectosValue[0][indR][-1] in self.FinTrayectoArray):\n                fantasma = True\n            else:\n                fantasma = False\n            for indT, matriz in enumerate(ruta):\n                indicesNonZero = np.nonzero(matriz)\n                for i in range(len(indicesNonZero[0])):\n                    estacionTransbordo = matriz[indicesNonZero[0][i],indicesNonZero[1][i]] -1\n                    if fantasma:\n                        if estacionTransbordo in trayectosValue[indT][indR][trayectosValue[indT][indR].index(indicesNonZero[0][i]):]:\n                            tiempoInicioTransbordo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], estacionTransbordo]\n                        else:\n                            # Si no se encuentra la Estacion de Transbordo en la secuencia, se sumará el tiempo de ir hasta la\n                            # estación final y luego la del trayecto de vuelta hasta la de transbordo\n                            tiempoInicioTransbordo = tiemposTrayectos[0][indR][indicesNonZero[0][i], trayectosValue[0][indR][-1]] \\\n                            + tiemposTrayectos[1][indR][trayectosValue[1][indR][0], estacionTransbordo]\n\n                    else:\n                        tiempoInicioTransbordo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], estacionTransbordo]\n                    tiempo = None\n                    for indT2, rutaTrayecto in enumerate(trayectosValue):\n                        for indR2, trayecto in enumerate(rutaTrayecto):\n                            if estacionTransbordo in trayecto:\n                                if indicesNonZero[1][i] in trayecto[np.where(trayecto==estacionTransbordo)[0]:]: \n                                    if fantasma:\n                                        sumaTiempos = (tiempoInicioTransbordo + \n                                        tiemposTrayectos[indT][indR][estacionTransbordo, indicesNonZero[1][i]]) \n                                        tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(\n                                            sumaTiempos)\n                                    else:\n                                        sumaTiempos = (tiempoInicioTransbordo + \n                                        tiemposTrayectos[indT2][indR2][estacionTransbordo, indicesNonZero[1][i]]) \n                                        if tiempo == None: # Si es el primero en encontrarlo\n                                            tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(\n                                            sumaTiempos)\n                                            tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]\n                                        elif tiempo > sumaTiempos:\n                                            tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(\n                                            sumaTiempos)\n                                            tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]\n                                elif fantasma:\n                                    if indicesNonZero[1][i] in trayectosValue[1][indR2]:\n                                        sumaTiempos = (tiempoInicioTransbordo + \n                                        tiemposTrayectos[indT2][indR2][estacionTransbordo, trayectosValue[indT2][indR2][-1]] +\n                                        tiemposTrayectos[1][indR2][trayectosValue[1][indR][0], indicesNonZero[1][i]]) \n                                        if tiempo == None: # Si es el primero en encontrarlo\n                                            tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(\n                                            sumaTiempos)\n                                            tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]\n                                        elif tiempo > sumaTiempos:\n                                            tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]] =(\n                                            sumaTiempos)\n                                            tiempo = tiemposTrayectos[indT][indR][indicesNonZero[0][i], indicesNonZero[1][i]]\n        return tiemposTrayectos\n\n    def tiempoTrayectosRutas(self, tiemposTrayectos):\n        '''\n            Devuelve la matriz de tiempo trayectos contando self.transbordos tiempoTrayectos[indiceTrayecto][indiceRuta][fila, columna]\n\n            Parametros\n            ----------\n                - tiempoTrayectos:    \n\n            Return\n            ------\n\n        '''\n        tiempoRutas = []\n        for indR in range(self.NUMERORUTAS):\n            tiempoRutas.append(tiemposTrayectos[0][indR] + tiemposTrayectos[1][indR])\n        return tiempoRutas\n\n    def obtenerTopologias(self, tiemposTrayectos):\n        '''\n            Crea las matrices de Topologias a traves de las matrices de tiempo\n\n            Parametros\n            ----------\n                - tiempoTrayectos: \n        '''\n        matricesTopologia = []\n        for indexT, tiempo in enumerate(tiemposTrayectos):\n            trayecto = []\n            for i, ruta in enumerate(tiempo):\n                topologia = np.zeros((self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n                topologia[ruta>0] = 1\n                # if indexT == 0:\n                    # np.savetxt(\"tiemposRuta\"+str(i+1)+\"IdaV2.csv\", ruta, delimiter=\",\", fmt = \"%10.5f\")\n                    # np.savetxt(\"topologiaRuta\"+str(i+1)+\"IdaV2.csv\", topologia, delimiter=\",\", fmt = \"%d\")\n                # else:\n                    # np.savetxt(\"tiemposRuta\"+str(i+1)+\"VueltaV2.csv\", ruta, delimiter=\",\", fmt = \"%10.5f\")\n                    # np.savetxt(\"topologiaRuta\"+str(i+1)+\"VueltaV2.csv\", topologia, delimiter=\",\", fmt = \"%d\")\n                trayecto.append(topologia)\n            matricesTopologia.append(trayecto)\n\n        matricesTopologia = zip(*matricesTopologia)\n        return matricesTopologia\n\n    def numeroEstaciones(self):\n        \"Devuelve la cantidad de estaciones totales, para generar rango de matrices\"\n        for ruta in self._SECUENCIAS:\n            for secuencia in ruta:\n                maximo = secuencia.max()\n                if maximo > self.NUMEROESTACIONES:\n                    self.NUMEROESTACIONES = maximo\n        return self.NUMEROESTACIONES\n    # self.numeroEstaciones()\n\n    def tiempoEntreEstaciones(self):\n        \"Crea las matrices de Tiempo Entre Estaciones, solo se toman en cuenta las directas\"\n        _tiempoEntreEstaciones = []\n        for ruta in self._SECUENCIAS:\n            _tiempoEntreEstacionesT = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))\n            # print ruta\n            for secuencia in ruta:\n                # print secuencia\n                secuenciaN = secuencia-1\n                for i, act in enumerate(secuenciaN[:-1]):\n                    # print i, act, secuenciaN[:-1]\n                    siguiente = secuenciaN[i+1]\n                    _tiempoEntreEstacionesT[act,siguiente] = 2 # Distancia entre estaciones\n                for k in range(1,len(secuenciaN[:-1])):\n                    for i, sec in enumerate(secuenciaN[:-1]):\n                        if i+k <= len(secuenciaN)-2:\n                            siguiente = secuenciaN[i+k]\n                            if siguiente != secuenciaN[-1]:\n                                j = secuenciaN[i+k+1]\n                                # for j in secuenciaN[i+2:-1]:\n                                    # print _tiempoEntreEstacionesT[sec,j], _tiempoEntreEstacionesT[sec,siguiente], _tiempoEntreEstacionesT[siguiente, j]\n                                    # print sec, j, \" : \", sec, siguiente, \" , \", siguiente, j, secuenciaN[i+2:-1]\n                                _tiempoEntreEstacionesT[sec,j] = _tiempoEntreEstacionesT[sec,siguiente] + _tiempoEntreEstacionesT[siguiente, j]\n\n\n            _tiempoEntreEstaciones.append(_tiempoEntreEstacionesT)\n        return np.array(_tiempoEntreEstaciones)\n\n    # print self.tiempoEntreEstaciones()\n\n    def mejoresSecuencias(self):\n        '''\n        Devuelve una matriz con las mejores secuencias para ir de una estación a otra\n        (algoritmo de fuerza bruta, se puede optimizar con programacion dinámica)\n        '''\n        _mejoresSecuencias = []\n        _tiempoEntreEstaciones = self.tiempoEntreEstaciones()\n        for ind in range(self.NUMEROESTACIONES):\n            fila = []\n            for indj in range(self.NUMEROESTACIONES):\n                minimo = 200\n                _mejorSecuencia = []\n                for ruta in _tiempoEntreEstaciones:\n                    tiempo = ruta[ind,indj]\n                    if tiempo != 0 and tiempo <= minimo:\n                        minimo = tiempo\n                        _mejorSecuencia = [ind+1, indj+1]\n                if indj == ind:\n                    _mejorSecuencia = [ind+1, indj+1]\n                fila.append(_mejorSecuencia)\n            _mejoresSecuencias.append(fila)\n        for i, fila in enumerate(_mejoresSecuencias):\n            for j, secuencia in enumerate(fila):\n                if len(secuencia) == 0:\n                    minimo = 200\n                    for indRuta1, ruta1 in enumerate(self._SECUENCIAS):\n                        # rutaN = []\n                        # trayectoN = []\n                        for trayecto in ruta1:\n                            secuenciaN = trayecto-1\n                            if j in secuenciaN:\n                                r = np.array(range(len(secuenciaN==j)))\n                                index = int(r[secuenciaN==j])\n                                for estacionI in secuenciaN[:index]: # Estación intermedia\n                                    minimoN = _tiempoEntreEstaciones[indRuta1][estacionI, j]\n                                    for indRuta2, ruta2 in enumerate(self._SECUENCIAS):\n                                        for trayecto2 in ruta2:\n                                            secuenciaN2 = trayecto2-1\n                                            if estacionI in secuenciaN2:\n                                                r1 = np.array(range(len(secuenciaN2==estacionI)))\n                                                index1 = int(r1[secuenciaN2==estacionI])\n                                                if i in secuenciaN2[:index1]:\n                                                    minimoN += _tiempoEntreEstaciones[indRuta2][i, estacionI]\n                                                    if minimoN < minimo:\n                                                        minimo = minimoN\n                                                        _mejoresSecuencias[i][j] = [i+1, estacionI+1, j+1]\n        _mejoresSecuencias[14][13] = [15,3,13,14]\n        _mejoresSecuencias[5][3]   = [6,3,4]\n        _mejoresSecuencias[7][3]   = [8,3,4]\n        _mejoresSecuencias[7][5]   = [8,3,6]\n\n        # return np.array(_mejoresSecuencias)\n        return _mejoresSecuencias\n    # print self.mejoresSecuencias()\n\n    def transbordos(self):\n        '''\n        Devuelve las matrices de self.transbordos de acuerdo a la matriz de mejores secuencias\n        Se implementa DP, con la variable de self.TRANSBORDO\n        '''\n        # global self.TRANSBORDO\n        # if self.TRANSBORDO == None: # Si no se han asignado self.transbordos\n            # Se toman las mejores secuencias (utilizando rutas más cortas)\n        _mejoresSecuenciasT = self.mejoresSecuencias()\n        _mejoresSecuenciasN = []\n        for ir ,ruta in enumerate(self._SECUENCIAS):\n            r = []\n            for it, trayecto in enumerate(ruta):\n                tr = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))\n                if ir == 2 and it == 1: # Si es estación fantasma\n                    # Se concatenan las dos secuencias, la de trayecto ida y la de vuelta.\n                    sec = np.concatenate((ruta[0]-1,ruta[1]-1))\n                else: # Si es cualquier estación normal, se asigna el trayecto actual\n                    sec = trayecto-1\n                # print sec\n                for i, act in enumerate(sec):\n                    for j in range(self.NUMEROESTACIONES):\n                        if len(_mejoresSecuenciasT[act][j])>=3 and _mejoresSecuenciasT[act][j][1] != 13:\n                            estaTrans = _mejoresSecuenciasT[act][j][1] # Estación de transbordo\n                            # Si la estación de transbordo está más adelante en la matriz trayecto\n                            # Se le asigna esta estación de transbordo.\n                            if np.in1d(estaTrans, sec[i:]+1):\n                                tr[act,j] = estaTrans\n                r.append(tr)\n            _mejoresSecuenciasN.append(np.array(r))\n\n            # self.TRANSBORDO = np.array(_mejoresSecuenciasN)\n\n        # return self.TRANSBORDO\n        return np.array(_mejoresSecuenciasN)\n\n\n    def tiempoEsperaMaximo(self, t):\n        \"Devuelve matriz de Tiempo de Espera Maximo para el trayecto 't'\"\n        suma = np.zeros(shape=(self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        # if model!=None:\n        #     for r in range(len(model)):\n\n        #         for i in range(suma.shape[0]):\n        #             for j in range(suma.shape[1]):\n        #                 suma[i,j] += self._TOPOLOGIA[r][t][i,j]*model[r]\n        # else:\n        for r in range(len(self.FrecuenciasOptimas)):\n            if r == 0:\n                suma = self._TOPOLOGIA[r][t]*self.FrecuenciasOptimas[r]\n            else:\n                suma += self._TOPOLOGIA[r][t]*self.FrecuenciasOptimas[r]\n        with np.errstate(divide='ignore'):\n            result = 1/suma\n        result[np.isinf(result)] = 0\n\n        return np.array(result)\n        # return np.around(result, decimals = 2)\n\n    def topologiaTot(self):\n        '''\n        Topologia sin trayectos\n        '''\n        _MatrizTopologia = []\n        for x in self._TOPOLOGIA:\n            _MatrizTopologia.append(x[0] + x[1])\n        return _MatrizTopologia\n\n    def tiempoEsperaMaximoTot(self):\n        \"Devuelve matriz de Tiemo de Espera Máximo total para los dos trayectos\"\n        suma = np.zeros(shape=(self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        topologiaTotV = self.topologiaTot()\n        # if model!=None:\n        #     for r in range(len(model)):#self.FrecuenciasOptimas)):\n        #         # suma += topologiaTotV[r]*value(model[r])\n        #         for i in range(suma.shape[0]):\n        #             for j in range(suma.shape[1]):\n        #                 suma[i,j] += topologiaTotV[r][i,j]*model[r]\n        # else:\n        for r in range(len(self.FrecuenciasOptimas)):\n            if r == 0:\n                suma = topologiaTotV[r]*self.FrecuenciasOptimas[r]#value(self.FrecuenciasOptimas[r]))\n            else:\n                suma += topologiaTotV[r]*self.FrecuenciasOptimas[r]#value(self.FrecuenciasOptimas[r]))\n\n        with np.errstate(divide='ignore'):\n            result = 1/suma\n\n        # for i in range(result.shape[0]):\n        #     for j in range(result.shape[1]):\n        #         topologia1 = 0\n        #         topologia2 = 0\n        #         for r in range(len(self.FrecuenciasOptimas)):\n        #             secuencia = _MEJOR_SECUENCIA[r][i][j]\n        #             if len(secuencia)== 3:\n        #                 topologia1 += topologiaTotV[r][secuencia[0]-1,secuencia[1]-1]*self.FrecuenciasOptimas[r]\n        #                 topologia2 += topologiaTotV[r][secuencia[1]-1,secuencia[2]-1]*self.FrecuenciasOptimas[r]\n        #                 if r == 2:\n        #                     result[i,j] = (1/topologia1) + (1/topologia2)\n\n        result[np.isinf(result)] = 0\n        return result\n        #return np.around(result, decimals = 2)\n\n\n\n    def demandaMediaConstante(self, x):\n        _Demanda = np.zeros(shape= (self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        _Demanda.fill(x)\n        np.fill_diagonal(_Demanda,[0]*self.NUMEROESTACIONES)\n        return _Demanda\n\n    # print self.demandaMediaConstante(3)\n\n    def tiempoEsperaPromedio(self, t):\n        \"Devuelve matriz de Tiempo de Espera Promedio para cada trayecto 't'\"\n        return np.array(self.tiempoEsperaMaximo(t)/2)\n\n    # print np.around(self.tiempoEsperaPromedio(1), decimals = 2)\n\n    def tiempoEsperaPromedioTot(self):\n        \"Devuelve matriz de Tiempo de Espera Promedio total\"\n        return np.array(self.tiempoEsperaMaximoTot()/2)\n\n\n\n    def matrizDemandaMedia(self):\n        \"Devuelve matriz de Demanda Media, \"\n        # arrayDemandaMedia = np.array(_DEMANDA_MEDIA)\n        arrayDemandaMedia = self.demandaMediaConstante(self.NUMERODEMANDA)\n        a = 0.4*self.tiempoEsperaPromedioTot()*arrayDemandaMedia\n        return np.array((a + arrayDemandaMedia) * (self._PROPORCIONES))\n\n    # print np.around(self.matrizDemandaMedia(), decimals = 2)\n\n\n    # matrizProbabilidadEleccionDP = np.empty((2,3,25))\n    # matrizProbabilidadEleccionDP.fill(-1)\n    # print matrizProbabilidadEleccionDP[0,0]\n\n    def probabilidadEleccion(self, r, t):\n        \"Devuelve matriz de probabilidad de Elección para el trayecto 't' de la ruta 'r'\"\n        topologia = self._TOPOLOGIA[r][t]\n        # if model!=None:\n        #     frecuencia = model[r]#self.FrecuenciasOptimas[r]\n        # else:\n        frecuencia = self.FrecuenciasOptimas[r]\n        # Se convierte del tipo array para que la multiplicación no sea matricial\n        tiempoEsperaM = np.array(self.tiempoEsperaMaximo(t))\n        return np.array(topologia*tiempoEsperaM*frecuencia)\n\n    # print np.around(self.probabilidadEleccion(0,0), decimals = 2)\n\n    def distribucionDemanda(self, r, t):\n        \"Devuelve matriz de Distribucion de Demanda para el trayecto 't' de la ruta 'r'\"\n        return self.matrizDemandaMedia()*self.probabilidadEleccion(r, t)\n\n    # print np.around(self.distribucionDemanda(0,0), decimals= 2)\n\n    def pasajerosEstacion(self, r, t):\n        \"Devuelve arreglo de pasajeros en estación para el trayecto 't' de la ruta 'r'\"\n        return self.distribucionDemanda(r, t).sum(axis= 1)\n\n    def pasajerosEstacionValida(self, r, t):\n        '''\n        Devuelve una arreglo binario, en donde haya más de un pasajero en la estación se marca 1\n        para el trayecto 't' de la ruta 'r'\n        '''\n        x = self.pasajerosEstacion(r, t)\n        x[x>0] = 1\n        # for i in range(x.shape[0]):\n        #     if value(x[i]) >= 0.000001:\n        #         x[i] = 1\n        return x\n\n    def pasajerosPuedenAbordar(self, r, t):\n        '''\n            Crea matriz de los pasajeros que pueden abordar, un vector de los que pueden subir\n            y  un vector de capacidades para el trayecto 't' de la ruta 'r'.\n        '''\n        # Toma la secuencia utilizara por la ruta r en el trayecto t\n        secuencia = self._SECUENCIAS[r][t]-1\n        pasajeros = self.pasajerosEstacion(r, t)\n        # Se crea un arreglo de zeros con tamaño igual al numero de estaciones\n        capacidad = np.zeros(shape=(self.NUMEROESTACIONES))\n        # Se crea un arreglo de zeros con tamaño igual al numero de estaciones\n        puedenSubir = np.zeros(shape=(self.NUMEROESTACIONES))\n         # Se crea una matriz cuadrada de zeros con tamaño igual al numero de estaciones\n        _pasajerosPuedenAbordar = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))\n        mTransbordo = self._TRANSBORDOS[r][t]\n        i = secuencia[0] # Se toma la estación inicial\n        capacidad[i] = self.CAPACIDADBUSES - pasajeros[i] # Se inicializa el arreglo de capacidades\n        puedenSubir[i] = self.CAPACIDADBUSES # Se inicializa el arreglo de puedenSubir\n        if puedenSubir[i] >= pasajeros[i]:\n            _pasajerosPuedenAbordar[i,:] = self.distribucionDemanda(r,t)[i,:]\n        else:\n            _pasajerosPuedenAbordar[i,:] = self.distribucionDemanda(r,t)[i,:] / (pasajeros[i]*puedenSubir[i])\n        if t == 0: # Si el trayecto es de ida\n            for iS, i in enumerate(secuencia[1:]):\n\n                valido = self.pasajerosEstacionValida(r, t)[i]\n                anterior = secuencia[iS]\n\n                pasajerosSuma = _pasajerosPuedenAbordar[:i,i].sum()\n                pasajerosTransbordo = 0\n                if np.in1d(i+1, mTransbordo):\n                    mTransbordoB = mTransbordo == i+1\n                    pasajerosTransbordo = _pasajerosPuedenAbordar[mTransbordoB].sum()\n\n                if capacidad[anterior] > pasajeros[i]:\n                    capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma + pasajerosTransbordo\n                else:\n                    capacidad[i] = 0\n\n                if capacidad[anterior] > 0:\n                    puedenSubir[i] = (capacidad[anterior] + pasajerosSuma + pasajerosTransbordo)*valido\n                else:\n                    puedenSubir[i] = (pasajerosSuma + pasajerosTransbordo)*valido\n                # if round(puedenSubir[i]) >= pasajeros[i]:\n                if puedenSubir[i] >= pasajeros[i]:\n                    _pasajerosPuedenAbordar[i,:] = self.distribucionDemanda(r, t)[i,:]\n                else:\n                    _pasajerosPuedenAbordar[i,:] = (self.distribucionDemanda(r, t)[i,:]/pasajeros[i])*puedenSubir[i]\n                # print _MEJOR_SECUENCIA[r][i-1][i]\n        else: # Si el trayecto es de Vuelta\n            # if r == 2 and t == 1: # Si es un final fantasma\n            if self.EsRutaFantasma[r][t]:\n                puedAbordI               = self.pasajerosPuedenAbordar(r, 0) \n                # Pasajeros que pueden abordar ida\n                pasajerosPuedenAbordarI  = puedAbordI[0]\n                # Capacidad que pueden abordar ida\n                capacidadI               = puedAbordI[2]#[self._SECUENCIAS[r][0][-1]-1]\n                # puedenSubirI             = puedAbordI[1]#[:self._SECUENCIAS[r][0][-1]-1,secuencia[1]]\n                secuenciaI               = self._SECUENCIAS[r][0]-1 # Secuencia ida\n                anterior                 = secuenciaI[-1]\n                mTransbordoI          = self._TRANSBORDOS[r][0]# Transbordo ida\n\n                pasajerosSuma = 0\n                for x in secuenciaI:\n                        pasajerosSuma += pasajerosPuedenAbordarI[x,i]\n\n                if capacidad[anterior] > 0:\n                    puedenSubir[i] = capacidadI[anterior] + pasajerosSuma\n                else:\n                    puedenSubir[i] = pasajerosSuma\n\n                if capacidad[anterior] > pasajeros[i]:\n                    capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma\n                else:\n                    capacidad[i] = 0\n                # print puedenSubir[i]\n                if puedenSubir[i] >= pasajeros[i]:\n                    _pasajerosPuedenAbordar[i,:] = self.distribucionDemanda(r,t)[i,:]\n                else:\n                    _pasajerosPuedenAbordar[i,:] = (self.distribucionDemanda(r,t)[i,:]/pasajeros[i])*puedenSubir[i]\n\n                for iS, i in enumerate(secuencia[1:]): # iS -> Contador, i -> Estacion secuencia\n                    valido = self.pasajerosEstacionValida(r, t)[i]\n                    anterior = secuencia[iS]\n                    pasajerosSuma  = 0\n                    pasajerosSumaI = 0\n                    if np.in1d(i+1, secuenciaI):\n                        for x in secuenciaI[i:]:\n                            pasajerosSumaI += pasajerosPuedenAbordarI[x,i]\n                    else:\n                        for x in secuenciaI:\n                            pasajerosSumaI += pasajerosPuedenAbordarI[x,i]\n\n                    for x in secuencia[:iS+1]:\n                        pasajerosSuma += _pasajerosPuedenAbordar[x,i]\n\n                    pasajerosTransbordo = 0\n                    if np.in1d(i+1, mTransbordo) or np.in1d(i+1, mTransbordoI):\n                        mTransbordoB = mTransbordo == i+1\n                        mTransbordoBI = mTransbordoI > 0 # mTransbordo == i+1 Temporalmente > 0 por error de minimizacion en excel\n                        pasajerosTransbordo = _pasajerosPuedenAbordar[mTransbordoB].sum() + pasajerosPuedenAbordarI[mTransbordoBI].sum()\n\n                    if capacidad[anterior] > 0:\n                        puedenSubir[i] = (capacidadI[anterior] + pasajerosSuma + pasajerosSumaI + pasajerosTransbordo)*valido\n                    else:\n                        puedenSubir[i] = (pasajerosSuma +  pasajerosSumaI + pasajerosTransbordo)*valido\n\n                    if capacidad[anterior] > pasajeros[i]:\n                        capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma + pasajerosSumaI + pasajerosTransbordo\n\n                    if puedenSubir[i] >= pasajeros[i]:\n                        _pasajerosPuedenAbordar[i,:] = self.distribucionDemanda(r,t)[i,:]\n                    else:\n                        _pasajerosPuedenAbordar[i,:] = (self.distribucionDemanda(r,t)[i,:]/pasajeros[i])*puedenSubir[i]\n            else:\n                for iS, i in enumerate(secuencia[1:]):\n\n                    valido = self.pasajerosEstacionValida(r, t)[i]\n                    anterior = secuencia[iS]\n                    pasajerosSuma = 0#_pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()\n                    # pasajerosSuma = _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i].sum()\n                    for x in secuencia[:iS+1]:\n                        pasajerosSuma += _pasajerosPuedenAbordar[x,i]\n\n                    pasajerosTransbordo = 0\n                    if np.in1d(i+1, mTransbordo):\n                        mTransbordoB = mTransbordo == i+1\n                        pasajerosTransbordo = _pasajerosPuedenAbordar[mTransbordoB].sum()\n\n                    if capacidad[anterior] > pasajeros[i]:\n                        capacidad[i] = capacidad[anterior] - pasajeros[i] + pasajerosSuma + pasajerosTransbordo\n                    else:\n                        capacidad[i] = 0\n\n                    if capacidad[anterior] > 0:\n                        puedenSubir[i] = (capacidad[anterior] + pasajerosSuma + pasajerosTransbordo)*valido\n                    else:\n                        puedenSubir[i] = (pasajerosSuma + pasajerosTransbordo)*valido\n                        # print i,anterior, puedenSubir[i], _pasajerosPuedenAbordar[i-len(_pasajerosPuedenAbordar):,i]\n                    if puedenSubir[i] >= pasajeros[i]:\n                        _pasajerosPuedenAbordar[i,:] = self.distribucionDemanda(r,t)[i,:]\n                    else:\n                        _pasajerosPuedenAbordar[i,:] = (self.distribucionDemanda(r,t)[i,:]/pasajeros[i])*puedenSubir[i]\n        # print np.around(puedenSubir, decimals= 0)\n        # print capacidad\n        # print np.rint(pasajeros)\n        return [_pasajerosPuedenAbordar, puedenSubir, capacidad]\n    # psPA = self.pasajerosPuedenAbordar(0,0)\n    # print np.around(psPA[0], decimals=2) , psPA[1], psPA[2]\n\n\n    def tiempoEsperaEstaciones(self, r, t):\n        \"Devuelve matriz de tiempo de Espera entre Estaciones para el trayecto 't' de la ruta 'r'\"\n        return self.pasajerosPuedenAbordar(r,t)[0]*self.TIEMPOABORDAR\n\n    # print np.around(self.tiempoEsperaEstaciones(0, 0), decimals =3)\n    # print np.around(self.tiempoEsperaEstaciones(0, 0).sum(axis=1), decimals =2)\n\n    def tiempoAcumuladoBajada(self, r, t):\n        \"Devuelve matriz de tiempo Acumulado de Bajada para el trayecto 't' de la ruta 'r'\"\n        tiempoEspera  = self.tiempoEsperaEstaciones(r,t)\n        mTransbordo = self._TRANSBORDOS[r][t]\n        tiempoEsperaI = 0\n        suma = np.zeros(shape=(self.NUMEROESTACIONES))\n        _tiempoBajada = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))\n        secuencia = self._SECUENCIAS[r][t]-1\n        for i, e in enumerate(secuencia):\n            if t == 0:\n                suma[e] = tiempoEspera[:e,e].sum()\n            else:\n                suma[e] = tiempoEspera[secuencia[:i],e].sum()\n                if r==2:\n                    tiempoEsperaI = self.tiempoEsperaEstaciones(r,0)\n                    secuenciaI = self._SECUENCIAS[r][0]-1\n                    if np.in1d(e, secuenciaI):\n                        suma[e] += tiempoEsperaI[secuenciaI[e:],e].sum() # Revisar\n                    else:\n                        suma[e] += tiempoEsperaI[secuenciaI,e].sum()\n            if np.in1d(e+1, mTransbordo):\n                mTransbordoB = mTransbordo == e+1\n                # print e+1\n                # print mTransbordoB\n                suma[e] += tiempoEspera[mTransbordoB].sum()\n                if r==2:\n                    tiempoEsperaI = self.tiempoEsperaEstaciones(r,0)\n                    suma[e] += tiempoEsperaI[mTransbordoB].sum()\n            if i>0 and t==0:\n                _tiempoBajada[e,secuencia[i-1]] = suma[e]\n\n        if t == 0:\n            for iS, i in enumerate(secuencia):\n                for j in range(iS+1,len(secuencia)):\n                    _tiempoBajada[secuencia[j],i] = _tiempoBajada[secuencia[j-1],i] + suma[secuencia[j]]\n            _tiempoBajada = np.transpose(_tiempoBajada)\n        else:\n            for iS, i in enumerate(secuencia):\n                for j in range(iS+1,len(secuencia)):\n                    _tiempoBajada[i,secuencia[j]] = _tiempoBajada[i,secuencia[j-1]] + suma[secuencia[j]]\n        return _tiempoBajada\n\n    # print self.tiempoAcumuladoBajada(2,0)\n    def tiempoAcumuladoSubida(self, r, t):\n        \"Devuelve matriz de tiempo Acumulado de Subida para el trayecto 't' de la ruta 'r'\"\n        tiempoEspera = self.tiempoEsperaEstaciones(r,t)\n        suma = tiempoEspera.sum(axis=1)\n        _tiempoSubida = np.zeros(shape=(self.NUMEROESTACIONES,self.NUMEROESTACIONES))\n        np.fill_diagonal(_tiempoSubida,suma)\n        secuencia = self._SECUENCIAS[r][t] -1\n        if t == 0:\n            for iS, i in enumerate(secuencia):\n                for j in range(iS+1,len(secuencia)):\n                    _tiempoSubida[secuencia[j],i] = _tiempoSubida[secuencia[j-1],i] + suma[secuencia[j]]\n            _tiempoSubida = np.transpose(_tiempoSubida)\n        else:\n            for iS, i in enumerate(secuencia):\n                for j in range(iS+1,len(secuencia)):\n                    _tiempoSubida[i,secuencia[j]] = _tiempoSubida[i,secuencia[j-1]] + suma[secuencia[j]]\n        return _tiempoSubida\n\n    # print np.around(self.tiempoAcumuladoSubida(0, 0), decimals = 2)\n\n    def tiempoViajePromedio(self, r, t):\n        '''\n        Devuelve Matriz tiempo de viaje promedio para el trayecto 't' de la ruta 'r'\n        '''\n        # print value(self.FrecuenciasOptimas[0])\n        tiempoEntreEstacionesM = self._TIEMPO_ENTRE_ESTACIONES[r]\n        tiempoEsperaPromedioM  = self.tiempoEsperaPromedio(t)\n        tiempoAcumuladoSubidaM = self.tiempoAcumuladoSubida(r,t)\n        tiempoAcumuladoBajadaM = self.tiempoAcumuladoBajada(r,t)\n        # print tiempoEsperaPromedioM\n        # print tiempoAcumuladoSubidaM\n        # print tiempoAcumuladoBajadaM\n        _tiempoViajePromedio = np.zeros(shape=(self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        secuencia = self._SECUENCIAS[r][t]-1\n        for i, ei in enumerate(secuencia):\n            for ej in secuencia[i:]:\n                _tiempoViajePromedio[ei,ej] = tiempoEntreEstacionesM[ei,ej] + tiempoEsperaPromedioM[ei,ej] + \\\n                tiempoAcumuladoSubidaM[ei,ej] + tiempoAcumuladoBajadaM[ei,ej]\n        # print _tiempoViajePromedio.sum(), model[0].value\n        return _tiempoViajePromedio\n\n    # print np.around(self.tiempoViajePromedio(2,1), decimals = 2)\n    # print np.around(self.tiempoViajePromedio(1,0).sum(axis=0), decimals = 2)\n\n    def pasajerosEspera2Viaje(self,r,t):\n        '''\n        Devuelve matriz de tiempo de espera de los pasajeros\n        para el segundo viaje para el trayecto 't' de la ruta 'r'\n        '''\n        return self.distribucionDemanda(r,t) - self.pasajerosPuedenAbordar(r,t)[0]\n\n    # print np.around(self.pasajerosEspera2Viaje(2,1), decimals=1)\n    # print np.around(self.pasajerosEspera2Viaje(2,1).sum(), decimals=1)\n\n    def tiempoEsperaPor2Bus(self, t):\n        \"Devuelve matriz de tiempo de espera por el segundo bus para el trayecto 't'\"\n        return self.tiempoEsperaPromedio(t) + self.tiempoEsperaMaximo(t)\n\n    # print np.around(self.tiempoEsperaPor2Bus(1), decimals=2)\n\n    def tiempoEsperarPor2Viaje(self,r,t):\n        '''\n        Devuelve matriz de tiempo de espera para el\n        segundo viaje para el trayecto 't' de la ruta 'r'\n        '''\n        pasajerosEspera2ViajeB = self.pasajerosEspera2Viaje(r,t)>0\n        # pasajerosE2Vmat = self.pasajerosEspera2Viaje(r,t, model)\n        # pasajerosEspera2ViajeB = np.zeros((self.NUMEROESTACIONES, self.NUMEROESTACIONES), dtype=bool)\n        # for i in range(pasajerosE2Vmat.shape[0]):\n        #     for j in range(pasajerosE2Vmat.shape[1]):\n        #         if pasajerosE2Vmat[i,j] > 0:\n        #             pasajerosEspera2ViajeB[i,j] = True\n\n        _tiempoEsperarPor2Viaje = np.where(pasajerosEspera2ViajeB, self.tiempoEsperaPor2Bus(t), 0)\n        return _tiempoEsperarPor2Viaje\n    # print np.around(self.tiempoEsperarPor2Viaje(2,1), decimals=1)\n\n    def frecuenciaTotal(self,t):\n        \"Devuelve matriz de Frecuencia Total para el segundo viaje para el trayecto 't'\"\n        _frecuenciaTotal = np.zeros(shape=(self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        # if model:\n        #     for r, f in enumerate(model):\n        #         _frecuenciaTotal += np.where(self._TOPOLOGIA[r][t]>0, model[r], 0)#value(f), 0)\n        # else:\n        for r, f in enumerate(self.FrecuenciasOptimas):\n            _frecuenciaTotal += np.where(self._TOPOLOGIA[r][t]>0, f, 0)#value(f), 0)\n        return _frecuenciaTotal\n\n    # print np.around(self.frecuenciaTotal(1), decimals=2)\n\n    def funcionCalidad(self,t):\n        '''\n        Devuelve matriz de Funcion de Calidad para el segundo viaje para el trayecto 't'\n\n        Parametros\n        ----------\n            - t: trayecto donde \"0\" es ida y \"1\" es vuelta\n\n        Return\n        ------\n            - matriz(self.NUMEROESTACIONES, self.NUMEROESTACIONES)\n\n        '''\n        return self.frecuenciaTotal(t)*self.tiempoEsperaPromedio(t)\n\n    # print np.around(self.funcionCalidad(1), decimals=2)\n\n    def serviciosRequeridos(self,r,t):\n        '''\n        Devuelve matriz de Servicios Requeridos para el\n        segundo viaje para el trayecto 't' de la ruta 'r'\n        '''\n        return self.distribucionDemanda(r,t)/self.CAPACIDADBUSES\n\n    # print np.around(self.serviciosRequeridos(1,0), decimals=2)\n\n    def flujoAsignado(self,t):\n        '''\n        Devuelve matriz de Flujo Asignado para el segundo viaje de todas las rutas en el trayecto trayecto 't'\n\n        Parametros\n        ----------\n            - t: trayecto donde \"0\" es ida y \"1\" es vuelta\n\n        Return\n        ------\n            - _flujoAsignado: matriz(self.NUMEROESTACIONES, self.NUMEROESTACIONES)\n\n        '''\n        _flujoAsignado = np.zeros(shape=(self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        for r in range(self.NUMERORUTAS):\n            _flujoAsignado += np.where(self._TOPOLOGIA[r][t]>0, self.serviciosRequeridos(r,t), 0)\n        # print self.FrecuenciasOptimas\n        return _flujoAsignado\n\n\n    def intervalosTiemposEntreSalidas(self):\n        \"Devuelve los periodos de salida de las rutas\"\n        return 1/np.array(self.FrecuenciasOptimas)\n\n    def tiempoViajePromedioSinEsperaSB(self,r,t):\n        '''\n        Matriz tiempo de viaje promedio\n        '''\n        # print value(self.FrecuenciasOptimas[0])\n        tiempoEntreEstacionesM = self._TIEMPO_ENTRE_ESTACIONES[r]\n        tiempoAcumuladoSubidaM = self.tiempoAcumuladoSubida(r,t)\n        tiempoAcumuladoBajadaM = self.tiempoAcumuladoBajada(r,t)\n        _tiempoViajePromedio = np.zeros(shape=(self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        secuencia = self._SECUENCIAS[r][t]-1\n        for i, ei in enumerate(secuencia):\n            for ej in secuencia[i:]:\n                _tiempoViajePromedio[ei,ej] = tiempoEntreEstacionesM[ei,ej] + tiempoAcumuladoSubidaM[ei,ej] + tiempoAcumuladoBajadaM[ei,ej]\n        # print _tiempoViajePromedio.sum(), model[0].value\n        return _tiempoViajePromedio\n\n    def tiempoViajePromedioSinEspera(self,r,t):\n        '''\n        Matriz tiempo de viaje promedio\n        '''\n        # print value(self.FrecuenciasOptimas[0])\n        tiempoEntreEstacionesM = self._TIEMPO_ENTRE_ESTACIONES[r]\n        _tiempoViajePromedio = np.zeros(shape=(self.NUMEROESTACIONES, self.NUMEROESTACIONES))\n        secuencia = self._SECUENCIAS[r][t]-1\n        for i, ei in enumerate(secuencia):\n            for ej in secuencia[i:]:\n                _tiempoViajePromedio[ei,ej] = tiempoEntreEstacionesM[ei,ej]\n        # print _tiempoViajePromedio.sum(), model[0].value\n        return _tiempoViajePromedio\n    \n\n    def convertHour(self, horas = None, hora = None):\n        '''\n        horas/hora es una variable que viene en segundos, esta Función\n        transforma los segundos en la clase delta.timedelta y los devuelve\n        como string\n        '''\n        if horas:\n            horasD = []\n            for i, x in enumerate(horas):\n                horasD.append(str(datetime.timedelta(seconds= int(round(((x*24)*60)*60)))))\n            # return np.vectorize(str(datetime.timedelta(minutes=x)))\n            return np.array(horasD)\n        elif hora:\n            horaStr = str(datetime.timedelta(seconds= int(round(((hora*24)*60)*60))))\n            if len(horaStr) == 7:\n                horaStr = \"0\" + horaStr\n            return horaStr\n\n\n    def horaInicioServicios(self,r):\n        '''\n        Devuelve un arreglo con las horas de inicio de cada servicio en la Ruta 'r'\n        '''\n        intervalosPeriodosRutas = self.intervalosTiemposEntreSalidas()[r]/(24*60)\n        tiempoInicio = self.HORAINICIO/24\n        tiempoFinal = self.HORAFIN/24\n        # minutosTotales = (self.HORAINICIO - self.HORAFIN)*60 # Los convertimos en minutos\n        horas = np.arange(tiempoInicio, tiempoFinal, intervalosPeriodosRutas)\n\n        # horasD = []\n        # for i, x in enumerate(horas):\n        #     horasD.append(str(datetime.timedelta(seconds= int(round(((x*24)*60)*60)))))\n        # return np.array(horasD)\n\n        return horas\n\n    def horaEstaciones(self,r,t, idT):\n        '''\n        Devuelve la linea del servicio,\n        es decir para cada estación tiene: la hora de llegada, la hora de salida,\n        dos booleanos que indican si es una estación de inicio o estación final,\n        el id del trayecto y la secuencia\n\n        Parametros\n        ----------\n            - r: Indice de Ruta\n            - t: Indice de Trayecto\n            - idT: id del Trayecto\n\n        Return\n        ------\n            - _horaEstaciones: matriz que contiene\n                               [[   * _horaEstacionesLlegada,\n                                    * _horaEstacionesSalida,\n                                    * estacionInicio,\n                                    * estacionFinal,\n                                    * idTrayecto,\n                                    * secuencia ], ...]\n\n        '''\n        horaInicio = self.horaInicioServicios(r)\n        secuencia = self._SECUENCIAS[r][t] -1\n        tiempoSalida = self.tiempoViajePromedioSinEsperaSB(r,t)[secuencia[0],secuencia] / (24*60)\n        tiempoLlegada = np.zeros(len(secuencia))\n        # tiempoLlegada[1:] = tiempoSalida[:-1] + self.tiempoViajePromedioSinEspera(r,t)[secuencia[0],secuencia[1:]] / (24*60)\n        for i in range(1,len(tiempoLlegada)):\n            tiempoLlegada[i] = tiempoSalida[i-1] + self.tiempoViajePromedioSinEspera(r,t)[secuencia[i-1],secuencia[i]] / (24*60)\n        _horaEstaciones = []\n        for horaI in horaInicio:\n            # _horaEstacionesLlegada = self.convertHour(horaI + tiempoLlegada)\n            _horaEstacionesLlegada = (horaI + tiempoLlegada)\n            # _horaEstacionesSalida = self.convertHour(horaI + tiempoSalida)\n            _horaEstacionesSalida = (horaI + tiempoSalida)\n            estacionInicio = np.zeros(len(secuencia), dtype=bool)\n            estacionInicio[0] = True\n            estacionFinal = np.zeros(len(secuencia), dtype=bool)\n            estacionFinal[-1] = True\n            idTrayecto = np.empty(len(secuencia))\n            idTrayecto.fill(idT)\n            _horaEstaciones.append(zip(_horaEstacionesLlegada, _horaEstacionesSalida, estacionInicio, estacionFinal, idTrayecto, secuencia))\n        dtype = [('horaLlegada', float), ('horaSalida', float),('estacionInicio', bool), ('estacionFinal', bool),('idTrayecto', int), ('secuencia', int)]\n        _horaEstaciones = np.array(_horaEstaciones, dtype)\n        return _horaEstaciones\n\n\n    def horasRuta(self,r):\n        '''\n        Devuelve una lista que contiene la hora inicial,\n        la hora final y el id del trayecto para la ruta \"r\"\n        '''\n        horas = []\n        rutaT = self._TRAYECTOS[r]\n        horasIda = []\n        horasVuelta = []\n        for t, value in rutaT.iteritems():\n            if value == 'Ida':\n                # horas.append(self.horaEstaciones(r,0,t))\n                for horaE in self.horaEstaciones(r,0,t):\n                    horasIda.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))\n            else:\n                for horaE in self.horaEstaciones(r,1,t):\n                    horasVuelta.append((horaE[0]['horaLlegada'], horaE[-1]['horaSalida'], horaE[0]['idTrayecto']))\n        horas = horasIda + horasVuelta\n        dtype= [('horaInicial', float), ('horaFinal', float), ('idTrayecto', int)]\n        horas = np.array(horas, dtype)\n        # print horas.shape, r, horas\n        # horas = horas.reshape(rows*columns,horas.shape[2])\n        return horas\n\n    def serviciosRuta(self,r, horas = None):\n        '''\n            Función que recibe la ruta para la cual se van a sacar los servicios\n            Los servicios son la identificación de un determinado bus que recorre la ruta\n\n            Parametros\n            ----------\n                - r: indice de Ruta. Ej: 0 --> Ruta 1\n                - horas: Arreglo con hora inicial y final de la ruta\n\n            Return\n            ------\n                - servicios: \n\n        '''\n        if horas == None:\n            horas = self.horasRuta(r)\n        horasDict = []\n        tray = self._TRAYECTOS[r]\n        tIda = None\n        tVuelta = None\n        for key, value in tray.items():\n            if value == 'Ida':\n                tIda = key\n            else:\n                tVuelta = key\n        for ind ,hora in enumerate(horas):\n            horasDict.append((ind , hora['horaInicial'], hora['idTrayecto']))\n        dtype = [('id', int),('horaLlegada', float), ('idTrayecto', int)]\n        horasDictArray = np.array(horasDict, dtype)\n        horasDictArray.sort(order='horaLlegada')\n        pilaSalida = []\n        servicios = []\n        pilaSalida.append((0,horas[horasDictArray[0][0]]['horaFinal'], horasDictArray[0][2]))\n        servicios.append((0, horasDictArray[0][0], horasDictArray[0][1], horasDictArray[0][2]))\n        serv  = 1\n        flag = True\n        for x in horasDictArray[1:]:\n            '''\n            x[0] = id    x[1] = horaLlegada    x[2] = idTrayecto\n            '''\n            # pilaSalida.append((i,horas['horaFinal'][x[0]][-1], x[2]))\n            typeD = [('servicio', int),('horaSalida', float), ('idTrayecto', int)]\n            pilaSalidaArray = np.array(pilaSalida, typeD)\n            pilaSalidaArray.sort(order='horaSalida')\n            pilaTrayecto = pilaSalidaArray[pilaSalidaArray['idTrayecto'] != x[2]]\n            # if pilaSalidaArray[0]['horaSalida'] < x[1]:\n            if pilaTrayecto[0]['horaSalida'] < x[1] and flag:\n                serviciosV = np.array(servicios)\n                serviciosAdicionales = serviciosV[serviciosV[:,-1]==tVuelta]\n                for ind in reversed(serviciosAdicionales):\n                    servicios.insert(0, (ind[0], -1.0, 0.0, tIda))\n                servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))\n                del pilaSalida[pilaTrayecto[0]['servicio']]\n                # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))\n                pilaSalida.insert(pilaTrayecto[0]['servicio'],(pilaTrayecto[0]['servicio'], horas[x[0]]['horaFinal'],x[2]))\n                flag = False\n            elif pilaTrayecto[0]['horaSalida'] < x[1]:\n                servicios.append((pilaTrayecto[0]['servicio'], x[0], x[1], x[2]))\n                del pilaSalida[pilaTrayecto[0]['servicio']]\n                # pilaSalida.insert(pilaSalidaArray[0]['servicio'],(pilaSalidaArray[0]['servicio'], horas[:]['horaSalida'][x[0]][-1],x[2]))\n                pilaSalida.insert(pilaTrayecto[0]['servicio'],(pilaTrayecto[0]['servicio'], horas[x[0]]['horaFinal'],x[2]))\n            else:\n                pilaSalida.append((serv , horas[x[0]]['horaFinal'] , x[2]))\n                servicios.append((serv , x[0], x[1], x[2]))\n                serv +=1\n        # print len(servicios)\n        numeroServA = len(serviciosAdicionales)\n        serviciosIda = np.array(servicios)\n        serviciosIda = serviciosIda[serviciosIda[:,-1]==tIda]\n        for serv in serviciosIda[-numeroServA:]:\n            servicios.append((serv[0], -1.0, 1.0, tVuelta))\n        # print len(servicios)\n\n        # dtype = [('servicio', int), ('id', int), ('horaLlegada', float), ('idTrayecto', int)]\n        return np.array(servicios)\n\n    def serviciosOrdenados(self,r, t):\n        \"Recibe los servicios, y los devuelve con orden respecto a los servicios\"\n        serv = self.serviciosRuta(r)\n        serv = serv[serv[:,-1]==t]\n        _serviciosOrdenados = serv[np.lexsort((serv[:,2], serv[:,0]))]\n        arrayServ = []\n        length = 0\n        for i in range(int(_serviciosOrdenados[:,0].max())+1):\n            subArray = _serviciosOrdenados[_serviciosOrdenados[:,0] == i]\n            lengthA = len(subArray)\n            arrayServ.append(subArray)\n            if length < lengthA:\n                length = lengthA\n        newArray = np.empty_like(serv)\n        ind = 0\n        for i in range(length):\n            for e in arrayServ:\n                if i < len(e):\n                    newArray[ind] = e[i]\n                    ind += 1\n                # print e[i]\n        return np.array(newArray)\n        # return 0\n\n\n    def jsonFile(self, direccion = None, nombreArchivoS = None):\n        '''\n            Genera el archivo \"horarios-NOMBREARCHIVOFUENTE-.json\" con la estructura v3\n            requerida por SingleClick\n\n            Parametros\n            ----------\n                - direccion = String. Contiene la direccion de la carpeta donde se va a generar el JSON\n                                      Si se deja como vacio la direccion por defecto sera:\n                                        \"/var/www/html/Archivos/Optimizacion/Programacion/\"\n                - nombreArchivoS = String. Contiene el nombre del archivo para ser generado. Si se deja\n                                           Vacio el nombre por defecto sera el nombre de este archivo.\n                                           \"modeloOptimizacionV5\"\n\n        '''\n        estructura = []\n        tray = 0\n        # horaAnt = None\n        # print self._TRAYECTOS\n        # _serviciosRuta = None\n        for r, rutaT in enumerate(self._TRAYECTOS):\n            _serviciosRuta = self.serviciosRuta(r)\n            horaAnt = None\n            for t, value in rutaT.iteritems():\n                estructura.append({'idtrayecto':t})\n                serviciosEst = []\n                if value == 'Ida':\n                    horas = self.horaEstaciones(r,0,t)\n                    horaAnt = horas\n                else:\n                    if horaAnt == None:\n                        for key, valueD in self._TRAYECTOS[r].iteritems():\n                            if valueD == 'Ida':\n                                horaAnt = self.horaEstaciones(r,0,key)\n                    horas = self.horaEstaciones(r,1,t)\n                # print self.serviciosRuta(0)\n                # _serviciosRuta = self.serviciosOrdenados(r, t)\n                _serviciosRutaB = _serviciosRuta[_serviciosRuta[:,-1]==t]\n                for i, servicio in enumerate(_serviciosRutaB):\n                # for i, servicio in enumerate(_serviciosRuta):\n                    horarios = {}\n                    # horarios = []\n                    serviciosDict = {'idservicio':int(servicio[0])+1}\n                    if servicio[1] != -1:\n                        if value == 'Ida':\n                            idLinea = servicio[1]\n                        else:\n                            idLinea = servicio[1] - len(horaAnt)\n                        for j, hora in enumerate(horas[idLinea]):\n                            # print hora\n                            estacionesDict = {}\n                            if self.EstacionesBaseDatosDict:\n                                estacionesDict[\"idestacion\"] = self.EstacionesBaseDatosDict[hora['secuencia']+1]\n                            else:\n                                estacionesDict[\"idestacion\"] = hora['secuencia']+1\n                            estacionesDict[\"horallegada\"] = self.convertHour(hora = hora['horaLlegada'])\n                            estacionesDict[\"horasalida\"] = self.convertHour(hora = hora[\"horaSalida\"])\n                            estacionesDict[\"estacioninicial\"] = 'true' if hora[\"estacionInicio\"] else 'false'\n                            estacionesDict[\"estacionfinal\"] = 'true' if hora[\"estacionFinal\"] else 'false'\n                            horarios[str(j)] = estacionesDict\n                            # horarios.append(str(j) +\" \"+str(estacionesDict))\n                    serviciosDict[\"horarios\"] = horarios\n                    serviciosDict[\"orden\"] = i+1\n                    serviciosEst.append(serviciosDict)\n                estructura[tray]['servicios']= serviciosEst\n                tray+=1\n        path = inspect.getfile(inspect.currentframe()) \n        nombreArchivoExt = os.path.basename(path)\n        nombreArchivo, extension = os.path.splitext(nombreArchivoExt)\n        if direccion is None:\n            out_file = open(\"/var/www/html/Archivos/Optimizacion/Programacion/\"+nombreArchivoS+\".json\",\"w\")\n        else:\n            if nombreArchivoS is None:\n                out_file = open(direccion+\"/\"+nombreArchivo+\".json\",\"w\")\n            else:\n                out_file = open(direccion+\"/\"+nombreArchivoS+\".json\",\"w\")\n\n        # out_file = open(\"/etc/optimizacion/archivos/horariosOpt.json\",\"w\")\n        # out_file = open(\"/var/www/html/Archivos/Optimizacion/horariosOpt.json\",\"w\")\n        generarRegistroBD(nombreArchivo, nombreArchivoS)\n        json.dump(estructura,out_file, indent=4, sort_keys=True, separators=(',', ': '))\n        out_file.close()\n\n    def generarRegistroBD(nombreArchivo, nombreArchivoS):\n        \n\n    def objFunctionGenetic(self, frecuencias):\n        '''\n        Función objetivo utilizada en el algoritmo Genético,\n        Que devuelve el valor de la función sin escalamiento\n\n        Parametros\n        ----------\n            - frecuencias: Lista de tipo int, que contiene los indices\n                           de la lista \"self.ValoresFrecuencias\".\n        Return\n        ------\n            - (obj1 + obj2)*penalty: Devuelve el valor de la funcion objetivo total,\n                                     Que es la suma de la funcion objetivo de los pasajeros \"obj1\"\n                                     mas la suma de la funcion objetivo del operador \"obj2\"\n                                     esto multiplicado por una penalidad.\n        '''\n        # global self.FrecuenciasOptimas\n        penalty = 1\n        for i, x in enumerate(frecuencias):\n            self.FrecuenciasOptimas[i] = self.ValoresFrecuencias[x]\n            # self.FrecuenciasOptimas[i] = x\n\n        lenf = len(self.FrecuenciasOptimas)\n        obj1 = (sum(self.tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) +\n                (sum(self.tiempoEsperarPor2Viaje(r,t).sum() for r in range(lenf) for t in  [0,1]))*self.TIEMPOESPERA2BUS)*self.FACTORPASAJERO\n        obj2 = sum(self.COSTOS[r]* self.FrecuenciasOptimas[r] for r in range(lenf))*self.FACTOROPERADEOR\n\n        # rule = self.flujoAsignado().sum(axis=0) <= self.funcionCalidad().sum(axis=0)\n        # Restriccion, se agrega penalidad a objetivo si no se cumple\n        if not((self.flujoAsignado(0) <= self.funcionCalidad(0)).all() and (self.flujoAsignado(1) <= self.funcionCalidad(1)).all()):\n            penalty = 100\n        # vecO[frecuencias]\n        return (obj1 + obj2)*penalty\n\n    def objFunction(self, frecuencias):\n        '''\n        Devuelve el valor de la funcion Funcion objetivo utilizada en el algoritmo Nelder-Mead,\n        ya que se utilizan los valores de las Frecuencias Optimas obtenidas por el algoritmo. \n        Se requiere separar las funciones objetivo ya que la variacion y tipo de el parametro \"frecuencias\"\n        es diferente.\n\n\n        Parametros\n        ----------\n            - frecuencias: Lista de tipo float, que contiene las frecuencias\n                           actuales.\n        Return\n        ------\n            - (obj1 + obj2)*penalty: Devuelve el valor de la funcion objetivo total,\n                                     Que es la suma de la funcion objetivo de los pasajeros \"obj1\"\n                                     mas la suma de la funcion objetivo del operador \"obj2\"\n                                     esto multiplicado por una penalidad.\n\n        '''\n        # global self.FrecuenciasOptimas\n        penalty = 1\n\n        for i, x in enumerate(frecuencias):\n            # self.FrecuenciasOptimas[i] = self.ValoresFrecuencias[x]\n            if x < self.ValoresFrecuencias[-1]:\n                penalty = 1000\n                self.FrecuenciasOptimas[i] = self.ValoresFrecuencias[-1]\n            else:\n                self.FrecuenciasOptimas[i] = x\n        lenf = len(self.FrecuenciasOptimas)\n        obj1 = (sum(self.tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) +\n                (sum(self.tiempoEsperarPor2Viaje(r,t).sum() for r in range(lenf) for t in  [0,1]))*self.TIEMPOESPERA2BUS)*self.FACTORPASAJERO\n        obj2 = sum(self.COSTOS[r]* self.FrecuenciasOptimas[r] for r in range(lenf))*self.FACTOROPERADEOR\n\n        if not((self.flujoAsignado(0) <= self.funcionCalidad(0)).all() and (self.flujoAsignado(1) <= self.funcionCalidad(1)).all()):\n            penalty = 100\n        # vecO[frecuencias]\n        return (obj1 + obj2)*penalty\n\n    def objFunctionList(self, frecuencias = None):\n        '''\n        Funcion objetivo utilizada en el algoritmo Nelder-Mead,\n        ya que se utilizan los valores de las Frecuencias Optimas\n        obtenidas por el algoritmo\n\n        frecuencias: Lista de tipo float, que contiene las frecuencias\n        optimas\n        '''\n        # global self.FrecuenciasOptimas\n\n        if frecuencias != None:\n            for i, x in enumerate(frecuencias):\n                # self.FrecuenciasOptimas[i] = self.ValoresFrecuencias[x]\n                self.FrecuenciasOptimas[i] = x\n\n        lenf = len(self.FrecuenciasOptimas)\n        obj1 = (sum(self.tiempoViajePromedio(r,t).sum() for r in range(lenf) for t in  [0,1]) +\n                (sum(self.tiempoEsperarPor2Viaje(r,t).sum() for r in range(lenf) for t in  [0,1]))*self.TIEMPOESPERA2BUS)*self.FACTORPASAJERO\n        obj2 = sum(self.COSTOS[r]* self.FrecuenciasOptimas[r] for r in range(lenf))*self.FACTOROPERADEOR\n\n        # vecO[frecuencias]\n        return [obj1, obj2]\n\n    def gradf(self, frecuencias):\n        '''\n        Calcula la gradiente de la función objetivo a través de numpy\n        '''\n        # global self.FrecuenciasOptimas\n\n        for i, x in enumerate(frecuencias):\n            # self.FrecuenciasOptimas[i] = self.ValoresFrecuencias[x]\n            self.FrecuenciasOptimas[i] = x\n        arrayT = []\n        for r in range(len(frecuencias)):\n            obj1 = (sum(self.tiempoViajePromedio(r,t).sum() for t in  [0,1]) +\n                sum(self.tiempoEsperarPor2Viaje(r,t).sum() for t in  [0,1])*self.TIEMPOESPERA2BUS)*self.FACTORPASAJERO\n            obj2 = self.COSTOS[r]* frecuencias[r]*self.FACTOROPERADEOR\n            arrayT.append(obj1+ obj2)\n        arrayN = np.array(arrayT)\n        arrayG = np.gradient(arrayN)\n        return arrayG\n\n\n    # Genome instance\n    def optGAPyevolve(self, multiProcessing= False):\n        '''\n        Implementación de Algoritmo Genético, a través de la librería pyevolve.\n        Devuelve la lista con las frecuencias óptimas para cada ruta\n        '''\n        # Crea una lista del tamaño del Numero de Rutas\n        genome = G1DList.G1DList(len(self.FrecuenciasOptimas))\n        # parametros que varían de 0 a 24 que son los indices de los valores\n        genome.setParams(rangemin=0, rangemax=25)\n        genome.initializator.set(Initializators.G1DListInitializatorInteger)\n        genome.mutator.set(Mutators.G1DListMutatorIntegerRange)\n\n        # The evaluator function (objective function)\n        genome.evaluator.set(self.objFunctionGenetic)\n\n        # Genetic Algorithm Instance\n        ga = GSimpleGA.GSimpleGA(genome)\n\n        if multiProcessing:\n            ga.setMultiProcessing()\n\n        ga.selector.set(Selectors.GRankSelector)\n        # ga.selector.set(Selectors.GTournamentSelector)\n        # csv_adapter = DBFileCSV(identify=\"run1\", filename=\"stats.csv\")\n        # ga.setDBAdapter(csv_adapter)\n        ga.setMinimax(Consts.minimaxType[\"minimize\"])\n        ga.setGenerations(20)\n        ga.setMutationRate(0.1)\n        # ga.terminationCriteria.set(GSimpleGA.RawScoreCriteria)\n\n        # print Initializators.G1DListInitializatorReal\n        # Do the evolution, with stats dump\n        # frequency of 10 generations\n        ga.evolve(freq_stats=5)\n\n        # # Best individual\n        best = ga.bestIndividual()\n        # print best\n        # print [self.ValoresFrecuencias[x] for x in best.genomeList]\n        frecuencias = np.copy(self.FrecuenciasOptimas)\n        for i, g in enumerate(best.genomeList):\n            frecuencias[i] = self.ValoresFrecuencias[g]\n\n        print \"\\nFuncion objetivo Genetico: %.2f\"% (best.score,), \\\n        \", Frecuencias: \", np.around(frecuencias, decimals = 4)\n\n        objetivos = self.objFunctionList(frecuencias)\n        print \"Objetivo Pasajeros: \" + str(objetivos[0])+\" Objetivo Operador: \" + str(objetivos[1])\n        return frecuencias\n\n    def optNelderMead(self, multiProcessing = False):\n        '''\n        Función que cambia las variables de las self.FrecuenciasOptimas # global\n        utilizando el algoritmo Nelder-Mead de la librería SciPy\n        Nelder-Mead: nonlinear optimization technique\n        '''\n        # global self.FrecuenciasOptimas\n        x0 = np.array(self.optGAPyevolve(multiProcessing))\n\n        # x0 = np.asarray((0.18, 0.11, 0.12))\n        # resultado = optimize.minimize(self.objFunction, x0, method = 'Nelder-Mead',\n        #                options={'disp': False})\n        resultado = optimize.fmin(self.objFunction, x0)\n        print \"\\nFuncion Objetivo Nelder-Mead: %.2f\"%(self.objFunction(resultado)),\n        print ', Frecuencias : ', #np.around(resultado.x, decimals= 4)\n        self.FrecuenciasOptimas = resultado\n        # frecuencias = []\n        for i, x in enumerate(resultado):\n            # self.FrecuenciasOptimas[i] = x\n            # frecuencias.append(x)\n            print x,\n        # self.FrecuenciasOptimas = frecuencias\n\n        objetivos = self.objFunctionList(self.FrecuenciasOptimas)\n        print \"\\nObjetivo Pasajeros: \" + str(objetivos[0])+\" Objetivo Operador: \" + str(objetivos[1])\n\n    def trayectosValueF(self, secuencias):\n        '''\n            Transpone la matriz de secuencias y pasa de indices iniciando en 1 a 0\n            ej: [[1,2,3,10,15],...] ---> [[0,1,2,9,14],...]\n\n            Parametros\n            ----------\n                - secuencias: Matriz que contiene las secuencias de cada ruta\n                              [[ida,vuelta], # Ruta 1\n                                ...        , # Ruta n\n                              ]\n            Return\n            ------\n                - trayectosValue: Matriz transpuesta de secuencias\n                                  [[ruta 1,...,ruta n], # Trayecto 1\n                                    ...               , # Trayecto 2\n                                  ]\n                              \n        '''\n        trayectosValue = map(list, zip(*secuencias))\n        for tray in range(len(trayectosValue)):\n            for ruta in range(len(trayectosValue[0])):\n                trayectosValue[tray][ruta] = list(trayectosValue[tray][ruta] -1)\n        return trayectosValue\n\n    def calcularTopologiaTiempo(self):\n        '''\n            Cambia las matrices de self._TIEMPO_ENTRE_ESTACIONES y self._TOPOLOGIA, de acuerdo a las \n            self._SECUENCIAS establecidas \n\n            Parametros\n            ----------\n                None\n\n            Return\n            ------\n                - trayectosValue: Matriz transpuesta de secuencias\n                                  [[ruta 1,...,ruta n], # Trayecto 1\n                                    ...               , # Trayecto 2\n                                  ]\n        '''\n        # global self._TIEMPO_ENTRE_ESTACIONES\n        # global self._TOPOLOGIA\n        trayectosValue = self.trayectosValueF(self._SECUENCIAS)\n        tiemposTrayectos = self.tiempoTrayectosTransbordo(trayectosValue)\n        self._TIEMPO_ENTRE_ESTACIONES = self.tiempoTrayectosRutas(tiemposTrayectos)\n        self._TOPOLOGIA = self.obtenerTopologias(self._TIEMPO_ENTRE_ESTACIONES)\n\n#Se ejecuta la optimización con Algorítmos Geneticos y luego el NelderMead\n\nif __name__ == \"__main__\":\n    optimizacionF = OptimizacionFrecuencias(numeroDemanda = 2)\n    optimizacionF.obtenerDatosBase( \n        db_host =  'localhost',\n        usuario = 'optimizacion',\n        clave =  'fdoq9zSyfSlMsyW9wGkh',\n        base_de_datos = 'rutamega_principal',\n    )\n    # optimizacionF.obtenerDatosBase()\n    # optimizacionF.generarCSV()\n    optimizacionF.calcularTopologiaTiempo()\n    # print optimizacionF._TRANSBORDOS\n    optimizacionF.optNelderMead(multiProcessing = True)\n  \n    print \"\\nFactor Operador: \", optimizacionF.FACTOROPERADEOR, \" Factor Pasajero: \", optimizacionF.FACTORPASAJERO\n    print \"Demanda: \", optimizacionF.NUMERODEMANDA, \" Costos: \", optimizacionF.COSTOS\n\n    # Se ejecuta la función que genera el archivo JSON, se toma el primer parametro como el nombre de archivo.\n    # Ejemplo: > python modeloOptimizacionV5.py horariosOpt. El nombre del archivo seria horariosOpt.json\n    optimizacionF.jsonFile(nombreArchivoS = sys.argv[1])\n\n",
-			"file": "modeloOptimizacionV5.py",
-			"file_size": 96376,
-			"file_write_time": 130741894523460649,
+			"contents": "SELECT AVG(best_result), `time`\\60, extra_config FROM `core_test` WHERE mapp_id = 20 GROUP by extra_config ORDER BY AVG(best_result) ASC",
 			"settings":
 			{
-				"buffer_size": 96325,
+				"buffer_size": 136,
 				"line_ending": "Unix",
-				"name": "modeloOptimizacionV5.py"
+				"name": "SELECT AVG(best_result), `time`\\60, extra_config F"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/MEGA/U/Progra/Python/databases.py",
+			"file": "/home/rafapinzon/MEGA/U/Proyecto de Grado/chapters/resultadosConclusiones.tex",
 			"settings":
 			{
-				"buffer_size": 2007,
+				"buffer_size": 12264,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/baseDatosDialog.py",
+			"file": "/home/rafapinzon/MEGA/U/Proyecto de Grado/biblio.bib",
 			"settings":
 			{
-				"buffer_size": 6951,
+				"buffer_size": 1743,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\\section{Descripción del Problema}\n\nUna gran cantidad de colegios, que incluye casi la totalidad de los privados de Pereira, prestan el servicio de transporte a sus estudiantes. Estos colegios pueden llegar a tener más de mil estudiantes cada uno y por consiguiente más de 30 buses o microbuses, con diferentes capacidades, para llevar a sus estudiantes.\n \nEn general los colegios empiezan con pocos estudiantes y pueden repartir a las personas en diferentes rutas  diseñadas manualmente, pero  a medida que crece el número de estudiantes este problema se vuelve más complejo y es muy probable que las decisiones tomadas estén lejos de ser las óptimas.\n\nEste tipo de problema se conoce en el mundo de la computación como VRP [15] (por sus siglas en inglés Vehicule Routing Problem) o problema de enrutamiento de vehículos. En este problema se dispone de un número finito de recursos o rutas para repartir bienes que ocupan una determinada capacidad de los recursos, los bienes deben repartirse en diferentes puntos y el objetivo es minimizar los costos de repartición, que en general consisten en la suma de las distancias recorridas por cada ruta. \n \nEl VRP puede ser representado usando un grafo, donde los vértices incluyen la ubicación de los bienes y del punto de inicio y final, las aristas son los recorridos entre cada vértice y sus costos están determinados por la distancia entre ellos, normalmente todas las conexiones son posibles. También es común usar una matriz donde se relacione la distancia de todos los nodos con cada uno de los demás.\n\nLa importancia de abordar el problema con inteligencia artificial radica en la complejidad computacional del problema. Si se hiciera una búsqueda explorando cada una de las soluciones para determinar la mejor, la cantidad de soluciones a explorar estaría determinada así, siendo n el total de alumnos, m el total rutas y r la capacidad de las rutas, asumiendo que la capacidad es igual para todas las rutas y que $m*rn$:\n\nPara escoger los alumnos de una primera ruta se tendrían $C_{r}^{n}$ posibildades para el segundo serían $C_{r}^{(n-r)}$ , luego $C_{r}^{(n-2r)}$ y cada uno de estos números se debe multiplicar hasta que no quede ningún estudiante por repartir, por lo cual el resultado final sería:\n\n\\begin{equation*}\n\\prod_{i=0}^{m-1}C_{r}^{(n-i*r)}\n\\end{equation*}\n\nQue expandiendo la combinatoria es equivalente a:\n\\begin{equation}\n\\prod_{i=0}^{m-1}\\frac{(n-i*r)!}{r!(n-(i+1)*r)!}\n\\end{equation}\n\nPara dar una mejor idea de la cantidad tan amplia de soluciones se hizo el cálculo con algunos valores, observar Cuadro 1.1.\\\\\n\\begin{table}[h]\n\\centering\n\\begin{tabular}{| c | c | c | c |}\n\\hline\nAlumnos &  Capacidad de rutas & Posibilidades  \\\\\n\\hline\n20 &  10 &  184.756 \\\\\n50 &  10 &  4,833E+31 \\\\\n100 &  20 &  1,095E+66 \\\\\n200 &  20 &  1,086E+191 \\\\\n210 &  30 &  1,145E+171 \\\\\n\\hline\n\\end{tabular}\n\\caption{Posibilidades de distribución de rutas}\n\\label{tab:tri}\n\\end{table}\n\nComo se puede observar en un colegio de 200 estudiantes no tiene sentido explorar todas las soluciones para determinar la óptima, además en Pereira hay colegios con más de 800 estudiantes como el Salesiano Juan Bosco [9], el Liceo Taller San Miguel [10] con alrededor de 700 y La Salle [11] con más de 1000.\n\nDebido a la cantidad de información que se debería analizar la complejidad computacional es bastante alta, por lo que se deben utilizar heurísticas que aunque no garanticen la mejor solución pueden encontrar una buena en un tiempo prudente independientemente de que no sea óptima.\n\n\n\\subsection{Definición del Problema}\nEl proceso de repartir a los estudiantes en rutas se hace hoy en día de manera empírica y manual en los colegios privados de la ciudad de Pereira, lo que conlleva a planes de distribución difíciles de crear y demanda horas de trabajo, estos planes pueden estar bastante lejos de lo óptimo, causando gastos innecesarios de combustible y tiempo afectando conductores y estudiantes.\n\n\\section{Justificación del proyecto}\nUna mala distribución en las rutas ocasiona pérdidas de tiempo en estudiantes y conductores, además de generar gastos de gasolina que podrían ser evitados. De otro lado se tiene a las personas encargadas de esta tarea que si lo hacen  manualmente  les puede tomar horas y se debe hacer cada que inicia un nuevo año escolar o cuando ingresan nuevos estudiantes en cualquier otro momento del año.\n \nTeniendo un software que haga esto automáticamente basado en la ubicación de cada estudiante, el número de rutas y la capacidad de las mismas, se puede encontrar una solución mucho mejor y en menos tiempo que si esta tarea se hace manualmente.\n\nSe espera también aportar a futuras investigaciones o desarrollos en el área de VRP con los datos recopilados y puntos que se deban tener en cuenta para obtener mejores resultados.ñ\n\n\\section{Objetivos}\n\\subsection{Objetivo General}\nDeterminar un algoritmo que mejor se adapte para el problema de repartición de rutas de colegios en Pereira para desarrollar un software prototipo que realice esta tarea.\n\n\\subsection{Objetivos Específicos}\n\n\\begin{enumerate}\n\\item Analizar alternativas con que se ha abordado el problema en el pasado.\n\\item Proponer una nueva alternativa o variación de un algoritmo existente.\n\\item Comparar alternativas y elegir la más adecuada teniendo en cuenta la distribución geográfica de los colegios objetivo.\n\\item Diseñar e implementar una aplicación que proponga un plan de distribución de rutas para colegios en la ciudad de Pereira.\n\\end{enumerate}\n\n\\section{Antecedentes}\nEl problema de distribución de rutas se puede abordar con 3 diferentes tipos de algoritmos; los primeros buscan encontrar una solución exacta pero tienen limitación en el tamaño de problema que pueden resolver, también están los algoritmos que utilizan heurísticas para encontrar una solución buena y con mayor capacidad en cuanto a puntos a repartir, y finalmente están los métodos clasificados como meta heurísticos en donde la búsqueda es más aleatoria pero que se adapta a más problemas y puede producir muy buenas soluciones. Una comparación de estas familias se puede encontrar en [43], [44] y [45].\n\n\\subsection{Algoritmos Exactos}\nEl primer acercamiento a resolver el VRP son los algoritmos exactos, es decir, que garantizan una solución óptima. Estos sin embargo se caracterizan por la limitación en la cantidad de puntos a distribuir que puede resolver y según el estudio de Laporte y Nobert [17] se clasifican en 3 grupos los cuales son: búsqueda de árbol directa, programación dinámica y programación lineal entera.\n\\subsubsection*{    Búsqueda de árbol directa}\nLa alternativa de búsqueda de árbol directa con mayor alcance conocida fue propuesta por Laporte, Mercure y Norbert en 1987 [17], en la cual se aprovecha la similitud del problema con el MSTP usando un algoritmo branch and bound que consiste en ramificar y podar aquellas soluciones que no llevarán a un camino óptimo. Este algoritmo demostró poder resolver problemas de hasta 250 vértices.\n\\subsubsection*{    Programación dinámica}\nEn cuanto al uso de programación dinámica para VRP, esta fue propuesta por Eilon, Watson-Gandy y Christofides en 1971 [18] el cual inicialmente podía encontrar una solución exacta para problemas entre 10 y 15 puntos. Posteriormente Christofides hizo algunas mejoras que permitieron que trabajara hasta con  50. Usos más actuales de este algoritmo logran resolver instancias de VRP de hasta 101 vértices en un tiempo de alrededor de 6 horas [25].\n\\subsubsection*{Programación lineal entera}\nEn el último grupo se tiene un método de particiones de conjuntos propuesto por Balinski, y Quandt en 1964 [19]; desafortunadamente este solo tiene alcance de hasta 15 vértices e incluso no garantiza una solución exacta siempre. Este procedimiento fue adaptado por Desrosiers y Solomon en 1991 [20] el cual sirve para resolver VRPTW, una modalidad que agrega ventanas de tiempo (las siglas TW son por Time Windows en inglés) en las que los bienes se pueden dejar o recoger con restricciones de tiempo. Este  funciona con problemas de hasta 100 lugares y su desempeño mejora a medida que las restricciones aumentan, ya que el campo de soluciones es menor.\n\n\\subsection{Algoritmos Heurísticos}\nDebido a las limitaciones de los algoritmos exactos se han propuesto múltiples aproximaciones que en general garantizan soluciones buenas, aunque no las óptimas. Estos algoritmos se dividen en 3 familias: constructivas, de dos fases y de mejora.\n\\subsubsection*{Constructivas}\nLas heurísticas constructivas crean soluciones desde cero. Una de ellas y tal vez la más fácil de implementar es la del vecino más cercano, en esta se escoge un punto al azar y se conecta con el que se encuentre a menor distancia aún no conectado, este proceso se repite hasta que todos estén unidos pero en general sus resultados están lejos de los óptimos por lo cual no es muy usado.\nEl algoritmo heurístico más representativo de esta familia es el Clark Wright Savings, propuesto por Clarke y Wright en 1964 [21] en el cual inicialmente se tiene un ruta para cada punto y estas se van combinando de acuerdo a la que produzca un mayor ahorro de recorrido.\n\n\\subsubsection*{Dos fases}\nLos algoritmos de dos fases se dividen en dos sub-familias: una en la que primero se agrupa y luego se enruta, y otra en la que el procedimiento se hace al revés. Del primer grupo está el algoritmo de barrido (The sweep algorithm) que fue inicialmente sugerido por Wren en 1971, luego por Wren y Holliday en 1972 [22] donde se usaba para CVRP, variante en la que se tiene en cuenta la capacidad de cada ruta y el espacio que ocupa cada bien que se transporta. El algoritmo se puede adaptar a situaciones con uno o múltiples origines de las rutas. Finalmente Gillett and Miller en 1974 [23] le dieron el nombre de algoritmo de barrido y este se popularizó.\n\nEste acercamiento ha probado proveer soluciones entre un 2\\% y un 10\\% de cercanidad con la solución óptima conocida en problemas de la vida real [24] [15].\n \nOtros métodos de dos fases y agrupamiento primero incluyen al de Fisher y Jaikumars de 1981 [26] el cual usa un método más sofisticado de agrupamiento, resolviéndolo como un GAP o problema de asignación general (General Assignment Process), este logra soluciones hasta un 2\\% mejores que las del algoritmo de barrido [15] pero tiene la limitación de que la cantidad de rutas debe ser fijada desde el inicio. También hay una extensión del método de barrido propuesta por Balinski y Quandt y mejorada por Foster y Ryan [27]; esta se conoce como algoritmo de pétalo y su variación consiste en que se produce una colección de rutas candidatas llamadas pétalos, las cuales inicialmente se intersectan y posteriormente se dividen en soluciones posibles, al igual que en las demás cada ruta se soluciona como un TSP aislado.\n \nLos métodos de la segunda sub-familia consisten en primero crear una especie de TSP que agrupe a todos los vértices y luego este se empieza a dividir en rutas, sin embargo no son competitivos con los algoritmos que tienen el orden inverso.\n\n\\subsubsection*{De mejora}\nLa última familia es de los algoritmos de mejora. Uno de los primeros métodos de mejora iterativa fue el 2-Opt, el cual consiste en recorrer parejas de nodos conectados y reordenarlos si esto causa una mejora en el total del recorrido. Una mejora propuesta por Christofides y Eilon [28] fue el 3-Opt, que funciona de igual manera pero se toman de a 3 nodos para intentar buscar un orden más conveniente. Este tipo de heurísticas al limitarse a la mejora de soluciones normalmente se utiliza en combinación con otros algoritmos, usándose como una mejora al resultado obtenido pero nunca para crear soluciones desde cero.\n\n\\subsection{Meta Heurísticas}\nLas meta heurísticas son métodos de nivel superior a los heurísticos en los que generalmente se crea una solución o conjunto de soluciones, a veces aleatorias, que son mejorados iterativamente en busca del óptimo global. Este tipo de algoritmos suelen aplicarse solamente a problemas que no tienen una buena solución con las heurísticas conocidas debido a que no garantizan que se encuentre incluso una buena solución y habitualmente tienen un margen de efectividad menor, sin embargo en cuanto a VRP algunos de los mejores resultados han sido encontrados con meta heurísticas. El éxito o fracaso depende de la forma en que se implemente y se ajusten las variables del algoritmo; los ajustes se hacen por lo regular de manera empírica. En este tipo de métodos se destacan las colonias de hormigas, la búsqueda Tabú, el enfriamiento simulado (mejor conocido como Simulated Annealing en inglés) y los algoritmos genéticos.\n\n\\subsubsection*{Enfriamiento simulado}\nEl enfriamiento simulado, SA por sus siglas en inglés, está inspirado en un proceso utilizado en la metalúrgica en el cual se calienta un material y se deja enfriar controladamente para reducir sus defectos.  Fue propuesto por Scott Kirkpatrick, C. Daniel Gelatt y Mario P. Vecch [31] para resolver problemas de múltiples variables y combinatorios. Lo interesante es que el algoritmo tiene la característica de explorar estocásticamente soluciones cercanas  a una solución dada  aunque no sean mejores que la actual, con el fin de escapar a mínimos locales. Las soluciones alternas se aceptan con una probabilidad que depende de una manera directamente proporcional del parámetro global T el cual va disminuyendo con las iteraciones para que converja finalmente. En la analogía con el proceso metalúrgico T representa la temperatura. Este procedimiento se ha utilizado principalmente para resolver VRPTW [29] [30].\n\n\\subsubsection*{Colonia de hormigas}\nLa optimización de colonia de hormigas está basada en la forma en que estos insectos buscan y recolectan comida y fue propuesta por primera vez para el VRP en 1997 por Bullnheimer, Hartl y Strauss [32]. En la vida real las hormigas inicialmente buscan la comida siguiendo caminos aleatorios y una vez la encuentran regresan a su colonia dejando un rastro de feromonas, así cuando otras hormigas salgan en la búsqueda seguirán los rastros que encuentren con una probabilidad directamente proporcional a que tan fuerte es aún la feromona, lo cual les indica hace cuánto tiempo fue depositada. Si existen varios caminos, los más cortos tendrán feromonas más recientes que serán preferidas por otras hormigas, además; si estos insectos siguen el rastro y encuentran la comida repetirán el proceso de volver a su colonia dejando a su paso más feromonas dando como resultado un buen camino que las demás recorrerán.\n \nEsta heurística se aplicó inicialmente a TSP y fue adaptada a VRP por Bullnheimer, Hartl y Strauss forzando a las hormigas a crear una nueva ruta cada vez que excedía su capacidad o una distancia máxima predefinida. Este algoritmo ha probado encontrar soluciones de hasta un 1\\% bajo la óptima conocida [33] y ha sido adaptado para resolver VRPTW [34] VRP dinámico o DVRP [35], variante en que las rutas deben ser actualizadas en tiempo real para abarcar nuevos nodos.\n\n\\subsubsection*{Búsqueda Tabú}\nEl concepto de búsqueda tabú fue descrito inicialmente por Glover [36] en 1986 y consiste en que cada iteración una solución se mueve hacia la mejor solución de un subconjunto de su vecindario. Para evitar ciclos, las soluciones tienen información sobre las recientemente exploradas, las cuales son declaradas prohibidas o tabú. La duración de una solución como tabú es determinada por parámetros que pueden variar a través del tiempo y adicionalmente se puede salir de este estatus si por ejemplo una declarada tabú es mejor que cualquier otra encontrada hasta ese momento. La búsqueda tabú inicia con una solución candidata, la cual puede ser generada aleatoriamente o partir de otra heurística.\n \nEntre las versiones de este algoritmo se encuentra el Tabú granular propuesta por Toth y Vigo [37] donde se hace un proceso adicional que elimina movimientos en el vecindario que probablemente no producirán buenos resultados y solo los reintegran si el algoritmo se atasca en un mínimo local. También está el proceso de memoria adaptativa de Rochat y Taillard [38] donde se tiene un conjunto de buenas soluciones que es dinámicamente actualizado a través del proceso de búsqueda y de manera periódica algunos elementos son extraídos y combinados con otros para producir nuevas soluciones buenas, finalmente el de Kelly y Xu que utiliza el intercambio de vértices entre dos rutas, un posicionamiento global de algunos vértices en otras rutas y mejoras locales en cada recorrido [39].\n\n\\subsubsection*{Algoritmos genéticos}\nLos algoritmos genéticos son uno de los meta heurísticos más conocidos; estos simulan el proceso de selección natural y lo que pasa a nivel de genética para evolucionar hacia mejores soluciones. La aplicación a problemas computacionales fue propuesta por Holland en 1975 [40] y ha sido aplicada a tipos de problemas muy variados. En este método cada solución debe estar codificada en cromosomas que representan al individuo y pueden ser evaluados por una función conocida como fitness, que indica que tan bueno es. Sobre la población o poblaciones de individuos se simula tanto la reproducción como la mutación, donde las soluciones más aptas tienen más posibilidades de reproducirse. Al final el individuo que mejor resultado tenga en la función fitness es decodificado y corresponde a la solución. En todo el proceso hay 3 operaciones importantes, de su implementación y de la representación del problema en cromosomas depende encontrar o no una buena solución, estas son la selección, reproducción y mutación.\n \nAl implementar las operaciones se debe buscar que se dé oportunidad de diversidad en las soluciones, de no ser así el algoritmo puede fácilmente converger en mínimos locales.\n \nLos resultados obtenidos con esta meta heurística no han sido los mejores; sin embargo una adaptación de Nagata de EAX [41] y un algoritmo genético híbrido propuesto por Berger y Barkoui conocido como HGA-VRP (Hybrid Genetic Algorithm – VRP) [42] han alcanzado las mejores soluciones conocidas para instancias clásicas de VRP y son competitivas con los mejores resultados conocidos.\n\n\\subsection{Factor geográfico y colegios}\nPereira es la capital del departamento de Risaralda, Colombia. Se ubica en la región central del país en la cordillera central de los Andes, es la más poblada del eje cafetero con más de medio millón de habitantes. El área municipal es de $702 km^2$ . La cercanía con el municipio vecino, Dosquebradas, hacen que la población de ambas se trate como una sola; además de compartir el sistema de transporte público, miles de personas se movilizan diariamente entre estos municipios, incluyendo estudiantes a sus colegios. En la figura \\ref{fig:x area metropolitana} se puede observar el área metropolitana.\n\n%\\begin{center}\n\n%\\vspace{13pt}\n\\begin{figure}[H]\n\\centering\n\\includegraphics[width=411pt, height=241pt, keepaspectratio=true]{images/Proyectodegrado-fig008.png}\n\\caption{Área metropolitana de Pereira}\n\\label{fig:x area metropolitana}\n\\end{figure}\n\n%\\vspace{13pt}\n%\\textbf{Fuente: Google Maps }\n%\\end{center}\n\nDebido a la distribución geográfica alargada de la ciudad, algunas heurísticas como la de dos fases podría no adaptarse bien al problema, ya que generalmente tienen éxito en problemas donde el depósito, en este caso colegio, está centrado en el mapa y los puntos están distribuidos alrededor de este. Más importante aún es que la población objetivo son los colegios de tipo privado, los principales de este tipo tienen en su mayoría la característica de encontrarse a las afueras de la ciudad, especialmente en la vía armenia y vía cerritos como se puede observar en la figura \\ref{fig:x principales colegios}. Los colegios están marcados con estrellas.\n\n\n\\begin{figure}[H]\n\\centering\n\\includegraphics[width=440pt, height=227pt, keepaspectratio=true]{images/Proyectodegrado-fig009.png}\n\\caption{Mapa de Pereira con principales colegios privados}\n\\label{fig:x principales colegios}\n\\end{figure}\n\nEn la imagen se encuentran los colegios más importantes y los más reconocidos de la ciudad. Vía Cerritos, parte izquierda del mapa, se encuentran el Liceo Campestre (fuera de la imagen debido a la lejanía), Liceo Merani, Colegio Saint Andrews, Colegio La Salle, Colegio General Rafael Reyes, Colegio Pino Verde y Liceo Inglés. En la vía Armenia, parte inferior derecha, están el Colegio Saint George, Colegio Angloamericano, Liceo Francés, Colegio Abraham Lincoln, Liceo Taller San Miguel y el Colegio Sagrados Corazones. Otros colegios en el mapa son las Bethlemitas, el Calazans, la Enseñanza, el Gimnasio Pereira, las Franciscanas y el Salesiano.\n \nEn la ciudad de Pereira por lo regular los colegios privados prestan el servicio de transporte a sus estudiantes; en la tabla de estudiantes del anexo se listan los principales colegios privados de la ciudad y una estimación del número de estudiantes de cada uno, basada en el número de los mismos que presentaron las pruebas Saber 11 en los últimos dos años. Estas pruebas son obligatorias para que los estudiantes de último año de secundaria se puedan graduar y el estado proporciona toda la información sobre cada colegio [47], por lo cual es una buena fuente para hacer la estimación. El cálculo se realizó tomando el promedio de estudiantes de último grado en los últimos 2 años y multiplicándolo por la cantidad de grados que ofrece el colegio, información tomada de [46]. Partiendo de esta estimación se calculó un promedio de 498 estudiantes por colegio, se espera por lo tanto que las soluciones encontradas por el aplicativo sean buenas para problemas de hasta este tamaño.\n",
+			"settings":
+			{
+				"buffer_size": 21660,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "[^]*{[^,_]*[,][^\\n}]+",
+			"settings":
+			{
+				"buffer_size": 21,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "@online{1,\n	title         = {The History of Artificial Intelligence [online]},\n	url           = {http://library.thinkquest.org/2705/history.html}\n}\n\n@article{2,\n	author        = {William Cook},\n	title         = {In Pursuit of the Traveling Salesman : Mathematics at the Limits of Computation},\n	journaltitle  = {Princeton University Press},\n	year          = {2011}\n}\n\n@online{3,\n	title         = {The optimal tour of Sweden [Online]},\n	location      = {Canada: University of Waterloo},\n	url           = { http://www.salesianosjb.edu.co/}\n}\n\n@online{4,\n	author        = {APPLEGATE David L.;  BIXBY Robert E.; CHVATAL Vasek; COOK William; ESPINOZA Daniel G.; GOYCOOLEA Marcos and HELSGAUN Keld},\n	title         = {Certification of an optimal TSP tour through 85,900 cities},\n	location      = {Canada: University of Waterloo},\n	year          = {2007},\n	url           = { http://www.salesianosjb.edu.co/}\n}\n\n@online{5,\n	author        = {HELSGAUN Keld},\n	title         = {An Effective Implementation of K-opt Moves for the Lin-Kernighan TSP Heuristic},\n	location      = {Dinamarca: Roskilde University},\n	year          = {2007},\n	url           = {http://www.akira.ruc.dk/~keld/research/LKH/KoptReport.pdf}\n}\n\n@online{6,\n	author        = {COOK William},\n	title         = {Concorde TSP Solver [Online]},\n	location      = {Canada: University of Waterloo},\n	year          = {2011},\n	url           = {http://www.math.uwaterloo.ca/tsp/sweden/index.html}\n}\n\n@online{7,\n	author        = {TREVISAN Luca},\n	title         = {Optimization Handout 3},\n	location      = {Stanford University: CS261},\n	year          = {2011},\n	month         = {January},\n	day           = {11},\n	pages         = {1-4},\n	url           = {http://theory.stanford.edu/~trevisan/cs261/lecture03.pdf  }\n}\n\n@article{8,\n	author        = {GUTIN Gregory and PUNNEN Abraham P (eds)},\n	title         = {The Traveling Salesman Problem and Its Variations},\n	journaltitle  = {ISBN 1-4020-0664-0},\n	year          = {2011},\n	month         = {5},\n	day           = {31}\n}\n\n@book{15,\n	author        = {TOTH Paolo and VIGO Daniel},\n	title         = {The Vehicle Routing Problem},\n	year          = {2002}\n}\n\n@online{9,\n	title         = {Colegio La Salle [online]},\n	url           = {pereira.delasalle.edu.co/}\n}\n\n@online{11,\n	title         = {Liceo Taller San Miguel [online]},\n	url           = {http://www.liceotallersanmiguel.edu.co/}\n}\n\n@online{10,\n	title         = {Colegio Salesiano San Juan Bosco [online]},\n	url           = { http://www.salesianosjb.edu.co/}\n}\n\n@online{12,\n	author        = {MATAI Rajesh; SINGH Surya  and MITTAL Murari Lal},\n	title         = {Traveling Salesman Problem: Theory and Applications, Capitulo 1},\n	location      = {ISBN: 978-953-307-426-9},\n	year          = {2013},\n	month         = {12},\n	url           = {http://www.intechopen.com/books/traveling-salesman-problem-theory-and-applications/traveling-salesmanproblem-an-overview-of-applications-formulations-and-solution-approaches}\n}\n\n@online{13,\n	author        = {WILLIAMSON David Paul},\n	title         = {Analysis of the Held-Karp Heuristic for the Traveling Salesman Problem},\n	location          = {Massachusetts Institute of Technology},\n	year          = {1990},\n	url           = {http://people.orie.cornell.edu/dpw/papers/masters.pdf}\n}\n\n@online{14,\n	author        = {KIRÁLY András and ABONYI János},\n	title         = {A Novel Approach to Solve Multiple Traveling Salesmen Problem by Genetic Algorithm},\n	journaltitle  = {En: Computational Intelligence in Engineering},\n	location      = {Hungaria, Veszprém: University of Pannonia},\n	departament   = {Departamento de Ingenería de Procesos},\n	year          = {2010},\n	pages         = {141-151},\n	url           = {http://people.orie.cornell.edu/dpw/papers/masters.pdf}\n}\n\n@article{16,\n	author        = {NAH SZE San and KING TIONG Wei},\n	title         = {A Comparison between Heuristic and Meta-Heuristic Methods for Solving the Multiple Traveling Salesman Problem},\n	journaltitle  = {World Academy of Science, Engineering and Technology},\n	year          = {2007}\n}\n\n@article{17,\n	author        = { LAPORTE Gilbert and NOBERT Yves},\n	title         = {Exact algorithms for the vehicle routing problem},\n	journaltitle  = {MARTELLO, Silvano et al. Surveys in Combinatorial Optimization},\n	location      = {Paises Bajos},\n	year          = {1987}\n}\n\n@book{18,\n	author        = {EILON Samuel; WATSON-GANDY Carl Donald and CHRISTOFIDES Nicos},\n	title         = {Distribution management: Mathematical modelling and practical analysis},\n	year          = {1971}\n}\n\n@article{19,\n	author        = {BALINSKI Michel Louis and QUANDT Richard Emeric},\n	title         = {On an integer program for a delivery problem},\n	journaltitle  = {Operations Research, Volumen 2 Tema 2},\n	year          = {1964}\n}\n\n@article{20,\n	author        = {DESROCHERS Martin; DESROSIERS Jacques and SOLOMON Marius},\n	title         = {A new optimization algorithm for the vehicle routing problem with time windows},\n	journaltitle  = {Operations Research Volumen 40 Tema 2},\n	year          = {1992}\n}\n\n@article{21,\n	author        = {CLARKE G and WRIGHT J. W},\n	title         = {Scheduling of vehicles from a central depot to a number of delivery points},\n	journaltitle  = {Operations Research Volumen 12 Tema 4},\n	year          = {1964}\n}\n\n@article{22,\n	author        = {WREN Anthony and HOLLIDAY Alan},\n	title         = {Computer scheduling of vehicles from one or more depots to a number of delivery points},\n	journaltitle  = {Operations Research Quarterly Volumen 23},\n	year          = {1972},\n	pages         = {333-344}\n}\n\n@article{23,\n	author        = {GILLETT Billy .E. and MILLER Leland R},\n	title         = {A heuristic algorithm for the vehicle dispatch problem},\n	journaltitle  = {Operations Research Volumen 22 Tema 2},\n	year          = {1974}\n}\n\n@article{24,\n	author        = {SUTHIKARNNARUN Nanthi},\n	title         = {A Sweep Algorithm for the Mix Fleet Vehicle Routing Problem},\n	journaltitle  = {Proceedings of the International MultiConference of Engineers and Computer Scientists, Vol II IMECS},\n	location      = {Hong Kong},\n	year          = {2008}\n}\n\n@online{25,\n	author        = {BEKTAS Tolga; ERDOGAN Gunes and ROPKE Stefan},\n	title         = {Formulations and Branch-and-Cut Algorithms for the Generalized Vehicle Routing Problem},\n	location      = {Transportation Science},\n	year          = {2011},\n	url           = {http://www.diku.dk/~sropke/Papers/Formulations%20and%20Branch-and-Cut%20Algorithms%20for%20the%20Generalized%20Vehicle%20Routing%20Problem.pdf}\n}\n\n@article{26,\n	author        = {FISHER Marshall L. and JAIKUMAR Ramchandran},\n	title         = {Generalized Assignment Heuristic for Vehicle Routing},\n	journaltitle  = {Networks Volumen 2 Tema 2},\n	pages         = {109-124},\n	year          = {2008}\n}\n\n@article{27,\n	author        = {RYAN David M.; HJORRING Curt and GLOVER Fred},\n	title         = {Extensions of the Petal Method for Vehicle Routing},\n	journaltitle  = {En Journal of the Operational Research Society},\n	pages         = {289-296},\n	year          = {1993}\n}\n\n@article{28,\n	author        = {CHRISTOFIDES Nicols and EILON Samuel},\n	title         = {An algorithm for the vehicle dispatching problem},\n	journaltitle  = {Operational Research Society, Volumen 20},\n	pages         = {309-318},\n	year          = {1969}\n}\n\n@article{29,\n	author        = {ARBELAITZ Olatz; RODRIGUEZ Clemente and ZAMAKOLA Ion},\n	title         = {Low Cost Parallel Solutions for the VRPTW Optimization Problem. International Conference on Parallel Processing Workshops},\n	journaltitle  = {IEEE Computer Society},\n	location      = {Valencia, Spain},\n	pages         = {176-181},\n	year          = {2001}\n}\n\n@article{30,\n	author        = {CZECH Zbigniew J. and CZARNAS Piotr},\n	title         = {Parallel simulated annealing for the vehicle routing problem with time windows},\n	journaltitle  = {10th Euromicro Workshop on Parallel, Distributed and Network-based Processing},\n	location      = {En España, Islas Canarias},\n	pages         = {376-383},\n	month         = {1},\n	year          = {2001}\n}\n\n@article{31,\n	author        = {KIRKPATRICK S.; GELATT Jr C. D. and VECCHI M. P},\n	title         = {Optimization by Simulated Annealing},\n	journaltitle  = {Science, New Series, Vol. 220, No. 4598},\n	location      = {Valencia, Spain},\n	pages         = {671-680},\n	month         = {5},\n	year          = {1983}\n}\n\n@article{32,\n	author        = {BULLNHEIMER Bernd; HARTL Richard F. and STRAUSS Christine},\n	title         = {Applying the Ant System to the Vehicle Routing Problem},\n	journaltitle  = {2nd International Conference on Metaheuristics,},\n	location      = {France},\n	year          = {1997}\n}\n\n@article{33,\n	author        = {BELL John E. and MCMULLEN Patrick R},\n	title         = {Ant colony optimization techniques for the vehicle routing problem},\n	journaltitle  = {Department of Operational Sciences, Air Force Institute of Technology, Wright-Patterson AFB, OH, USA},\n	location      = {Babcock Graduate School of Management, Wake Forest University, Winston-Salem, NC, USA},\n	month         = {7},\n	year          = {2004}\n}\n\n@article{34,\n	author        = {GAMBARDELLA Luca M.; TAILLARD Eric. and AGAZZI Giovanni},\n	title         = {MACS-VRPTW: A Multiple Ant Colony System for Vehicle Routing Problems with Time Windows},\n	journaltitle  = {Istituto Dalle Molle Di Studi Sull Intelligenza Artificiale},\n	year          = {1999}\n}\n\n@article{35,\n	author        = {GAMBARDELLA Luca M.; RIZZOLI Andrea E. and DONATI Alberto V},\n	title         = {Ant Colony System for a Dynamic Vehicle Routing Problem},\n	journaltitle  = {Istituto Dalle Molle di Studi sull Intelligenza Artiﬁciale},\n	year          = {2005}\n}\n\n@article{36,\n	author        = {GLOVER Fred},\n	title         = {Future Paths for Integer Programming and Links to Artificial Intelligence},\n	journaltitle  = {Computers and Operations Research, Volumen 13},\n	pages         = {533-549},\n	year          = {1986}\n}\n\n@article{37,\n	author        = {OTH Paolo and VIGO Daniel},\n	title         = {The Granular Tabu Search and its Application to the Vehicle Routing Problem},\n	journaltitle  = {Computers and Operations Research, Volumen 13},\n	pages         = {533-549},\n	year          = {1986}\n}\n\n\n@article{38,\n	author        = {TARANTILIS Christos D.  and KIRANOUDIS Chris T},\n	title         = {BoneRoute: An Adaptive Memory-Based Method for Effective Fleet Management},\n	journaltitle  = {Annalis of Operations Research, Volumen 115, Kluwer Academic Publishers},\n	pages         = {227-241},\n	year          = {2002}\n}\n\n\n@article{39,\n	author        = {KELLY James P. and XU Jiefeng},\n	title         = {A Network Flow-Based Tabu Search Heuristic for the Vehicle Routing Problem},\n	journaltitle  = {Transportation Science, Volumen 30},\n	pages         = {379-393},\n	year          = {1996}\n}\n\n@article{40,\n	author        = {HOLLAND John Henry},\n	title         = {Adaptation in natural and artificial systems},\n	journaltitle  = {University of Michigan Press},\n	year          = {1975}\n}\n\n@article{41,\n	author        = {NAGATA Yuichi},\n	title         = {Edge assembly crossover for the capacitated vehicle routing problem},\n	journaltitle  = {Evolutionary Computation in Combinatorial Optimization, Lectures Notes in Computer Science, Volumen 4446},\n	pages         = {142–153},\n	year                  = {2007}\n}\n\n@article{42,\n	author        = {BERGER Jean and BARKAOUI Mohamed},\n	title         = {A hybrid genetic algorithm for the capacitated vehicle routing problem},\n	journaltitle  = {Genetic and Evolutionary Computation—GECCO 2003, volume 2723 of Lecture Notes in Computer Science},\n	pages         = {646-656},\n	year          = {2003}\n}\n\n@article{43,\n	author        = {FENTON Aish},\n	title         = {The Bees Algorithm for the Vehicle Routing Problem},\n	journaltitle  = {Computer Science},\n	location      = {Nueva Zelanda: University of Auckland},\n	year          = {2011}\n}\n\n@article{44,\n	author        = {LAPORTE Gilbert},\n	title         = {The Vehicle Routing Problem: An overview of exact and approximate algorithms},\n	journaltitle      = {Centre de Recherche sur les Transports},\n	location          = {Université de Montreal, Canada},\n	year                  = {1992}\n}\n\n\n@online{45,\n	title         = {Solution Methods for VRP [online]},\n	author        = {Networking and Emerging Optimization Research Group},\n	location      = {En España: Universidad de Málaga},\n	url           = {http://neo.lcc.uma.es/vrp/solution-methods/}\n}\n\n@online{46,\n	title         = {Colegios de Pereira [online]},\n	author        = {Programa de futuros científicos},\n	url           = {http://www.ofecfuturoscientificos.com/colegios-pereira.html }\n}\n\n@online{47,\n	title         = {ICFES Interactivo: Clasificación por planteles [online]},\n	url           = {http://www.icfesinteractivo.gov.co/Clasificacion/}\n}\n\n\n",
+			"settings":
+			{
+				"buffer_size": 12785,
+				"line_ending": "Unix",
+				"name": "@online{1,"
 			}
 		}
 	],
-	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system": "Packages/LaTeXing/LaTeX.sublime-build",
 	"build_system_choices":
 	[
 		[
@@ -667,15 +737,67 @@
 				"Packages/Python/Python.sublime-build",
 				""
 			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Primary Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Choose Quick Build"
+				],
+				[
+					"Packages/LaTeXing/LaTeX.sublime-build",
+					"Clean up Files"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXing/LaTeX.sublime-build",
+				""
+			]
 		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 266.0,
-		"last_filter": "pyth",
+		"height": 400.0,
+		"last_filter": "packa",
 		"selected_items":
 		[
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"late",
+				"Set Syntax: LaTeXing"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
 			[
 				"pyth",
 				"Set Syntax: Python"
@@ -701,19 +823,7 @@
 				"Package Control: Enable Package"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"enable",
-				"Package Control: Enable Package"
-			],
-			[
 				"remove",
-				"Package Control: Remove Package"
-			],
-			[
-				"packa",
 				"Package Control: Remove Package"
 			],
 			[
@@ -733,7 +843,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 435.0
+		"width": 475.0
 	},
 	"console":
 	{
@@ -758,25 +868,64 @@
 	"expanded_folders":
 	[
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion"
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/archivos"
 	],
 	"file_history":
 	[
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacion.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUI/modeloOptimizacion.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/modeloOptimizacion.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV6.py",
+		"/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl.py",
+		"/home/rafapinzon/Documents/Chat/Chat/Server.py",
+		"/home/rafapinzon/Documents/Chat/Chat/cliente.py",
+		"/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/Cliente.py",
+		"/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/Server.py",
+		"/home/rafapinzon/MEGA/U/Proyecto de Grado/proyectoText.tex",
+		"/home/rafapinzon/MEGA/U/Proyecto de Grado/chapters/algoritmoGenetico.tex",
+		"/home/rafapinzon/MEGA/U/Proyecto de Grado/TestBachillerLTSMcsv.csv",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/rafapinzon/MEGA/U/Proyecto de Grado/proyectoGradoTex.tex",
+		"/home/rafapinzon/VRS/project_rs/TestSimAnn_Bachillerato LTSM.csv",
+		"/home/rafapinzon/MEGA/U/Proyecto de Grado/rafaBiblio.dbj",
+		"/home/rafapinzon/MEGA/U/Proyecto de Grado/ezspanish.bst",
+		"/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GPopulation.py",
+		"/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GSimpleGA.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/Tutorial5InterfazBasica.py",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/rafapinzon/MEGA/U/Progra/Python/databases.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/Pruebas_ModeloOptimizacionV6.txt",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacion5.2.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/modeloOptimizacionV5.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40Estaciones.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40EstacionesV2.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/baseDatosDialog.py",
+		"/home/rafapinzon/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV6 (RafaPc2's conflicted copy 2015-04-27).py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/pyqt4file.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/NameFileExecuted.py",
+		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/dist/modeloOptimizacionV6.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV5.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos/Topologia2Vuelta.csv",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos/Transbordos2Vuelta.csv",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos/Topologia1Vuelta.csv",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos/TiempoEntreEstaciones2.csv",
+		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorialSumar.py",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos/horariosOpt-modeloOptimizacionV5.py-.json",
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV4.1.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/archivos/horariosOpt-modeloOptimizacionV5-.json",
 		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUI_App.py",
 		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/PrimeraApp.py",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Python.sublime-settings",
 		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/05TutorialInterfazBasica.py",
-		"/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GPopulation.py",
 		"/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/FunctionSlot.py",
 		"/home/rafapinzon/CompilPython/mpascal/mpasparse.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV2.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modelo.sublime-project",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Python Django.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV4.1.py",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
 		"/home/rafapinzon/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
@@ -788,7 +937,6 @@
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/urls.py",
 		"/home/rafapinzon/VRS/project_rs/templates/base.html",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/DatosCreacionTiempo40est.txt",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40EstacionesV2.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV4.py",
 		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorial6_dialogs.py",
 		"/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorial5_signals.py",
@@ -798,7 +946,6 @@
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/TestView.py",
 		"/home/rafapinzon/MEGA/U/Progra/Python/csvtutorial.py",
 		"/home/rafapinzon/MEGA/U/Progra/Python/pyqt4table_example.py",
-		"/home/rafapinzon/MEGA/U/Progra/Python/pyqt4file.py",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/classes/MappWrapper.py",
 		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/gui_python.py",
 		"/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/csv_module_pyqt4.py",
@@ -816,22 +963,18 @@
 		"/home/rafapinzon/.config/sublime-text-3/Packages/Anaconda/README.md",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/MapView.py",
 		"/home/rafapinzon/VRS/project_rs/templates/core/mapp/costs.html",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempo40Estaciones.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV1.py",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/classes/SimAnn.py",
 		"/home/rafapinzon/Dropbox/U/Progra/Python/TryExceptTut.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Documentos/IdsEstacionesTrayectoRuta2.txt",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Documentos/trayectos2ruta.cvs",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/Secuencias40Est.txt",
-		"/home/rafapinzon/Documents/Chat/Chat/cliente.py",
 		"/home/rafapinzon/Dropbox/U/Progra/Python/qtTutorial.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionV3.py",
-		"/home/rafapinzon/Documents/Chat/Chat/Server.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/EscogenciaTiemposTransbordoRutaFantasma.txt",
 		"/home/rafapinzon/VRS/project_rs/local_apps/core/forms/MappForm.py",
 		"/home/rafapinzon/Dropbox/U/Progra/untitled.c",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/tiempos.csv",
-		"/home/rafapinzon/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/Extras/TiemposRuta2Alg.py",
 		"/home/rafapinzon/Dropbox/StuffsToDo",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/ErrorServerUne.txt",
@@ -850,7 +993,6 @@
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionDB.py",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/Tablas(frecuencias 0,14237 0,07289 0,15171)",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/Pruebas.txt",
-		"/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl.py",
 		"/home/rafapinzon/Dropbox/U/Bases de Datos/modeloER/diagramaER.htm",
 		"/home/rafapinzon/Dropbox/U/Administracion Proyectos de Software/PROYECTOS Y PLANEACION ESTRATEGICA.docx",
 		"/home/rafapinzon/VRS/project_rs/rs/settings.py",
@@ -859,42 +1001,11 @@
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/Estructura Json Frecuencias_v3.json",
 		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/horarios.json",
 		"/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControlconoptreal.py",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionPyomo.py",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacion.py",
-		"/home/rafapinzon/Dropbox/U/Sistemas Distribuidos/Threading.py",
-		"/home/rafapinzon/Dropbox/U/Sistemas Distribuidos/Server.py",
-		"/home/rafapinzon/Dropbox/U/Sistemas Distribuidos/Client.py",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionGA.py",
-		"/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/GenerarControl organizada con problemas.py",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionPyomo.dat",
-		"/home/rafapinzon/Downloads/ply-3.4/AnaLexico-1.py",
-		"/tmp/.fr-qnJfqu/ply-3.4/AnaLexico-1.py",
-		"/home/rafapinzon/Downloads/Estructura Json Frecuencias_v2.txt",
-		"/home/rafapinzon/Downloads/AnaLexico.py",
-		"/home/rafapinzon/Dropbox/Proyecto Optimización/Richard/Excelexample.py",
-		"/home/rafapinzon/Dropbox/U/Compiladores/pruebas.py",
-		"/home/rafapinzon/Dropbox/U/Compiladores/Pruebas.pas",
-		"/home/rafapinzon/Dropbox/Proyecto Optimización/json.py",
-		"/home/rafapinzon/Dropbox/U/Progra/Python/databases.py",
-		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/tutorial.py",
-		"/home/rafapinzon/Downloads/CoinIpopt/ThirdParty/Lapack/get.Lapack",
-		"/home/rafapinzon/Dropbox/Proyecto Optimización/RafaStuff/modeloOptimizacion.py",
-		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_resources.py",
-		"/home/rafapinzon/VRS/include/python2.7/traceback.h",
-		"/home/rafapinzon/VRS/lib/python2.7/site-packages/django/contrib/admin/static/admin/js/timeparse.js",
-		"/home/rafapinzon/VRS/lib/python2.7/site-packages/django/contrib/gis/tests/data/invalid/emptypoints.dbf",
-		"/home/rafapinzon/VRS/include/python2.7/timefuncs.h",
-		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_easy_install.py",
-		"/home/rafapinzon/VRS/lib/python2.7/site-packages/setuptools/tests/test_dist_info.py",
-		"/home/rafapinzon/VRS/project_rs/TODO.txt",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/SimAnnView.py",
-		"/home/rafapinzon/VRS/project_rs/local_apps/core/views/UtilsView.py",
-		"/home/rafapinzon/VRS/project_rs/prueba.py",
-		"/home/rafapinzon/VRS/project_rs/templates/core/home.html"
+		"/home/rafapinzon/Dropbox/ProyectoMegaBusR/ProyectoOptimizacion/modeloOptimizacionPyomo.py"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -909,6 +1020,54 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"*",
+			"\"",
+			"c",
+			"numero",
+			"nombre",
+			"ingresado",
+			"print",
+			"')\n",
+			"/",
+			"pushButtonAbrirCSV",
+			"\"archivos",
+			"[^]*{[^,_]*[,][^\\n}]+",
+			"$^{\\circ}$",
+			"\n",
+			"[^]*{[^,_]* y [^\\n}]+",
+			"[^]*{[^,_]* and [^\\n}]+",
+			"[^]*{[^,_]*and[^\\n}]+",
+			"[]\\{[^,_]*[,][^\\n}]+",
+			"[]{[^,_]*[,][^\\n}]+",
+			"{[^,_]*[,][^\\n}]+",
+			"[^]{[^,_]*[,][^\\n}]+",
+			"{[^,_]*[,][^\\n}]+",
+			"[^]*author[\\t ]*= {[^,_]*[,][^\\n}]+",
+			"[^]* author = [^]*{[^,_]*[,][^\\n}]+",
+			"[^]*{[^,_]*[,][^\\n]",
+			"[^]*{[^,]*[,][^\\n]",
+			"[^]*{[^,]*[,][^",
+			"[^]*{[^,]*[,][^]*",
+			"[^]*{[^,]*[,][^{}]*}",
+			"[^]*{[^,]*,[^]*}",
+			"[^]*{[^,]*,[^auhtor]}",
+			"author",
+			"scaps",
+			"\\text",
+			"connect",
+			"18",
+			"ui.tableView",
+			"def baseDatosTrigger(self):\n        self.baseDatos = ObtenerDBGUI(uiPrincipal = self)\n        self.baseDatos.exec_()",
+			"tableTrigger",
+			"\"archivos/",
+			"savetxt",
+			"\"archivos/",
+			"ctrl+shift+[",
+			"np.save",
+			"fantasma",
+			"nombreArchivoS",
+			"%s",
+			"datetime",
 			"parent",
 			"()\n",
 			"QtCore.QObject.connect(self.ui.buttonBoxOkCancel, QtCore.SIGNAL('accpeted()'), self.cambiarVariables)",
@@ -988,55 +1147,7 @@
 			"mejoresSecuencias",
 			"tiempoEntreEstaciones",
 			"numeroEstaciones",
-			"obtenerTopologias",
-			"tiempoTrayectosRutas",
-			"tiempoTrayectosTransbordo",
-			"tiempoTrayectosDirectos",
-			"EsRutasFantasmas",
-			"EsRutaFantasma",
-			"_TRAYECTOS",
-			"_PROPORCIONES",
-			"EsRutasFantasmas",
-			"FinTrayectoArray",
-			"EstacionesBaseDatosDict",
-			"NUMEROESTACIONES",
-			"_TRANSBORDOS",
-			"_SECUENCIAS",
-			"_TOPOLOGIA",
-			"_TiempoDirectoTrayectos",
-			"_TIEMPO_ENTRE_ESTACIONES",
-			"FrecuenciasOptimas",
-			"COSTOS",
-			"ValoresFrecuencias",
-			"NUMERORUTAS",
-			"HORAFIN",
-			"HORAINICIO",
-			"NUMERODEMANDA",
-			"TIEMPOESPERA2BUS",
-			"TIEMPOABORDAR",
-			"CAPACIDADBUSES",
-			"FACTOROPERADEOR",
-			"FACTORPASAJERO",
-			"tab",
-			"tabs",
-			"file",
-			"fileName",
-			"open",
-			"spinbox",
-			"*args, **kwargs",
-			"int",
-			"float",
-			"int",
-			"0",
-			"columnView",
-			"ColumnView",
-			"columnView",
-			"11[\\r*\\n+]",
-			"11\n",
-			"- GESTIÓN DE LOS RIESGOS DEL PROYECTO",
-			"31211 - GESTIÓN DE LOS RIESGOS DEL PROYECTO\n",
-			"",
-			"^[^\\#\\n]( )+print"
+			"obtenerTopologias"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1130,118 +1241,29 @@
 	"groups":
 	[
 		{
-			"selected": 12,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "modeloOptimizacionV4.1.py",
+					"file": "/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/Server.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 82889,
+						"buffer_size": 3719,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								61056,
-								61056
+								2753,
+								2753
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 22706.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GSimpleGA.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 28674,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14159,
-								14159
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 702.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/rafapinzon/Downloads/Pyevolve-0.6rc1/pyevolve/GPopulation.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13859,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4514,
-								4514
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 59.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/Tutorial5InterfazBasica.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1775,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								346,
-								346
-							]
-						],
-						"settings":
-						{
+							"apply_syntax_touched": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -1250,30 +1272,30 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/SumarApp.py",
+					"buffer": 1,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 851,
+						"buffer_size": 2665,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								444,
-								444
+								2556,
+								2556
 							]
 						],
 						"settings":
 						{
-							"auto_name": "SumarApp.py",
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"apply_syntax_touched": true,
+							"auto_name": "\\begin{table}[h]",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1283,37 +1305,375 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUI_App.py",
+					"buffer": 2,
+					"file": "/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/cliente.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4927,
+						"buffer_size": 2622,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1350,
-								1350
+								2622,
+								2622
 							]
 						],
 						"settings":
 						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 729.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/rafapinzon/MEGA/U/Sistemas Distribuidos/Proyecto/cliente_3funciones.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1173,
+								1173
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1123.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUI_App.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 929.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "modeloOptimizacion.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 106142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23853,
+								23853
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 50.0,
+						"translation.y": 6790.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/archivos/programacion2/Proporciones.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/modeloOptimizacionV6_1.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 107760,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/testWriteExcel.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 85,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								83,
+								83
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/tableGUI.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2662,
+								2662
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 234.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/csv_module_pyqt4.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1836,
+								1836
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/pyqt4file.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								814,
+								814
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 342.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/Executable.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								466,
+								466
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/Executable2.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 912,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								540,
+								540
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
 					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUI_App_Threads.py",
 					"semi_transient": false,
 					"settings":
@@ -1331,49 +1691,20 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 486.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "archivos/horariosOpt-modeloOptimizacionV5.py-.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1162424,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1162115,
-								1162115
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 521957.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 15,
 					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/AppMultipleWindows.py",
 					"semi_transient": false,
 					"settings":
@@ -1391,49 +1722,20 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 159.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/tutorialSumar.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2818,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2004,
-								2004
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 172.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
+					"buffer": 16,
 					"file": "/home/rafapinzon/MEGA/U/Progra/Python/Python GUI Development with Qt Tutorial/frameMultipleWindow.py",
 					"semi_transient": false,
 					"settings":
@@ -1451,7 +1753,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1459,126 +1762,216 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 17,
 					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/GUIframework.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15088,
+						"buffer_size": 16109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								225,
-								225
+								12619,
+								12619
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2118.0,
+						"translation.y": 3233.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "modeloOptimizacionV5.py",
+					"buffer": 18,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 96325,
+						"buffer_size": 136,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								84512,
-								84512
+								136,
+								136
 							]
 						],
 						"settings":
 						{
-							"auto_name": "modeloOptimizacionV5.py",
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+							"apply_syntax_touched": true,
+							"auto_name": "SELECT AVG(best_result), `time`\\60, extra_config F",
+							"default_dir": "/home/rafapinzon/Dropbox/ProyectoMegaBusR",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 28810.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "/home/rafapinzon/MEGA/U/Progra/Python/databases.py",
+					"buffer": 19,
+					"file": "/home/rafapinzon/MEGA/U/Proyecto de Grado/chapters/resultadosConclusiones.tex",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2007,
+						"buffer_size": 12264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1318,
-								1318
+								1097,
+								1097
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
+							"apply_syntax_touched": true,
+							"syntax": "Packages/LaTeXing/support/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/home/rafapinzon/MEGA/U/Proyecto de Grado/biblio.bib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1555,
+								1555
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								726,
+								726
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": -0.0,
-						"translation.y": 216.0,
+						"translation.y": 756.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "/home/rafapinzon/MEGA/U/Progra/Python/MyNewGUI/baseDatosDialog.py",
+					"buffer": 22,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6951,
+						"buffer_size": 21,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								919,
-								919
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"apply_syntax_touched": true,
+							"default_dir": "/home/rafapinzon/Dropbox/ProyectoMegaBusR",
+							"syntax": "Packages/Regular Expressions/RegExp.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 982.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12785,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_name": "@online{1,",
+							"default_dir": "/home/rafapinzon/Dropbox/ProyectoMegaBusR",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1677,7 +2070,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 234.0,
+	"side_bar_width": 268.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
